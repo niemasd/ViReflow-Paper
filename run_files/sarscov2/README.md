@@ -24,3 +24,4 @@ Results:
 | Number of Samples | ViReflow Walltime (seconds) | ViReflow Cost (dollars) |
 | ----------------- | --------------------------- | ----------------------- |
 |                 1 |                    2145.172 |                     TBD |
+|                10 |                    2086.650 |                     TBD |
