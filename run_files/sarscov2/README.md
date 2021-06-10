@@ -8,8 +8,7 @@ Copy FASTQ files for each replicate:
 
 ```bash
 # replace 'n=10' with whatever n
-n=10; parallel --jobs 7 aws s3 cp s3://vireflow-demo/benchmark/sarscov2_R{2}.fastq s3://vireflow-demo/benchmark/n$n.
-r{1}_R{2}.fastq ::: $(seq -w 1 $n) ::: 1 2
+n=10; parallel --jobs 7 aws s3 cp s3://vireflow-demo/benchmark/sarscov2_R{2}.fastq s3://vireflow-demo/benchmark/n$n.r{1}_R{2}.fastq ::: $(seq -w 1 $n) ::: 1 2
 ```
 
 Generate batch files for each replicate:
