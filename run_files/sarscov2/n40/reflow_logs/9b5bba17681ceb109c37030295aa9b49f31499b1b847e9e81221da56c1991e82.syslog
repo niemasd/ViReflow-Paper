@@ -1,0 +1,588 @@
+2021/06/11 18:26:35 reflow version: reflow1.6.0 (go1.13.15)
+2021/06/11 18:26:35 run ID: 9b5bba17
+2021/06/11 18:26:36 Trace: /home/niema/.reflow/runs/9b5bba17681ceb109c37030295aa9b49f31499b1b847e9e81221da56c1991e82.trace
+2021/06/11 18:27:25 discovered instance i-057d0868ccd4e305f (t3a.medium) ec2-18-117-153-182.us-east-2.compute.amazonaws.com
+2021/06/11 18:28:09 discovered instance i-0dc94a5b66e5ec367 (c5.12xlarge) ec2-3-17-36-245.us-east-2.compute.amazonaws.com
+2021/06/11 18:28:09 discovered instance i-0eae5c2665d0cbe82 (t3a.small) ec2-18-118-103-156.us-east-2.compute.amazonaws.com
+2021/06/11 18:28:10 failed to allocate from pool: unavailable: too many tries; provisioning new instances
+2021/06/11 18:28:50 discovered instance i-02029ae62bb122b36 (c5.9xlarge) ec2-18-116-234-144.us-east-2.compute.amazonaws.com
+2021/06/11 18:34:05 scheduler: alloc ec2-18-116-234-144.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 keepalive failed: context canceled
+2021/06/11 18:36:35 scheduler: alloc ec2-3-17-36-245.us-east-2.compute.amazonaws.com:9000/681d0d86d1e9a007 keepalive failed: context canceled
+2021/06/11 18:36:35 scheduler: alloc ec2-18-117-153-182.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 keepalive failed: context canceled
+2021/06/11 18:36:35 scheduler: alloc ec2-3-17-36-245.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 keepalive failed: context canceled
+2021/06/11 18:56:35 scheduler: alloc ec2-18-118-103-156.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 keepalive failed: context canceled
+2021/06/11 19:00:54 total n=571 time=34m18s
+	ident                                n   ncache transfer runtime(m) cpu         mem(GiB)    disk(GiB)   tmp(GiB) requested
+	n40.r01.Main.cp_consensus            1   0      0B                                                      
+	n40.r01.Main.cp_depth                1   0      0B                                                      
+	n40.r01.Main.cp_low_depth            1   0      0B                                                      
+	n40.r01.Main.cp_pileup               1   0      0B                                                      
+	n40.r01.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r01.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r01.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r01.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r01.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r01.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r01.Main.cp_variants             1   0      0B                                                      
+	n40.r01.Main.fq1                     1   0      0B                                                      
+	n40.r01.Main.fq2                     1   0      0B                                                      
+	n40.r01.Main.primer_bed              1   0      0B       0/0/0      0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r01.Main.ref_fas                 1   0      0B       0/0/0      0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r01.Main.ref_gff                 1   0      0B       0/0/0      0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r01.Main.untrimmed_bam           1   0      0B       2/2/2      1.0/1.0/1.0 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r02.Main.cp_consensus            1   0      0B                                                      
+	n40.r02.Main.cp_depth                1   0      0B                                                      
+	n40.r02.Main.cp_low_depth            1   0      0B                                                      
+	n40.r02.Main.cp_pileup               1   0      0B                                                      
+	n40.r02.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r02.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r02.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r02.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r02.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r02.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r02.Main.cp_variants             1   0      0B                                                      
+	n40.r02.Main.fq1                     1   0      0B                                                      
+	n40.r02.Main.fq2                     1   0      0B                                                      
+	n40.r02.Main.untrimmed_bam           1   0      0B       1/1/1      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r03.Main.cp_consensus            1   0      0B                                                      
+	n40.r03.Main.cp_depth                1   0      0B                                                      
+	n40.r03.Main.cp_low_depth            1   0      0B                                                      
+	n40.r03.Main.cp_pileup               1   0      0B                                                      
+	n40.r03.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r03.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r03.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r03.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r03.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r03.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r03.Main.cp_variants             1   0      0B                                                      
+	n40.r03.Main.fq1                     1   0      0B                                                      
+	n40.r03.Main.fq2                     1   0      0B                                                      
+	n40.r03.Main.untrimmed_bam           1   0      0B       2/2/2      1.0/1.0/1.0 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r04.Main.cp_consensus            1   0      0B                                                      
+	n40.r04.Main.cp_depth                1   0      0B                                                      
+	n40.r04.Main.cp_low_depth            1   0      0B                                                      
+	n40.r04.Main.cp_pileup               1   0      0B                                                      
+	n40.r04.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r04.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r04.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r04.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r04.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r04.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r04.Main.cp_variants             1   0      0B                                                      
+	n40.r04.Main.fq1                     1   0      0B                                                      
+	n40.r04.Main.fq2                     1   0      0B                                                      
+	n40.r04.Main.untrimmed_bam           1   0      0B       1/1/1      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r05.Main.cp_consensus            1   0      0B                                                      
+	n40.r05.Main.cp_depth                1   0      0B                                                      
+	n40.r05.Main.cp_low_depth            1   0      0B                                                      
+	n40.r05.Main.cp_pileup               1   0      0B                                                      
+	n40.r05.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r05.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r05.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r05.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r05.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r05.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r05.Main.cp_variants             1   0      0B                                                      
+	n40.r05.Main.fq1                     1   0      0B                                                      
+	n40.r05.Main.fq2                     1   0      0B                                                      
+	n40.r05.Main.untrimmed_bam           1   0      0B       1/1/1      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r06.Main.cp_consensus            1   0      0B                                                      
+	n40.r06.Main.cp_depth                1   0      0B                                                      
+	n40.r06.Main.cp_low_depth            1   0      0B                                                      
+	n40.r06.Main.cp_pileup               1   0      0B                                                      
+	n40.r06.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r06.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r06.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r06.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r06.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r06.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r06.Main.cp_variants             1   0      0B                                                      
+	n40.r06.Main.fq1                     1   0      0B                                                      
+	n40.r06.Main.fq2                     1   0      0B                                                      
+	n40.r06.Main.untrimmed_bam           1   0      0B       1/1/1      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r07.Main.cp_consensus            1   0      0B                                                      
+	n40.r07.Main.cp_depth                1   0      0B                                                      
+	n40.r07.Main.cp_low_depth            1   0      0B                                                      
+	n40.r07.Main.cp_pileup               1   0      0B                                                      
+	n40.r07.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r07.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r07.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r07.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r07.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r07.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r07.Main.cp_variants             1   0      0B                                                      
+	n40.r07.Main.fq1                     1   0      0B                                                      
+	n40.r07.Main.fq2                     1   0      0B                                                      
+	n40.r07.Main.untrimmed_bam           1   0      0B       2/2/2      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r08.Main.cp_consensus            1   0      0B                                                      
+	n40.r08.Main.cp_depth                1   0      0B                                                      
+	n40.r08.Main.cp_low_depth            1   0      0B                                                      
+	n40.r08.Main.cp_pileup               1   0      0B                                                      
+	n40.r08.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r08.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r08.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r08.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r08.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r08.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r08.Main.cp_variants             1   0      0B                                                      
+	n40.r08.Main.fq1                     1   0      0B                                                      
+	n40.r08.Main.fq2                     1   0      0B                                                      
+	n40.r08.Main.untrimmed_bam           1   0      0B       1/1/1      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r09.Main.consensus               1   0      0B       0/0/0      0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r09.Main.cp_consensus            1   0      0B                                                      
+	n40.r09.Main.cp_depth                1   0      0B                                                      
+	n40.r09.Main.cp_low_depth            1   0      0B                                                      
+	n40.r09.Main.cp_pileup               1   0      0B                                                      
+	n40.r09.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r09.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r09.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r09.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r09.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r09.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r09.Main.cp_variants             1   0      0B                                                      
+	n40.r09.Main.fq1                     1   0      0B                                                      
+	n40.r09.Main.fq2                     1   0      0B                                                      
+	n40.r09.Main.untrimmed_bam           1   0      0B       1/1/1      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r10.Main.cp_consensus            1   0      0B                                                      
+	n40.r10.Main.cp_depth                1   0      0B                                                      
+	n40.r10.Main.cp_low_depth            1   0      0B                                                      
+	n40.r10.Main.cp_pileup               1   0      0B                                                      
+	n40.r10.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r10.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r10.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r10.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r10.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r10.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r10.Main.cp_variants             1   0      0B                                                      
+	n40.r10.Main.fq1                     1   0      0B                                                      
+	n40.r10.Main.fq2                     1   0      0B                                                      
+	n40.r10.Main.untrimmed_bam           1   0      0B       1/1/1      1.0/1.0/1.0 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r11.Main.cp_consensus            1   0      0B                                                      
+	n40.r11.Main.cp_depth                1   0      0B                                                      
+	n40.r11.Main.cp_low_depth            1   0      0B                                                      
+	n40.r11.Main.cp_pileup               1   0      0B                                                      
+	n40.r11.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r11.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r11.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r11.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r11.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r11.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r11.Main.cp_variants             1   0      0B                                                      
+	n40.r11.Main.fq1                     1   0      0B                                                      
+	n40.r11.Main.fq2                     1   0      0B                                                      
+	n40.r11.Main.untrimmed_bam           1   0      0B       1/1/1      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r12.Main.cp_consensus            1   0      0B                                                      
+	n40.r12.Main.cp_depth                1   0      0B                                                      
+	n40.r12.Main.cp_low_depth            1   0      0B                                                      
+	n40.r12.Main.cp_pileup               1   0      0B                                                      
+	n40.r12.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r12.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r12.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r12.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r12.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r12.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r12.Main.cp_variants             1   0      0B                                                      
+	n40.r12.Main.fq1                     1   0      0B                                                      
+	n40.r12.Main.fq2                     1   0      0B                                                      
+	n40.r12.Main.untrimmed_bam           1   0      0B       2/2/2      1.0/1.0/1.0 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r13.Main.cp_consensus            1   0      0B                                                      
+	n40.r13.Main.cp_depth                1   0      0B                                                      
+	n40.r13.Main.cp_low_depth            1   0      0B                                                      
+	n40.r13.Main.cp_pileup               1   0      0B                                                      
+	n40.r13.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r13.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r13.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r13.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r13.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r13.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r13.Main.cp_variants             1   0      0B                                                      
+	n40.r13.Main.fq1                     1   0      0B                                                      
+	n40.r13.Main.fq2                     1   0      0B                                                      
+	n40.r13.Main.sorted_untrimmed_bam    1   0      0B       1/1/1      1.0/1.0/1.0 0.8/0.8/0.8 0.1/0.1/0.1 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r13.Main.untrimmed_bam           1   0      0B       1/1/1      1.0/1.0/1.0 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r14.Main.cp_consensus            1   0      0B                                                      
+	n40.r14.Main.cp_depth                1   0      0B                                                      
+	n40.r14.Main.cp_low_depth            1   0      0B                                                      
+	n40.r14.Main.cp_pileup               1   0      0B                                                      
+	n40.r14.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r14.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r14.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r14.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r14.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r14.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r14.Main.cp_variants             1   0      0B                                                      
+	n40.r14.Main.fq1                     1   0      0B                                                      
+	n40.r14.Main.fq2                     1   0      0B                                                      
+	n40.r14.Main.untrimmed_bam           1   0      0B       1/1/1      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r15.Main.cp_consensus            1   0      0B                                                      
+	n40.r15.Main.cp_depth                1   0      0B                                                      
+	n40.r15.Main.cp_low_depth            1   0      0B                                                      
+	n40.r15.Main.cp_pileup               1   0      0B                                                      
+	n40.r15.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r15.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r15.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r15.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r15.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r15.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r15.Main.cp_variants             1   0      0B                                                      
+	n40.r15.Main.fq1                     1   0      0B                                                      
+	n40.r15.Main.fq2                     1   0      0B                                                      
+	n40.r15.Main.untrimmed_bam           1   0      0B       1/1/1      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r16.Main.cp_consensus            1   0      0B                                                      
+	n40.r16.Main.cp_depth                1   0      0B                                                      
+	n40.r16.Main.cp_low_depth            1   0      0B                                                      
+	n40.r16.Main.cp_pileup               1   0      0B                                                      
+	n40.r16.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r16.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r16.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r16.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r16.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r16.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r16.Main.cp_variants             1   0      0B                                                      
+	n40.r16.Main.fq1                     1   0      0B                                                      
+	n40.r16.Main.fq2                     1   0      0B                                                      
+	n40.r16.Main.low_depth               1   0      0B       0/0/0      0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r16.Main.untrimmed_bam           1   0      0B       2/2/2      1.0/1.0/1.0 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r17.Main.cp_consensus            1   0      0B                                                      
+	n40.r17.Main.cp_depth                1   0      0B                                                      
+	n40.r17.Main.cp_low_depth            1   0      0B                                                      
+	n40.r17.Main.cp_pileup               1   0      0B                                                      
+	n40.r17.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r17.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r17.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r17.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r17.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r17.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r17.Main.cp_variants             1   0      0B                                                      
+	n40.r17.Main.fq1                     1   0      0B                                                      
+	n40.r17.Main.fq2                     1   0      0B                                                      
+	n40.r17.Main.untrimmed_bam           1   0      0B       2/2/2      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r18.Main.cp_consensus            1   0      0B                                                      
+	n40.r18.Main.cp_depth                1   0      0B                                                      
+	n40.r18.Main.cp_low_depth            1   0      0B                                                      
+	n40.r18.Main.cp_pileup               1   0      0B                                                      
+	n40.r18.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r18.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r18.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r18.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r18.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r18.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r18.Main.cp_variants             1   0      0B                                                      
+	n40.r18.Main.fq1                     1   0      0B                                                      
+	n40.r18.Main.fq2                     1   0      0B                                                      
+	n40.r18.Main.untrimmed_bam           1   0      0B       2/2/2      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r19.Main.cp_consensus            1   0      0B                                                      
+	n40.r19.Main.cp_depth                1   0      0B                                                      
+	n40.r19.Main.cp_low_depth            1   0      0B                                                      
+	n40.r19.Main.cp_pileup               1   0      0B                                                      
+	n40.r19.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r19.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r19.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r19.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r19.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r19.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r19.Main.cp_variants             1   0      0B                                                      
+	n40.r19.Main.fq1                     1   0      0B                                                      
+	n40.r19.Main.fq2                     1   0      0B                                                      
+	n40.r19.Main.untrimmed_bam           1   0      0B       1/1/1      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r20.Main.cp_consensus            1   0      0B                                                      
+	n40.r20.Main.cp_depth                1   0      0B                                                      
+	n40.r20.Main.cp_low_depth            1   0      0B                                                      
+	n40.r20.Main.cp_pileup               1   0      0B                                                      
+	n40.r20.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r20.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r20.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r20.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r20.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r20.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r20.Main.cp_variants             1   0      0B                                                      
+	n40.r20.Main.depth                   1   0      0B       0/0/0      0.9/0.9/0.9 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r20.Main.fq1                     1   0      0B                                                      
+	n40.r20.Main.fq2                     1   0      0B                                                      
+	n40.r20.Main.untrimmed_bam           1   0      0B       1/1/1      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r20.Main.variants                1   0      0B       14/14/14   1.0/1.0/1.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r21.Main.cp_consensus            1   0      0B                                                      
+	n40.r21.Main.cp_depth                1   0      0B                                                      
+	n40.r21.Main.cp_low_depth            1   0      0B                                                      
+	n40.r21.Main.cp_pileup               1   0      0B                                                      
+	n40.r21.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r21.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r21.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r21.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r21.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r21.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r21.Main.cp_variants             1   0      0B                                                      
+	n40.r21.Main.fq1                     1   0      0B                                                      
+	n40.r21.Main.fq2                     1   0      0B                                                      
+	n40.r21.Main.sorted_trimmed_bam      1   0      0B       0/0/0      0.9/0.9/0.9 0.8/0.8/0.8 0.1/0.1/0.1 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r21.Main.untrimmed_bam           1   0      0B       2/2/2      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r22.Main.cp_consensus            1   0      0B                                                      
+	n40.r22.Main.cp_depth                1   0      0B                                                      
+	n40.r22.Main.cp_low_depth            1   0      0B                                                      
+	n40.r22.Main.cp_pileup               1   0      0B                                                      
+	n40.r22.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r22.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r22.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r22.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r22.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r22.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r22.Main.cp_variants             1   0      0B                                                      
+	n40.r22.Main.fq1                     1   0      0B                                                      
+	n40.r22.Main.fq2                     1   0      0B                                                      
+	n40.r22.Main.untrimmed_bam           1   0      0B       1/1/1      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r23.Main.cp_consensus            1   0      0B                                                      
+	n40.r23.Main.cp_depth                1   0      0B                                                      
+	n40.r23.Main.cp_low_depth            1   0      0B                                                      
+	n40.r23.Main.cp_pileup               1   0      0B                                                      
+	n40.r23.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r23.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r23.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r23.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r23.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r23.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r23.Main.cp_variants             1   0      0B                                                      
+	n40.r23.Main.fq1                     1   0      0B                                                      
+	n40.r23.Main.fq2                     1   0      0B                                                      
+	n40.r23.Main.untrimmed_bam           1   0      0B       1/1/1      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r24.Main.cp_consensus            1   0      0B                                                      
+	n40.r24.Main.cp_depth                1   0      0B                                                      
+	n40.r24.Main.cp_low_depth            1   0      0B                                                      
+	n40.r24.Main.cp_pileup               1   0      0B                                                      
+	n40.r24.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r24.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r24.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r24.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r24.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r24.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r24.Main.cp_variants             1   0      0B                                                      
+	n40.r24.Main.fq1                     1   0      0B                                                      
+	n40.r24.Main.fq2                     1   0      0B                                                      
+	n40.r24.Main.untrimmed_bam           1   0      0B       1/1/1      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r25.Main.cp_consensus            1   0      0B                                                      
+	n40.r25.Main.cp_depth                1   0      0B                                                      
+	n40.r25.Main.cp_low_depth            1   0      0B                                                      
+	n40.r25.Main.cp_pileup               1   0      0B                                                      
+	n40.r25.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r25.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r25.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r25.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r25.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r25.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r25.Main.cp_variants             1   0      0B                                                      
+	n40.r25.Main.fq1                     1   0      0B                                                      
+	n40.r25.Main.fq2                     1   0      0B                                                      
+	n40.r25.Main.pileup                  1   0      0B       4/4/4      1.0/1.0/1.0 0.0/0.0/0.0 0.4/0.4/0.4 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r25.Main.untrimmed_bam           1   0      0B       2/2/2      1.0/1.0/1.0 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r26.Main.cp_consensus            1   0      0B                                                      
+	n40.r26.Main.cp_depth                1   0      0B                                                      
+	n40.r26.Main.cp_low_depth            1   0      0B                                                      
+	n40.r26.Main.cp_pileup               1   0      0B                                                      
+	n40.r26.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r26.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r26.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r26.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r26.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r26.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r26.Main.cp_variants             1   0      0B                                                      
+	n40.r26.Main.fq1                     1   0      0B                                                      
+	n40.r26.Main.fq2                     1   0      0B                                                      
+	n40.r26.Main.untrimmed_bam           1   0      0B       2/2/2      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r27.Main.cp_consensus            1   0      0B                                                      
+	n40.r27.Main.cp_depth                1   0      0B                                                      
+	n40.r27.Main.cp_low_depth            1   0      0B                                                      
+	n40.r27.Main.cp_pileup               1   0      0B                                                      
+	n40.r27.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r27.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r27.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r27.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r27.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r27.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r27.Main.cp_variants             1   0      0B                                                      
+	n40.r27.Main.fq1                     1   0      0B                                                      
+	n40.r27.Main.fq2                     1   0      0B                                                      
+	n40.r27.Main.untrimmed_bam           1   0      0B       2/2/2      1.0/1.0/1.0 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r28.Main.cp_consensus            1   0      0B                                                      
+	n40.r28.Main.cp_depth                1   0      0B                                                      
+	n40.r28.Main.cp_low_depth            1   0      0B                                                      
+	n40.r28.Main.cp_pileup               1   0      0B                                                      
+	n40.r28.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r28.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r28.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r28.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r28.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r28.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r28.Main.cp_variants             1   0      0B                                                      
+	n40.r28.Main.fq1                     1   0      0B                                                      
+	n40.r28.Main.fq2                     1   0      0B                                                      
+	n40.r28.Main.untrimmed_bam           1   0      0B       1/1/1      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r29.Main.cp_consensus            1   0      0B                                                      
+	n40.r29.Main.cp_depth                1   0      0B                                                      
+	n40.r29.Main.cp_low_depth            1   0      0B                                                      
+	n40.r29.Main.cp_pileup               1   0      0B                                                      
+	n40.r29.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r29.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r29.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r29.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r29.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r29.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r29.Main.cp_variants             1   0      0B                                                      
+	n40.r29.Main.fq1                     1   0      0B                                                      
+	n40.r29.Main.fq2                     1   0      0B                                                      
+	n40.r29.Main.untrimmed_bam           1   0      0B       1/1/1      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r30.Main.cp_consensus            1   0      0B                                                      
+	n40.r30.Main.cp_depth                1   0      0B                                                      
+	n40.r30.Main.cp_low_depth            1   0      0B                                                      
+	n40.r30.Main.cp_pileup               1   0      0B                                                      
+	n40.r30.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r30.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r30.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r30.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r30.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r30.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r30.Main.cp_variants             1   0      0B                                                      
+	n40.r30.Main.fq1                     1   0      0B                                                      
+	n40.r30.Main.fq2                     1   0      0B                                                      
+	n40.r30.Main.untrimmed_bam           1   0      0B       2/2/2      1.0/1.0/1.0 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r31.Main.cp_consensus            1   0      0B                                                      
+	n40.r31.Main.cp_depth                1   0      0B                                                      
+	n40.r31.Main.cp_low_depth            1   0      0B                                                      
+	n40.r31.Main.cp_pileup               1   0      0B                                                      
+	n40.r31.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r31.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r31.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r31.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r31.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r31.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r31.Main.cp_variants             1   0      0B                                                      
+	n40.r31.Main.fq1                     1   0      0B                                                      
+	n40.r31.Main.fq2                     1   0      0B                                                      
+	n40.r31.Main.trimmed_bam             1   0      0B       15/15/15   1.0/1.0/1.0 0.0/0.0/0.0 0.1/0.1/0.1 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r31.Main.untrimmed_bam           1   0      0B       2/2/2      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r32.Main.cp_consensus            1   0      0B                                                      
+	n40.r32.Main.cp_depth                1   0      0B                                                      
+	n40.r32.Main.cp_low_depth            1   0      0B                                                      
+	n40.r32.Main.cp_pileup               1   0      0B                                                      
+	n40.r32.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r32.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r32.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r32.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r32.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r32.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r32.Main.cp_variants             1   0      0B                                                      
+	n40.r32.Main.fq1                     1   0      0B                                                      
+	n40.r32.Main.fq2                     1   0      0B                                                      
+	n40.r32.Main.untrimmed_bam           1   0      0B       1/1/1      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r33.Main.cp_consensus            1   0      0B                                                      
+	n40.r33.Main.cp_depth                1   0      0B                                                      
+	n40.r33.Main.cp_low_depth            1   0      0B                                                      
+	n40.r33.Main.cp_pileup               1   0      0B                                                      
+	n40.r33.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r33.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r33.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r33.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r33.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r33.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r33.Main.cp_variants             1   0      0B                                                      
+	n40.r33.Main.fq1                     1   0      0B                                                      
+	n40.r33.Main.fq2                     1   0      0B                                                      
+	n40.r33.Main.untrimmed_bam           1   0      0B       1/1/1      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r34.Main.cp_consensus            1   0      0B                                                      
+	n40.r34.Main.cp_depth                1   0      0B                                                      
+	n40.r34.Main.cp_low_depth            1   0      0B                                                      
+	n40.r34.Main.cp_pileup               1   0      0B                                                      
+	n40.r34.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r34.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r34.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r34.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r34.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r34.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r34.Main.cp_variants             1   0      0B                                                      
+	n40.r34.Main.fq1                     1   0      0B                                                      
+	n40.r34.Main.fq2                     1   0      0B                                                      
+	n40.r34.Main.untrimmed_bam           1   0      0B       1/1/1      1.0/1.0/1.0 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r35.Main.cp_consensus            1   0      0B                                                      
+	n40.r35.Main.cp_depth                1   0      0B                                                      
+	n40.r35.Main.cp_low_depth            1   0      0B                                                      
+	n40.r35.Main.cp_pileup               1   0      0B                                                      
+	n40.r35.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r35.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r35.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r35.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r35.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r35.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r35.Main.cp_variants             1   0      0B                                                      
+	n40.r35.Main.fq1                     1   0      0B                                                      
+	n40.r35.Main.fq2                     1   0      0B                                                      
+	n40.r35.Main.untrimmed_bam           1   0      0B       2/2/2      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r36.Main.cp_consensus            1   0      0B                                                      
+	n40.r36.Main.cp_depth                1   0      0B                                                      
+	n40.r36.Main.cp_low_depth            1   0      0B                                                      
+	n40.r36.Main.cp_pileup               1   0      0B                                                      
+	n40.r36.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r36.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r36.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r36.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r36.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r36.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r36.Main.cp_variants             1   0      0B                                                      
+	n40.r36.Main.fq1                     1   0      0B                                                      
+	n40.r36.Main.fq2                     1   0      0B                                                      
+	n40.r36.Main.untrimmed_bam           1   0      0B       1/1/1      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r37.Main.cp_consensus            1   0      0B                                                      
+	n40.r37.Main.cp_depth                1   0      0B                                                      
+	n40.r37.Main.cp_low_depth            1   0      0B                                                      
+	n40.r37.Main.cp_pileup               1   0      0B                                                      
+	n40.r37.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r37.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r37.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r37.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r37.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r37.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r37.Main.cp_variants             1   0      0B                                                      
+	n40.r37.Main.fq1                     1   0      0B                                                      
+	n40.r37.Main.fq2                     1   0      0B                                                      
+	n40.r37.Main.untrimmed_bam           1   0      0B       1/1/1      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r38.Main.cp_consensus            1   0      0B                                                      
+	n40.r38.Main.cp_depth                1   0      0B                                                      
+	n40.r38.Main.cp_low_depth            1   0      0B                                                      
+	n40.r38.Main.cp_pileup               1   0      0B                                                      
+	n40.r38.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r38.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r38.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r38.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r38.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r38.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r38.Main.cp_variants             1   0      0B                                                      
+	n40.r38.Main.fq1                     1   0      0B                                                      
+	n40.r38.Main.fq2                     1   0      0B                                                      
+	n40.r38.Main.untrimmed_bam           1   0      0B       1/1/1      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r39.Main.cp_consensus            1   0      0B                                                      
+	n40.r39.Main.cp_depth                1   0      0B                                                      
+	n40.r39.Main.cp_low_depth            1   0      0B                                                      
+	n40.r39.Main.cp_pileup               1   0      0B                                                      
+	n40.r39.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r39.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r39.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r39.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r39.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r39.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r39.Main.cp_variants             1   0      0B                                                      
+	n40.r39.Main.fq1                     1   0      0B                                                      
+	n40.r39.Main.fq2                     1   0      0B                                                      
+	n40.r39.Main.untrimmed_bam           1   0      0B       2/2/2      1.0/1.0/1.0 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n40.r40.Main.cp_consensus            1   0      0B                                                      
+	n40.r40.Main.cp_depth                1   0      0B                                                      
+	n40.r40.Main.cp_low_depth            1   0      0B                                                      
+	n40.r40.Main.cp_pileup               1   0      0B                                                      
+	n40.r40.Main.cp_primer_bed           1   0      0B                                                      
+	n40.r40.Main.cp_ref_fas              1   0      0B                                                      
+	n40.r40.Main.cp_ref_gff              1   0      0B                                                      
+	n40.r40.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n40.r40.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n40.r40.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n40.r40.Main.cp_variants             1   0      0B                                                      
+	n40.r40.Main.fq1                     1   0      0B                                                      
+	n40.r40.Main.fq2                     1   0      0B                                                      
+	n40.r40.Main.untrimmed_bam           1   0      0B       1/1/1      1.0/1.0/1.0 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	
+2021/06/11 19:00:54 result: [(val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=2aace8af 154.0MiB>, val<.=60d1ebfe 63.1MiB>, val<.=32643162 55.4MiB>, val<.=0228d87f 457.8MiB>, val<.=8acf2b80 24.8KiB>, val<.=587c7818 668.4KiB>, val<.=a91de104 40B>, val<.=be5f4a83 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>)]
