@@ -32,4 +32,4 @@ n=1; parallel --jobs 7 ~/ViReflow/ViReflow.py -rf "https://raw.githubusercontent
 |               200 |                    2094.054 |                   $4.62 |
 |               400 |                    2114.001 |                  $11.45 |
 |              1000 |                    1878.077 |                  $20.34 |
-|      Full NovaSeq |                    7489.465 |                     ??? |
+|      Full NovaSeq |                    7489.465 |                  $61.95 |
