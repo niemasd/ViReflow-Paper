@@ -1,3 +1,5 @@
+This used an internal NovaSeq dataset, but for the actual paper, we should use an already-published dataset.
+
 # ViReflow command
 
 ```bash
