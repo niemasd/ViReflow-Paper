@@ -1,0 +1,39 @@
+2021/06/19 15:54:59 reflow version: reflow1.6.0 (go1.13.15)
+2021/06/19 15:54:59 run ID: b2a30bda
+2021/06/19 15:55:00 Trace: /home/niema/.reflow/runs/b2a30bda5c7f03ef66a231d23382aa96149a6fca24f41a1589c216db390bb797.trace
+2021/06/19 15:55:53 discovered instance i-01af478cc60ba3b59 (t3a.medium) ec2-3-137-170-171.us-east-2.compute.amazonaws.com
+2021/06/19 15:56:38 discovered instance i-0a1ac93c8903ed76e (t3a.small) ec2-18-223-121-255.us-east-2.compute.amazonaws.com
+2021/06/19 16:04:59 scheduler: alloc ec2-3-137-170-171.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 keepalive failed: context canceled
+2021/06/19 16:22:48 discovered instance i-0d3a8026e5b4f8044 (t3a.small) ec2-18-223-124-55.us-east-2.compute.amazonaws.com
+2021/06/19 16:23:14 discovered instance i-07c49fdd5a143ad7a (t3a.small) ec2-3-19-61-38.us-east-2.compute.amazonaws.com
+2021/06/19 16:29:59 scheduler: alloc ec2-3-19-61-38.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 keepalive failed: context canceled
+2021/06/19 16:34:59 scheduler: alloc ec2-18-223-121-255.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 keepalive failed: context canceled
+2021/06/19 16:45:18 total n=25 time=50m18s
+	ident                                  n   ncache transfer runtime(m) cpu         mem(GiB)    disk(GiB)   tmp(GiB)    requested
+	n1.r10.s1.Main.consensus               1   0      0B       0/0/0      0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r10.s1.Main.cp_consensus            1   0      0B                                                      
+	n1.r10.s1.Main.cp_depth                1   0      0B                                                      
+	n1.r10.s1.Main.cp_low_depth            1   0      0B                                                      
+	n1.r10.s1.Main.cp_pileup               1   0      0B                                                      
+	n1.r10.s1.Main.cp_primer_bed           1   0      0B                                                      
+	n1.r10.s1.Main.cp_ref_fas              1   0      0B                                                      
+	n1.r10.s1.Main.cp_ref_gff              1   0      0B                                                      
+	n1.r10.s1.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n1.r10.s1.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n1.r10.s1.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n1.r10.s1.Main.cp_variants             1   0      0B                                                      
+	n1.r10.s1.Main.depth                   1   0      0B       1/1/1      1.0/1.0/1.0 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r10.s1.Main.fq1                     1   0      0B                                                      
+	n1.r10.s1.Main.fq2                     1   0      0B                                                      
+	n1.r10.s1.Main.low_depth               1   0      0B       0/0/0      0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r10.s1.Main.pileup                  1   0      0B       7/7/7      1.0/1.0/1.0 0.1/0.1/0.1 0.6/0.6/0.6 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r10.s1.Main.primer_bed              1   0      0B       0/0/0      0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r10.s1.Main.ref_fas                 1   0      0B       0/0/0      0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r10.s1.Main.ref_gff                 1   0      0B       0/0/0      0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r10.s1.Main.sorted_trimmed_bam      1   0      0B       1/1/1      1.0/1.0/1.0 0.8/0.8/0.8 0.1/0.1/0.1 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r10.s1.Main.sorted_untrimmed_bam    1   0      0B       1/1/1      1.0/1.0/1.0 0.8/0.8/0.8 0.1/0.1/0.1 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r10.s1.Main.trimmed_bam             1   0      0B       22/22/22   1.0/1.0/1.0 0.1/0.1/0.1 0.1/0.1/0.1 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r10.s1.Main.untrimmed_bam           1   0      0B       2/2/2      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r10.s1.Main.variants                1   0      0B       22/22/22   1.0/1.0/1.0 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	
+2021/06/19 16:45:18 result: [(val<.=9ad7d0e0 221.1MiB>, val<.=3596325a 94.2MiB>, val<.=0385d873 83.4MiB>, val<.=9365dffd 649.8MiB>, val<.=b12896f8 18.9KiB>, val<.=4fdf0d46 670.6KiB>, val<.=afa90095 40B>, val<.=30281702 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>)]
