@@ -1,6 +1,6 @@
-This used the AHFGT7DRXY NovaSeq run. The benchmarking over multiple values of *n* used copies of this sample:
+This used the AHFGT7DRXY NovaSeq run. The benchmarking over multiple values of *n* used random subsamples of this sample:
 ```
-SEARCH-19469__D101810__P17__210529_A00953_0313_AHFGT7DRXY__S143_L002
+SEARCH-19280__D101810__M11__210529_A00953_0313_AHFGT7DRXY__S49_L002
 ```
 
 # ViReflow command
