@@ -20,15 +20,6 @@ ViReflow.py -rf "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC
 n=1; R=10; G=29903; L=151; C=100; NUM_READS=$(echo $G | numlist -mul$C | numlist -div$L | numlist -int); mkdir -p n$n; for r in $(seq -w 1 $R); do mkdir -p n$n/r$r; done; parallel --jobs 7 'SEED=$RANDOM' "&&" seqtk sample '-s$SEED' SEARCH-19280__D101810__M11__210529_A00953_0313_AHFGT7DRXY__S49_L002_R1_001.fastq.gz $NUM_READS ">" n$n/r{1}/n$n.r{1}.s{2}_R1.fastq "&&" seqtk sample '-s$SEED' SEARCH-19280__D101810__M11__210529_A00953_0313_AHFGT7DRXY__S49_L002_R2_001.fastq.gz $NUM_READS ">" n$n/r{1}/n$n.r{1}.s{2}_R2.fastq ::: $(seq -w 1 $R) ::: $(seq -w 1 $n)
 ```
 
-# Copy FASTQ files for each replicate
-This didn't work! All the files are identical, so they have the same exact SHA256, so Reflow doesn't recompute the analysis on all of them: it just does it on one.
-
-```bash
-# replace 'n=1' with whatever n (total number of samples)
-# replace 'R=10' with whatever r (total number of technical replicates)
-n=1; R=10; parallel --jobs 7 aws s3 cp s3://niema-test/SEARCH-19469_R{3}.fastq s3://niema-test/n$n/r{1}/n$n.r{1}.s{2}_R{3}.fastq ::: $(seq -w 1 $R) ::: $(seq -w 1 $n) ::: 1 2
-```
-
 # Generate batch files for each replicate
 
 ```bash
