@@ -1,0 +1,3040 @@
+strict digraph "reflow flowgraph sha256:5b4f2eb6dfe7a045bae6b6fff69e0b554174e12e0aa26338855a55018b627a57" {
+// Node definitions.
+"0026fb2e-intern-n10.r10.s05.Main.fq1-s3://niema-test/n10/r10/n10.r10.s05_R1.fastq" [
+fillcolor=green
+style=filled
+];
+"00424d45-coerce-n10.r10.s03.Main.pileup";
+"0053a2a4-val-";
+"007ff6d1-coerce-n10.r10.s03.Main.depth";
+"00b89863-val-";
+"00f4dcac-val-";
+"00fee091-coerce-n10.r10.s03.Main.fq2";
+"010142b8-extern-n10.r10.s04.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s04.reference.gff" [
+fillcolor=green
+style=filled
+];
+"01151850-val-";
+"01507e21-extern-n10.r10.s05.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s05.reference.gff" [
+fillcolor=green
+style=filled
+];
+"016e283d-coerce-n10.r10.s04.Main.untrimmed_bam";
+"018263bf-extern-n10.r10.s02.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s02.variants.vcf" [
+fillcolor=green
+style=filled
+];
+"01b2c3d1-val-";
+"0287e646-coerce-n10.r10.s03.Main.pileup";
+"02f07cef-val-";
+"032071f2-exec-n10.r10.s03.Main.pileup" [
+fillcolor=green
+style=filled
+];
+"0326d02b-extern-n10.r10.s05.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s05.lowdepth.tsv" [
+fillcolor=green
+style=filled
+];
+"033be6cd-val-";
+"03514a60-val-";
+"039d0821-extern-n10.r10.s06.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s06.pileup.txt" [
+fillcolor=green
+style=filled
+];
+"03a5a2a4-val-";
+"053c4ff4-coerce-n10.r10.s08.Main.fq2";
+"058e1734-val-";
+"06a0bead-val-";
+"072716bf-val-";
+"08002755-val-";
+"08540fe1-val-";
+"0861d24a-val-";
+"0880301f-val-";
+"0896423a-val-";
+"08ba7bec-coerce-n10.r10.s08.Main.sorted_untrimmed_bam";
+"0999b0c4-val-";
+"0a135613-val-";
+"0a46315f-val-";
+"0a777a91-val-";
+"0ab27e23-val-";
+"0ab49e45-val-";
+"0b85eec8-coerce-n10.r10.s03.Main.fq1";
+"0b9be667-val-";
+"0cb5daa4-val-";
+"0de1315a-val-";
+"0e113c33-coerce-n10.r10.s03.Main.depth";
+"0e3b6e0a-coerce-n10.r10.s03.Main.variants";
+"0ea4ba6e-val-";
+"0f1847ae-coerce-n10.r10.s05.Main.low_depth";
+"11a53dac-val-";
+"11d97de2-coerce-n10.r10.s02.Main.trimmed_bam";
+"12daa468-val-";
+"13096b1f-val-";
+"131eeac2-val-";
+"13a1314d-intern-n10.r10.s08.Main.fq2-s3://niema-test/n10/r10/n10.r10.s08_R2.fastq" [
+fillcolor=green
+style=filled
+];
+"13b74036-extern-n10.r10.s05.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s05.variants.vcf" [
+fillcolor=green
+style=filled
+];
+"13c184ee-val-";
+"146773e9-extern-n10.r10.s10.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s10.untrimmed.bam" [
+fillcolor=green
+style=filled
+];
+"14a4a0ae-val-";
+"14b6ae3f-exec-n10.r10.s05.Main.untrimmed_bam" [
+fillcolor=green
+style=filled
+];
+"14f01059-exec-n10.r10.s08.Main.sorted_untrimmed_bam" [
+fillcolor=green
+style=filled
+];
+"1532e759-intern-n10.r10.s03.Main.fq2-s3://niema-test/n10/r10/n10.r10.s03_R2.fastq" [
+fillcolor=green
+style=filled
+];
+"1552e6ea-val-";
+"158d694e-val-";
+"1597b7a6-val-";
+"169cd1c2-val-";
+"16bb8b2b-extern-n10.r10.s05.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s05.untrimmed.bam" [
+fillcolor=green
+style=filled
+];
+"16ea2f46-intern-n10.r10.s01.Main.fq2-s3://niema-test/n10/r10/n10.r10.s01_R2.fastq" [
+fillcolor=green
+style=filled
+];
+"16f6e6c5-extern-n10.r10.s09.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s09.consensus.fas" [
+fillcolor=green
+style=filled
+];
+"1768d4d3-val-";
+"178e1d68-val-";
+"1864d140-val-";
+"187281f8-val-";
+"189899ad-val-";
+"189d9483-val-";
+"18a49976-val-";
+"1a3acc5b-val-";
+"1a850842-val-";
+"1a9cb805-extern-n10.r10.s09.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s09.reference.fas" [
+fillcolor=green
+style=filled
+];
+"1b2da54c-val-";
+"1b6fc058-coerce-n10.r10.s03.Main.variants";
+"1b9f306f-val-";
+"1bb2fe3b-val-";
+"1be48dcf-val-";
+"1c3dc1d5-extern-n10.r10.s01.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s01.reference.fas" [
+fillcolor=green
+style=filled
+];
+"1c50ff68-coerce-n10.r10.s01.Main.primer_bed";
+"1c8ae327-extern-n10.r10.s02.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s02.pileup.txt" [
+fillcolor=green
+style=filled
+];
+"1cd18b84-val-";
+"1cf9f8bc-coerce-n10.r10.s08.Main.sorted_trimmed_bam";
+"1d2c4dfc-val-";
+"1d85263c-extern-n10.r10.s02.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s02.untrimmed.sorted.bam" [
+fillcolor=green
+style=filled
+];
+"1e431f5e-val-";
+"1f92a05a-val-";
+"2018fe39-val-";
+"203b2d9b-coerce-n10.r10.s02.Main.fq1";
+"219e666b-val-";
+"2232d2cd-val-";
+"2304cd79-coerce-n10.r10.s05.Main.consensus";
+"2311ec51-val-";
+"23255a70-val-";
+"2332bb6d-extern-n10.r10.s09.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s09.untrimmed.bam" [
+fillcolor=green
+style=filled
+];
+"2372b81c-val-";
+"23f814c1-val-";
+"24675f39-val-";
+"246946f4-val-";
+"253bc03a-coerce-n10.r10.s02.Main.trimmed_bam";
+"25853d45-val-";
+"25d81e73-exec-n10.r10.s08.Main.untrimmed_bam" [
+fillcolor=green
+style=filled
+];
+"2605b143-val-";
+"261dfd34-coerce-n10.r10.s08.Main.sorted_trimmed_bam";
+"26361dd3-val-";
+"2649fa52-val-";
+"2663220e-val-";
+"26b3e125-val-";
+"271a1226-val-";
+"276b4a8b-coerce-n10.r10.s03.Main.depth";
+"278ec804-extern-n10.r10.s03.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s03.reference.gff" [
+fillcolor=green
+style=filled
+];
+"27bae314-coerce-n10.r10.s10.Main.untrimmed_bam";
+"2861de6a-val-";
+"29a5aad1-coerce-n10.r10.s06.Main.fq2";
+"29ec65da-extern-n10.r10.s04.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s04.pileup.txt" [
+fillcolor=green
+style=filled
+];
+"2a214c93-val-";
+"2aca7f72-val-";
+"2ae1b13f-extern-n10.r10.s03.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s03.variants.vcf" [
+fillcolor=green
+style=filled
+];
+"2b05c024-coerce-n10.r10.s08.Main.sorted_trimmed_bam";
+"2bd06ec0-val-";
+"2caca983-val-";
+"2cdbbc73-extern-n10.r10.s03.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s03.primers.bed" [
+fillcolor=green
+style=filled
+];
+"2d140771-val-";
+"2d9241d5-val-";
+"2dbd58e9-val-";
+"2dedb1a4-extern-n10.r10.s04.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s04.depth.txt" [
+fillcolor=green
+style=filled
+];
+"2dfd6e4f-val-";
+"2e2cb0fa-val-";
+"2f3f1f13-val-";
+"2f4592e7-val-";
+"2f8bf4ab-val-";
+"2f8e638f-val-";
+"2f947710-val-";
+"2faf51c3-val-";
+"2fbb6461-extern-n10.r10.s01.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s01.lowdepth.tsv" [
+fillcolor=green
+style=filled
+];
+"303e002f-val-";
+"30703d53-val-";
+"30d43f28-val-";
+"30df18e9-coerce-n10.r10.s03.Main.pileup";
+"31f58c7e-exec-n10.r10.s03.Main.untrimmed_bam" [
+fillcolor=green
+style=filled
+];
+"322b17aa-coerce-n10.r10.s09.Main.fq1";
+"3260ec96-extern-n10.r10.s05.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s05.depth.txt" [
+fillcolor=green
+style=filled
+];
+"32e280d7-coerce-n10.r10.s05.Main.low_depth";
+"3359626f-extern-n10.r10.s06.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s06.consensus.fas" [
+fillcolor=green
+style=filled
+];
+"33f92246-val-";
+"3425d97d-extern-n10.r10.s01.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s01.primers.bed" [
+fillcolor=green
+style=filled
+];
+"342dc305-coerce-n10.r10.s03.Main.pileup";
+"35256b9f-val-";
+"3575d301-val-";
+"36215c0c-val-";
+"3646733f-coerce-n10.r10.s02.Main.trimmed_bam";
+"36f784c6-val-";
+"3769875d-extern-n10.r10.s07.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s07.untrimmed.bam" [
+fillcolor=green
+style=filled
+];
+"37d6e44f-val-";
+"386d2bc5-val-";
+"38abcc43-val-";
+"393d8e94-val-";
+"39470123-extern-n10.r10.s04.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s04.lowdepth.tsv" [
+fillcolor=green
+style=filled
+];
+"394a22a0-val-";
+"39830f0d-coerce-n10.r10.s08.Main.sorted_trimmed_bam";
+"3b0cb470-extern-n10.r10.s04.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s04.untrimmed.bam" [
+fillcolor=green
+style=filled
+];
+"3b546219-val-";
+"3badb1ab-val-";
+"3c731ca0-val-";
+"3cf1d592-val-";
+"3e2004e3-extern-n10.r10.s01.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s01.depth.txt" [
+fillcolor=green
+style=filled
+];
+"3e3b01cb-coerce-n10.r10.s02.Main.trimmed_bam";
+"3e45e037-extern-n10.r10.s09.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s09.pileup.txt" [
+fillcolor=green
+style=filled
+];
+"3e5e66bb-val-";
+"3e683f17-val-";
+"3f265543-val-";
+"3fffae0d-val-";
+"40684120-intern-n10.r10.s06.Main.fq1-s3://niema-test/n10/r10/n10.r10.s06_R1.fastq" [
+fillcolor=green
+style=filled
+];
+"4078e038-val-";
+"40a5160a-val-";
+"4180a124-val-";
+"41ddd4fe-val-";
+"41f50479-val-";
+"41fd43fd-val-";
+"423858e2-val-";
+"42e80c5f-val-";
+"42ee43db-extern-n10.r10.s05.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s05.primers.bed" [
+fillcolor=green
+style=filled
+];
+"42fafe57-val-";
+"4317e98c-val-";
+"43c5e83a-val-";
+"43fe03ed-val-";
+"441c05e2-extern-n10.r10.s03.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s03.untrimmed.bam" [
+fillcolor=green
+style=filled
+];
+"448c5146-exec-n10.r10.s06.Main.untrimmed_bam" [
+fillcolor=green
+style=filled
+];
+"459e28b1-val-";
+"45e25550-coerce-n10.r10.s10.Main.fq1";
+"46929a1a-val-";
+"470520b8-val-";
+"473fd6c3-val-";
+"4766f498-val-";
+"47774e16-extern-n10.r10.s05.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s05.sorted.trimmed.bam" [
+fillcolor=green
+style=filled
+];
+"47a4b430-coerce-n10.r10.s08.Main.sorted_untrimmed_bam";
+"47a65a62-val-";
+"48401755-val-";
+"484ca7a0-coerce-n10.r10.s03.Main.pileup";
+"489e3b2c-val-";
+"48c0e862-val-";
+"49df3252-coerce-n10.r10.s08.Main.sorted_trimmed_bam";
+"4a5bcf3d-val-";
+"4a665c66-coerce-n10.r10.s02.Main.trimmed_bam";
+"4a689319-val-";
+"4a93ab85-exec-n10.r10.s01.Main.ref_fas" [
+fillcolor=green
+style=filled
+];
+"4b2b9144-val-";
+"4ba0047c-coerce-n10.r10.s05.Main.low_depth";
+"4c4cde14-extern-n10.r10.s05.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s05.pileup.txt" [
+fillcolor=green
+style=filled
+];
+"4c6115c1-extern-n10.r10.s07.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s07.consensus.fas" [
+fillcolor=green
+style=filled
+];
+"4c7c812c-coerce-n10.r10.s07.Main.fq1";
+"4c905229-coerce-n10.r10.s05.Main.low_depth";
+"4cb54fd3-coerce-n10.r10.s05.Main.consensus";
+"4d43b4a5-val-";
+"4d632963-val-";
+"4d67cfd1-val-";
+"4db0986e-coerce-n10.r10.s08.Main.sorted_trimmed_bam";
+"4e7ac732-extern-n10.r10.s06.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s06.reference.gff" [
+fillcolor=green
+style=filled
+];
+"4eea3a90-val-";
+"4eeecaaa-intern-n10.r10.s07.Main.fq2-s3://niema-test/n10/r10/n10.r10.s07_R2.fastq" [
+fillcolor=green
+style=filled
+];
+"4f1ea5ed-val-";
+"4f22521b-val-";
+"4f56e78a-extern-n10.r10.s07.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s07.lowdepth.tsv" [
+fillcolor=green
+style=filled
+];
+"50a26fd9-extern-n10.r10.s08.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s08.sorted.trimmed.bam" [
+fillcolor=green
+style=filled
+];
+"50d6b15c-val-";
+"50d7aacb-val-";
+"50fcd1d5-val-";
+"51a3cd8b-extern-n10.r10.s09.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s09.depth.txt" [
+fillcolor=green
+style=filled
+];
+"51b3fb11-val-";
+"51d45b78-val-";
+"51eb16d6-val-";
+"523ae1f5-extern-n10.r10.s09.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s09.untrimmed.sorted.bam" [
+fillcolor=green
+style=filled
+];
+"523f91d4-val-";
+"52b44ee3-intern-n10.r10.s01.Main.fq1-s3://niema-test/n10/r10/n10.r10.s01_R1.fastq" [
+fillcolor=green
+style=filled
+];
+"535c2d14-coerce-n10.r10.s08.Main.fq1";
+"53c725db-val-";
+"53d838d0-val-";
+"53e16067-val-";
+"5474abb7-val-";
+"54c2e389-val-";
+"54e40805-val-";
+"554519f5-val-";
+"55a5bb63-val-";
+"55b95638-val-";
+"55eda6d4-val-";
+"5601a8d2-val-";
+"5678a14e-val-";
+"58195b8d-val-";
+"58360849-val-";
+"584d4b1b-val-";
+"5855ac87-val-";
+"58a68517-val-";
+"58dc2bda-val-";
+"58dd8c13-val-";
+"590960d4-val-";
+"59ba663c-val-";
+"59e34a15-val-";
+"59e95e09-val-";
+"5a2b8cdd-coerce-n10.r10.s01.Main.untrimmed_bam";
+"5aca80e1-val-";
+"5aed44f4-extern-n10.r10.s08.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s08.variants.vcf" [
+fillcolor=green
+style=filled
+];
+"5af19ae1-val-";
+"5b054fb3-val-";
+"5b0ae1ab-val-";
+"5b758d5a-intern-n10.r10.s09.Main.fq1-s3://niema-test/n10/r10/n10.r10.s09_R1.fastq" [
+fillcolor=green
+style=filled
+];
+"5b7af539-val-";
+"5bc97726-val-";
+"5bcc23c5-val-";
+"5bdf3ded-extern-n10.r10.s09.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s09.lowdepth.tsv" [
+fillcolor=green
+style=filled
+];
+"5c120bff-val-";
+"5c2580b4-val-";
+"5ecbf73f-val-";
+"5effb986-val-";
+"5f158d9f-val-";
+"5fd224c3-val-";
+"60037232-extern-n10.r10.s01.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s01.pileup.txt" [
+fillcolor=green
+style=filled
+];
+"6015ae1e-coerce-n10.r10.s01.Main.ref_gff";
+"6099865f-val-";
+"60bc7f79-coerce-n10.r10.s03.Main.variants";
+"61186fec-val-";
+"616d5ec4-val-";
+"61911478-extern-n10.r10.s09.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s09.primers.bed" [
+fillcolor=green
+style=filled
+];
+"61996739-val-";
+"6219b0aa-coerce-n10.r10.s08.Main.sorted_untrimmed_bam";
+"6233f999-val-";
+"625d11fc-val-";
+"6282daea-val-";
+"6333d82c-val-";
+"6473ddd4-coerce-n10.r10.s03.Main.variants";
+"649816e1-val-";
+"64c759b0-val-";
+"6501e0d3-val-";
+"65115c7a-extern-n10.r10.s10.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s10.variants.vcf" [
+fillcolor=green
+style=filled
+];
+"652c8698-extern-n10.r10.s10.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s10.pileup.txt" [
+fillcolor=green
+style=filled
+];
+"6538d7a0-val-";
+"6539fcc3-val-";
+"65b4a7a7-val-";
+"65c6dc2e-val-";
+"65ec4681-val-";
+"6604a778-val-";
+"668945cd-val-";
+"66ea289f-extern-n10.r10.s04.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s04.primers.bed" [
+fillcolor=green
+style=filled
+];
+"66f14d0b-extern-n10.r10.s10.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s10.lowdepth.tsv" [
+fillcolor=green
+style=filled
+];
+"67705995-coerce-n10.r10.s03.Main.depth";
+"67c41991-val-";
+"67e6a693-val-";
+"685f79a4-coerce-n10.r10.s08.Main.sorted_trimmed_bam";
+"68a833a0-exec-n10.r10.s10.Main.untrimmed_bam" [
+fillcolor=green
+style=filled
+];
+"68be8f62-extern-n10.r10.s06.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s06.sorted.trimmed.bam" [
+fillcolor=green
+style=filled
+];
+"68ebc491-coerce-n10.r10.s05.Main.fq2";
+"69517f0e-coerce-n10.r10.s05.Main.low_depth";
+"6a052429-val-";
+"6a1df9c3-extern-n10.r10.s07.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s07.sorted.trimmed.bam" [
+fillcolor=green
+style=filled
+];
+"6c780bd8-extern-n10.r10.s02.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s02.primers.bed" [
+fillcolor=green
+style=filled
+];
+"6caee3e0-val-";
+"6ccc72a2-extern-n10.r10.s03.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s03.lowdepth.tsv" [
+fillcolor=green
+style=filled
+];
+"6d615a4c-val-";
+"6dee91b4-val-";
+"6ecc9b73-intern-n10.r10.s03.Main.fq1-s3://niema-test/n10/r10/n10.r10.s03_R1.fastq" [
+fillcolor=green
+style=filled
+];
+"70325c5c-val-";
+"7084d651-extern-n10.r10.s10.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s10.consensus.fas" [
+fillcolor=green
+style=filled
+];
+"70be9555-extern-n10.r10.s07.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s07.depth.txt" [
+fillcolor=green
+style=filled
+];
+"713d9fc1-coerce-n10.r10.s03.Main.variants";
+"713e0dc8-extern-n10.r10.s01.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s01.reference.gff" [
+fillcolor=green
+style=filled
+];
+"715d6a36-val-";
+"71a1522f-val-";
+"72161f4f-val-";
+"721a4883-extern-n10.r10.s04.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s04.untrimmed.sorted.bam" [
+fillcolor=green
+style=filled
+];
+"724a44b7-extern-n10.r10.s07.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s07.reference.fas" [
+fillcolor=green
+style=filled
+];
+"725390ce-val-";
+"72d888b8-coerce-n10.r10.s08.Main.sorted_untrimmed_bam";
+"73713631-val-";
+"73b7e198-val-";
+"7531ca96-val-";
+"75d3f39d-val-";
+"76229822-intern-n10.r10.s02.Main.fq2-s3://niema-test/n10/r10/n10.r10.s02_R2.fastq" [
+fillcolor=green
+style=filled
+];
+"7639f0e4-val-";
+"766a7fa5-extern-n10.r10.s02.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s02.untrimmed.bam" [
+fillcolor=green
+style=filled
+];
+"7682bb97-val-";
+"76b1590a-val-";
+"76c921bc-val-";
+"76dcaa41-coerce-n10.r10.s05.Main.low_depth";
+"77682ae4-val-";
+"7769470a-val-";
+"77c47648-val-";
+"77e20788-val-";
+"7801d792-coerce-n10.r10.s05.Main.low_depth";
+"782a5dbb-val-";
+"7871c211-val-";
+"78c6a73f-val-";
+"79789300-extern-n10.r10.s03.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s03.sorted.trimmed.bam" [
+fillcolor=green
+style=filled
+];
+"79c06471-val-";
+"7bb75d53-val-";
+"7bbc31bd-extern-n10.r10.s04.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s04.reference.fas" [
+fillcolor=green
+style=filled
+];
+"7bf34f4f-val-";
+"7c0ddb07-val-";
+"7c10cb10-val-";
+"7cbc9d6f-val-";
+"7dc9f187-coerce-n10.r10.s02.Main.trimmed_bam";
+"7e95a44d-val-";
+"7ea233ed-coerce-n10.r10.s02.Main.fq2";
+"7ea6c91b-coerce-n10.r10.s03.Main.variants";
+"7f086326-val-";
+"7f1ea91d-val-";
+"7f737c76-val-";
+"806bdbb6-coerce-n10.r10.s03.Main.untrimmed_bam";
+"8129ceb2-coerce-n10.r10.s08.Main.sorted_untrimmed_bam";
+"8193ffa5-intern-n10.r10.s06.Main.fq2-s3://niema-test/n10/r10/n10.r10.s06_R2.fastq" [
+fillcolor=green
+style=filled
+];
+"824ab244-val-";
+"825183ae-val-";
+"8259c9df-val-";
+"842eb080-val-";
+"84a0de31-coerce-n10.r10.s03.Main.pileup";
+"84b147dc-val-";
+"84cee04c-val-";
+"84d668ef-val-";
+"859a2f77-val-";
+"85a9e7bd-coerce-n10.r10.s03.Main.pileup";
+"86a2ffff-coerce-n10.r10.s03.Main.depth";
+"86a44fea-coerce-n10.r10.s05.Main.consensus";
+"86c2a272-val-";
+"87330c57-extern-n10.r10.s08.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s08.untrimmed.bam" [
+fillcolor=green
+style=filled
+];
+"876e5177-val-";
+"878a735a-val-";
+"88122d3b-val-";
+"88145b94-val-";
+"884af8ed-val-";
+"8887dd98-val-";
+"8895ace8-val-";
+"889fdbdf-coerce-n10.r10.s03.Main.pileup";
+"88b5cac7-extern-n10.r10.s03.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s03.untrimmed.sorted.bam" [
+fillcolor=green
+style=filled
+];
+"88d7cb07-val-";
+"88e8bc3b-coerce-n10.r10.s03.Main.depth";
+"8aed8e65-val-";
+"8b083a4d-intern-n10.r10.s10.Main.fq1-s3://niema-test/n10/r10/n10.r10.s10_R1.fastq" [
+fillcolor=green
+style=filled
+];
+"8b4426f0-coerce-n10.r10.s05.Main.consensus";
+"8b733e4a-val-";
+"8be49def-val-";
+"8c0594fd-val-";
+"8c4de157-val-";
+"8c76caa4-val-";
+"8cdf7d3e-extern-n10.r10.s03.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s03.consensus.fas" [
+fillcolor=green
+style=filled
+];
+"8dc6baff-val-";
+"8dcb3e79-val-";
+"8df12668-val-";
+"8df6af82-val-";
+"8e1b2f90-val-";
+"8e737b5e-extern-n10.r10.s08.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s08.lowdepth.tsv" [
+fillcolor=green
+style=filled
+];
+"8e975368-val-";
+"8f431d74-val-";
+"8fe08b6a-coerce-n10.r10.s02.Main.trimmed_bam";
+"9032d22d-extern-n10.r10.s03.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s03.depth.txt" [
+fillcolor=green
+style=filled
+];
+"9185ca14-extern-n10.r10.s08.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s08.untrimmed.sorted.bam" [
+fillcolor=green
+style=filled
+];
+"9191ff99-val-";
+"91f1f233-val-";
+"91f6ba04-val-";
+"92fab1a7-val-";
+"930535e6-val-";
+"93783aa2-val-";
+"93a102d8-val-";
+"93a597f1-extern-n10.r10.s09.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s09.sorted.trimmed.bam" [
+fillcolor=green
+style=filled
+];
+"94016a97-exec-n10.r10.s05.Main.low_depth" [
+fillcolor=green
+style=filled
+];
+"9424aa75-val-";
+"9439857c-val-";
+"9592d40f-val-";
+"95d3157b-val-";
+"966d998b-val-";
+"966f092a-extern-n10.r10.s02.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s02.reference.gff" [
+fillcolor=green
+style=filled
+];
+"9681c98a-coerce-n10.r10.s02.Main.trimmed_bam";
+"9682ec78-val-";
+"96be85a3-extern-n10.r10.s02.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s02.reference.fas" [
+fillcolor=green
+style=filled
+];
+"973b1d49-val-";
+"98467414-val-";
+"9847a35b-val-";
+"98f4fcd3-val-";
+"992a25ea-extern-n10.r10.s05.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s05.untrimmed.sorted.bam" [
+fillcolor=green
+style=filled
+];
+"994dff24-val-";
+"99abe5ea-val-";
+"9a42f4c6-val-";
+"9b3b7130-extern-n10.r10.s06.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s06.depth.txt" [
+fillcolor=green
+style=filled
+];
+"9bd60ff6-extern-n10.r10.s10.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s10.depth.txt" [
+fillcolor=green
+style=filled
+];
+"9befad5b-intern-n10.r10.s02.Main.fq1-s3://niema-test/n10/r10/n10.r10.s02_R1.fastq" [
+fillcolor=green
+style=filled
+];
+"9c08713e-coerce-n10.r10.s03.Main.pileup";
+"9d33e3e1-val-";
+"9d51a72a-val-";
+"9d9bfa75-coerce-n10.r10.s10.Main.fq2";
+"9dc4144e-val-";
+"9e4d8184-val-";
+"9e9cf600-extern-n10.r10.s08.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s08.primers.bed" [
+fillcolor=green
+style=filled
+];
+"9eb1b26e-extern-n10.r10.s10.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s10.reference.fas" [
+fillcolor=green
+style=filled
+];
+"9ebe601f-val-";
+"9eeffc89-val-";
+"9f0ad7ce-coerce-n10.r10.s05.Main.low_depth";
+"9f296180-intern-n10.r10.s09.Main.fq2-s3://niema-test/n10/r10/n10.r10.s09_R2.fastq" [
+fillcolor=green
+style=filled
+];
+"9f3817da-val-";
+"9f53653b-val-";
+"9fc24c1f-val-";
+"a035c7db-val-";
+"a0dd1604-val-";
+"a0e25b8e-val-";
+"a0e88bb3-val-";
+"a1bb5c3c-val-";
+"a2e430cb-exec-n10.r10.s02.Main.untrimmed_bam" [
+fillcolor=green
+style=filled
+];
+"a2f14842-coerce-n10.r10.s06.Main.untrimmed_bam";
+"a2fef1ac-intern-n10.r10.s10.Main.fq2-s3://niema-test/n10/r10/n10.r10.s10_R2.fastq" [
+fillcolor=green
+style=filled
+];
+"a352360f-val-";
+"a35a35ca-val-";
+"a3bee47a-val-";
+"a44703f6-val-";
+"a44d8c2f-exec-n10.r10.s06.Main.trimmed_bam" [
+fillcolor=green
+style=filled
+];
+"a490d04b-val-";
+"a49ead97-intern-n10.r10.s04.Main.fq1-s3://niema-test/n10/r10/n10.r10.s04_R1.fastq" [
+fillcolor=green
+style=filled
+];
+"a55b1a8d-val-";
+"a601958c-val-";
+"a6abf8a0-val-";
+"a71d5d58-val-";
+"a7269c53-val-";
+"a82c341d-coerce-n10.r10.s08.Main.untrimmed_bam";
+"a85466bb-val-";
+"a8ba8f1c-val-";
+"a9039baf-val-";
+"a92277d0-val-";
+"a9751225-val-";
+"a9a1b6b3-val-";
+"a9e597b5-val-";
+"a9f6df01-extern-n10.r10.s03.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s03.pileup.txt" [
+fillcolor=green
+style=filled
+];
+"aa28f567-val-";
+"aa3fe85d-val-";
+"aa529e4c-val-";
+"aa5f8363-val-";
+"aaf30d59-val-";
+"aaf3199e-extern-n10.r10.s01.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s01.variants.vcf" [
+fillcolor=green
+style=filled
+];
+"ab042e08-extern-n10.r10.s02.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s02.consensus.fas" [
+fillcolor=green
+style=filled
+];
+"ab37c7fe-coerce-n10.r10.s03.Main.depth";
+"ab4c35b1-val-";
+"ab717fd7-coerce-n10.r10.s08.Main.sorted_untrimmed_bam";
+"abb4be64-intern-n10.r10.s07.Main.fq1-s3://niema-test/n10/r10/n10.r10.s07_R1.fastq" [
+fillcolor=green
+style=filled
+];
+"ac3942bd-val-";
+"ac96bc1a-val-";
+"acaaace3-coerce-n10.r10.s03.Main.depth";
+"acabae35-val-";
+"acb524a7-val-";
+"acf8c343-extern-n10.r10.s07.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s07.pileup.txt" [
+fillcolor=green
+style=filled
+];
+"ad72d4b7-val-";
+"adab6cd8-val-";
+"ae002c6a-exec-n10.r10.s01.Main.untrimmed_bam" [
+fillcolor=green
+style=filled
+];
+"ae4d5442-val-";
+"aea567a7-val-";
+"aeaab7f3-extern-n10.r10.s08.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s08.depth.txt" [
+fillcolor=green
+style=filled
+];
+"af98ca56-val-";
+"afc20e62-val-";
+"b0534761-val-";
+"b0ee964a-val-";
+"b149c062-val-";
+"b1f16c0b-val-";
+"b204c147-extern-n10.r10.s10.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s10.reference.gff" [
+fillcolor=green
+style=filled
+];
+"b26afabb-coerce-n10.r10.s03.Main.pileup";
+"b2a36bae-val-";
+"b2b3e561-val-";
+"b2bee82d-val-";
+"b32ed7a3-val-";
+"b3e12313-val-";
+"b4d54d23-exec-n10.r10.s05.Main.consensus" [
+fillcolor=green
+style=filled
+];
+"b53189fe-val-";
+"b564caa2-val-";
+"b566f856-coerce-n10.r10.s03.Main.variants";
+"b57b81e6-val-";
+"b60acf9a-val-";
+"b60c6201-val-";
+"b6887ca1-val-";
+"b6ad4f9f-val-";
+"b6ee4e01-val-";
+"b7da9960-val-";
+"b7e29225-val-";
+"b7f68375-val-";
+"b8208a36-val-";
+"b8759097-val-";
+"b88d0ec0-val-";
+"b8dd72cd-val-";
+"b8fc6c7c-coerce-n10.r10.s05.Main.consensus";
+"ba15cb45-val-";
+"ba2cfe95-val-";
+"bab0800b-val-";
+"bab922d5-val-";
+"bad4f726-coerce-n10.r10.s05.Main.consensus";
+"bb5462a6-val-";
+"bb674d3b-val-";
+"bc40ba63-coerce-n10.r10.s07.Main.fq2";
+"bc63def0-val-";
+"bd1aba95-extern-n10.r10.s04.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s04.variants.vcf" [
+fillcolor=green
+style=filled
+];
+"bd296563-coerce-n10.r10.s05.Main.consensus";
+"bd4e02c0-val-";
+"bdac9ca1-val-";
+"bdc17309-val-";
+"be3ab6b0-val-";
+"bf32c9b2-val-";
+"bf5e1077-val-";
+"bf772542-val-";
+"bf896b6e-extern-n10.r10.s06.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s06.variants.vcf" [
+fillcolor=green
+style=filled
+];
+"bfafb7c9-extern-n10.r10.s07.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s07.primers.bed" [
+fillcolor=green
+style=filled
+];
+"c00ec99e-val-";
+"c0476c0b-val-";
+"c06f97c4-val-";
+"c0d69a90-extern-n10.r10.s06.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s06.reference.fas" [
+fillcolor=green
+style=filled
+];
+"c0e6e452-val-";
+"c185f9f5-val-";
+"c19e2a13-val-";
+"c1aefe1b-val-";
+"c22d6383-val-";
+"c28a7316-coerce-n10.r10.s06.Main.fq1";
+"c2ba096b-val-";
+"c2c9468f-val-";
+"c2f48d29-val-";
+"c339c281-val-";
+"c37fb505-val-";
+"c40d8328-val-";
+"c4714051-val-";
+"c4ff5aea-exec-n10.r10.s08.Main.sorted_trimmed_bam" [
+fillcolor=green
+style=filled
+];
+"c5266561-coerce-n10.r10.s01.Main.fq1";
+"c5b655f1-val-";
+"c5d724df-coerce-n10.r10.s09.Main.fq2";
+"c5e8e66f-val-";
+"c67ca09b-coerce-n10.r10.s02.Main.trimmed_bam";
+"c7bf0223-val-";
+"c7c2efb1-val-";
+"c7d6872b-val-";
+"c8176cf8-val-";
+"c89f4962-val-";
+"c9a01377-val-";
+"ca3ea8de-coerce-n10.r10.s08.Main.sorted_untrimmed_bam";
+"ca43955d-exec-n10.r10.s09.Main.untrimmed_bam" [
+fillcolor=green
+style=filled
+];
+"ca472dc6-coerce-n10.r10.s05.Main.consensus";
+"ca815875-val-";
+"cacad6e4-val-";
+"cb45c2c9-coerce-n10.r10.s08.Main.sorted_trimmed_bam";
+"cbc42789-extern-n10.r10.s04.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s04.consensus.fas" [
+fillcolor=green
+style=filled
+];
+"cc253833-val-";
+"cc3650bb-extern-n10.r10.s07.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s07.variants.vcf" [
+fillcolor=green
+style=filled
+];
+"cc469595-val-";
+"cd292872-val-";
+"cd3391fa-val-";
+"cd5140a4-val-";
+"cd5bd148-val-";
+"cda183b3-val-";
+"cddd89b5-extern-n10.r10.s06.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s06.untrimmed.sorted.bam" [
+fillcolor=green
+style=filled
+];
+"ce0e49f6-val-";
+"cee4aea6-val-";
+"cf01952b-extern-n10.r10.s08.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s08.consensus.fas" [
+fillcolor=green
+style=filled
+];
+"cf52974f-val-";
+"cf53aa25-extern-n10.r10.s01.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s01.consensus.fas" [
+fillcolor=green
+style=filled
+];
+"d102352f-extern-n10.r10.s08.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s08.reference.fas" [
+fillcolor=green
+style=filled
+];
+"d12622b9-val-";
+"d1383da8-extern-n10.r10.s02.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s02.sorted.trimmed.bam" [
+fillcolor=green
+style=filled
+];
+"d2059912-val-";
+"d2625aa7-extern-n10.r10.s05.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s05.consensus.fas" [
+fillcolor=green
+style=filled
+];
+"d276eaa9-coerce-n10.r10.s01.Main.fq2";
+"d2830dd4-extern-n10.r10.s03.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s03.reference.fas" [
+fillcolor=green
+style=filled
+];
+"d2966217-coerce-n10.r10.s03.Main.variants";
+"d2c23f83-val-";
+"d302ca6b-val-";
+"d32a13c9-intern-n10.r10.s08.Main.fq1-s3://niema-test/n10/r10/n10.r10.s08_R1.fastq" [
+fillcolor=green
+style=filled
+];
+"d38dab1d-val-";
+"d3cc7208-val-";
+"d42e848f-val-";
+"d46251d3-val-";
+"d48d613d-coerce-n10.r10.s08.Main.sorted_untrimmed_bam";
+"d4c98d25-val-";
+"d4df904f-exec-n10.r10.s03.Main.variants" [
+fillcolor=green
+style=filled
+];
+"d66c020c-val-";
+"d6a2155e-val-";
+"d73a0746-val-";
+"d74fccad-val-";
+"d7bb2d36-coerce-n10.r10.s05.Main.low_depth";
+"d814a711-val-";
+"d82d6f36-val-";
+"d8834aac-coerce-n10.r10.s05.Main.consensus";
+"d98d1c1d-coerce-n10.r10.s05.Main.untrimmed_bam";
+"d9cb6b8a-extern-n10.r10.s01.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s01.untrimmed.sorted.bam" [
+fillcolor=green
+style=filled
+];
+"d9efe939-val-";
+"da2759e7-val-";
+"da893999-val-";
+"dacb6a14-val-";
+"db0c0f26-extern-n10.r10.s09.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s09.variants.vcf" [
+fillcolor=green
+style=filled
+];
+"db474b0a-intern-n10.r10.s04.Main.fq2-s3://niema-test/n10/r10/n10.r10.s04_R2.fastq" [
+fillcolor=green
+style=filled
+];
+"db81f583-val-";
+"dbbd0515-val-";
+"dc2073de-coerce-n10.r10.s05.Main.consensus";
+"dc55b1cb-val-";
+"dc7dc5e1-extern-n10.r10.s01.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s01.sorted.trimmed.bam" [
+fillcolor=green
+style=filled
+];
+"dd833962-val-";
+"ddd1937e-val-";
+"ddf9ca90-val-";
+"de086228-val-";
+"dec1e49b-val-";
+"dec22858-val-";
+"dee3f397-val-";
+"df054f85-val-";
+"df071ad9-coerce-n10.r10.s08.Main.sorted_untrimmed_bam";
+"df30f191-exec-n10.r10.s04.Main.untrimmed_bam" [
+fillcolor=green
+style=filled
+];
+"df34c85a-coerce-n10.r10.s03.Main.depth";
+"df4c3aa3-val-";
+"df761937-val-";
+"df7edf98-val-";
+"dfafc377-val-";
+"dfb9b812-val-";
+"e05292c7-val-";
+"e07a3fb7-val-";
+"e1bc2e56-val-";
+"e20efffc-extern-n10.r10.s09.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s09.reference.gff" [
+fillcolor=green
+style=filled
+];
+"e273f0e6-val-";
+"e299f8a6-extern-n10.r10.s08.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s08.reference.gff" [
+fillcolor=green
+style=filled
+];
+"e2aaac7a-extern-n10.r10.s10.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s10.sorted.trimmed.bam" [
+fillcolor=green
+style=filled
+];
+"e38044de-exec-n10.r10.s01.Main.ref_gff" [
+fillcolor=green
+style=filled
+];
+"e3845521-val-";
+"e3a5af88-val-";
+"e3bd61fd-extern-n10.r10.s02.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s02.lowdepth.tsv" [
+fillcolor=green
+style=filled
+];
+"e49b74a2-val-";
+"e4fb12e6-val-";
+"e51e092f-extern-n10.r10.s02.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s02.depth.txt" [
+fillcolor=green
+style=filled
+];
+"e547eedd-coerce-n10.r10.s05.Main.low_depth";
+"e5944ce5-coerce-n10.r10.s05.Main.fq1";
+"e5e615f5-coerce-n10.r10.s08.Main.sorted_untrimmed_bam";
+"e6103cf3-coerce-n10.r10.s02.Main.trimmed_bam";
+"e623be16-val-";
+"e67a6920-val-";
+"e67a8997-val-";
+"e69c8b79-exec-n10.r10.s01.Main.primer_bed" [
+fillcolor=green
+style=filled
+];
+"e706f4d4-val-";
+"e8c933b5-val-";
+"e8d13125-coerce-n10.r10.s02.Main.untrimmed_bam";
+"e93edc34-coerce-n10.r10.s01.Main.ref_fas";
+"ea0ab992-val-";
+"eacb33fc-extern-n10.r10.s10.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s10.primers.bed" [
+fillcolor=green
+style=filled
+];
+"eafc3025-extern-n10.r10.s04.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s04.sorted.trimmed.bam" [
+fillcolor=green
+style=filled
+];
+"eb042f10-extern-n10.r10.s06.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s06.untrimmed.bam" [
+fillcolor=green
+style=filled
+];
+"eb78ba4e-exec-n10.r10.s03.Main.depth" [
+fillcolor=green
+style=filled
+];
+"eb9dc199-val-";
+"ec3d6172-extern-n10.r10.s08.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s08.pileup.txt" [
+fillcolor=green
+style=filled
+];
+"ec998be9-val-";
+"ecfbf18a-val-";
+"ed2fb954-val-";
+"ed6b9548-val-";
+"ed8093c3-exec-n10.r10.s07.Main.untrimmed_bam" [
+fillcolor=green
+style=filled
+];
+"ed9fd3f8-extern-n10.r10.s01.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s01.untrimmed.bam" [
+fillcolor=green
+style=filled
+];
+"edca56ac-val-";
+"ef0b84f2-coerce-n10.r10.s03.Main.variants";
+"ef2c29ba-val-";
+"efe797ee-val-";
+"f08180f7-val-";
+"f0ef5564-val-";
+"f16bc451-extern-n10.r10.s06.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s06.lowdepth.tsv" [
+fillcolor=green
+style=filled
+];
+"f1a5172c-val-";
+"f1a98f9e-val-";
+"f2908295-val-";
+"f3130a9a-val-";
+"f3d96390-val-";
+"f3daf330-coerce-n10.r10.s07.Main.untrimmed_bam";
+"f3f52bc0-val-";
+"f471e566-val-";
+"f4f3b90b-val-";
+"f577fca5-extern-n10.r10.s10.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s10.untrimmed.sorted.bam" [
+fillcolor=green
+style=filled
+];
+"f5ae0e7e-val-";
+"f615b8e1-val-";
+"f61a29d1-val-";
+"f68368fe-val-";
+"f6a181c7-val-";
+"f6d1ad6b-extern-n10.r10.s05.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s05.reference.fas" [
+fillcolor=green
+style=filled
+];
+"f6d55288-coerce-n10.r10.s04.Main.fq2";
+"f6e103f6-intern-n10.r10.s05.Main.fq2-s3://niema-test/n10/r10/n10.r10.s05_R2.fastq" [
+fillcolor=green
+style=filled
+];
+"f7ee7855-val-";
+"f8719a37-val-";
+"f8ec8844-val-";
+"f8f55b4a-extern-n10.r10.s06.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s06.primers.bed" [
+fillcolor=green
+style=filled
+];
+"f907e082-val-";
+"f92996dc-extern-n10.r10.s07.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s07.reference.gff" [
+fillcolor=green
+style=filled
+];
+"f961b495-val-";
+"f98b9d73-val-";
+"fa42caf5-val-";
+"fab9204b-val-";
+"fbc8ed10-extern-n10.r10.s07.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s07.untrimmed.sorted.bam" [
+fillcolor=green
+style=filled
+];
+"fbe128fa-coerce-n10.r10.s03.Main.depth";
+"fcb2a087-coerce-n10.r10.s03.Main.variants";
+"fd4583e9-val-";
+"fddbfa8b-coerce-n10.r10.s08.Main.sorted_trimmed_bam";
+"fdeacbfe-val-";
+"ff07ec46-val-";
+"ff72090a-val-";
+"ff974502-coerce-n10.r10.s08.Main.sorted_trimmed_bam";
+"ffa0b76b-coerce-n10.r10.s09.Main.untrimmed_bam";
+"ffaf1127-coerce-n10.r10.s04.Main.fq1";
+
+// Edge definitions.
+"00424d45-coerce-n10.r10.s03.Main.pileup" -> "032071f2-exec-n10.r10.s03.Main.pileup" [
+dynamic=true
+color=blue
+];
+"00424d45-coerce-n10.r10.s03.Main.pileup" -> "7cbc9d6f-val-" [dynamic=false];
+"00424d45-coerce-n10.r10.s03.Main.pileup" -> "8259c9df-val-" [dynamic=false];
+"0053a2a4-val-" -> "2ae1b13f-extern-n10.r10.s03.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s03.variants.vcf" [dynamic=false];
+"007ff6d1-coerce-n10.r10.s03.Main.depth" -> "8c0594fd-val-" [dynamic=false];
+"007ff6d1-coerce-n10.r10.s03.Main.depth" -> "eb78ba4e-exec-n10.r10.s03.Main.depth" [
+dynamic=true
+color=blue
+];
+"00b89863-val-" -> "4317e98c-val-" [dynamic=false];
+"00f4dcac-val-" -> "38abcc43-val-" [dynamic=false];
+"00fee091-coerce-n10.r10.s03.Main.fq2" -> "1532e759-intern-n10.r10.s03.Main.fq2-s3://niema-test/n10/r10/n10.r10.s03_R2.fastq" [dynamic=false];
+"010142b8-extern-n10.r10.s04.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s04.reference.gff" -> "26b3e125-val-" [
+dynamic=true
+color=blue
+];
+"010142b8-extern-n10.r10.s04.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s04.reference.gff" -> "9439857c-val-" [dynamic=false];
+"01151850-val-" -> "68be8f62-extern-n10.r10.s06.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s06.sorted.trimmed.bam" [dynamic=false];
+"01507e21-extern-n10.r10.s05.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s05.reference.gff" -> "26b3e125-val-" [
+dynamic=true
+color=blue
+];
+"01507e21-extern-n10.r10.s05.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s05.reference.gff" -> "9439857c-val-" [dynamic=false];
+"016e283d-coerce-n10.r10.s04.Main.untrimmed_bam" -> "7c10cb10-val-" [dynamic=false];
+"016e283d-coerce-n10.r10.s04.Main.untrimmed_bam" -> "8259c9df-val-" [dynamic=false];
+"016e283d-coerce-n10.r10.s04.Main.untrimmed_bam" -> "a0e88bb3-val-" [dynamic=false];
+"016e283d-coerce-n10.r10.s04.Main.untrimmed_bam" -> "df30f191-exec-n10.r10.s04.Main.untrimmed_bam" [
+dynamic=true
+color=blue
+];
+"018263bf-extern-n10.r10.s02.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s02.variants.vcf" -> "55a5bb63-val-" [
+dynamic=true
+color=blue
+];
+"018263bf-extern-n10.r10.s02.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s02.variants.vcf" -> "78c6a73f-val-" [dynamic=false];
+"01b2c3d1-val-" -> "c7d6872b-val-" [dynamic=false];
+"0287e646-coerce-n10.r10.s03.Main.pileup" -> "032071f2-exec-n10.r10.s03.Main.pileup" [
+dynamic=true
+color=blue
+];
+"0287e646-coerce-n10.r10.s03.Main.pileup" -> "8259c9df-val-" [dynamic=false];
+"0287e646-coerce-n10.r10.s03.Main.pileup" -> "c19e2a13-val-" [dynamic=false];
+"02f07cef-val-" -> "bf32c9b2-val-" [dynamic=false];
+"032071f2-exec-n10.r10.s03.Main.pileup" -> "59e34a15-val-" [
+dynamic=true
+color=blue
+];
+"032071f2-exec-n10.r10.s03.Main.pileup" -> "f8719a37-val-" [
+dynamic=true
+color=blue
+];
+"0326d02b-extern-n10.r10.s05.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s05.lowdepth.tsv" -> "aa5f8363-val-" [dynamic=false];
+"0326d02b-extern-n10.r10.s05.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s05.lowdepth.tsv" -> "dbbd0515-val-" [
+dynamic=true
+color=blue
+];
+"039d0821-extern-n10.r10.s06.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s06.pileup.txt" -> "6539fcc3-val-" [
+dynamic=true
+color=blue
+];
+"039d0821-extern-n10.r10.s06.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s06.pileup.txt" -> "b7f68375-val-" [dynamic=false];
+"053c4ff4-coerce-n10.r10.s08.Main.fq2" -> "13a1314d-intern-n10.r10.s08.Main.fq2-s3://niema-test/n10/r10/n10.r10.s08_R2.fastq" [dynamic=false];
+"058e1734-val-" -> "fbc8ed10-extern-n10.r10.s07.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s07.untrimmed.sorted.bam" [dynamic=false];
+"06a0bead-val-" -> "535c2d14-coerce-n10.r10.s08.Main.fq1" [dynamic=false];
+"072716bf-val-" -> "db0c0f26-extern-n10.r10.s09.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s09.variants.vcf" [dynamic=false];
+"08002755-val-" -> "4cb54fd3-coerce-n10.r10.s05.Main.consensus" [dynamic=false];
+"08540fe1-val-" -> "4a665c66-coerce-n10.r10.s02.Main.trimmed_bam" [dynamic=false];
+"0861d24a-val-" -> "8e737b5e-extern-n10.r10.s08.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s08.lowdepth.tsv" [dynamic=false];
+"0880301f-val-" -> "6a1df9c3-extern-n10.r10.s07.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s07.sorted.trimmed.bam" [dynamic=false];
+"0896423a-val-" -> "f577fca5-extern-n10.r10.s10.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s10.untrimmed.sorted.bam" [dynamic=false];
+"08ba7bec-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" -> "14f01059-exec-n10.r10.s08.Main.sorted_untrimmed_bam" [
+dynamic=true
+color=blue
+];
+"08ba7bec-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" -> "73b7e198-val-" [dynamic=false];
+"0999b0c4-val-" -> "2861de6a-val-" [dynamic=false];
+"0a135613-val-" -> "2fbb6461-extern-n10.r10.s01.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s01.lowdepth.tsv" [dynamic=false];
+"0a46315f-val-" -> "e3845521-val-" [dynamic=false];
+"0ab27e23-val-" -> "303e002f-val-" [dynamic=false];
+"0ab49e45-val-" -> "2b05c024-coerce-n10.r10.s08.Main.sorted_trimmed_bam" [dynamic=false];
+"0b85eec8-coerce-n10.r10.s03.Main.fq1" -> "6ecc9b73-intern-n10.r10.s03.Main.fq1-s3://niema-test/n10/r10/n10.r10.s03_R1.fastq" [dynamic=false];
+"0b9be667-val-" -> "3425d97d-extern-n10.r10.s01.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s01.primers.bed" [dynamic=false];
+"0cb5daa4-val-" -> "8e975368-val-" [dynamic=false];
+"0de1315a-val-" -> "e20efffc-extern-n10.r10.s09.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s09.reference.gff" [dynamic=false];
+"0e113c33-coerce-n10.r10.s03.Main.depth" -> "b60acf9a-val-" [dynamic=false];
+"0e113c33-coerce-n10.r10.s03.Main.depth" -> "eb78ba4e-exec-n10.r10.s03.Main.depth" [
+dynamic=true
+color=blue
+];
+"0e3b6e0a-coerce-n10.r10.s03.Main.variants" -> "8259c9df-val-" [dynamic=false];
+"0e3b6e0a-coerce-n10.r10.s03.Main.variants" -> "b8208a36-val-" [dynamic=false];
+"0e3b6e0a-coerce-n10.r10.s03.Main.variants" -> "d4df904f-exec-n10.r10.s03.Main.variants" [
+dynamic=true
+color=blue
+];
+"0ea4ba6e-val-" -> "0e3b6e0a-coerce-n10.r10.s03.Main.variants" [dynamic=false];
+"0f1847ae-coerce-n10.r10.s05.Main.low_depth" -> "94016a97-exec-n10.r10.s05.Main.low_depth" [
+dynamic=true
+color=blue
+];
+"0f1847ae-coerce-n10.r10.s05.Main.low_depth" -> "cc469595-val-" [dynamic=false];
+"11a53dac-val-" -> "88b5cac7-extern-n10.r10.s03.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s03.untrimmed.sorted.bam" [dynamic=false];
+"11d97de2-coerce-n10.r10.s02.Main.trimmed_bam" -> "65c6dc2e-val-" [dynamic=false];
+"11d97de2-coerce-n10.r10.s02.Main.trimmed_bam" -> "88d7cb07-val-" [dynamic=false];
+"11d97de2-coerce-n10.r10.s02.Main.trimmed_bam" -> "a44d8c2f-exec-n10.r10.s06.Main.trimmed_bam" [
+dynamic=true
+color=blue
+];
+"12daa468-val-" -> "0053a2a4-val-" [dynamic=false];
+"13096b1f-val-" -> "766a7fa5-extern-n10.r10.s02.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s02.untrimmed.bam" [dynamic=false];
+"131eeac2-val-" -> "e93edc34-coerce-n10.r10.s01.Main.ref_fas" [dynamic=false];
+"13b74036-extern-n10.r10.s05.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s05.variants.vcf" -> "41f50479-val-" [dynamic=false];
+"13b74036-extern-n10.r10.s05.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s05.variants.vcf" -> "55a5bb63-val-" [
+dynamic=true
+color=blue
+];
+"13c184ee-val-" -> "dacb6a14-val-" [dynamic=false];
+"146773e9-extern-n10.r10.s10.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s10.untrimmed.bam" -> "033be6cd-val-" [
+dynamic=true
+color=blue
+];
+"146773e9-extern-n10.r10.s10.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s10.untrimmed.bam" -> "cd5140a4-val-" [dynamic=false];
+"14a4a0ae-val-" -> "16bb8b2b-extern-n10.r10.s05.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s05.untrimmed.bam" [dynamic=false];
+"14b6ae3f-exec-n10.r10.s05.Main.untrimmed_bam" -> "03a5a2a4-val-" [
+dynamic=true
+color=blue
+];
+"14b6ae3f-exec-n10.r10.s05.Main.untrimmed_bam" -> "1d2c4dfc-val-" [
+dynamic=true
+color=blue
+];
+"14b6ae3f-exec-n10.r10.s05.Main.untrimmed_bam" -> "59e34a15-val-" [
+dynamic=true
+color=blue
+];
+"14f01059-exec-n10.r10.s08.Main.sorted_untrimmed_bam" -> "033be6cd-val-" [
+dynamic=true
+color=blue
+];
+"1552e6ea-val-" -> "d9efe939-val-" [dynamic=false];
+"158d694e-val-" -> "d38dab1d-val-" [dynamic=false];
+"1597b7a6-val-" -> "9185ca14-extern-n10.r10.s08.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s08.untrimmed.sorted.bam" [dynamic=false];
+"169cd1c2-val-" -> "47774e16-extern-n10.r10.s05.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s05.sorted.trimmed.bam" [dynamic=false];
+"16bb8b2b-extern-n10.r10.s05.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s05.untrimmed.bam" -> "033be6cd-val-" [
+dynamic=true
+color=blue
+];
+"16bb8b2b-extern-n10.r10.s05.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s05.untrimmed.bam" -> "a85466bb-val-" [dynamic=false];
+"16f6e6c5-extern-n10.r10.s09.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s09.consensus.fas" -> "dec22858-val-" [
+dynamic=true
+color=blue
+];
+"16f6e6c5-extern-n10.r10.s09.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s09.consensus.fas" -> "f61a29d1-val-" [dynamic=false];
+"1768d4d3-val-" -> "3359626f-extern-n10.r10.s06.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s06.consensus.fas" [dynamic=false];
+"178e1d68-val-" -> "d9cb6b8a-extern-n10.r10.s01.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s01.untrimmed.sorted.bam" [dynamic=false];
+"1864d140-val-" -> "584d4b1b-val-" [dynamic=false];
+"187281f8-val-" -> "cf53aa25-extern-n10.r10.s01.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s01.consensus.fas" [dynamic=false];
+"189899ad-val-" -> "616d5ec4-val-" [dynamic=false];
+"189d9483-val-" -> "11a53dac-val-" [dynamic=false];
+"18a49976-val-" -> "de086228-val-" [dynamic=false];
+"1a3acc5b-val-" -> "6219b0aa-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" [dynamic=false];
+"1a850842-val-" -> "523ae1f5-extern-n10.r10.s09.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s09.untrimmed.sorted.bam" [dynamic=false];
+"1a9cb805-extern-n10.r10.s09.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s09.reference.fas" -> "131eeac2-val-" [dynamic=false];
+"1a9cb805-extern-n10.r10.s09.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s09.reference.fas" -> "59e34a15-val-" [
+dynamic=true
+color=blue
+];
+"1b2da54c-val-" -> "91f6ba04-val-" [dynamic=false];
+"1b6fc058-coerce-n10.r10.s03.Main.variants" -> "8259c9df-val-" [dynamic=false];
+"1b6fc058-coerce-n10.r10.s03.Main.variants" -> "c19e2a13-val-" [dynamic=false];
+"1b6fc058-coerce-n10.r10.s03.Main.variants" -> "d4df904f-exec-n10.r10.s03.Main.variants" [
+dynamic=true
+color=blue
+];
+"1b9f306f-val-" -> "d2059912-val-" [dynamic=false];
+"1bb2fe3b-val-" -> "f907e082-val-" [dynamic=false];
+"1be48dcf-val-" -> "cd292872-val-" [dynamic=false];
+"1c3dc1d5-extern-n10.r10.s01.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s01.reference.fas" -> "131eeac2-val-" [dynamic=false];
+"1c3dc1d5-extern-n10.r10.s01.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s01.reference.fas" -> "59e34a15-val-" [
+dynamic=true
+color=blue
+];
+"1c50ff68-coerce-n10.r10.s01.Main.primer_bed" -> "e69c8b79-exec-n10.r10.s01.Main.primer_bed" [dynamic=false];
+"1c8ae327-extern-n10.r10.s02.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s02.pileup.txt" -> "6539fcc3-val-" [
+dynamic=true
+color=blue
+];
+"1c8ae327-extern-n10.r10.s02.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s02.pileup.txt" -> "878a735a-val-" [dynamic=false];
+"1cd18b84-val-" -> "d48d613d-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" [dynamic=false];
+"1cf9f8bc-coerce-n10.r10.s08.Main.sorted_trimmed_bam" -> "67e6a693-val-" [dynamic=false];
+"1cf9f8bc-coerce-n10.r10.s08.Main.sorted_trimmed_bam" -> "c4ff5aea-exec-n10.r10.s08.Main.sorted_trimmed_bam" [
+dynamic=true
+color=blue
+];
+"1d85263c-extern-n10.r10.s02.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s02.untrimmed.sorted.bam" -> "0a777a91-val-" [
+dynamic=true
+color=blue
+];
+"1d85263c-extern-n10.r10.s02.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s02.untrimmed.sorted.bam" -> "a490d04b-val-" [dynamic=false];
+"1e431f5e-val-" -> "c0d69a90-extern-n10.r10.s06.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s06.reference.fas" [dynamic=false];
+"1f92a05a-val-" -> "37d6e44f-val-" [dynamic=false];
+"2018fe39-val-" -> "b32ed7a3-val-" [dynamic=false];
+"203b2d9b-coerce-n10.r10.s02.Main.fq1" -> "9befad5b-intern-n10.r10.s02.Main.fq1-s3://niema-test/n10/r10/n10.r10.s02_R1.fastq" [dynamic=false];
+"219e666b-val-" -> "966f092a-extern-n10.r10.s02.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s02.reference.gff" [dynamic=false];
+"2232d2cd-val-" -> "b3e12313-val-" [dynamic=false];
+"2304cd79-coerce-n10.r10.s05.Main.consensus" -> "61186fec-val-" [dynamic=false];
+"2304cd79-coerce-n10.r10.s05.Main.consensus" -> "8259c9df-val-" [dynamic=false];
+"2304cd79-coerce-n10.r10.s05.Main.consensus" -> "b4d54d23-exec-n10.r10.s05.Main.consensus" [
+dynamic=true
+color=blue
+];
+"2304cd79-coerce-n10.r10.s05.Main.consensus" -> "b6887ca1-val-" [dynamic=false];
+"2311ec51-val-" -> "824ab244-val-" [dynamic=false];
+"23255a70-val-" -> "6dee91b4-val-" [dynamic=false];
+"2332bb6d-extern-n10.r10.s09.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s09.untrimmed.bam" -> "033be6cd-val-" [
+dynamic=true
+color=blue
+];
+"2332bb6d-extern-n10.r10.s09.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s09.untrimmed.bam" -> "8c4de157-val-" [dynamic=false];
+"2372b81c-val-" -> "4b2b9144-val-" [dynamic=false];
+"23f814c1-val-" -> "f8ec8844-val-" [dynamic=false];
+"24675f39-val-" -> "016e283d-coerce-n10.r10.s04.Main.untrimmed_bam" [dynamic=false];
+"246946f4-val-" -> "af98ca56-val-" [dynamic=false];
+"253bc03a-coerce-n10.r10.s02.Main.trimmed_bam" -> "3badb1ab-val-" [dynamic=false];
+"253bc03a-coerce-n10.r10.s02.Main.trimmed_bam" -> "65c6dc2e-val-" [dynamic=false];
+"253bc03a-coerce-n10.r10.s02.Main.trimmed_bam" -> "a44d8c2f-exec-n10.r10.s06.Main.trimmed_bam" [
+dynamic=true
+color=blue
+];
+"25853d45-val-" -> "5855ac87-val-" [dynamic=false];
+"25d81e73-exec-n10.r10.s08.Main.untrimmed_bam" -> "5678a14e-val-" [
+dynamic=true
+color=blue
+];
+"25d81e73-exec-n10.r10.s08.Main.untrimmed_bam" -> "59e34a15-val-" [
+dynamic=true
+color=blue
+];
+"25d81e73-exec-n10.r10.s08.Main.untrimmed_bam" -> "ef2c29ba-val-" [
+dynamic=true
+color=blue
+];
+"2605b143-val-" -> "4f56e78a-extern-n10.r10.s07.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s07.lowdepth.tsv" [dynamic=false];
+"261dfd34-coerce-n10.r10.s08.Main.sorted_trimmed_bam" -> "00f4dcac-val-" [dynamic=false];
+"261dfd34-coerce-n10.r10.s08.Main.sorted_trimmed_bam" -> "c4ff5aea-exec-n10.r10.s08.Main.sorted_trimmed_bam" [
+dynamic=true
+color=blue
+];
+"26361dd3-val-" -> "30703d53-val-" [dynamic=false];
+"2649fa52-val-" -> "b204c147-extern-n10.r10.s10.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s10.reference.gff" [dynamic=false];
+"2663220e-val-" -> "261dfd34-coerce-n10.r10.s08.Main.sorted_trimmed_bam" [dynamic=false];
+"271a1226-val-" -> "2f4592e7-val-" [dynamic=false];
+"276b4a8b-coerce-n10.r10.s03.Main.depth" -> "b8208a36-val-" [dynamic=false];
+"276b4a8b-coerce-n10.r10.s03.Main.depth" -> "eb78ba4e-exec-n10.r10.s03.Main.depth" [
+dynamic=true
+color=blue
+];
+"278ec804-extern-n10.r10.s03.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s03.reference.gff" -> "26b3e125-val-" [
+dynamic=true
+color=blue
+];
+"278ec804-extern-n10.r10.s03.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s03.reference.gff" -> "9439857c-val-" [dynamic=false];
+"27bae314-coerce-n10.r10.s10.Main.untrimmed_bam" -> "00b89863-val-" [dynamic=false];
+"27bae314-coerce-n10.r10.s10.Main.untrimmed_bam" -> "68a833a0-exec-n10.r10.s10.Main.untrimmed_bam" [
+dynamic=true
+color=blue
+];
+"27bae314-coerce-n10.r10.s10.Main.untrimmed_bam" -> "8259c9df-val-" [dynamic=false];
+"27bae314-coerce-n10.r10.s10.Main.untrimmed_bam" -> "a0e25b8e-val-" [dynamic=false];
+"2861de6a-val-" -> "3f265543-val-" [dynamic=false];
+"29a5aad1-coerce-n10.r10.s06.Main.fq2" -> "8193ffa5-intern-n10.r10.s06.Main.fq2-s3://niema-test/n10/r10/n10.r10.s06_R2.fastq" [dynamic=false];
+"29ec65da-extern-n10.r10.s04.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s04.pileup.txt" -> "6539fcc3-val-" [
+dynamic=true
+color=blue
+];
+"29ec65da-extern-n10.r10.s04.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s04.pileup.txt" -> "df4c3aa3-val-" [dynamic=false];
+"2aca7f72-val-" -> "01151850-val-" [dynamic=false];
+"2ae1b13f-extern-n10.r10.s03.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s03.variants.vcf" -> "55a5bb63-val-" [
+dynamic=true
+color=blue
+];
+"2ae1b13f-extern-n10.r10.s03.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s03.variants.vcf" -> "d38dab1d-val-" [dynamic=false];
+"2b05c024-coerce-n10.r10.s08.Main.sorted_trimmed_bam" -> "5fd224c3-val-" [dynamic=false];
+"2b05c024-coerce-n10.r10.s08.Main.sorted_trimmed_bam" -> "c4ff5aea-exec-n10.r10.s08.Main.sorted_trimmed_bam" [
+dynamic=true
+color=blue
+];
+"2bd06ec0-val-" -> "30df18e9-coerce-n10.r10.s03.Main.pileup" [dynamic=false];
+"2caca983-val-" -> "8887dd98-val-" [dynamic=false];
+"2cdbbc73-extern-n10.r10.s03.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s03.primers.bed" -> "53e16067-val-" [
+dynamic=true
+color=blue
+];
+"2cdbbc73-extern-n10.r10.s03.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s03.primers.bed" -> "6a052429-val-" [dynamic=false];
+"2d140771-val-" -> "6473ddd4-coerce-n10.r10.s03.Main.variants" [dynamic=false];
+"2dbd58e9-val-" -> "ab042e08-extern-n10.r10.s02.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s02.consensus.fas" [dynamic=false];
+"2dedb1a4-extern-n10.r10.s04.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s04.depth.txt" -> "9191ff99-val-" [dynamic=false];
+"2dedb1a4-extern-n10.r10.s04.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s04.depth.txt" -> "95d3157b-val-" [
+dynamic=true
+color=blue
+];
+"2e2cb0fa-val-" -> "7639f0e4-val-" [dynamic=false];
+"2f3f1f13-val-" -> "685f79a4-coerce-n10.r10.s08.Main.sorted_trimmed_bam" [dynamic=false];
+"2f4592e7-val-" -> "66f14d0b-extern-n10.r10.s10.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s10.lowdepth.tsv" [dynamic=false];
+"2f8bf4ab-val-" -> "29ec65da-extern-n10.r10.s04.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s04.pileup.txt" [dynamic=false];
+"2f8e638f-val-" -> "1b2da54c-val-" [dynamic=false];
+"2f8e638f-val-" -> "23f814c1-val-" [dynamic=false];
+"2f8e638f-val-" -> "42fafe57-val-" [dynamic=false];
+"2f8e638f-val-" -> "65b4a7a7-val-" [dynamic=false];
+"2f8e638f-val-" -> "93783aa2-val-" [dynamic=false];
+"2f8e638f-val-" -> "9e4d8184-val-" [dynamic=false];
+"2f8e638f-val-" -> "b2a36bae-val-" [dynamic=false];
+"2f8e638f-val-" -> "b60c6201-val-" [dynamic=false];
+"2f8e638f-val-" -> "c06f97c4-val-" [dynamic=false];
+"2f8e638f-val-" -> "d3cc7208-val-" [dynamic=false];
+"2f8e638f-val-" -> "ea0ab992-val-" [dynamic=false];
+"2f947710-val-" -> "48401755-val-" [dynamic=false];
+"2faf51c3-val-" -> "8129ceb2-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" [dynamic=false];
+"2fbb6461-extern-n10.r10.s01.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s01.lowdepth.tsv" -> "88122d3b-val-" [dynamic=false];
+"2fbb6461-extern-n10.r10.s01.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s01.lowdepth.tsv" -> "dbbd0515-val-" [
+dynamic=true
+color=blue
+];
+"303e002f-val-" -> "1b9f306f-val-" [dynamic=false];
+"303e002f-val-" -> "2372b81c-val-" [dynamic=false];
+"303e002f-val-" -> "2e2cb0fa-val-" [dynamic=false];
+"303e002f-val-" -> "53c725db-val-" [dynamic=false];
+"303e002f-val-" -> "5ecbf73f-val-" [dynamic=false];
+"303e002f-val-" -> "7f1ea91d-val-" [dynamic=false];
+"303e002f-val-" -> "a352360f-val-" [dynamic=false];
+"303e002f-val-" -> "b0534761-val-" [dynamic=false];
+"303e002f-val-" -> "b57b81e6-val-" [dynamic=false];
+"303e002f-val-" -> "c89f4962-val-" [dynamic=false];
+"303e002f-val-" -> "ed2fb954-val-" [dynamic=false];
+"30703d53-val-" -> "50a26fd9-extern-n10.r10.s08.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s08.sorted.trimmed.bam" [dynamic=false];
+"30d43f28-val-" -> "ff07ec46-val-" [dynamic=false];
+"30df18e9-coerce-n10.r10.s03.Main.pileup" -> "032071f2-exec-n10.r10.s03.Main.pileup" [
+dynamic=true
+color=blue
+];
+"30df18e9-coerce-n10.r10.s03.Main.pileup" -> "8259c9df-val-" [dynamic=false];
+"30df18e9-coerce-n10.r10.s03.Main.pileup" -> "e706f4d4-val-" [dynamic=false];
+"31f58c7e-exec-n10.r10.s03.Main.untrimmed_bam" -> "46929a1a-val-" [
+dynamic=true
+color=blue
+];
+"31f58c7e-exec-n10.r10.s03.Main.untrimmed_bam" -> "59e34a15-val-" [
+dynamic=true
+color=blue
+];
+"31f58c7e-exec-n10.r10.s03.Main.untrimmed_bam" -> "d302ca6b-val-" [
+dynamic=true
+color=blue
+];
+"322b17aa-coerce-n10.r10.s09.Main.fq1" -> "5b758d5a-intern-n10.r10.s09.Main.fq1-s3://niema-test/n10/r10/n10.r10.s09_R1.fastq" [dynamic=false];
+"3260ec96-extern-n10.r10.s05.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s05.depth.txt" -> "95d3157b-val-" [
+dynamic=true
+color=blue
+];
+"3260ec96-extern-n10.r10.s05.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s05.depth.txt" -> "ac3942bd-val-" [dynamic=false];
+"32e280d7-coerce-n10.r10.s05.Main.low_depth" -> "59ba663c-val-" [dynamic=false];
+"32e280d7-coerce-n10.r10.s05.Main.low_depth" -> "94016a97-exec-n10.r10.s05.Main.low_depth" [
+dynamic=true
+color=blue
+];
+"3359626f-extern-n10.r10.s06.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s06.consensus.fas" -> "a9e597b5-val-" [dynamic=false];
+"3359626f-extern-n10.r10.s06.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s06.consensus.fas" -> "dec22858-val-" [
+dynamic=true
+color=blue
+];
+"33f92246-val-" -> "039d0821-extern-n10.r10.s06.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s06.pileup.txt" [dynamic=false];
+"3425d97d-extern-n10.r10.s01.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s01.primers.bed" -> "53e16067-val-" [
+dynamic=true
+color=blue
+];
+"3425d97d-extern-n10.r10.s01.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s01.primers.bed" -> "6a052429-val-" [dynamic=false];
+"342dc305-coerce-n10.r10.s03.Main.pileup" -> "032071f2-exec-n10.r10.s03.Main.pileup" [
+dynamic=true
+color=blue
+];
+"342dc305-coerce-n10.r10.s03.Main.pileup" -> "8259c9df-val-" [dynamic=false];
+"342dc305-coerce-n10.r10.s03.Main.pileup" -> "b8208a36-val-" [dynamic=false];
+"35256b9f-val-" -> "a82c341d-coerce-n10.r10.s08.Main.untrimmed_bam" [dynamic=false];
+"3575d301-val-" -> "1768d4d3-val-" [dynamic=false];
+"36215c0c-val-" -> "fa42caf5-val-" [dynamic=false];
+"3646733f-coerce-n10.r10.s02.Main.trimmed_bam" -> "65c6dc2e-val-" [dynamic=false];
+"3646733f-coerce-n10.r10.s02.Main.trimmed_bam" -> "a44d8c2f-exec-n10.r10.s06.Main.trimmed_bam" [
+dynamic=true
+color=blue
+];
+"3646733f-coerce-n10.r10.s02.Main.trimmed_bam" -> "c00ec99e-val-" [dynamic=false];
+"36f784c6-val-" -> "489e3b2c-val-" [dynamic=false];
+"3769875d-extern-n10.r10.s07.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s07.untrimmed.bam" -> "033be6cd-val-" [
+dynamic=true
+color=blue
+];
+"3769875d-extern-n10.r10.s07.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s07.untrimmed.bam" -> "590960d4-val-" [dynamic=false];
+"37d6e44f-val-" -> "cbc42789-extern-n10.r10.s04.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s04.consensus.fas" [dynamic=false];
+"386d2bc5-val-" -> "9bd60ff6-extern-n10.r10.s10.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s10.depth.txt" [dynamic=false];
+"38abcc43-val-" -> "3e3b01cb-coerce-n10.r10.s02.Main.trimmed_bam" [dynamic=false];
+"393d8e94-val-" -> "6333d82c-val-" [dynamic=false];
+"39470123-extern-n10.r10.s04.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s04.lowdepth.tsv" -> "dbbd0515-val-" [
+dynamic=true
+color=blue
+];
+"39470123-extern-n10.r10.s04.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s04.lowdepth.tsv" -> "e4fb12e6-val-" [dynamic=false];
+"394a22a0-val-" -> "99abe5ea-val-" [dynamic=false];
+"39830f0d-coerce-n10.r10.s08.Main.sorted_trimmed_bam" -> "2018fe39-val-" [dynamic=false];
+"39830f0d-coerce-n10.r10.s08.Main.sorted_trimmed_bam" -> "c4ff5aea-exec-n10.r10.s08.Main.sorted_trimmed_bam" [
+dynamic=true
+color=blue
+];
+"3b0cb470-extern-n10.r10.s04.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s04.untrimmed.bam" -> "033be6cd-val-" [
+dynamic=true
+color=blue
+];
+"3b0cb470-extern-n10.r10.s04.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s04.untrimmed.bam" -> "24675f39-val-" [dynamic=false];
+"3b546219-val-" -> "86c2a272-val-" [dynamic=false];
+"3badb1ab-val-" -> "a490d04b-val-" [dynamic=false];
+"3c731ca0-val-" -> "b6ee4e01-val-" [dynamic=false];
+"3cf1d592-val-" -> "4c7c812c-coerce-n10.r10.s07.Main.fq1" [dynamic=false];
+"3e2004e3-extern-n10.r10.s01.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s01.depth.txt" -> "489e3b2c-val-" [dynamic=false];
+"3e2004e3-extern-n10.r10.s01.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s01.depth.txt" -> "95d3157b-val-" [
+dynamic=true
+color=blue
+];
+"3e3b01cb-coerce-n10.r10.s02.Main.trimmed_bam" -> "0a46315f-val-" [dynamic=false];
+"3e3b01cb-coerce-n10.r10.s02.Main.trimmed_bam" -> "65c6dc2e-val-" [dynamic=false];
+"3e3b01cb-coerce-n10.r10.s02.Main.trimmed_bam" -> "a44d8c2f-exec-n10.r10.s06.Main.trimmed_bam" [
+dynamic=true
+color=blue
+];
+"3e45e037-extern-n10.r10.s09.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s09.pileup.txt" -> "6539fcc3-val-" [
+dynamic=true
+color=blue
+];
+"3e45e037-extern-n10.r10.s09.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s09.pileup.txt" -> "f0ef5564-val-" [dynamic=false];
+"3e5e66bb-val-" -> "441c05e2-extern-n10.r10.s03.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s03.untrimmed.bam" [dynamic=false];
+"3e683f17-val-" -> "55b95638-val-" [dynamic=false];
+"3e683f17-val-" -> "58dd8c13-val-" [dynamic=false];
+"3e683f17-val-" -> "5aca80e1-val-" [dynamic=false];
+"3e683f17-val-" -> "5f158d9f-val-" [dynamic=false];
+"3e683f17-val-" -> "8aed8e65-val-" [dynamic=false];
+"3e683f17-val-" -> "9592d40f-val-" [dynamic=false];
+"3e683f17-val-" -> "a9039baf-val-" [dynamic=false];
+"3e683f17-val-" -> "ab4c35b1-val-" [dynamic=false];
+"3e683f17-val-" -> "b8759097-val-" [dynamic=false];
+"3e683f17-val-" -> "cda183b3-val-" [dynamic=false];
+"3e683f17-val-" -> "d66c020c-val-" [dynamic=false];
+"3f265543-val-" -> "4a5bcf3d-val-" [dynamic=false];
+"3f265543-val-" -> "4eea3a90-val-" [dynamic=false];
+"3f265543-val-" -> "5bc97726-val-" [dynamic=false];
+"3f265543-val-" -> "8b733e4a-val-" [dynamic=false];
+"3f265543-val-" -> "9ebe601f-val-" [dynamic=false];
+"3f265543-val-" -> "a3bee47a-val-" [dynamic=false];
+"3f265543-val-" -> "a71d5d58-val-" [dynamic=false];
+"3f265543-val-" -> "b53189fe-val-" [dynamic=false];
+"3f265543-val-" -> "c9a01377-val-" [dynamic=false];
+"3f265543-val-" -> "d73a0746-val-" [dynamic=false];
+"3f265543-val-" -> "dec1e49b-val-" [dynamic=false];
+"3fffae0d-val-" -> "93a597f1-extern-n10.r10.s09.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s09.sorted.trimmed.bam" [dynamic=false];
+"4078e038-val-" -> "bb674d3b-val-" [dynamic=false];
+"40a5160a-val-" -> "b8fc6c7c-coerce-n10.r10.s05.Main.consensus" [dynamic=false];
+"4180a124-val-" -> "65115c7a-extern-n10.r10.s10.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s10.variants.vcf" [dynamic=false];
+"41ddd4fe-val-" -> "43c5e83a-val-" [dynamic=false];
+"41f50479-val-" -> "b566f856-coerce-n10.r10.s03.Main.variants" [dynamic=false];
+"41fd43fd-val-" -> "010142b8-extern-n10.r10.s04.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s04.reference.gff" [dynamic=false];
+"42e80c5f-val-" -> "ca472dc6-coerce-n10.r10.s05.Main.consensus" [dynamic=false];
+"42ee43db-extern-n10.r10.s05.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s05.primers.bed" -> "53e16067-val-" [
+dynamic=true
+color=blue
+];
+"42ee43db-extern-n10.r10.s05.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s05.primers.bed" -> "6a052429-val-" [dynamic=false];
+"42fafe57-val-" -> "50d7aacb-val-" [dynamic=false];
+"4317e98c-val-" -> "9d9bfa75-coerce-n10.r10.s10.Main.fq2" [dynamic=false];
+"43c5e83a-val-" -> "11d97de2-coerce-n10.r10.s02.Main.trimmed_bam" [dynamic=false];
+"43fe03ed-val-" -> "50d6b15c-val-" [dynamic=false];
+"441c05e2-extern-n10.r10.s03.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s03.untrimmed.bam" -> "033be6cd-val-" [
+dynamic=true
+color=blue
+];
+"441c05e2-extern-n10.r10.s03.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s03.untrimmed.bam" -> "bab0800b-val-" [dynamic=false];
+"448c5146-exec-n10.r10.s06.Main.untrimmed_bam" -> "59e34a15-val-" [
+dynamic=true
+color=blue
+];
+"448c5146-exec-n10.r10.s06.Main.untrimmed_bam" -> "5c120bff-val-" [
+dynamic=true
+color=blue
+];
+"448c5146-exec-n10.r10.s06.Main.untrimmed_bam" -> "f7ee7855-val-" [
+dynamic=true
+color=blue
+];
+"459e28b1-val-" -> "aeaab7f3-extern-n10.r10.s08.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s08.depth.txt" [dynamic=false];
+"45e25550-coerce-n10.r10.s10.Main.fq1" -> "8b083a4d-intern-n10.r10.s10.Main.fq1-s3://niema-test/n10/r10/n10.r10.s10_R1.fastq" [dynamic=false];
+"470520b8-val-" -> "2f8bf4ab-val-" [dynamic=false];
+"473fd6c3-val-" -> "dc55b1cb-val-" [dynamic=false];
+"4766f498-val-" -> "51a3cd8b-extern-n10.r10.s09.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s09.depth.txt" [dynamic=false];
+"47774e16-extern-n10.r10.s05.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s05.sorted.trimmed.bam" -> "a92277d0-val-" [dynamic=false];
+"47774e16-extern-n10.r10.s05.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s05.sorted.trimmed.bam" -> "f8719a37-val-" [
+dynamic=true
+color=blue
+];
+"47a4b430-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" -> "14f01059-exec-n10.r10.s08.Main.sorted_untrimmed_bam" [
+dynamic=true
+color=blue
+];
+"47a4b430-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" -> "a9a1b6b3-val-" [dynamic=false];
+"47a65a62-val-" -> "a85466bb-val-" [dynamic=false];
+"48401755-val-" -> "79789300-extern-n10.r10.s03.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s03.sorted.trimmed.bam" [dynamic=false];
+"484ca7a0-coerce-n10.r10.s03.Main.pileup" -> "032071f2-exec-n10.r10.s03.Main.pileup" [
+dynamic=true
+color=blue
+];
+"484ca7a0-coerce-n10.r10.s03.Main.pileup" -> "8259c9df-val-" [dynamic=false];
+"484ca7a0-coerce-n10.r10.s03.Main.pileup" -> "aa28f567-val-" [dynamic=false];
+"489e3b2c-val-" -> "0e113c33-coerce-n10.r10.s03.Main.depth" [dynamic=false];
+"49df3252-coerce-n10.r10.s08.Main.sorted_trimmed_bam" -> "b88d0ec0-val-" [dynamic=false];
+"49df3252-coerce-n10.r10.s08.Main.sorted_trimmed_bam" -> "c4ff5aea-exec-n10.r10.s08.Main.sorted_trimmed_bam" [
+dynamic=true
+color=blue
+];
+"4a5bcf3d-val-" -> "51b3fb11-val-" [dynamic=false];
+"4a665c66-coerce-n10.r10.s02.Main.trimmed_bam" -> "65c6dc2e-val-" [dynamic=false];
+"4a665c66-coerce-n10.r10.s02.Main.trimmed_bam" -> "a44d8c2f-exec-n10.r10.s06.Main.trimmed_bam" [
+dynamic=true
+color=blue
+];
+"4a665c66-coerce-n10.r10.s02.Main.trimmed_bam" -> "ad72d4b7-val-" [dynamic=false];
+"4a689319-val-" -> "eacb33fc-extern-n10.r10.s10.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s10.primers.bed" [dynamic=false];
+"4b2b9144-val-" -> "60037232-extern-n10.r10.s01.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s01.pileup.txt" [dynamic=false];
+"4ba0047c-coerce-n10.r10.s05.Main.low_depth" -> "94016a97-exec-n10.r10.s05.Main.low_depth" [
+dynamic=true
+color=blue
+];
+"4ba0047c-coerce-n10.r10.s05.Main.low_depth" -> "e49b74a2-val-" [dynamic=false];
+"4c4cde14-extern-n10.r10.s05.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s05.pileup.txt" -> "6539fcc3-val-" [
+dynamic=true
+color=blue
+];
+"4c4cde14-extern-n10.r10.s05.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s05.pileup.txt" -> "c7bf0223-val-" [dynamic=false];
+"4c6115c1-extern-n10.r10.s07.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s07.consensus.fas" -> "b2b3e561-val-" [dynamic=false];
+"4c6115c1-extern-n10.r10.s07.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s07.consensus.fas" -> "dec22858-val-" [
+dynamic=true
+color=blue
+];
+"4c7c812c-coerce-n10.r10.s07.Main.fq1" -> "abb4be64-intern-n10.r10.s07.Main.fq1-s3://niema-test/n10/r10/n10.r10.s07_R1.fastq" [dynamic=false];
+"4c905229-coerce-n10.r10.s05.Main.low_depth" -> "94016a97-exec-n10.r10.s05.Main.low_depth" [
+dynamic=true
+color=blue
+];
+"4c905229-coerce-n10.r10.s05.Main.low_depth" -> "aaf30d59-val-" [dynamic=false];
+"4cb54fd3-coerce-n10.r10.s05.Main.consensus" -> "8259c9df-val-" [dynamic=false];
+"4cb54fd3-coerce-n10.r10.s05.Main.consensus" -> "b1f16c0b-val-" [dynamic=false];
+"4cb54fd3-coerce-n10.r10.s05.Main.consensus" -> "b4d54d23-exec-n10.r10.s05.Main.consensus" [
+dynamic=true
+color=blue
+];
+"4cb54fd3-coerce-n10.r10.s05.Main.consensus" -> "e623be16-val-" [dynamic=false];
+"4d43b4a5-val-" -> "a9f6df01-extern-n10.r10.s03.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s03.pileup.txt" [dynamic=false];
+"4d632963-val-" -> "33f92246-val-" [dynamic=false];
+"4db0986e-coerce-n10.r10.s08.Main.sorted_trimmed_bam" -> "c4ff5aea-exec-n10.r10.s08.Main.sorted_trimmed_bam" [
+dynamic=true
+color=blue
+];
+"4db0986e-coerce-n10.r10.s08.Main.sorted_trimmed_bam" -> "e05292c7-val-" [dynamic=false];
+"4e7ac732-extern-n10.r10.s06.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s06.reference.gff" -> "26b3e125-val-" [
+dynamic=true
+color=blue
+];
+"4e7ac732-extern-n10.r10.s06.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s06.reference.gff" -> "9439857c-val-" [dynamic=false];
+"4eea3a90-val-" -> "df761937-val-" [dynamic=false];
+"4f1ea5ed-val-" -> "14a4a0ae-val-" [dynamic=false];
+"4f22521b-val-" -> "1c8ae327-extern-n10.r10.s02.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s02.pileup.txt" [dynamic=false];
+"4f56e78a-extern-n10.r10.s07.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s07.lowdepth.tsv" -> "c7d6872b-val-" [dynamic=false];
+"4f56e78a-extern-n10.r10.s07.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s07.lowdepth.tsv" -> "dbbd0515-val-" [
+dynamic=true
+color=blue
+];
+"50a26fd9-extern-n10.r10.s08.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s08.sorted.trimmed.bam" -> "2663220e-val-" [dynamic=false];
+"50a26fd9-extern-n10.r10.s08.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s08.sorted.trimmed.bam" -> "f8719a37-val-" [
+dynamic=true
+color=blue
+];
+"50d6b15c-val-" -> "f8f55b4a-extern-n10.r10.s06.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s06.primers.bed" [dynamic=false];
+"50d7aacb-val-" -> "724a44b7-extern-n10.r10.s07.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s07.reference.fas" [dynamic=false];
+"50fcd1d5-val-" -> "76dcaa41-coerce-n10.r10.s05.Main.low_depth" [dynamic=false];
+"51a3cd8b-extern-n10.r10.s09.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s09.depth.txt" -> "95d3157b-val-" [
+dynamic=true
+color=blue
+];
+"51a3cd8b-extern-n10.r10.s09.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s09.depth.txt" -> "bab922d5-val-" [dynamic=false];
+"51b3fb11-val-" -> "16f6e6c5-extern-n10.r10.s09.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s09.consensus.fas" [dynamic=false];
+"51d45b78-val-" -> "278ec804-extern-n10.r10.s03.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s03.reference.gff" [dynamic=false];
+"51eb16d6-val-" -> "42ee43db-extern-n10.r10.s05.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s05.primers.bed" [dynamic=false];
+"523ae1f5-extern-n10.r10.s09.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s09.untrimmed.sorted.bam" -> "0a777a91-val-" [
+dynamic=true
+color=blue
+];
+"523ae1f5-extern-n10.r10.s09.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s09.untrimmed.sorted.bam" -> "a6abf8a0-val-" [dynamic=false];
+"523f91d4-val-" -> "51d45b78-val-" [dynamic=false];
+"535c2d14-coerce-n10.r10.s08.Main.fq1" -> "d32a13c9-intern-n10.r10.s08.Main.fq1-s3://niema-test/n10/r10/n10.r10.s08_R1.fastq" [dynamic=false];
+"53c725db-val-" -> "0a135613-val-" [dynamic=false];
+"53d838d0-val-" -> "146773e9-extern-n10.r10.s10.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s10.untrimmed.bam" [dynamic=false];
+"5474abb7-val-" -> "169cd1c2-val-" [dynamic=false];
+"54c2e389-val-" -> "d42e848f-val-" [dynamic=false];
+"54e40805-val-" -> "2dedb1a4-extern-n10.r10.s04.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s04.depth.txt" [dynamic=false];
+"554519f5-val-" -> "53d838d0-val-" [dynamic=false];
+"55b95638-val-" -> "f1a98f9e-val-" [dynamic=false];
+"55eda6d4-val-" -> "aea567a7-val-" [dynamic=false];
+"58195b8d-val-" -> "1597b7a6-val-" [dynamic=false];
+"58360849-val-" -> "45e25550-coerce-n10.r10.s10.Main.fq1" [dynamic=false];
+"584d4b1b-val-" -> "c5266561-coerce-n10.r10.s01.Main.fq1" [dynamic=false];
+"5855ac87-val-" -> "f6d1ad6b-extern-n10.r10.s05.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s05.reference.fas" [dynamic=false];
+"58a68517-val-" -> "eb042f10-extern-n10.r10.s06.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s06.untrimmed.bam" [dynamic=false];
+"58dc2bda-val-" -> "c22d6383-val-" [dynamic=false];
+"58dd8c13-val-" -> "9eeffc89-val-" [dynamic=false];
+"590960d4-val-" -> "f3daf330-coerce-n10.r10.s07.Main.untrimmed_bam" [dynamic=false];
+"59ba663c-val-" -> "9191ff99-val-" [dynamic=false];
+"59e95e09-val-" -> "a6abf8a0-val-" [dynamic=false];
+"5a2b8cdd-coerce-n10.r10.s01.Main.untrimmed_bam" -> "1864d140-val-" [dynamic=false];
+"5a2b8cdd-coerce-n10.r10.s01.Main.untrimmed_bam" -> "246946f4-val-" [dynamic=false];
+"5a2b8cdd-coerce-n10.r10.s01.Main.untrimmed_bam" -> "8259c9df-val-" [dynamic=false];
+"5a2b8cdd-coerce-n10.r10.s01.Main.untrimmed_bam" -> "ae002c6a-exec-n10.r10.s01.Main.untrimmed_bam" [
+dynamic=true
+color=blue
+];
+"5aca80e1-val-" -> "13096b1f-val-" [dynamic=false];
+"5aed44f4-extern-n10.r10.s08.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s08.variants.vcf" -> "55a5bb63-val-" [
+dynamic=true
+color=blue
+];
+"5aed44f4-extern-n10.r10.s08.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s08.variants.vcf" -> "a035c7db-val-" [dynamic=false];
+"5af19ae1-val-" -> "acf8c343-extern-n10.r10.s07.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s07.pileup.txt" [dynamic=false];
+"5b054fb3-val-" -> "49df3252-coerce-n10.r10.s08.Main.sorted_trimmed_bam" [dynamic=false];
+"5b0ae1ab-val-" -> "6ccc72a2-extern-n10.r10.s03.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s03.lowdepth.tsv" [dynamic=false];
+"5b7af539-val-" -> "bf772542-val-" [dynamic=false];
+"5bc97726-val-" -> "7769470a-val-" [dynamic=false];
+"5bcc23c5-val-" -> "cee4aea6-val-" [dynamic=false];
+"5bdf3ded-extern-n10.r10.s09.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s09.lowdepth.tsv" -> "9dc4144e-val-" [dynamic=false];
+"5bdf3ded-extern-n10.r10.s09.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s09.lowdepth.tsv" -> "dbbd0515-val-" [
+dynamic=true
+color=blue
+];
+"5c2580b4-val-" -> "0287e646-coerce-n10.r10.s03.Main.pileup" [dynamic=false];
+"5ecbf73f-val-" -> "178e1d68-val-" [dynamic=false];
+"5effb986-val-" -> "e6103cf3-coerce-n10.r10.s02.Main.trimmed_bam" [dynamic=false];
+"5f158d9f-val-" -> "219e666b-val-" [dynamic=false];
+"5fd224c3-val-" -> "f961b495-val-" [dynamic=false];
+"60037232-extern-n10.r10.s01.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s01.pileup.txt" -> "6539fcc3-val-" [
+dynamic=true
+color=blue
+];
+"60037232-extern-n10.r10.s01.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s01.pileup.txt" -> "aa3fe85d-val-" [dynamic=false];
+"6015ae1e-coerce-n10.r10.s01.Main.ref_gff" -> "e38044de-exec-n10.r10.s01.Main.ref_gff" [dynamic=false];
+"6099865f-val-" -> "bdc17309-val-" [dynamic=false];
+"60bc7f79-coerce-n10.r10.s03.Main.variants" -> "8259c9df-val-" [dynamic=false];
+"60bc7f79-coerce-n10.r10.s03.Main.variants" -> "8c0594fd-val-" [dynamic=false];
+"60bc7f79-coerce-n10.r10.s03.Main.variants" -> "d4df904f-exec-n10.r10.s03.Main.variants" [
+dynamic=true
+color=blue
+];
+"61186fec-val-" -> "d82d6f36-val-" [dynamic=false];
+"616d5ec4-val-" -> "e2aaac7a-extern-n10.r10.s10.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s10.sorted.trimmed.bam" [dynamic=false];
+"61911478-extern-n10.r10.s09.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s09.primers.bed" -> "53e16067-val-" [
+dynamic=true
+color=blue
+];
+"61911478-extern-n10.r10.s09.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s09.primers.bed" -> "6a052429-val-" [dynamic=false];
+"61996739-val-" -> "bc63def0-val-" [dynamic=false];
+"6219b0aa-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" -> "14f01059-exec-n10.r10.s08.Main.sorted_untrimmed_bam" [
+dynamic=true
+color=blue
+];
+"6219b0aa-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" -> "47a65a62-val-" [dynamic=false];
+"6233f999-val-" -> "5b054fb3-val-" [dynamic=false];
+"625d11fc-val-" -> "dee3f397-val-" [dynamic=false];
+"6282daea-val-" -> "72d888b8-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" [dynamic=false];
+"6333d82c-val-" -> "39470123-extern-n10.r10.s04.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s04.lowdepth.tsv" [dynamic=false];
+"6473ddd4-coerce-n10.r10.s03.Main.variants" -> "8259c9df-val-" [dynamic=false];
+"6473ddd4-coerce-n10.r10.s03.Main.variants" -> "b60acf9a-val-" [dynamic=false];
+"6473ddd4-coerce-n10.r10.s03.Main.variants" -> "d4df904f-exec-n10.r10.s03.Main.variants" [
+dynamic=true
+color=blue
+];
+"649816e1-val-" -> "acabae35-val-" [dynamic=false];
+"64c759b0-val-" -> "4d43b4a5-val-" [dynamic=false];
+"6501e0d3-val-" -> "98f4fcd3-val-" [dynamic=false];
+"65115c7a-extern-n10.r10.s10.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s10.variants.vcf" -> "55a5bb63-val-" [
+dynamic=true
+color=blue
+];
+"65115c7a-extern-n10.r10.s10.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s10.variants.vcf" -> "d82d6f36-val-" [dynamic=false];
+"652c8698-extern-n10.r10.s10.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s10.pileup.txt" -> "6539fcc3-val-" [
+dynamic=true
+color=blue
+];
+"652c8698-extern-n10.r10.s10.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s10.pileup.txt" -> "fd4583e9-val-" [dynamic=false];
+"6538d7a0-val-" -> "c28a7316-coerce-n10.r10.s06.Main.fq1" [dynamic=false];
+"65b4a7a7-val-" -> "9847a35b-val-" [dynamic=false];
+"65c6dc2e-val-" -> "6a052429-val-" [dynamic=false];
+"65ec4681-val-" -> "24675f39-val-" [dynamic=false];
+"6604a778-val-" -> "aa5f8363-val-" [dynamic=false];
+"668945cd-val-" -> "df34c85a-coerce-n10.r10.s03.Main.depth" [dynamic=false];
+"66ea289f-extern-n10.r10.s04.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s04.primers.bed" -> "53e16067-val-" [
+dynamic=true
+color=blue
+];
+"66ea289f-extern-n10.r10.s04.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s04.primers.bed" -> "6a052429-val-" [dynamic=false];
+"66f14d0b-extern-n10.r10.s10.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s10.lowdepth.tsv" -> "c0e6e452-val-" [dynamic=false];
+"66f14d0b-extern-n10.r10.s10.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s10.lowdepth.tsv" -> "dbbd0515-val-" [
+dynamic=true
+color=blue
+];
+"67705995-coerce-n10.r10.s03.Main.depth" -> "7cbc9d6f-val-" [dynamic=false];
+"67705995-coerce-n10.r10.s03.Main.depth" -> "eb78ba4e-exec-n10.r10.s03.Main.depth" [
+dynamic=true
+color=blue
+];
+"67c41991-val-" -> "189899ad-val-" [dynamic=false];
+"67c41991-val-" -> "2232d2cd-val-" [dynamic=false];
+"67c41991-val-" -> "271a1226-val-" [dynamic=false];
+"67c41991-val-" -> "554519f5-val-" [dynamic=false];
+"67c41991-val-" -> "a1bb5c3c-val-" [dynamic=false];
+"67c41991-val-" -> "b2bee82d-val-" [dynamic=false];
+"67c41991-val-" -> "bd4e02c0-val-" [dynamic=false];
+"67c41991-val-" -> "c5e8e66f-val-" [dynamic=false];
+"67c41991-val-" -> "da893999-val-" [dynamic=false];
+"67c41991-val-" -> "e273f0e6-val-" [dynamic=false];
+"67c41991-val-" -> "f615b8e1-val-" [dynamic=false];
+"67e6a693-val-" -> "5effb986-val-" [dynamic=false];
+"685f79a4-coerce-n10.r10.s08.Main.sorted_trimmed_bam" -> "76b1590a-val-" [dynamic=false];
+"685f79a4-coerce-n10.r10.s08.Main.sorted_trimmed_bam" -> "c4ff5aea-exec-n10.r10.s08.Main.sorted_trimmed_bam" [
+dynamic=true
+color=blue
+];
+"68a833a0-exec-n10.r10.s10.Main.untrimmed_bam" -> "03514a60-val-" [
+dynamic=true
+color=blue
+];
+"68a833a0-exec-n10.r10.s10.Main.untrimmed_bam" -> "2a214c93-val-" [
+dynamic=true
+color=blue
+];
+"68a833a0-exec-n10.r10.s10.Main.untrimmed_bam" -> "59e34a15-val-" [
+dynamic=true
+color=blue
+];
+"68be8f62-extern-n10.r10.s06.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s06.sorted.trimmed.bam" -> "c1aefe1b-val-" [dynamic=false];
+"68be8f62-extern-n10.r10.s06.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s06.sorted.trimmed.bam" -> "f8719a37-val-" [
+dynamic=true
+color=blue
+];
+"68ebc491-coerce-n10.r10.s05.Main.fq2" -> "f6e103f6-intern-n10.r10.s05.Main.fq2-s3://niema-test/n10/r10/n10.r10.s05_R2.fastq" [dynamic=false];
+"69517f0e-coerce-n10.r10.s05.Main.low_depth" -> "36f784c6-val-" [dynamic=false];
+"69517f0e-coerce-n10.r10.s05.Main.low_depth" -> "94016a97-exec-n10.r10.s05.Main.low_depth" [
+dynamic=true
+color=blue
+];
+"6a052429-val-" -> "1c50ff68-coerce-n10.r10.s01.Main.primer_bed" [dynamic=false];
+"6a1df9c3-extern-n10.r10.s07.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s07.sorted.trimmed.bam" -> "2f3f1f13-val-" [dynamic=false];
+"6a1df9c3-extern-n10.r10.s07.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s07.sorted.trimmed.bam" -> "f8719a37-val-" [
+dynamic=true
+color=blue
+];
+"6c780bd8-extern-n10.r10.s02.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s02.primers.bed" -> "53e16067-val-" [
+dynamic=true
+color=blue
+];
+"6c780bd8-extern-n10.r10.s02.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s02.primers.bed" -> "6a052429-val-" [dynamic=false];
+"6ccc72a2-extern-n10.r10.s03.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s03.lowdepth.tsv" -> "c4714051-val-" [dynamic=false];
+"6ccc72a2-extern-n10.r10.s03.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s03.lowdepth.tsv" -> "dbbd0515-val-" [
+dynamic=true
+color=blue
+];
+"6d615a4c-val-" -> "41f50479-val-" [dynamic=false];
+"6dee91b4-val-" -> "26361dd3-val-" [dynamic=false];
+"6dee91b4-val-" -> "394a22a0-val-" [dynamic=false];
+"6dee91b4-val-" -> "473fd6c3-val-" [dynamic=false];
+"6dee91b4-val-" -> "58195b8d-val-" [dynamic=false];
+"6dee91b4-val-" -> "71a1522f-val-" [dynamic=false];
+"6dee91b4-val-" -> "73713631-val-" [dynamic=false];
+"6dee91b4-val-" -> "7bb75d53-val-" [dynamic=false];
+"6dee91b4-val-" -> "98467414-val-" [dynamic=false];
+"6dee91b4-val-" -> "d46251d3-val-" [dynamic=false];
+"6dee91b4-val-" -> "df054f85-val-" [dynamic=false];
+"6dee91b4-val-" -> "f471e566-val-" [dynamic=false];
+"70325c5c-val-" -> "54e40805-val-" [dynamic=false];
+"7084d651-extern-n10.r10.s10.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s10.consensus.fas" -> "c8176cf8-val-" [dynamic=false];
+"7084d651-extern-n10.r10.s10.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s10.consensus.fas" -> "dec22858-val-" [
+dynamic=true
+color=blue
+];
+"70be9555-extern-n10.r10.s07.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s07.depth.txt" -> "668945cd-val-" [dynamic=false];
+"70be9555-extern-n10.r10.s07.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s07.depth.txt" -> "95d3157b-val-" [
+dynamic=true
+color=blue
+];
+"713d9fc1-coerce-n10.r10.s03.Main.variants" -> "8259c9df-val-" [dynamic=false];
+"713d9fc1-coerce-n10.r10.s03.Main.variants" -> "aa28f567-val-" [dynamic=false];
+"713d9fc1-coerce-n10.r10.s03.Main.variants" -> "d4df904f-exec-n10.r10.s03.Main.variants" [
+dynamic=true
+color=blue
+];
+"713e0dc8-extern-n10.r10.s01.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s01.reference.gff" -> "26b3e125-val-" [
+dynamic=true
+color=blue
+];
+"713e0dc8-extern-n10.r10.s01.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s01.reference.gff" -> "9439857c-val-" [dynamic=false];
+"715d6a36-val-" -> "86a44fea-coerce-n10.r10.s05.Main.consensus" [dynamic=false];
+"71a1522f-val-" -> "459e28b1-val-" [dynamic=false];
+"72161f4f-val-" -> "dc7dc5e1-extern-n10.r10.s01.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s01.sorted.trimmed.bam" [dynamic=false];
+"721a4883-extern-n10.r10.s04.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s04.untrimmed.sorted.bam" -> "0a777a91-val-" [
+dynamic=true
+color=blue
+];
+"721a4883-extern-n10.r10.s04.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s04.untrimmed.sorted.bam" -> "6282daea-val-" [dynamic=false];
+"724a44b7-extern-n10.r10.s07.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s07.reference.fas" -> "131eeac2-val-" [dynamic=false];
+"724a44b7-extern-n10.r10.s07.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s07.reference.fas" -> "59e34a15-val-" [
+dynamic=true
+color=blue
+];
+"725390ce-val-" -> "ca3ea8de-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" [dynamic=false];
+"72d888b8-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" -> "14f01059-exec-n10.r10.s08.Main.sorted_untrimmed_bam" [
+dynamic=true
+color=blue
+];
+"72d888b8-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" -> "65ec4681-val-" [dynamic=false];
+"73713631-val-" -> "e8c933b5-val-" [dynamic=false];
+"73b7e198-val-" -> "cd5140a4-val-" [dynamic=false];
+"7531ca96-val-" -> "ff974502-coerce-n10.r10.s08.Main.sorted_trimmed_bam" [dynamic=false];
+"75d3f39d-val-" -> "23255a70-val-" [dynamic=false];
+"7639f0e4-val-" -> "713e0dc8-extern-n10.r10.s01.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s01.reference.gff" [dynamic=false];
+"766a7fa5-extern-n10.r10.s02.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s02.untrimmed.bam" -> "033be6cd-val-" [
+dynamic=true
+color=blue
+];
+"766a7fa5-extern-n10.r10.s02.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s02.untrimmed.bam" -> "88145b94-val-" [dynamic=false];
+"7682bb97-val-" -> "2cdbbc73-extern-n10.r10.s03.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s03.primers.bed" [dynamic=false];
+"76b1590a-val-" -> "7e95a44d-val-" [dynamic=false];
+"76c921bc-val-" -> "a035c7db-val-" [dynamic=false];
+"76dcaa41-coerce-n10.r10.s05.Main.low_depth" -> "8895ace8-val-" [dynamic=false];
+"76dcaa41-coerce-n10.r10.s05.Main.low_depth" -> "94016a97-exec-n10.r10.s05.Main.low_depth" [
+dynamic=true
+color=blue
+];
+"77682ae4-val-" -> "d1383da8-extern-n10.r10.s02.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s02.sorted.trimmed.bam" [dynamic=false];
+"7769470a-val-" -> "2332bb6d-extern-n10.r10.s09.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s09.untrimmed.bam" [dynamic=false];
+"77c47648-val-" -> "9032d22d-extern-n10.r10.s03.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s03.depth.txt" [dynamic=false];
+"77e20788-val-" -> "d7bb2d36-coerce-n10.r10.s05.Main.low_depth" [dynamic=false];
+"7801d792-coerce-n10.r10.s05.Main.low_depth" -> "94016a97-exec-n10.r10.s05.Main.low_depth" [
+dynamic=true
+color=blue
+];
+"7801d792-coerce-n10.r10.s05.Main.low_depth" -> "9d51a72a-val-" [dynamic=false];
+"782a5dbb-val-" -> "bab0800b-val-" [dynamic=false];
+"7871c211-val-" -> "35256b9f-val-" [dynamic=false];
+"78c6a73f-val-" -> "d2966217-coerce-n10.r10.s03.Main.variants" [dynamic=false];
+"79789300-extern-n10.r10.s03.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s03.sorted.trimmed.bam" -> "f5ae0e7e-val-" [dynamic=false];
+"79789300-extern-n10.r10.s03.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s03.sorted.trimmed.bam" -> "f8719a37-val-" [
+dynamic=true
+color=blue
+];
+"79c06471-val-" -> "c185f9f5-val-" [dynamic=false];
+"7bb75d53-val-" -> "c2f48d29-val-" [dynamic=false];
+"7bbc31bd-extern-n10.r10.s04.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s04.reference.fas" -> "131eeac2-val-" [dynamic=false];
+"7bbc31bd-extern-n10.r10.s04.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s04.reference.fas" -> "59e34a15-val-" [
+dynamic=true
+color=blue
+];
+"7bf34f4f-val-" -> "ed9fd3f8-extern-n10.r10.s01.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s01.untrimmed.bam" [dynamic=false];
+"7c0ddb07-val-" -> "ffaf1127-coerce-n10.r10.s04.Main.fq1" [dynamic=false];
+"7c10cb10-val-" -> "84d668ef-val-" [dynamic=false];
+"7cbc9d6f-val-" -> "ca815875-val-" [dynamic=false];
+"7dc9f187-coerce-n10.r10.s02.Main.trimmed_bam" -> "65c6dc2e-val-" [dynamic=false];
+"7dc9f187-coerce-n10.r10.s02.Main.trimmed_bam" -> "a44d8c2f-exec-n10.r10.s06.Main.trimmed_bam" [
+dynamic=true
+color=blue
+];
+"7dc9f187-coerce-n10.r10.s02.Main.trimmed_bam" -> "d6a2155e-val-" [dynamic=false];
+"7e95a44d-val-" -> "7dc9f187-coerce-n10.r10.s02.Main.trimmed_bam" [dynamic=false];
+"7ea233ed-coerce-n10.r10.s02.Main.fq2" -> "76229822-intern-n10.r10.s02.Main.fq2-s3://niema-test/n10/r10/n10.r10.s02_R2.fastq" [dynamic=false];
+"7ea6c91b-coerce-n10.r10.s03.Main.variants" -> "8259c9df-val-" [dynamic=false];
+"7ea6c91b-coerce-n10.r10.s03.Main.variants" -> "d4df904f-exec-n10.r10.s03.Main.variants" [
+dynamic=true
+color=blue
+];
+"7ea6c91b-coerce-n10.r10.s03.Main.variants" -> "fdeacbfe-val-" [dynamic=false];
+"7f086326-val-" -> "efe797ee-val-" [dynamic=false];
+"7f1ea91d-val-" -> "9682ec78-val-" [dynamic=false];
+"7f737c76-val-" -> "1be48dcf-val-" [dynamic=false];
+"806bdbb6-coerce-n10.r10.s03.Main.untrimmed_bam" -> "31f58c7e-exec-n10.r10.s03.Main.untrimmed_bam" [
+dynamic=true
+color=blue
+];
+"806bdbb6-coerce-n10.r10.s03.Main.untrimmed_bam" -> "8259c9df-val-" [dynamic=false];
+"806bdbb6-coerce-n10.r10.s03.Main.untrimmed_bam" -> "876e5177-val-" [dynamic=false];
+"806bdbb6-coerce-n10.r10.s03.Main.untrimmed_bam" -> "973b1d49-val-" [dynamic=false];
+"8129ceb2-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" -> "14f01059-exec-n10.r10.s08.Main.sorted_untrimmed_bam" [
+dynamic=true
+color=blue
+];
+"8129ceb2-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" -> "d12622b9-val-" [dynamic=false];
+"824ab244-val-" -> "2f8e638f-val-" [dynamic=false];
+"825183ae-val-" -> "3769875d-extern-n10.r10.s07.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s07.untrimmed.bam" [dynamic=false];
+"8259c9df-val-" -> "131eeac2-val-" [dynamic=false];
+"842eb080-val-" -> "cddd89b5-extern-n10.r10.s06.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s06.untrimmed.sorted.bam" [dynamic=false];
+"84a0de31-coerce-n10.r10.s03.Main.pileup" -> "032071f2-exec-n10.r10.s03.Main.pileup" [
+dynamic=true
+color=blue
+];
+"84a0de31-coerce-n10.r10.s03.Main.pileup" -> "8259c9df-val-" [dynamic=false];
+"84a0de31-coerce-n10.r10.s03.Main.pileup" -> "8c0594fd-val-" [dynamic=false];
+"84b147dc-val-" -> "0ab27e23-val-" [dynamic=false];
+"84cee04c-val-" -> "842eb080-val-" [dynamic=false];
+"84d668ef-val-" -> "f6d55288-coerce-n10.r10.s04.Main.fq2" [dynamic=false];
+"859a2f77-val-" -> "61911478-extern-n10.r10.s09.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s09.primers.bed" [dynamic=false];
+"85a9e7bd-coerce-n10.r10.s03.Main.pileup" -> "032071f2-exec-n10.r10.s03.Main.pileup" [
+dynamic=true
+color=blue
+];
+"85a9e7bd-coerce-n10.r10.s03.Main.pileup" -> "6233f999-val-" [dynamic=false];
+"85a9e7bd-coerce-n10.r10.s03.Main.pileup" -> "8259c9df-val-" [dynamic=false];
+"86a2ffff-coerce-n10.r10.s03.Main.depth" -> "6233f999-val-" [dynamic=false];
+"86a2ffff-coerce-n10.r10.s03.Main.depth" -> "eb78ba4e-exec-n10.r10.s03.Main.depth" [
+dynamic=true
+color=blue
+];
+"86a44fea-coerce-n10.r10.s05.Main.consensus" -> "158d694e-val-" [dynamic=false];
+"86a44fea-coerce-n10.r10.s05.Main.consensus" -> "8259c9df-val-" [dynamic=false];
+"86a44fea-coerce-n10.r10.s05.Main.consensus" -> "b4d54d23-exec-n10.r10.s05.Main.consensus" [
+dynamic=true
+color=blue
+];
+"86a44fea-coerce-n10.r10.s05.Main.consensus" -> "c7c2efb1-val-" [dynamic=false];
+"86c2a272-val-" -> "a2f14842-coerce-n10.r10.s06.Main.untrimmed_bam" [dynamic=false];
+"87330c57-extern-n10.r10.s08.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s08.untrimmed.bam" -> "033be6cd-val-" [
+dynamic=true
+color=blue
+];
+"87330c57-extern-n10.r10.s08.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s08.untrimmed.bam" -> "35256b9f-val-" [dynamic=false];
+"876e5177-val-" -> "c2c9468f-val-" [dynamic=false];
+"878a735a-val-" -> "00424d45-coerce-n10.r10.s03.Main.pileup" [dynamic=false];
+"88122d3b-val-" -> "69517f0e-coerce-n10.r10.s05.Main.low_depth" [dynamic=false];
+"88145b94-val-" -> "e8d13125-coerce-n10.r10.s02.Main.untrimmed_bam" [dynamic=false];
+"884af8ed-val-" -> "67705995-coerce-n10.r10.s03.Main.depth" [dynamic=false];
+"8887dd98-val-" -> "e547eedd-coerce-n10.r10.s05.Main.low_depth" [dynamic=false];
+"8895ace8-val-" -> "884af8ed-val-" [dynamic=false];
+"889fdbdf-coerce-n10.r10.s03.Main.pileup" -> "032071f2-exec-n10.r10.s03.Main.pileup" [
+dynamic=true
+color=blue
+];
+"889fdbdf-coerce-n10.r10.s03.Main.pileup" -> "8259c9df-val-" [dynamic=false];
+"889fdbdf-coerce-n10.r10.s03.Main.pileup" -> "fdeacbfe-val-" [dynamic=false];
+"88b5cac7-extern-n10.r10.s03.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s03.untrimmed.sorted.bam" -> "0a777a91-val-" [
+dynamic=true
+color=blue
+];
+"88b5cac7-extern-n10.r10.s03.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s03.untrimmed.sorted.bam" -> "cf52974f-val-" [dynamic=false];
+"88d7cb07-val-" -> "1cd18b84-val-" [dynamic=false];
+"88e8bc3b-coerce-n10.r10.s03.Main.depth" -> "aa28f567-val-" [dynamic=false];
+"88e8bc3b-coerce-n10.r10.s03.Main.depth" -> "eb78ba4e-exec-n10.r10.s03.Main.depth" [
+dynamic=true
+color=blue
+];
+"8aed8e65-val-" -> "2dbd58e9-val-" [dynamic=false];
+"8b4426f0-coerce-n10.r10.s05.Main.consensus" -> "8259c9df-val-" [dynamic=false];
+"8b4426f0-coerce-n10.r10.s05.Main.consensus" -> "b4d54d23-exec-n10.r10.s05.Main.consensus" [
+dynamic=true
+color=blue
+];
+"8b4426f0-coerce-n10.r10.s05.Main.consensus" -> "cc253833-val-" [dynamic=false];
+"8b4426f0-coerce-n10.r10.s05.Main.consensus" -> "ecfbf18a-val-" [dynamic=false];
+"8b733e4a-val-" -> "0de1315a-val-" [dynamic=false];
+"8be49def-val-" -> "0cb5daa4-val-" [dynamic=false];
+"8c0594fd-val-" -> "7531ca96-val-" [dynamic=false];
+"8c4de157-val-" -> "ffa0b76b-coerce-n10.r10.s09.Main.untrimmed_bam" [dynamic=false];
+"8c76caa4-val-" -> "7084d651-extern-n10.r10.s10.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s10.consensus.fas" [dynamic=false];
+"8cdf7d3e-extern-n10.r10.s03.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s03.consensus.fas" -> "715d6a36-val-" [dynamic=false];
+"8cdf7d3e-extern-n10.r10.s03.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s03.consensus.fas" -> "dec22858-val-" [
+dynamic=true
+color=blue
+];
+"8dc6baff-val-" -> "3e5e66bb-val-" [dynamic=false];
+"8dcb3e79-val-" -> "fddbfa8b-coerce-n10.r10.s08.Main.sorted_trimmed_bam" [dynamic=false];
+"8df12668-val-" -> "e5944ce5-coerce-n10.r10.s05.Main.fq1" [dynamic=false];
+"8df6af82-val-" -> "7ea233ed-coerce-n10.r10.s02.Main.fq2" [dynamic=false];
+"8e1b2f90-val-" -> "1a9cb805-extern-n10.r10.s09.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s09.reference.fas" [dynamic=false];
+"8e737b5e-extern-n10.r10.s08.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s08.lowdepth.tsv" -> "77e20788-val-" [dynamic=false];
+"8e737b5e-extern-n10.r10.s08.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s08.lowdepth.tsv" -> "dbbd0515-val-" [
+dynamic=true
+color=blue
+];
+"8e975368-val-" -> "2aca7f72-val-" [dynamic=false];
+"8e975368-val-" -> "3575d301-val-" [dynamic=false];
+"8e975368-val-" -> "43fe03ed-val-" [dynamic=false];
+"8e975368-val-" -> "4d632963-val-" [dynamic=false];
+"8e975368-val-" -> "5bcc23c5-val-" [dynamic=false];
+"8e975368-val-" -> "79c06471-val-" [dynamic=false];
+"8e975368-val-" -> "84cee04c-val-" [dynamic=false];
+"8e975368-val-" -> "9f53653b-val-" [dynamic=false];
+"8e975368-val-" -> "ac96bc1a-val-" [dynamic=false];
+"8e975368-val-" -> "ae4d5442-val-" [dynamic=false];
+"8e975368-val-" -> "c2ba096b-val-" [dynamic=false];
+"8f431d74-val-" -> "cf01952b-extern-n10.r10.s08.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s08.consensus.fas" [dynamic=false];
+"8fe08b6a-coerce-n10.r10.s02.Main.trimmed_bam" -> "59e95e09-val-" [dynamic=false];
+"8fe08b6a-coerce-n10.r10.s02.Main.trimmed_bam" -> "65c6dc2e-val-" [dynamic=false];
+"8fe08b6a-coerce-n10.r10.s02.Main.trimmed_bam" -> "a44d8c2f-exec-n10.r10.s06.Main.trimmed_bam" [
+dynamic=true
+color=blue
+];
+"9032d22d-extern-n10.r10.s03.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s03.depth.txt" -> "95d3157b-val-" [
+dynamic=true
+color=blue
+];
+"9032d22d-extern-n10.r10.s03.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s03.depth.txt" -> "d74fccad-val-" [dynamic=false];
+"9185ca14-extern-n10.r10.s08.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s08.untrimmed.sorted.bam" -> "0a777a91-val-" [
+dynamic=true
+color=blue
+];
+"9185ca14-extern-n10.r10.s08.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s08.untrimmed.sorted.bam" -> "e3845521-val-" [dynamic=false];
+"9191ff99-val-" -> "007ff6d1-coerce-n10.r10.s03.Main.depth" [dynamic=false];
+"91f1f233-val-" -> "3b0cb470-extern-n10.r10.s04.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s04.untrimmed.bam" [dynamic=false];
+"91f6ba04-val-" -> "cc3650bb-extern-n10.r10.s07.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s07.variants.vcf" [dynamic=false];
+"92fab1a7-val-" -> "3cf1d592-val-" [dynamic=false];
+"930535e6-val-" -> "3646733f-coerce-n10.r10.s02.Main.trimmed_bam" [dynamic=false];
+"93783aa2-val-" -> "825183ae-val-" [dynamic=false];
+"93a102d8-val-" -> "bd1aba95-extern-n10.r10.s04.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s04.variants.vcf" [dynamic=false];
+"93a597f1-extern-n10.r10.s09.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s09.sorted.trimmed.bam" -> "0ab49e45-val-" [dynamic=false];
+"93a597f1-extern-n10.r10.s09.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s09.sorted.trimmed.bam" -> "f8719a37-val-" [
+dynamic=true
+color=blue
+];
+"94016a97-exec-n10.r10.s05.Main.low_depth" -> "95d3157b-val-" [
+dynamic=true
+color=blue
+];
+"9424aa75-val-" -> "ba15cb45-val-" [dynamic=false];
+"9439857c-val-" -> "6015ae1e-coerce-n10.r10.s01.Main.ref_gff" [dynamic=false];
+"9592d40f-val-" -> "77682ae4-val-" [dynamic=false];
+"966d998b-val-" -> "8df6af82-val-" [dynamic=false];
+"966f092a-extern-n10.r10.s02.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s02.reference.gff" -> "26b3e125-val-" [
+dynamic=true
+color=blue
+];
+"966f092a-extern-n10.r10.s02.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s02.reference.gff" -> "9439857c-val-" [dynamic=false];
+"9681c98a-coerce-n10.r10.s02.Main.trimmed_bam" -> "65c6dc2e-val-" [dynamic=false];
+"9681c98a-coerce-n10.r10.s02.Main.trimmed_bam" -> "a44d8c2f-exec-n10.r10.s06.Main.trimmed_bam" [
+dynamic=true
+color=blue
+];
+"9681c98a-coerce-n10.r10.s02.Main.trimmed_bam" -> "ce0e49f6-val-" [dynamic=false];
+"9682ec78-val-" -> "3e2004e3-extern-n10.r10.s01.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s01.depth.txt" [dynamic=false];
+"96be85a3-extern-n10.r10.s02.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s02.reference.fas" -> "131eeac2-val-" [dynamic=false];
+"96be85a3-extern-n10.r10.s02.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s02.reference.fas" -> "59e34a15-val-" [
+dynamic=true
+color=blue
+];
+"973b1d49-val-" -> "e67a6920-val-" [dynamic=false];
+"98467414-val-" -> "a55b1a8d-val-" [dynamic=false];
+"9847a35b-val-" -> "4c6115c1-extern-n10.r10.s07.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s07.consensus.fas" [dynamic=false];
+"98f4fcd3-val-" -> "0326d02b-extern-n10.r10.s05.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s05.lowdepth.tsv" [dynamic=false];
+"992a25ea-extern-n10.r10.s05.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s05.untrimmed.sorted.bam" -> "0a777a91-val-" [
+dynamic=true
+color=blue
+];
+"992a25ea-extern-n10.r10.s05.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s05.untrimmed.sorted.bam" -> "1a3acc5b-val-" [dynamic=false];
+"994dff24-val-" -> "d2625aa7-extern-n10.r10.s05.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s05.consensus.fas" [dynamic=false];
+"99abe5ea-val-" -> "9e9cf600-extern-n10.r10.s08.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s08.primers.bed" [dynamic=false];
+"9a42f4c6-val-" -> "12daa468-val-" [dynamic=false];
+"9a42f4c6-val-" -> "189d9483-val-" [dynamic=false];
+"9a42f4c6-val-" -> "2f947710-val-" [dynamic=false];
+"9a42f4c6-val-" -> "4078e038-val-" [dynamic=false];
+"9a42f4c6-val-" -> "523f91d4-val-" [dynamic=false];
+"9a42f4c6-val-" -> "64c759b0-val-" [dynamic=false];
+"9a42f4c6-val-" -> "8dc6baff-val-" [dynamic=false];
+"9a42f4c6-val-" -> "a44703f6-val-" [dynamic=false];
+"9a42f4c6-val-" -> "d2c23f83-val-" [dynamic=false];
+"9a42f4c6-val-" -> "e3a5af88-val-" [dynamic=false];
+"9a42f4c6-val-" -> "f68368fe-val-" [dynamic=false];
+"9b3b7130-extern-n10.r10.s06.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s06.depth.txt" -> "95d3157b-val-" [
+dynamic=true
+color=blue
+];
+"9b3b7130-extern-n10.r10.s06.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s06.depth.txt" -> "d42e848f-val-" [dynamic=false];
+"9bd60ff6-extern-n10.r10.s10.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s10.depth.txt" -> "95d3157b-val-" [
+dynamic=true
+color=blue
+];
+"9bd60ff6-extern-n10.r10.s10.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s10.depth.txt" -> "bc63def0-val-" [dynamic=false];
+"9c08713e-coerce-n10.r10.s03.Main.pileup" -> "032071f2-exec-n10.r10.s03.Main.pileup" [
+dynamic=true
+color=blue
+];
+"9c08713e-coerce-n10.r10.s03.Main.pileup" -> "8259c9df-val-" [dynamic=false];
+"9c08713e-coerce-n10.r10.s03.Main.pileup" -> "b60acf9a-val-" [dynamic=false];
+"9d33e3e1-val-" -> "dd833962-val-" [dynamic=false];
+"9d51a72a-val-" -> "bab922d5-val-" [dynamic=false];
+"9d9bfa75-coerce-n10.r10.s10.Main.fq2" -> "a2fef1ac-intern-n10.r10.s10.Main.fq2-s3://niema-test/n10/r10/n10.r10.s10_R2.fastq" [dynamic=false];
+"9dc4144e-val-" -> "7801d792-coerce-n10.r10.s05.Main.low_depth" [dynamic=false];
+"9e4d8184-val-" -> "058e1734-val-" [dynamic=false];
+"9e9cf600-extern-n10.r10.s08.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s08.primers.bed" -> "53e16067-val-" [
+dynamic=true
+color=blue
+];
+"9e9cf600-extern-n10.r10.s08.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s08.primers.bed" -> "6a052429-val-" [dynamic=false];
+"9eb1b26e-extern-n10.r10.s10.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s10.reference.fas" -> "131eeac2-val-" [dynamic=false];
+"9eb1b26e-extern-n10.r10.s10.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s10.reference.fas" -> "59e34a15-val-" [
+dynamic=true
+color=blue
+];
+"9ebe601f-val-" -> "4766f498-val-" [dynamic=false];
+"9eeffc89-val-" -> "6c780bd8-extern-n10.r10.s02.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s02.primers.bed" [dynamic=false];
+"9f0ad7ce-coerce-n10.r10.s05.Main.low_depth" -> "61996739-val-" [dynamic=false];
+"9f0ad7ce-coerce-n10.r10.s05.Main.low_depth" -> "94016a97-exec-n10.r10.s05.Main.low_depth" [
+dynamic=true
+color=blue
+];
+"9f3817da-val-" -> "edca56ac-val-" [dynamic=false];
+"9f53653b-val-" -> "1e431f5e-val-" [dynamic=false];
+"9fc24c1f-val-" -> "68ebc491-coerce-n10.r10.s05.Main.fq2" [dynamic=false];
+"a035c7db-val-" -> "1b6fc058-coerce-n10.r10.s03.Main.variants" [dynamic=false];
+"a0dd1604-val-" -> "f3130a9a-val-" [dynamic=false];
+"a0e25b8e-val-" -> "58360849-val-" [dynamic=false];
+"a0e88bb3-val-" -> "7c0ddb07-val-" [dynamic=false];
+"a1bb5c3c-val-" -> "b6ad4f9f-val-" [dynamic=false];
+"a2e430cb-exec-n10.r10.s02.Main.untrimmed_bam" -> "59e34a15-val-" [
+dynamic=true
+color=blue
+];
+"a2e430cb-exec-n10.r10.s02.Main.untrimmed_bam" -> "c37fb505-val-" [
+dynamic=true
+color=blue
+];
+"a2e430cb-exec-n10.r10.s02.Main.untrimmed_bam" -> "c40d8328-val-" [
+dynamic=true
+color=blue
+];
+"a2f14842-coerce-n10.r10.s06.Main.untrimmed_bam" -> "448c5146-exec-n10.r10.s06.Main.untrimmed_bam" [
+dynamic=true
+color=blue
+];
+"a2f14842-coerce-n10.r10.s06.Main.untrimmed_bam" -> "8259c9df-val-" [dynamic=false];
+"a2f14842-coerce-n10.r10.s06.Main.untrimmed_bam" -> "c0476c0b-val-" [dynamic=false];
+"a2f14842-coerce-n10.r10.s06.Main.untrimmed_bam" -> "cd3391fa-val-" [dynamic=false];
+"a352360f-val-" -> "0b9be667-val-" [dynamic=false];
+"a35a35ca-val-" -> "77e20788-val-" [dynamic=false];
+"a3bee47a-val-" -> "072716bf-val-" [dynamic=false];
+"a44703f6-val-" -> "7682bb97-val-" [dynamic=false];
+"a44d8c2f-exec-n10.r10.s06.Main.trimmed_bam" -> "0a777a91-val-" [
+dynamic=true
+color=blue
+];
+"a44d8c2f-exec-n10.r10.s06.Main.trimmed_bam" -> "53e16067-val-" [
+dynamic=true
+color=blue
+];
+"a490d04b-val-" -> "e5e615f5-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" [dynamic=false];
+"a55b1a8d-val-" -> "d102352f-extern-n10.r10.s08.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s08.reference.fas" [dynamic=false];
+"a601958c-val-" -> "1d85263c-extern-n10.r10.s02.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s02.untrimmed.sorted.bam" [dynamic=false];
+"a6abf8a0-val-" -> "47a4b430-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" [dynamic=false];
+"a71d5d58-val-" -> "eb9dc199-val-" [dynamic=false];
+"a7269c53-val-" -> "41fd43fd-val-" [dynamic=false];
+"a82c341d-coerce-n10.r10.s08.Main.untrimmed_bam" -> "25d81e73-exec-n10.r10.s08.Main.untrimmed_bam" [
+dynamic=true
+color=blue
+];
+"a82c341d-coerce-n10.r10.s08.Main.untrimmed_bam" -> "30d43f28-val-" [dynamic=false];
+"a82c341d-coerce-n10.r10.s08.Main.untrimmed_bam" -> "8259c9df-val-" [dynamic=false];
+"a82c341d-coerce-n10.r10.s08.Main.untrimmed_bam" -> "aa529e4c-val-" [dynamic=false];
+"a85466bb-val-" -> "d98d1c1d-coerce-n10.r10.s05.Main.untrimmed_bam" [dynamic=false];
+"a8ba8f1c-val-" -> "87330c57-extern-n10.r10.s08.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s08.untrimmed.bam" [dynamic=false];
+"a9039baf-val-" -> "b149c062-val-" [dynamic=false];
+"a92277d0-val-" -> "1cf9f8bc-coerce-n10.r10.s08.Main.sorted_trimmed_bam" [dynamic=false];
+"a9751225-val-" -> "9fc24c1f-val-" [dynamic=false];
+"a9a1b6b3-val-" -> "8c4de157-val-" [dynamic=false];
+"a9e597b5-val-" -> "d8834aac-coerce-n10.r10.s05.Main.consensus" [dynamic=false];
+"a9f6df01-extern-n10.r10.s03.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s03.pileup.txt" -> "6539fcc3-val-" [
+dynamic=true
+color=blue
+];
+"a9f6df01-extern-n10.r10.s03.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s03.pileup.txt" -> "ba2cfe95-val-" [dynamic=false];
+"aa28f567-val-" -> "f5ae0e7e-val-" [dynamic=false];
+"aa3fe85d-val-" -> "9c08713e-coerce-n10.r10.s03.Main.pileup" [dynamic=false];
+"aa529e4c-val-" -> "06a0bead-val-" [dynamic=false];
+"aa5f8363-val-" -> "4ba0047c-coerce-n10.r10.s05.Main.low_depth" [dynamic=false];
+"aaf30d59-val-" -> "668945cd-val-" [dynamic=false];
+"aaf3199e-extern-n10.r10.s01.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s01.variants.vcf" -> "2d140771-val-" [dynamic=false];
+"aaf3199e-extern-n10.r10.s01.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s01.variants.vcf" -> "55a5bb63-val-" [
+dynamic=true
+color=blue
+];
+"ab042e08-extern-n10.r10.s02.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s02.consensus.fas" -> "40a5160a-val-" [dynamic=false];
+"ab042e08-extern-n10.r10.s02.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s02.consensus.fas" -> "dec22858-val-" [
+dynamic=true
+color=blue
+];
+"ab37c7fe-coerce-n10.r10.s03.Main.depth" -> "d4c98d25-val-" [dynamic=false];
+"ab37c7fe-coerce-n10.r10.s03.Main.depth" -> "eb78ba4e-exec-n10.r10.s03.Main.depth" [
+dynamic=true
+color=blue
+];
+"ab4c35b1-val-" -> "4f22521b-val-" [dynamic=false];
+"ab717fd7-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" -> "14f01059-exec-n10.r10.s08.Main.sorted_untrimmed_bam" [
+dynamic=true
+color=blue
+];
+"ab717fd7-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" -> "7871c211-val-" [dynamic=false];
+"ac3942bd-val-" -> "ab37c7fe-coerce-n10.r10.s03.Main.depth" [dynamic=false];
+"ac96bc1a-val-" -> "58a68517-val-" [dynamic=false];
+"acaaace3-coerce-n10.r10.s03.Main.depth" -> "eb78ba4e-exec-n10.r10.s03.Main.depth" [
+dynamic=true
+color=blue
+];
+"acaaace3-coerce-n10.r10.s03.Main.depth" -> "fdeacbfe-val-" [dynamic=false];
+"acabae35-val-" -> "3260ec96-extern-n10.r10.s05.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s05.depth.txt" [dynamic=false];
+"acb524a7-val-" -> "3e683f17-val-" [dynamic=false];
+"acf8c343-extern-n10.r10.s07.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s07.pileup.txt" -> "2bd06ec0-val-" [dynamic=false];
+"acf8c343-extern-n10.r10.s07.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s07.pileup.txt" -> "6539fcc3-val-" [
+dynamic=true
+color=blue
+];
+"ad72d4b7-val-" -> "725390ce-val-" [dynamic=false];
+"adab6cd8-val-" -> "36215c0c-val-" [dynamic=false];
+"ae002c6a-exec-n10.r10.s01.Main.untrimmed_bam" -> "423858e2-val-" [
+dynamic=true
+color=blue
+];
+"ae002c6a-exec-n10.r10.s01.Main.untrimmed_bam" -> "59e34a15-val-" [
+dynamic=true
+color=blue
+];
+"ae002c6a-exec-n10.r10.s01.Main.untrimmed_bam" -> "6caee3e0-val-" [
+dynamic=true
+color=blue
+];
+"ae4d5442-val-" -> "afc20e62-val-" [dynamic=false];
+"aea567a7-val-" -> "c5d724df-coerce-n10.r10.s09.Main.fq2" [dynamic=false];
+"aeaab7f3-extern-n10.r10.s08.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s08.depth.txt" -> "95d3157b-val-" [
+dynamic=true
+color=blue
+];
+"aeaab7f3-extern-n10.r10.s08.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s08.depth.txt" -> "bf32c9b2-val-" [dynamic=false];
+"af98ca56-val-" -> "d276eaa9-coerce-n10.r10.s01.Main.fq2" [dynamic=false];
+"afc20e62-val-" -> "bf896b6e-extern-n10.r10.s06.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s06.variants.vcf" [dynamic=false];
+"b0534761-val-" -> "7bf34f4f-val-" [dynamic=false];
+"b149c062-val-" -> "e51e092f-extern-n10.r10.s02.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s02.depth.txt" [dynamic=false];
+"b1f16c0b-val-" -> "88122d3b-val-" [dynamic=false];
+"b204c147-extern-n10.r10.s10.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s10.reference.gff" -> "26b3e125-val-" [
+dynamic=true
+color=blue
+];
+"b204c147-extern-n10.r10.s10.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s10.reference.gff" -> "9439857c-val-" [dynamic=false];
+"b26afabb-coerce-n10.r10.s03.Main.pileup" -> "032071f2-exec-n10.r10.s03.Main.pileup" [
+dynamic=true
+color=blue
+];
+"b26afabb-coerce-n10.r10.s03.Main.pileup" -> "8259c9df-val-" [dynamic=false];
+"b26afabb-coerce-n10.r10.s03.Main.pileup" -> "d4c98d25-val-" [dynamic=false];
+"b2a36bae-val-" -> "5af19ae1-val-" [dynamic=false];
+"b2b3e561-val-" -> "bd296563-coerce-n10.r10.s05.Main.consensus" [dynamic=false];
+"b2bee82d-val-" -> "4a689319-val-" [dynamic=false];
+"b32ed7a3-val-" -> "9681c98a-coerce-n10.r10.s02.Main.trimmed_bam" [dynamic=false];
+"b3e12313-val-" -> "652c8698-extern-n10.r10.s10.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s10.pileup.txt" [dynamic=false];
+"b4d54d23-exec-n10.r10.s05.Main.consensus" -> "55a5bb63-val-" [
+dynamic=true
+color=blue
+];
+"b4d54d23-exec-n10.r10.s05.Main.consensus" -> "59e34a15-val-" [
+dynamic=true
+color=blue
+];
+"b4d54d23-exec-n10.r10.s05.Main.consensus" -> "dbbd0515-val-" [
+dynamic=true
+color=blue
+];
+"b53189fe-val-" -> "859a2f77-val-" [dynamic=false];
+"b564caa2-val-" -> "91f1f233-val-" [dynamic=false];
+"b566f856-coerce-n10.r10.s03.Main.variants" -> "8259c9df-val-" [dynamic=false];
+"b566f856-coerce-n10.r10.s03.Main.variants" -> "d4c98d25-val-" [dynamic=false];
+"b566f856-coerce-n10.r10.s03.Main.variants" -> "d4df904f-exec-n10.r10.s03.Main.variants" [
+dynamic=true
+color=blue
+];
+"b57b81e6-val-" -> "72161f4f-val-" [dynamic=false];
+"b60acf9a-val-" -> "8dcb3e79-val-" [dynamic=false];
+"b60c6201-val-" -> "b7e29225-val-" [dynamic=false];
+"b6887ca1-val-" -> "c0e6e452-val-" [dynamic=false];
+"b6ad4f9f-val-" -> "9eb1b26e-extern-n10.r10.s10.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s10.reference.fas" [dynamic=false];
+"b6ee4e01-val-" -> "60bc7f79-coerce-n10.r10.s03.Main.variants" [dynamic=false];
+"b7da9960-val-" -> "e1bc2e56-val-" [dynamic=false];
+"b7e29225-val-" -> "70be9555-extern-n10.r10.s07.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s07.depth.txt" [dynamic=false];
+"b7f68375-val-" -> "889fdbdf-coerce-n10.r10.s03.Main.pileup" [dynamic=false];
+"b8208a36-val-" -> "0ab49e45-val-" [dynamic=false];
+"b8759097-val-" -> "be3ab6b0-val-" [dynamic=false];
+"b88d0ec0-val-" -> "930535e6-val-" [dynamic=false];
+"b8dd72cd-val-" -> "88145b94-val-" [dynamic=false];
+"b8fc6c7c-coerce-n10.r10.s05.Main.consensus" -> "8259c9df-val-" [dynamic=false];
+"b8fc6c7c-coerce-n10.r10.s05.Main.consensus" -> "b4d54d23-exec-n10.r10.s05.Main.consensus" [
+dynamic=true
+color=blue
+];
+"b8fc6c7c-coerce-n10.r10.s05.Main.consensus" -> "bf5e1077-val-" [dynamic=false];
+"b8fc6c7c-coerce-n10.r10.s05.Main.consensus" -> "dfb9b812-val-" [dynamic=false];
+"ba15cb45-val-" -> "5a2b8cdd-coerce-n10.r10.s01.Main.untrimmed_bam" [dynamic=false];
+"ba2cfe95-val-" -> "484ca7a0-coerce-n10.r10.s03.Main.pileup" [dynamic=false];
+"bab0800b-val-" -> "806bdbb6-coerce-n10.r10.s03.Main.untrimmed_bam" [dynamic=false];
+"bab922d5-val-" -> "276b4a8b-coerce-n10.r10.s03.Main.depth" [dynamic=false];
+"bad4f726-coerce-n10.r10.s05.Main.consensus" -> "76c921bc-val-" [dynamic=false];
+"bad4f726-coerce-n10.r10.s05.Main.consensus" -> "8259c9df-val-" [dynamic=false];
+"bad4f726-coerce-n10.r10.s05.Main.consensus" -> "a35a35ca-val-" [dynamic=false];
+"bad4f726-coerce-n10.r10.s05.Main.consensus" -> "b4d54d23-exec-n10.r10.s05.Main.consensus" [
+dynamic=true
+color=blue
+];
+"bb5462a6-val-" -> "8df12668-val-" [dynamic=false];
+"bb674d3b-val-" -> "8cdf7d3e-extern-n10.r10.s03.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s03.consensus.fas" [dynamic=false];
+"bc40ba63-coerce-n10.r10.s07.Main.fq2" -> "4eeecaaa-intern-n10.r10.s07.Main.fq2-s3://niema-test/n10/r10/n10.r10.s07_R2.fastq" [dynamic=false];
+"bc63def0-val-" -> "86a2ffff-coerce-n10.r10.s03.Main.depth" [dynamic=false];
+"bd1aba95-extern-n10.r10.s04.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s04.variants.vcf" -> "55a5bb63-val-" [
+dynamic=true
+color=blue
+];
+"bd1aba95-extern-n10.r10.s04.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s04.variants.vcf" -> "b6ee4e01-val-" [dynamic=false];
+"bd296563-coerce-n10.r10.s05.Main.consensus" -> "01b2c3d1-val-" [dynamic=false];
+"bd296563-coerce-n10.r10.s05.Main.consensus" -> "13c184ee-val-" [dynamic=false];
+"bd296563-coerce-n10.r10.s05.Main.consensus" -> "8259c9df-val-" [dynamic=false];
+"bd296563-coerce-n10.r10.s05.Main.consensus" -> "b4d54d23-exec-n10.r10.s05.Main.consensus" [
+dynamic=true
+color=blue
+];
+"bd4e02c0-val-" -> "386d2bc5-val-" [dynamic=false];
+"bdac9ca1-val-" -> "994dff24-val-" [dynamic=false];
+"bdc17309-val-" -> "7bbc31bd-extern-n10.r10.s04.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s04.reference.fas" [dynamic=false];
+"be3ab6b0-val-" -> "96be85a3-extern-n10.r10.s02.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s02.reference.fas" [dynamic=false];
+"bf32c9b2-val-" -> "fbe128fa-coerce-n10.r10.s03.Main.depth" [dynamic=false];
+"bf5e1077-val-" -> "50fcd1d5-val-" [dynamic=false];
+"bf772542-val-" -> "01507e21-extern-n10.r10.s05.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s05.reference.gff" [dynamic=false];
+"bf896b6e-extern-n10.r10.s06.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s06.variants.vcf" -> "55a5bb63-val-" [
+dynamic=true
+color=blue
+];
+"bf896b6e-extern-n10.r10.s06.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s06.variants.vcf" -> "c22d6383-val-" [dynamic=false];
+"bfafb7c9-extern-n10.r10.s07.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s07.primers.bed" -> "53e16067-val-" [
+dynamic=true
+color=blue
+];
+"bfafb7c9-extern-n10.r10.s07.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s07.primers.bed" -> "6a052429-val-" [dynamic=false];
+"c00ec99e-val-" -> "c339c281-val-" [dynamic=false];
+"c0476c0b-val-" -> "6538d7a0-val-" [dynamic=false];
+"c06f97c4-val-" -> "0880301f-val-" [dynamic=false];
+"c0d69a90-extern-n10.r10.s06.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s06.reference.fas" -> "131eeac2-val-" [dynamic=false];
+"c0d69a90-extern-n10.r10.s06.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s06.reference.fas" -> "59e34a15-val-" [
+dynamic=true
+color=blue
+];
+"c0e6e452-val-" -> "9f0ad7ce-coerce-n10.r10.s05.Main.low_depth" [dynamic=false];
+"c185f9f5-val-" -> "f16bc451-extern-n10.r10.s06.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s06.lowdepth.tsv" [dynamic=false];
+"c19e2a13-val-" -> "2663220e-val-" [dynamic=false];
+"c1aefe1b-val-" -> "cb45c2c9-coerce-n10.r10.s08.Main.sorted_trimmed_bam" [dynamic=false];
+"c22d6383-val-" -> "7ea6c91b-coerce-n10.r10.s03.Main.variants" [dynamic=false];
+"c28a7316-coerce-n10.r10.s06.Main.fq1" -> "40684120-intern-n10.r10.s06.Main.fq1-s3://niema-test/n10/r10/n10.r10.s06_R1.fastq" [dynamic=false];
+"c2ba096b-val-" -> "f1a5172c-val-" [dynamic=false];
+"c2c9468f-val-" -> "00fee091-coerce-n10.r10.s03.Main.fq2" [dynamic=false];
+"c2f48d29-val-" -> "e299f8a6-extern-n10.r10.s08.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s08.reference.gff" [dynamic=false];
+"c339c281-val-" -> "08ba7bec-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" [dynamic=false];
+"c4714051-val-" -> "0f1847ae-coerce-n10.r10.s05.Main.low_depth" [dynamic=false];
+"c4ff5aea-exec-n10.r10.s08.Main.sorted_trimmed_bam" -> "5601a8d2-val-" [
+dynamic=true
+color=blue
+];
+"c5266561-coerce-n10.r10.s01.Main.fq1" -> "52b44ee3-intern-n10.r10.s01.Main.fq1-s3://niema-test/n10/r10/n10.r10.s01_R1.fastq" [dynamic=false];
+"c5b655f1-val-" -> "f92996dc-extern-n10.r10.s07.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s07.reference.gff" [dynamic=false];
+"c5d724df-coerce-n10.r10.s09.Main.fq2" -> "9f296180-intern-n10.r10.s09.Main.fq2-s3://niema-test/n10/r10/n10.r10.s09_R2.fastq" [dynamic=false];
+"c5e8e66f-val-" -> "0896423a-val-" [dynamic=false];
+"c67ca09b-coerce-n10.r10.s02.Main.trimmed_bam" -> "65c6dc2e-val-" [dynamic=false];
+"c67ca09b-coerce-n10.r10.s02.Main.trimmed_bam" -> "a44d8c2f-exec-n10.r10.s06.Main.trimmed_bam" [
+dynamic=true
+color=blue
+];
+"c67ca09b-coerce-n10.r10.s02.Main.trimmed_bam" -> "f4f3b90b-val-" [dynamic=false];
+"c7bf0223-val-" -> "b26afabb-coerce-n10.r10.s03.Main.pileup" [dynamic=false];
+"c7c2efb1-val-" -> "c4714051-val-" [dynamic=false];
+"c7d6872b-val-" -> "4c905229-coerce-n10.r10.s05.Main.low_depth" [dynamic=false];
+"c8176cf8-val-" -> "2304cd79-coerce-n10.r10.s05.Main.consensus" [dynamic=false];
+"c89f4962-val-" -> "cacad6e4-val-" [dynamic=false];
+"c9a01377-val-" -> "1a850842-val-" [dynamic=false];
+"ca3ea8de-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" -> "14f01059-exec-n10.r10.s08.Main.sorted_untrimmed_bam" [
+dynamic=true
+color=blue
+];
+"ca3ea8de-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" -> "9424aa75-val-" [dynamic=false];
+"ca43955d-exec-n10.r10.s09.Main.untrimmed_bam" -> "2d9241d5-val-" [
+dynamic=true
+color=blue
+];
+"ca43955d-exec-n10.r10.s09.Main.untrimmed_bam" -> "48c0e862-val-" [
+dynamic=true
+color=blue
+];
+"ca43955d-exec-n10.r10.s09.Main.untrimmed_bam" -> "59e34a15-val-" [
+dynamic=true
+color=blue
+];
+"ca472dc6-coerce-n10.r10.s05.Main.consensus" -> "3c731ca0-val-" [dynamic=false];
+"ca472dc6-coerce-n10.r10.s05.Main.consensus" -> "8259c9df-val-" [dynamic=false];
+"ca472dc6-coerce-n10.r10.s05.Main.consensus" -> "b4d54d23-exec-n10.r10.s05.Main.consensus" [
+dynamic=true
+color=blue
+];
+"ca472dc6-coerce-n10.r10.s05.Main.consensus" -> "f2908295-val-" [dynamic=false];
+"ca815875-val-" -> "4db0986e-coerce-n10.r10.s08.Main.sorted_trimmed_bam" [dynamic=false];
+"cacad6e4-val-" -> "1c3dc1d5-extern-n10.r10.s01.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s01.reference.fas" [dynamic=false];
+"cb45c2c9-coerce-n10.r10.s08.Main.sorted_trimmed_bam" -> "41ddd4fe-val-" [dynamic=false];
+"cb45c2c9-coerce-n10.r10.s08.Main.sorted_trimmed_bam" -> "c4ff5aea-exec-n10.r10.s08.Main.sorted_trimmed_bam" [
+dynamic=true
+color=blue
+];
+"cbc42789-extern-n10.r10.s04.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s04.consensus.fas" -> "42e80c5f-val-" [dynamic=false];
+"cbc42789-extern-n10.r10.s04.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s04.consensus.fas" -> "dec22858-val-" [
+dynamic=true
+color=blue
+];
+"cc253833-val-" -> "0ea4ba6e-val-" [dynamic=false];
+"cc3650bb-extern-n10.r10.s07.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s07.variants.vcf" -> "55a5bb63-val-" [
+dynamic=true
+color=blue
+];
+"cc3650bb-extern-n10.r10.s07.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s07.variants.vcf" -> "dacb6a14-val-" [dynamic=false];
+"cc469595-val-" -> "d74fccad-val-" [dynamic=false];
+"cd292872-val-" -> "25853d45-val-" [dynamic=false];
+"cd292872-val-" -> "4f1ea5ed-val-" [dynamic=false];
+"cd292872-val-" -> "5474abb7-val-" [dynamic=false];
+"cd292872-val-" -> "5b7af539-val-" [dynamic=false];
+"cd292872-val-" -> "649816e1-val-" [dynamic=false];
+"cd292872-val-" -> "6501e0d3-val-" [dynamic=false];
+"cd292872-val-" -> "9d33e3e1-val-" [dynamic=false];
+"cd292872-val-" -> "b7da9960-val-" [dynamic=false];
+"cd292872-val-" -> "bdac9ca1-val-" [dynamic=false];
+"cd292872-val-" -> "dfafc377-val-" [dynamic=false];
+"cd292872-val-" -> "e07a3fb7-val-" [dynamic=false];
+"cd3391fa-val-" -> "da2759e7-val-" [dynamic=false];
+"cd5140a4-val-" -> "27bae314-coerce-n10.r10.s10.Main.untrimmed_bam" [dynamic=false];
+"cd5bd148-val-" -> "bad4f726-coerce-n10.r10.s05.Main.consensus" [dynamic=false];
+"cda183b3-val-" -> "ddd1937e-val-" [dynamic=false];
+"cddd89b5-extern-n10.r10.s06.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s06.untrimmed.sorted.bam" -> "0a777a91-val-" [
+dynamic=true
+color=blue
+];
+"cddd89b5-extern-n10.r10.s06.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s06.untrimmed.sorted.bam" -> "1cd18b84-val-" [dynamic=false];
+"ce0e49f6-val-" -> "cf52974f-val-" [dynamic=false];
+"cee4aea6-val-" -> "4e7ac732-extern-n10.r10.s06.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s06.reference.gff" [dynamic=false];
+"cf01952b-extern-n10.r10.s08.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s08.consensus.fas" -> "cd5bd148-val-" [dynamic=false];
+"cf01952b-extern-n10.r10.s08.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s08.consensus.fas" -> "dec22858-val-" [
+dynamic=true
+color=blue
+];
+"cf52974f-val-" -> "df071ad9-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" [dynamic=false];
+"cf53aa25-extern-n10.r10.s01.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s01.consensus.fas" -> "08002755-val-" [dynamic=false];
+"cf53aa25-extern-n10.r10.s01.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s01.consensus.fas" -> "dec22858-val-" [
+dynamic=true
+color=blue
+];
+"d102352f-extern-n10.r10.s08.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s08.reference.fas" -> "131eeac2-val-" [dynamic=false];
+"d102352f-extern-n10.r10.s08.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s08.reference.fas" -> "59e34a15-val-" [
+dynamic=true
+color=blue
+];
+"d12622b9-val-" -> "590960d4-val-" [dynamic=false];
+"d1383da8-extern-n10.r10.s02.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s02.sorted.trimmed.bam" -> "ca815875-val-" [dynamic=false];
+"d1383da8-extern-n10.r10.s02.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s02.sorted.trimmed.bam" -> "f8719a37-val-" [
+dynamic=true
+color=blue
+];
+"d2059912-val-" -> "aaf3199e-extern-n10.r10.s01.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s01.variants.vcf" [dynamic=false];
+"d2625aa7-extern-n10.r10.s05.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s05.consensus.fas" -> "dec22858-val-" [
+dynamic=true
+color=blue
+];
+"d2625aa7-extern-n10.r10.s05.Main.cp_consensus-s3://niema-test/n10/r10/n10.r10.s05.consensus.fas" -> "f3f52bc0-val-" [dynamic=false];
+"d276eaa9-coerce-n10.r10.s01.Main.fq2" -> "16ea2f46-intern-n10.r10.s01.Main.fq2-s3://niema-test/n10/r10/n10.r10.s01_R2.fastq" [dynamic=false];
+"d2830dd4-extern-n10.r10.s03.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s03.reference.fas" -> "131eeac2-val-" [dynamic=false];
+"d2830dd4-extern-n10.r10.s03.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s03.reference.fas" -> "59e34a15-val-" [
+dynamic=true
+color=blue
+];
+"d2966217-coerce-n10.r10.s03.Main.variants" -> "7cbc9d6f-val-" [dynamic=false];
+"d2966217-coerce-n10.r10.s03.Main.variants" -> "8259c9df-val-" [dynamic=false];
+"d2966217-coerce-n10.r10.s03.Main.variants" -> "d4df904f-exec-n10.r10.s03.Main.variants" [
+dynamic=true
+color=blue
+];
+"d2c23f83-val-" -> "fab9204b-val-" [dynamic=false];
+"d38dab1d-val-" -> "713d9fc1-coerce-n10.r10.s03.Main.variants" [dynamic=false];
+"d3cc7208-val-" -> "2605b143-val-" [dynamic=false];
+"d42e848f-val-" -> "acaaace3-coerce-n10.r10.s03.Main.depth" [dynamic=false];
+"d46251d3-val-" -> "a8ba8f1c-val-" [dynamic=false];
+"d48d613d-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" -> "14f01059-exec-n10.r10.s08.Main.sorted_untrimmed_bam" [
+dynamic=true
+color=blue
+];
+"d48d613d-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" -> "3b546219-val-" [dynamic=false];
+"d4c98d25-val-" -> "a92277d0-val-" [dynamic=false];
+"d4df904f-exec-n10.r10.s03.Main.variants" -> "59e34a15-val-" [
+dynamic=true
+color=blue
+];
+"d4df904f-exec-n10.r10.s03.Main.variants" -> "f8719a37-val-" [
+dynamic=true
+color=blue
+];
+"d66c020c-val-" -> "a601958c-val-" [dynamic=false];
+"d6a2155e-val-" -> "2faf51c3-val-" [dynamic=false];
+"d73a0746-val-" -> "3fffae0d-val-" [dynamic=false];
+"d74fccad-val-" -> "88e8bc3b-coerce-n10.r10.s03.Main.depth" [dynamic=false];
+"d7bb2d36-coerce-n10.r10.s05.Main.low_depth" -> "02f07cef-val-" [dynamic=false];
+"d7bb2d36-coerce-n10.r10.s05.Main.low_depth" -> "94016a97-exec-n10.r10.s05.Main.low_depth" [
+dynamic=true
+color=blue
+];
+"d82d6f36-val-" -> "ef0b84f2-coerce-n10.r10.s03.Main.variants" [dynamic=false];
+"d8834aac-coerce-n10.r10.s05.Main.consensus" -> "2caca983-val-" [dynamic=false];
+"d8834aac-coerce-n10.r10.s05.Main.consensus" -> "58dc2bda-val-" [dynamic=false];
+"d8834aac-coerce-n10.r10.s05.Main.consensus" -> "8259c9df-val-" [dynamic=false];
+"d8834aac-coerce-n10.r10.s05.Main.consensus" -> "b4d54d23-exec-n10.r10.s05.Main.consensus" [
+dynamic=true
+color=blue
+];
+"d98d1c1d-coerce-n10.r10.s05.Main.untrimmed_bam" -> "14b6ae3f-exec-n10.r10.s05.Main.untrimmed_bam" [
+dynamic=true
+color=blue
+];
+"d98d1c1d-coerce-n10.r10.s05.Main.untrimmed_bam" -> "8259c9df-val-" [dynamic=false];
+"d98d1c1d-coerce-n10.r10.s05.Main.untrimmed_bam" -> "a9751225-val-" [dynamic=false];
+"d98d1c1d-coerce-n10.r10.s05.Main.untrimmed_bam" -> "bb5462a6-val-" [dynamic=false];
+"d9cb6b8a-extern-n10.r10.s01.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s01.untrimmed.sorted.bam" -> "0a777a91-val-" [
+dynamic=true
+color=blue
+];
+"d9cb6b8a-extern-n10.r10.s01.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s01.untrimmed.sorted.bam" -> "725390ce-val-" [dynamic=false];
+"d9efe939-val-" -> "67c41991-val-" [dynamic=false];
+"da2759e7-val-" -> "29a5aad1-coerce-n10.r10.s06.Main.fq2" [dynamic=false];
+"da893999-val-" -> "4180a124-val-" [dynamic=false];
+"dacb6a14-val-" -> "fcb2a087-coerce-n10.r10.s03.Main.variants" [dynamic=false];
+"db0c0f26-extern-n10.r10.s09.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s09.variants.vcf" -> "0ea4ba6e-val-" [dynamic=false];
+"db0c0f26-extern-n10.r10.s09.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s09.variants.vcf" -> "55a5bb63-val-" [
+dynamic=true
+color=blue
+];
+"db81f583-val-" -> "1a3acc5b-val-" [dynamic=false];
+"dc2073de-coerce-n10.r10.s05.Main.consensus" -> "6604a778-val-" [dynamic=false];
+"dc2073de-coerce-n10.r10.s05.Main.consensus" -> "6d615a4c-val-" [dynamic=false];
+"dc2073de-coerce-n10.r10.s05.Main.consensus" -> "8259c9df-val-" [dynamic=false];
+"dc2073de-coerce-n10.r10.s05.Main.consensus" -> "b4d54d23-exec-n10.r10.s05.Main.consensus" [
+dynamic=true
+color=blue
+];
+"dc55b1cb-val-" -> "ec3d6172-extern-n10.r10.s08.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s08.pileup.txt" [dynamic=false];
+"dc7dc5e1-extern-n10.r10.s01.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s01.sorted.trimmed.bam" -> "8dcb3e79-val-" [dynamic=false];
+"dc7dc5e1-extern-n10.r10.s01.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s01.sorted.trimmed.bam" -> "f8719a37-val-" [
+dynamic=true
+color=blue
+];
+"dd833962-val-" -> "992a25ea-extern-n10.r10.s05.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s05.untrimmed.sorted.bam" [dynamic=false];
+"ddd1937e-val-" -> "e3bd61fd-extern-n10.r10.s02.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s02.lowdepth.tsv" [dynamic=false];
+"ddf9ca90-val-" -> "0999b0c4-val-" [dynamic=false];
+"ddf9ca90-val-" -> "1552e6ea-val-" [dynamic=false];
+"ddf9ca90-val-" -> "2311ec51-val-" [dynamic=false];
+"ddf9ca90-val-" -> "75d3f39d-val-" [dynamic=false];
+"ddf9ca90-val-" -> "7f737c76-val-" [dynamic=false];
+"ddf9ca90-val-" -> "84b147dc-val-" [dynamic=false];
+"ddf9ca90-val-" -> "8be49def-val-" [dynamic=false];
+"ddf9ca90-val-" -> "9f3817da-val-" [dynamic=false];
+"ddf9ca90-val-" -> "adab6cd8-val-" [dynamic=false];
+"ddf9ca90-val-" -> "f6a181c7-val-" [dynamic=false];
+"de086228-val-" -> "c67ca09b-coerce-n10.r10.s02.Main.trimmed_bam" [dynamic=false];
+"dec1e49b-val-" -> "8e1b2f90-val-" [dynamic=false];
+"dee3f397-val-" -> "203b2d9b-coerce-n10.r10.s02.Main.fq1" [dynamic=false];
+"df054f85-val-" -> "8f431d74-val-" [dynamic=false];
+"df071ad9-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" -> "14f01059-exec-n10.r10.s08.Main.sorted_untrimmed_bam" [
+dynamic=true
+color=blue
+];
+"df071ad9-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" -> "782a5dbb-val-" [dynamic=false];
+"df30f191-exec-n10.r10.s04.Main.untrimmed_bam" -> "2dfd6e4f-val-" [
+dynamic=true
+color=blue
+];
+"df30f191-exec-n10.r10.s04.Main.untrimmed_bam" -> "4d67cfd1-val-" [
+dynamic=true
+color=blue
+];
+"df30f191-exec-n10.r10.s04.Main.untrimmed_bam" -> "59e34a15-val-" [
+dynamic=true
+color=blue
+];
+"df34c85a-coerce-n10.r10.s03.Main.depth" -> "e706f4d4-val-" [dynamic=false];
+"df34c85a-coerce-n10.r10.s03.Main.depth" -> "eb78ba4e-exec-n10.r10.s03.Main.depth" [
+dynamic=true
+color=blue
+];
+"df4c3aa3-val-" -> "84a0de31-coerce-n10.r10.s03.Main.pileup" [dynamic=false];
+"df761937-val-" -> "3e45e037-extern-n10.r10.s09.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s09.pileup.txt" [dynamic=false];
+"df7edf98-val-" -> "08540fe1-val-" [dynamic=false];
+"dfafc377-val-" -> "51eb16d6-val-" [dynamic=false];
+"dfb9b812-val-" -> "78c6a73f-val-" [dynamic=false];
+"e05292c7-val-" -> "ec998be9-val-" [dynamic=false];
+"e07a3fb7-val-" -> "f08180f7-val-" [dynamic=false];
+"e1bc2e56-val-" -> "4c4cde14-extern-n10.r10.s05.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s05.pileup.txt" [dynamic=false];
+"e20efffc-extern-n10.r10.s09.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s09.reference.gff" -> "26b3e125-val-" [
+dynamic=true
+color=blue
+];
+"e20efffc-extern-n10.r10.s09.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s09.reference.gff" -> "9439857c-val-" [dynamic=false];
+"e273f0e6-val-" -> "8c76caa4-val-" [dynamic=false];
+"e299f8a6-extern-n10.r10.s08.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s08.reference.gff" -> "26b3e125-val-" [
+dynamic=true
+color=blue
+];
+"e299f8a6-extern-n10.r10.s08.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s08.reference.gff" -> "9439857c-val-" [dynamic=false];
+"e2aaac7a-extern-n10.r10.s10.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s10.sorted.trimmed.bam" -> "5b054fb3-val-" [dynamic=false];
+"e2aaac7a-extern-n10.r10.s10.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s10.sorted.trimmed.bam" -> "f8719a37-val-" [
+dynamic=true
+color=blue
+];
+"e3845521-val-" -> "ab717fd7-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" [dynamic=false];
+"e3a5af88-val-" -> "5b0ae1ab-val-" [dynamic=false];
+"e3bd61fd-extern-n10.r10.s02.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s02.lowdepth.tsv" -> "50fcd1d5-val-" [dynamic=false];
+"e3bd61fd-extern-n10.r10.s02.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s02.lowdepth.tsv" -> "dbbd0515-val-" [
+dynamic=true
+color=blue
+];
+"e49b74a2-val-" -> "ac3942bd-val-" [dynamic=false];
+"e4fb12e6-val-" -> "32e280d7-coerce-n10.r10.s05.Main.low_depth" [dynamic=false];
+"e51e092f-extern-n10.r10.s02.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s02.depth.txt" -> "884af8ed-val-" [dynamic=false];
+"e51e092f-extern-n10.r10.s02.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s02.depth.txt" -> "95d3157b-val-" [
+dynamic=true
+color=blue
+];
+"e547eedd-coerce-n10.r10.s05.Main.low_depth" -> "54c2e389-val-" [dynamic=false];
+"e547eedd-coerce-n10.r10.s05.Main.low_depth" -> "94016a97-exec-n10.r10.s05.Main.low_depth" [
+dynamic=true
+color=blue
+];
+"e5944ce5-coerce-n10.r10.s05.Main.fq1" -> "0026fb2e-intern-n10.r10.s05.Main.fq1-s3://niema-test/n10/r10/n10.r10.s05_R1.fastq" [dynamic=false];
+"e5e615f5-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" -> "14f01059-exec-n10.r10.s08.Main.sorted_untrimmed_bam" [
+dynamic=true
+color=blue
+];
+"e5e615f5-coerce-n10.r10.s08.Main.sorted_untrimmed_bam" -> "b8dd72cd-val-" [dynamic=false];
+"e6103cf3-coerce-n10.r10.s02.Main.trimmed_bam" -> "65c6dc2e-val-" [dynamic=false];
+"e6103cf3-coerce-n10.r10.s02.Main.trimmed_bam" -> "a44d8c2f-exec-n10.r10.s06.Main.trimmed_bam" [
+dynamic=true
+color=blue
+];
+"e6103cf3-coerce-n10.r10.s02.Main.trimmed_bam" -> "db81f583-val-" [dynamic=false];
+"e623be16-val-" -> "2d140771-val-" [dynamic=false];
+"e67a6920-val-" -> "0b85eec8-coerce-n10.r10.s03.Main.fq1" [dynamic=false];
+"e67a8997-val-" -> "f3d96390-val-" [dynamic=false];
+"e706f4d4-val-" -> "2f3f1f13-val-" [dynamic=false];
+"e8c933b5-val-" -> "5aed44f4-extern-n10.r10.s08.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s08.variants.vcf" [dynamic=false];
+"e8d13125-coerce-n10.r10.s02.Main.untrimmed_bam" -> "625d11fc-val-" [dynamic=false];
+"e8d13125-coerce-n10.r10.s02.Main.untrimmed_bam" -> "8259c9df-val-" [dynamic=false];
+"e8d13125-coerce-n10.r10.s02.Main.untrimmed_bam" -> "966d998b-val-" [dynamic=false];
+"e8d13125-coerce-n10.r10.s02.Main.untrimmed_bam" -> "a2e430cb-exec-n10.r10.s02.Main.untrimmed_bam" [
+dynamic=true
+color=blue
+];
+"e93edc34-coerce-n10.r10.s01.Main.ref_fas" -> "4a93ab85-exec-n10.r10.s01.Main.ref_fas" [dynamic=false];
+"ea0ab992-val-" -> "c5b655f1-val-" [dynamic=false];
+"eacb33fc-extern-n10.r10.s10.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s10.primers.bed" -> "53e16067-val-" [
+dynamic=true
+color=blue
+];
+"eacb33fc-extern-n10.r10.s10.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s10.primers.bed" -> "6a052429-val-" [dynamic=false];
+"eafc3025-extern-n10.r10.s04.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s04.sorted.trimmed.bam" -> "7531ca96-val-" [dynamic=false];
+"eafc3025-extern-n10.r10.s04.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s04.sorted.trimmed.bam" -> "f8719a37-val-" [
+dynamic=true
+color=blue
+];
+"eb042f10-extern-n10.r10.s06.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s06.untrimmed.bam" -> "033be6cd-val-" [
+dynamic=true
+color=blue
+];
+"eb042f10-extern-n10.r10.s06.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s06.untrimmed.bam" -> "86c2a272-val-" [dynamic=false];
+"eb78ba4e-exec-n10.r10.s03.Main.depth" -> "f8719a37-val-" [
+dynamic=true
+color=blue
+];
+"eb9dc199-val-" -> "5bdf3ded-extern-n10.r10.s09.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s09.lowdepth.tsv" [dynamic=false];
+"ec3d6172-extern-n10.r10.s08.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s08.pileup.txt" -> "5c2580b4-val-" [dynamic=false];
+"ec3d6172-extern-n10.r10.s08.Main.cp_pileup-s3://niema-test/n10/r10/n10.r10.s08.pileup.txt" -> "6539fcc3-val-" [
+dynamic=true
+color=blue
+];
+"ec998be9-val-" -> "253bc03a-coerce-n10.r10.s02.Main.trimmed_bam" [dynamic=false];
+"ecfbf18a-val-" -> "9dc4144e-val-" [dynamic=false];
+"ed2fb954-val-" -> "187281f8-val-" [dynamic=false];
+"ed6b9548-val-" -> "bc40ba63-coerce-n10.r10.s07.Main.fq2" [dynamic=false];
+"ed8093c3-exec-n10.r10.s07.Main.untrimmed_bam" -> "59e34a15-val-" [
+dynamic=true
+color=blue
+];
+"ed8093c3-exec-n10.r10.s07.Main.untrimmed_bam" -> "b0ee964a-val-" [
+dynamic=true
+color=blue
+];
+"ed8093c3-exec-n10.r10.s07.Main.untrimmed_bam" -> "d814a711-val-" [
+dynamic=true
+color=blue
+];
+"ed9fd3f8-extern-n10.r10.s01.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s01.untrimmed.bam" -> "033be6cd-val-" [
+dynamic=true
+color=blue
+];
+"ed9fd3f8-extern-n10.r10.s01.Main.cp_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s01.untrimmed.bam" -> "ba15cb45-val-" [dynamic=false];
+"edca56ac-val-" -> "9a42f4c6-val-" [dynamic=false];
+"ef0b84f2-coerce-n10.r10.s03.Main.variants" -> "6233f999-val-" [dynamic=false];
+"ef0b84f2-coerce-n10.r10.s03.Main.variants" -> "8259c9df-val-" [dynamic=false];
+"ef0b84f2-coerce-n10.r10.s03.Main.variants" -> "d4df904f-exec-n10.r10.s03.Main.variants" [
+dynamic=true
+color=blue
+];
+"efe797ee-val-" -> "322b17aa-coerce-n10.r10.s09.Main.fq1" [dynamic=false];
+"f08180f7-val-" -> "13b74036-extern-n10.r10.s05.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s05.variants.vcf" [dynamic=false];
+"f0ef5564-val-" -> "342dc305-coerce-n10.r10.s03.Main.pileup" [dynamic=false];
+"f16bc451-extern-n10.r10.s06.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s06.lowdepth.tsv" -> "8887dd98-val-" [dynamic=false];
+"f16bc451-extern-n10.r10.s06.Main.cp_low_depth-s3://niema-test/n10/r10/n10.r10.s06.lowdepth.tsv" -> "dbbd0515-val-" [
+dynamic=true
+color=blue
+];
+"f1a5172c-val-" -> "9b3b7130-extern-n10.r10.s06.Main.cp_depth-s3://niema-test/n10/r10/n10.r10.s06.depth.txt" [dynamic=false];
+"f1a98f9e-val-" -> "018263bf-extern-n10.r10.s02.Main.cp_variants-s3://niema-test/n10/r10/n10.r10.s02.variants.vcf" [dynamic=false];
+"f2908295-val-" -> "e4fb12e6-val-" [dynamic=false];
+"f3130a9a-val-" -> "721a4883-extern-n10.r10.s04.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s04.untrimmed.sorted.bam" [dynamic=false];
+"f3d96390-val-" -> "66ea289f-extern-n10.r10.s04.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s04.primers.bed" [dynamic=false];
+"f3daf330-coerce-n10.r10.s07.Main.untrimmed_bam" -> "8259c9df-val-" [dynamic=false];
+"f3daf330-coerce-n10.r10.s07.Main.untrimmed_bam" -> "92fab1a7-val-" [dynamic=false];
+"f3daf330-coerce-n10.r10.s07.Main.untrimmed_bam" -> "ed8093c3-exec-n10.r10.s07.Main.untrimmed_bam" [
+dynamic=true
+color=blue
+];
+"f3daf330-coerce-n10.r10.s07.Main.untrimmed_bam" -> "ff72090a-val-" [dynamic=false];
+"f3f52bc0-val-" -> "dc2073de-coerce-n10.r10.s05.Main.consensus" [dynamic=false];
+"f471e566-val-" -> "0861d24a-val-" [dynamic=false];
+"f4f3b90b-val-" -> "6282daea-val-" [dynamic=false];
+"f577fca5-extern-n10.r10.s10.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s10.untrimmed.sorted.bam" -> "0a777a91-val-" [
+dynamic=true
+color=blue
+];
+"f577fca5-extern-n10.r10.s10.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s10.untrimmed.sorted.bam" -> "c339c281-val-" [dynamic=false];
+"f5ae0e7e-val-" -> "39830f0d-coerce-n10.r10.s08.Main.sorted_trimmed_bam" [dynamic=false];
+"f615b8e1-val-" -> "2649fa52-val-" [dynamic=false];
+"f61a29d1-val-" -> "8b4426f0-coerce-n10.r10.s05.Main.consensus" [dynamic=false];
+"f68368fe-val-" -> "77c47648-val-" [dynamic=false];
+"f6a181c7-val-" -> "acb524a7-val-" [dynamic=false];
+"f6d1ad6b-extern-n10.r10.s05.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s05.reference.fas" -> "131eeac2-val-" [dynamic=false];
+"f6d1ad6b-extern-n10.r10.s05.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s05.reference.fas" -> "59e34a15-val-" [
+dynamic=true
+color=blue
+];
+"f6d55288-coerce-n10.r10.s04.Main.fq2" -> "db474b0a-intern-n10.r10.s04.Main.fq2-s3://niema-test/n10/r10/n10.r10.s04_R2.fastq" [dynamic=false];
+"f8ec8844-val-" -> "bfafb7c9-extern-n10.r10.s07.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s07.primers.bed" [dynamic=false];
+"f8f55b4a-extern-n10.r10.s06.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s06.primers.bed" -> "53e16067-val-" [
+dynamic=true
+color=blue
+];
+"f8f55b4a-extern-n10.r10.s06.Main.cp_primer_bed-s3://niema-test/n10/r10/n10.r10.s06.primers.bed" -> "6a052429-val-" [dynamic=false];
+"f907e082-val-" -> "eafc3025-extern-n10.r10.s04.Main.cp_sorted_trimmed_bam-s3://niema-test/n10/r10/n10.r10.s04.sorted.trimmed.bam" [dynamic=false];
+"f92996dc-extern-n10.r10.s07.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s07.reference.gff" -> "26b3e125-val-" [
+dynamic=true
+color=blue
+];
+"f92996dc-extern-n10.r10.s07.Main.cp_ref_gff-s3://niema-test/n10/r10/n10.r10.s07.reference.gff" -> "9439857c-val-" [dynamic=false];
+"f961b495-val-" -> "8fe08b6a-coerce-n10.r10.s02.Main.trimmed_bam" [dynamic=false];
+"f98b9d73-val-" -> "93a102d8-val-" [dynamic=false];
+"fa42caf5-val-" -> "1bb2fe3b-val-" [dynamic=false];
+"fa42caf5-val-" -> "1f92a05a-val-" [dynamic=false];
+"fa42caf5-val-" -> "393d8e94-val-" [dynamic=false];
+"fa42caf5-val-" -> "470520b8-val-" [dynamic=false];
+"fa42caf5-val-" -> "6099865f-val-" [dynamic=false];
+"fa42caf5-val-" -> "70325c5c-val-" [dynamic=false];
+"fa42caf5-val-" -> "a0dd1604-val-" [dynamic=false];
+"fa42caf5-val-" -> "a7269c53-val-" [dynamic=false];
+"fa42caf5-val-" -> "b564caa2-val-" [dynamic=false];
+"fa42caf5-val-" -> "e67a8997-val-" [dynamic=false];
+"fa42caf5-val-" -> "f98b9d73-val-" [dynamic=false];
+"fab9204b-val-" -> "d2830dd4-extern-n10.r10.s03.Main.cp_ref_fas-s3://niema-test/n10/r10/n10.r10.s03.reference.fas" [dynamic=false];
+"fbc8ed10-extern-n10.r10.s07.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s07.untrimmed.sorted.bam" -> "0a777a91-val-" [
+dynamic=true
+color=blue
+];
+"fbc8ed10-extern-n10.r10.s07.Main.cp_sorted_untrimmed_bam-s3://niema-test/n10/r10/n10.r10.s07.untrimmed.sorted.bam" -> "2faf51c3-val-" [dynamic=false];
+"fbe128fa-coerce-n10.r10.s03.Main.depth" -> "c19e2a13-val-" [dynamic=false];
+"fbe128fa-coerce-n10.r10.s03.Main.depth" -> "eb78ba4e-exec-n10.r10.s03.Main.depth" [
+dynamic=true
+color=blue
+];
+"fcb2a087-coerce-n10.r10.s03.Main.variants" -> "8259c9df-val-" [dynamic=false];
+"fcb2a087-coerce-n10.r10.s03.Main.variants" -> "d4df904f-exec-n10.r10.s03.Main.variants" [
+dynamic=true
+color=blue
+];
+"fcb2a087-coerce-n10.r10.s03.Main.variants" -> "e706f4d4-val-" [dynamic=false];
+"fd4583e9-val-" -> "85a9e7bd-coerce-n10.r10.s03.Main.pileup" [dynamic=false];
+"fddbfa8b-coerce-n10.r10.s08.Main.sorted_trimmed_bam" -> "c4ff5aea-exec-n10.r10.s08.Main.sorted_trimmed_bam" [
+dynamic=true
+color=blue
+];
+"fddbfa8b-coerce-n10.r10.s08.Main.sorted_trimmed_bam" -> "df7edf98-val-" [dynamic=false];
+"fdeacbfe-val-" -> "c1aefe1b-val-" [dynamic=false];
+"ff07ec46-val-" -> "053c4ff4-coerce-n10.r10.s08.Main.fq2" [dynamic=false];
+"ff72090a-val-" -> "ed6b9548-val-" [dynamic=false];
+"ff974502-coerce-n10.r10.s08.Main.sorted_trimmed_bam" -> "18a49976-val-" [dynamic=false];
+"ff974502-coerce-n10.r10.s08.Main.sorted_trimmed_bam" -> "c4ff5aea-exec-n10.r10.s08.Main.sorted_trimmed_bam" [
+dynamic=true
+color=blue
+];
+"ffa0b76b-coerce-n10.r10.s09.Main.untrimmed_bam" -> "55eda6d4-val-" [dynamic=false];
+"ffa0b76b-coerce-n10.r10.s09.Main.untrimmed_bam" -> "7f086326-val-" [dynamic=false];
+"ffa0b76b-coerce-n10.r10.s09.Main.untrimmed_bam" -> "8259c9df-val-" [dynamic=false];
+"ffa0b76b-coerce-n10.r10.s09.Main.untrimmed_bam" -> "ca43955d-exec-n10.r10.s09.Main.untrimmed_bam" [
+dynamic=true
+color=blue
+];
+"ffaf1127-coerce-n10.r10.s04.Main.fq1" -> "a49ead97-intern-n10.r10.s04.Main.fq1-s3://niema-test/n10/r10/n10.r10.s04_R1.fastq" [dynamic=false];
+}
