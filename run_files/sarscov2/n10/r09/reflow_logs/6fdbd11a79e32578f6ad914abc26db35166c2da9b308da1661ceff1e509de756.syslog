@@ -1,0 +1,169 @@
+2021/06/20 18:47:25 reflow version: reflow1.6.0 (go1.13.15)
+2021/06/20 18:47:25 run ID: 6fdbd11a
+2021/06/20 18:47:26 Trace: /home/niema/.reflow/runs/6fdbd11a79e32578f6ad914abc26db35166c2da9b308da1661ceff1e509de756.trace
+2021/06/20 18:48:14 discovered instance i-0a9e6b7ad51a86e44 (t3a.medium) ec2-18-117-247-114.us-east-2.compute.amazonaws.com
+2021/06/20 18:48:59 discovered instance i-04c67a423acca4d4c (t3a.small) ec2-18-217-173-245.us-east-2.compute.amazonaws.com
+2021/06/20 18:48:59 discovered instance i-05671683cdec8ff83 (t3a.2xlarge) ec2-18-117-109-121.us-east-2.compute.amazonaws.com
+2021/06/20 18:49:47 discovered instance i-0f84be681db236b4c (c5a.4xlarge) ec2-18-222-208-228.us-east-2.compute.amazonaws.com
+2021/06/20 18:54:55 scheduler: alloc ec2-18-222-208-228.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 keepalive failed: context canceled
+2021/06/20 18:54:55 scheduler: alloc ec2-18-222-208-228.us-east-2.compute.amazonaws.com:9000/681d0d86d1e9a007 keepalive failed: context canceled
+2021/06/20 18:57:25 scheduler: alloc ec2-18-117-247-114.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 keepalive failed: context canceled
+2021/06/20 18:59:55 scheduler: alloc ec2-18-117-109-121.us-east-2.compute.amazonaws.com:9000/681d0d86d1e98a5b keepalive failed: context canceled
+2021/06/20 18:59:55 scheduler: alloc ec2-18-117-109-121.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 keepalive failed: context canceled
+2021/06/20 19:16:27 discovered instance i-0365153342e541d04 (t3a.small) ec2-13-58-254-42.us-east-2.compute.amazonaws.com
+2021/06/20 19:22:25 scheduler: alloc ec2-18-217-173-245.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 keepalive failed: context canceled
+2021/06/20 19:41:35 total n=151 time=54m9s
+	ident                                    n   ncache transfer runtime(m) cpu         mem(GiB)    disk(GiB)   tmp(GiB) requested
+	n10.r09.s01.Main.cp_consensus            1   0      0B                                                      
+	n10.r09.s01.Main.cp_depth                1   0      0B                                                      
+	n10.r09.s01.Main.cp_low_depth            1   0      0B                                                      
+	n10.r09.s01.Main.cp_pileup               1   0      0B                                                      
+	n10.r09.s01.Main.cp_primer_bed           1   0      0B                                                      
+	n10.r09.s01.Main.cp_ref_fas              1   0      0B                                                      
+	n10.r09.s01.Main.cp_ref_gff              1   0      0B                                                      
+	n10.r09.s01.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n10.r09.s01.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n10.r09.s01.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n10.r09.s01.Main.cp_variants             1   0      0B                                                      
+	n10.r09.s01.Main.fq1                     1   0      0B                                                      
+	n10.r09.s01.Main.fq2                     1   0      0B                                                      
+	n10.r09.s01.Main.primer_bed              1   0      0B       0/0/0      0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n10.r09.s01.Main.ref_fas                 1   0      0B       0/0/0      0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n10.r09.s01.Main.ref_gff                 1   0      0B       0/0/0      0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n10.r09.s01.Main.untrimmed_bam           1   0      0B       3/3/3      1.0/1.0/1.0 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n10.r09.s02.Main.cp_consensus            1   0      0B                                                      
+	n10.r09.s02.Main.cp_depth                1   0      0B                                                      
+	n10.r09.s02.Main.cp_low_depth            1   0      0B                                                      
+	n10.r09.s02.Main.cp_pileup               1   0      0B                                                      
+	n10.r09.s02.Main.cp_primer_bed           1   0      0B                                                      
+	n10.r09.s02.Main.cp_ref_fas              1   0      0B                                                      
+	n10.r09.s02.Main.cp_ref_gff              1   0      0B                                                      
+	n10.r09.s02.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n10.r09.s02.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n10.r09.s02.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n10.r09.s02.Main.cp_variants             1   0      0B                                                      
+	n10.r09.s02.Main.fq1                     1   0      0B                                                      
+	n10.r09.s02.Main.fq2                     1   0      0B                                                      
+	n10.r09.s02.Main.untrimmed_bam           1   0      0B       3/3/3      1.0/1.0/1.0 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n10.r09.s03.Main.consensus               1   0      0B       0/0/0      0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n10.r09.s03.Main.cp_consensus            1   0      0B                                                      
+	n10.r09.s03.Main.cp_depth                1   0      0B                                                      
+	n10.r09.s03.Main.cp_low_depth            1   0      0B                                                      
+	n10.r09.s03.Main.cp_pileup               1   0      0B                                                      
+	n10.r09.s03.Main.cp_primer_bed           1   0      0B                                                      
+	n10.r09.s03.Main.cp_ref_fas              1   0      0B                                                      
+	n10.r09.s03.Main.cp_ref_gff              1   0      0B                                                      
+	n10.r09.s03.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n10.r09.s03.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n10.r09.s03.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n10.r09.s03.Main.cp_variants             1   0      0B                                                      
+	n10.r09.s03.Main.fq1                     1   0      0B                                                      
+	n10.r09.s03.Main.fq2                     1   0      0B                                                      
+	n10.r09.s03.Main.untrimmed_bam           1   0      0B       3/3/3      1.0/1.0/1.0 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n10.r09.s04.Main.cp_consensus            1   0      0B                                                      
+	n10.r09.s04.Main.cp_depth                1   0      0B                                                      
+	n10.r09.s04.Main.cp_low_depth            1   0      0B                                                      
+	n10.r09.s04.Main.cp_pileup               1   0      0B                                                      
+	n10.r09.s04.Main.cp_primer_bed           1   0      0B                                                      
+	n10.r09.s04.Main.cp_ref_fas              1   0      0B                                                      
+	n10.r09.s04.Main.cp_ref_gff              1   0      0B                                                      
+	n10.r09.s04.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n10.r09.s04.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n10.r09.s04.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n10.r09.s04.Main.cp_variants             1   0      0B                                                      
+	n10.r09.s04.Main.fq1                     1   0      0B                                                      
+	n10.r09.s04.Main.fq2                     1   0      0B                                                      
+	n10.r09.s04.Main.untrimmed_bam           1   0      0B       3/3/3      1.0/1.0/1.0 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n10.r09.s05.Main.cp_consensus            1   0      0B                                                      
+	n10.r09.s05.Main.cp_depth                1   0      0B                                                      
+	n10.r09.s05.Main.cp_low_depth            1   0      0B                                                      
+	n10.r09.s05.Main.cp_pileup               1   0      0B                                                      
+	n10.r09.s05.Main.cp_primer_bed           1   0      0B                                                      
+	n10.r09.s05.Main.cp_ref_fas              1   0      0B                                                      
+	n10.r09.s05.Main.cp_ref_gff              1   0      0B                                                      
+	n10.r09.s05.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n10.r09.s05.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n10.r09.s05.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n10.r09.s05.Main.cp_variants             1   0      0B                                                      
+	n10.r09.s05.Main.fq1                     1   0      0B                                                      
+	n10.r09.s05.Main.fq2                     1   0      0B                                                      
+	n10.r09.s05.Main.trimmed_bam             1   0      0B       22/22/22   1.0/1.0/1.0 0.1/0.1/0.1 0.1/0.1/0.1 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n10.r09.s05.Main.untrimmed_bam           1   0      0B       3/3/3      1.0/1.0/1.0 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n10.r09.s06.Main.cp_consensus            1   0      0B                                                      
+	n10.r09.s06.Main.cp_depth                1   0      0B                                                      
+	n10.r09.s06.Main.cp_low_depth            1   0      0B                                                      
+	n10.r09.s06.Main.cp_pileup               1   0      0B                                                      
+	n10.r09.s06.Main.cp_primer_bed           1   0      0B                                                      
+	n10.r09.s06.Main.cp_ref_fas              1   0      0B                                                      
+	n10.r09.s06.Main.cp_ref_gff              1   0      0B                                                      
+	n10.r09.s06.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n10.r09.s06.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n10.r09.s06.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n10.r09.s06.Main.cp_variants             1   0      0B                                                      
+	n10.r09.s06.Main.fq1                     1   0      0B                                                      
+	n10.r09.s06.Main.fq2                     1   0      0B                                                      
+	n10.r09.s06.Main.sorted_untrimmed_bam    1   0      0B       1/1/1      1.0/1.0/1.0 0.8/0.8/0.8 0.1/0.1/0.1 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n10.r09.s06.Main.untrimmed_bam           1   0      0B       2/2/2      1.1/1.1/1.1 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n10.r09.s07.Main.cp_consensus            1   0      0B                                                      
+	n10.r09.s07.Main.cp_depth                1   0      0B                                                      
+	n10.r09.s07.Main.cp_low_depth            1   0      0B                                                      
+	n10.r09.s07.Main.cp_pileup               1   0      0B                                                      
+	n10.r09.s07.Main.cp_primer_bed           1   0      0B                                                      
+	n10.r09.s07.Main.cp_ref_fas              1   0      0B                                                      
+	n10.r09.s07.Main.cp_ref_gff              1   0      0B                                                      
+	n10.r09.s07.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n10.r09.s07.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n10.r09.s07.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n10.r09.s07.Main.cp_variants             1   0      0B                                                      
+	n10.r09.s07.Main.fq1                     1   0      0B                                                      
+	n10.r09.s07.Main.fq2                     1   0      0B                                                      
+	n10.r09.s07.Main.untrimmed_bam           1   0      0B       3/3/3      1.0/1.0/1.0 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n10.r09.s08.Main.cp_consensus            1   0      0B                                                      
+	n10.r09.s08.Main.cp_depth                1   0      0B                                                      
+	n10.r09.s08.Main.cp_low_depth            1   0      0B                                                      
+	n10.r09.s08.Main.cp_pileup               1   0      0B                                                      
+	n10.r09.s08.Main.cp_primer_bed           1   0      0B                                                      
+	n10.r09.s08.Main.cp_ref_fas              1   0      0B                                                      
+	n10.r09.s08.Main.cp_ref_gff              1   0      0B                                                      
+	n10.r09.s08.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n10.r09.s08.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n10.r09.s08.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n10.r09.s08.Main.cp_variants             1   0      0B                                                      
+	n10.r09.s08.Main.fq1                     1   0      0B                                                      
+	n10.r09.s08.Main.fq2                     1   0      0B                                                      
+	n10.r09.s08.Main.untrimmed_bam           1   0      0B       3/3/3      1.0/1.0/1.0 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n10.r09.s09.Main.cp_consensus            1   0      0B                                                      
+	n10.r09.s09.Main.cp_depth                1   0      0B                                                      
+	n10.r09.s09.Main.cp_low_depth            1   0      0B                                                      
+	n10.r09.s09.Main.cp_pileup               1   0      0B                                                      
+	n10.r09.s09.Main.cp_primer_bed           1   0      0B                                                      
+	n10.r09.s09.Main.cp_ref_fas              1   0      0B                                                      
+	n10.r09.s09.Main.cp_ref_gff              1   0      0B                                                      
+	n10.r09.s09.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n10.r09.s09.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n10.r09.s09.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n10.r09.s09.Main.cp_variants             1   0      0B                                                      
+	n10.r09.s09.Main.fq1                     1   0      0B                                                      
+	n10.r09.s09.Main.fq2                     1   0      0B                                                      
+	n10.r09.s09.Main.untrimmed_bam           1   0      0B       3/3/3      1.0/1.0/1.0 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n10.r09.s10.Main.cp_consensus            1   0      0B                                                      
+	n10.r09.s10.Main.cp_depth                1   0      0B                                                      
+	n10.r09.s10.Main.cp_low_depth            1   0      0B                                                      
+	n10.r09.s10.Main.cp_pileup               1   0      0B                                                      
+	n10.r09.s10.Main.cp_primer_bed           1   0      0B                                                      
+	n10.r09.s10.Main.cp_ref_fas              1   0      0B                                                      
+	n10.r09.s10.Main.cp_ref_gff              1   0      0B                                                      
+	n10.r09.s10.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n10.r09.s10.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n10.r09.s10.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n10.r09.s10.Main.cp_variants             1   0      0B                                                      
+	n10.r09.s10.Main.depth                   1   0      0B       1/1/1      1.0/1.0/1.0 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n10.r09.s10.Main.fq1                     1   0      0B                                                      
+	n10.r09.s10.Main.fq2                     1   0      0B                                                      
+	n10.r09.s10.Main.low_depth               1   0      0B       0/0/0      0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n10.r09.s10.Main.pileup                  1   0      0B       9/9/9      1.0/1.0/1.0 0.1/0.1/0.1 0.6/0.6/0.6 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n10.r09.s10.Main.sorted_trimmed_bam      1   0      0B       1/1/1      1.0/1.0/1.0 0.8/0.8/0.8 0.1/0.1/0.1 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n10.r09.s10.Main.untrimmed_bam           1   0      0B       3/3/3      1.0/1.0/1.0 0.2/0.2/0.2 0.2/0.2/0.2 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n10.r09.s10.Main.variants                1   0      0B       25/25/25   1.0/1.0/1.0 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	
+2021/06/20 19:41:35 result: [(val<.=9ad7d0e0 221.1MiB>, val<.=3596325a 94.2MiB>, val<.=0385d873 83.4MiB>, val<.=9365dffd 649.8MiB>, val<.=090e4571 18.9KiB>, val<.=4fdf0d46 670.6KiB>, val<.=afa90095 40B>, val<.=30281702 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=9ad7d0e0 221.1MiB>, val<.=3596325a 94.2MiB>, val<.=0385d873 83.4MiB>, val<.=9365dffd 649.8MiB>, val<.=090e4571 18.9KiB>, val<.=4fdf0d46 670.6KiB>, val<.=afa90095 40B>, val<.=30281702 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=9ad7d0e0 221.1MiB>, val<.=3596325a 94.2MiB>, val<.=0385d873 83.4MiB>, val<.=9365dffd 649.8MiB>, val<.=090e4571 18.9KiB>, val<.=4fdf0d46 670.6KiB>, val<.=afa90095 40B>, val<.=30281702 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=9ad7d0e0 221.1MiB>, val<.=3596325a 94.2MiB>, val<.=0385d873 83.4MiB>, val<.=9365dffd 649.8MiB>, val<.=090e4571 18.9KiB>, val<.=4fdf0d46 670.6KiB>, val<.=afa90095 40B>, val<.=30281702 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=9ad7d0e0 221.1MiB>, val<.=3596325a 94.2MiB>, val<.=0385d873 83.4MiB>, val<.=9365dffd 649.8MiB>, val<.=090e4571 18.9KiB>, val<.=4fdf0d46 670.6KiB>, val<.=afa90095 40B>, val<.=30281702 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=9ad7d0e0 221.1MiB>, val<.=3596325a 94.2MiB>, val<.=0385d873 83.4MiB>, val<.=9365dffd 649.8MiB>, val<.=090e4571 18.9KiB>, val<.=4fdf0d46 670.6KiB>, val<.=afa90095 40B>, val<.=30281702 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=9ad7d0e0 221.1MiB>, val<.=3596325a 94.2MiB>, val<.=0385d873 83.4MiB>, val<.=9365dffd 649.8MiB>, val<.=090e4571 18.9KiB>, val<.=4fdf0d46 670.6KiB>, val<.=afa90095 40B>, val<.=30281702 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=9ad7d0e0 221.1MiB>, val<.=3596325a 94.2MiB>, val<.=0385d873 83.4MiB>, val<.=9365dffd 649.8MiB>, val<.=090e4571 18.9KiB>, val<.=4fdf0d46 670.6KiB>, val<.=afa90095 40B>, val<.=30281702 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=9ad7d0e0 221.1MiB>, val<.=3596325a 94.2MiB>, val<.=0385d873 83.4MiB>, val<.=9365dffd 649.8MiB>, val<.=090e4571 18.9KiB>, val<.=4fdf0d46 670.6KiB>, val<.=afa90095 40B>, val<.=30281702 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>), (val<.=9ad7d0e0 221.1MiB>, val<.=3596325a 94.2MiB>, val<.=0385d873 83.4MiB>, val<.=9365dffd 649.8MiB>, val<.=090e4571 18.9KiB>, val<.=4fdf0d46 670.6KiB>, val<.=afa90095 40B>, val<.=30281702 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>)]
