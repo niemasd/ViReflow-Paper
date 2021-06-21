@@ -1,0 +1,797 @@
+2021/06/21 10:54:16 reflow version: reflow1.6.0 (go1.13.15)
+2021/06/21 10:54:16 run ID: 7979459b
+2021/06/21 10:54:17 evaluating program /home/niema/ViReflow-Paper/run_files/sarscov2/n1/n1.r09.rf
+	(no params)
+	(no arguments)
+2021/06/21 10:54:17 Trace: /home/niema/.reflow/runs/7979459b8ab90b89a8aab1cabf731b10b1806100ee63f1ceed527494009a8cd4.trace
+2021/06/21 10:54:17 evaluating with configuration: scheduler *sched.Scheduler snapshotter blob.Mux transferer *repository.Manager repository *blobrepo.Repository,url=s3://niema-test-quickstart-cache/ assoc *dydbassoc.Assoc,TableName=niema-test-quickstart flags cacheextern,nocache,nogc,norecomputeempty,topdown flowconfig hashv2 cachelookuptimeout 20m0s imagemap map[niemasd/bash:5.1.0:index.docker.io/niemasd/bash@sha256:850e096199de927966e0a823d9803df56619370f0a1e0c8a4751aca971a7cbb0] dotwriter(*os.File)
+2021/06/21 10:54:17 scheduler task 15353bb9 (flow e38044de): submitted with execconfig exec image index.docker.io/niemasd/bash@sha256:850e096199de927966e0a823d9803df56619370f0a1e0c8a4751aca971a7cbb0 cmd "\n        wget -O \"%s\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3\" 1>&2\n    " args [out[0]] resources {mem:500.0MiB cpu:1 disk:0B}
+2021/06/21 10:54:17 scheduler task 7a174b09 (flow e69c8b79): submitted with execconfig exec image index.docker.io/niemasd/bash@sha256:850e096199de927966e0a823d9803df56619370f0a1e0c8a4751aca971a7cbb0 cmd "\n        wget -O \"%s\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed\" 1>&2\n    " args [out[0]] resources {mem:500.0MiB cpu:1 disk:0B}
+2021/06/21 10:54:17 scheduler task bb38ca07 (flow 4a93ab85): submitted with execconfig exec image index.docker.io/niemasd/bash@sha256:850e096199de927966e0a823d9803df56619370f0a1e0c8a4751aca971a7cbb0 cmd "\n        wget -O \"%s\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas\" 1>&2\n    " args [out[0]] resources {mem:500.0MiB cpu:1 disk:0B}
+2021/06/21 10:55:18 scheduler task 15353bb9 (flow e38044de): assigning to alloc ec2-18-223-97-213.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 available {mem:2.6GiB cpu:0 disk:327.8GiB intel_avx:2 intel_avx2:2}
+2021/06/21 10:55:18 scheduler task bb38ca07 (flow 4a93ab85): assigning to alloc ec2-18-223-97-213.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 available {mem:2.6GiB cpu:0 disk:327.8GiB intel_avx:2 intel_avx2:2}
+2021/06/21 10:55:18 scheduler task 15353bb9 (flow e38044de): loading (try 0): started
+2021/06/21 10:55:18 scheduler task 15353bb9 (flow e38044de): loading (try 0): successful, next state: submitting
+2021/06/21 10:55:18 scheduler task bb38ca07 (flow 4a93ab85): loading (try 0): started
+2021/06/21 10:55:18 scheduler task bb38ca07 (flow 4a93ab85): loading (try 0): successful, next state: submitting
+2021/06/21 10:55:18 scheduler task 15353bb9 (flow e38044de): submitting (try 0): started
+2021/06/21 10:55:18 scheduler task bb38ca07 (flow 4a93ab85): submitting (try 0): started
+2021/06/21 10:55:18 scheduler task 15353bb9 (flow e38044de): submitting (try 0): successful, next state: waiting for completion
+2021/06/21 10:55:18 scheduler task 15353bb9 (flow e38044de): waiting for completion (try 0): started
+2021/06/21 10:55:18  ->  n1.r09.s1.Main.ref_gff e38044de exec   exec ..803df56619370f0a1e0c8a4751aca971a7cbb0 wget -O "{{out}}" "https://ra..n/demo/NC_045512.2.gff3" 1>&2
+2021/06/21 10:55:18 n1.r09.s1.Main.ref_gff e38044de r09/n1.r09.s1.rf:19:20:
+	resources: {mem:500.0MiB cpu:1 disk:0B}
+	sha256:4f347e429e583c1ad70a6d918859e9f40749d94ca353ece46e1ca36da1a8da0e
+	sha256:2d3b4d150828493e5bd9cddfd75506f434abbb834bb14898b62409f3a9586bb0
+	sha256:e38044de3b073437b8e14a201ce23e7dc211e52b95feb3443e95b77eb1328a9d
+	ec2-18-223-97-213.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/15353bb95903ddf59744de7997df49d580d27404d593f79da342d62efed77526
+	index.docker.io/niemasd/bash@sha256:850e096199de927966e0a823d9803df56619370f0a1e0c8a4751aca971a7cbb0
+	command:
+	    wget -O "{{out}}" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3" 1>&2
+	where:
+2021/06/21 10:55:18 scheduler task bb38ca07 (flow 4a93ab85): submitting (try 0): successful, next state: waiting for completion
+2021/06/21 10:55:18 scheduler task bb38ca07 (flow 4a93ab85): waiting for completion (try 0): started
+2021/06/21 10:55:18  ->  n1.r09.s1.Main.ref_fas 4a93ab85 exec   exec ..803df56619370f0a1e0c8a4751aca971a7cbb0 wget -O "{{out}}" "https://ra..in/demo/NC_045512.2.fas" 1>&2
+2021/06/21 10:55:18 n1.r09.s1.Main.ref_fas 4a93ab85 r09/n1.r09.s1.rf:13:20:
+	resources: {mem:500.0MiB cpu:1 disk:0B}
+	sha256:4a7bdcf2abcd05d1beb2b819e57f32bcb64fe8a9853eb129c50e8c25064c4127
+	sha256:8c9f81ac9f4275bffbcd57ceac3b55bce49c8cd81a973628457763382b932615
+	sha256:4a93ab8532e1dba4f3e5ecc713b5cd87133dafc60e794ba710e2f2baebbd16e9
+	ec2-18-223-97-213.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/bb38ca07ea84b23dd7ebb85246004a97e208a8fb2fcb004e61d1ca52fc85f777
+	index.docker.io/niemasd/bash@sha256:850e096199de927966e0a823d9803df56619370f0a1e0c8a4751aca971a7cbb0
+	command:
+	    wget -O "{{out}}" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas" 1>&2
+	where:
+2021/06/21 10:55:20 scheduler task 15353bb9 (flow e38044de): waiting for completion (try 0): successful, next state: promoting objects
+2021/06/21 10:55:20 scheduler task bb38ca07 (flow 4a93ab85): waiting for completion (try 0): successful, next state: promoting objects
+2021/06/21 10:55:20 scheduler task 15353bb9 (flow e38044de): promoting objects (try 0): started
+2021/06/21 10:55:20 scheduler task bb38ca07 (flow 4a93ab85): promoting objects (try 0): started
+2021/06/21 10:55:20 scheduler task 15353bb9 (flow e38044de): promoting objects (try 0): successful, next state: retrieving diagnostic output
+2021/06/21 10:55:20 scheduler task bb38ca07 (flow 4a93ab85): promoting objects (try 0): successful, next state: retrieving diagnostic output
+2021/06/21 10:55:20 scheduler task 15353bb9 (flow e38044de): retrieving diagnostic output (try 0): started
+2021/06/21 10:55:20 scheduler task bb38ca07 (flow 4a93ab85): retrieving diagnostic output (try 0): started
+2021/06/21 10:55:20 scheduler task 15353bb9 (flow e38044de): retrieving diagnostic output (try 0): successful, next state: retrieving result
+2021/06/21 10:55:20 scheduler task 15353bb9 (flow e38044de): retrieving result (try 0): started
+2021/06/21 10:55:20 scheduler task bb38ca07 (flow 4a93ab85): retrieving diagnostic output (try 0): successful, next state: retrieving result
+2021/06/21 10:55:20 scheduler task bb38ca07 (flow 4a93ab85): retrieving result (try 0): started
+2021/06/21 10:55:20 scheduler task 15353bb9 (flow e38044de): retrieving result (try 0): successful, next state: transferring output
+2021/06/21 10:55:20 scheduler task 15353bb9 (flow e38044de): transferring output (try 0): started
+2021/06/21 10:55:20 scheduler task bb38ca07 (flow 4a93ab85): retrieving result (try 0): successful, next state: transferring output
+2021/06/21 10:55:20 scheduler task bb38ca07 (flow 4a93ab85): transferring output (try 0): started
+2021/06/21 10:55:20 scheduler task 15353bb9 (flow e38044de): transferring output (try 0): successful, next state: unloading
+2021/06/21 10:55:20 scheduler task 15353bb9 (flow e38044de): unloading (try 0): started
+2021/06/21 10:55:20 scheduler task 15353bb9 (flow e38044de): unloading list<val<.=70383dad 14.3KiB> 14.3KiB>
+2021/06/21 10:55:21 scheduler task 15353bb9 (flow e38044de): unloaded list<val<.=70383dad 14.3KiB> 14.3KiB>
+2021/06/21 10:55:21 scheduler task 15353bb9 (flow e38044de): unloading (try 0): successful, next state: complete
+2021/06/21 10:55:21 scheduler task bb38ca07 (flow 4a93ab85): transferring output (try 0): successful, next state: unloading
+2021/06/21 10:55:21 scheduler task 7a174b09 (flow e69c8b79): assigning to alloc ec2-18-223-97-213.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 available {mem:2.6GiB cpu:0 disk:327.8GiB intel_avx:2 intel_avx2:2}
+2021/06/21 10:55:21 scheduler task 7a174b09 (flow e69c8b79): loading (try 0): started
+2021/06/21 10:55:21 scheduler task 7a174b09 (flow e69c8b79): loading (try 0): successful, next state: submitting
+2021/06/21 10:55:21  <-  n1.r09.s1.Main.ref_gff e38044de ok     exec 0s 14.3KiB
+2021/06/21 10:55:21 n1.r09.s1.Main.ref_gff e38044de r09/n1.r09.s1.rf:19:20:
+	resources: {mem:500.0MiB cpu:1 disk:0B}
+	sha256:4f347e429e583c1ad70a6d918859e9f40749d94ca353ece46e1ca36da1a8da0e
+	sha256:2d3b4d150828493e5bd9cddfd75506f434abbb834bb14898b62409f3a9586bb0
+	sha256:e38044de3b073437b8e14a201ce23e7dc211e52b95feb3443e95b77eb1328a9d
+	ec2-18-223-97-213.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/15353bb95903ddf59744de7997df49d580d27404d593f79da342d62efed77526
+	index.docker.io/niemasd/bash@sha256:850e096199de927966e0a823d9803df56619370f0a1e0c8a4751aca971a7cbb0
+	command:
+	    wget -O "{{out}}" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3" 1>&2
+	where:
+	result:
+	    {{out}} =
+	        . sha256:70383daddfac7980b49de5cc655696894a5a352b6b09eeb2938dc6b38abafa87 14.3KiB
+	profile:
+	    cpu mean=0.0 max=0.0
+	    mem mean=0B max=0B
+	    disk mean=14.3KiB max=14.3KiB
+	    tmp mean=0B max=0B
+2021/06/21 10:55:21 scheduler task a00158a4 (flow 00c6f09c): submitted with execconfig extern url s3://niema-test/n1/r09/n1.r09.s1.reference.gff resources {}
+2021/06/21 10:55:21  ->  n1.r09.s1.Main.cp_ref_gff 00c6f09c exec extern s3://niema-test/n1/r09/n1.r09.s1.reference.gff 14.3KiB
+2021/06/21 10:55:21 scheduler task bb38ca07 (flow 4a93ab85): unloading (try 0): started
+2021/06/21 10:55:21 scheduler task bb38ca07 (flow 4a93ab85): unloading list<val<.=0891c00c 29.7KiB> 29.7KiB>
+2021/06/21 10:55:21 scheduler task 7a174b09 (flow e69c8b79): submitting (try 0): started
+2021/06/21 10:55:21 scheduler task bb38ca07 (flow 4a93ab85): unloaded list<val<.=0891c00c 29.7KiB> 29.7KiB>
+2021/06/21 10:55:21 scheduler task bb38ca07 (flow 4a93ab85): unloading (try 0): successful, next state: complete
+2021/06/21 10:55:21  <-  n1.r09.s1.Main.ref_fas 4a93ab85 ok     exec 0s 29.7KiB
+2021/06/21 10:55:21 n1.r09.s1.Main.ref_fas 4a93ab85 r09/n1.r09.s1.rf:13:20:
+	resources: {mem:500.0MiB cpu:1 disk:0B}
+	sha256:4a7bdcf2abcd05d1beb2b819e57f32bcb64fe8a9853eb129c50e8c25064c4127
+	sha256:8c9f81ac9f4275bffbcd57ceac3b55bce49c8cd81a973628457763382b932615
+	sha256:4a93ab8532e1dba4f3e5ecc713b5cd87133dafc60e794ba710e2f2baebbd16e9
+	ec2-18-223-97-213.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/bb38ca07ea84b23dd7ebb85246004a97e208a8fb2fcb004e61d1ca52fc85f777
+	index.docker.io/niemasd/bash@sha256:850e096199de927966e0a823d9803df56619370f0a1e0c8a4751aca971a7cbb0
+	command:
+	    wget -O "{{out}}" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas" 1>&2
+	where:
+	result:
+	    {{out}} =
+	        . sha256:0891c00cc2d503f58e0c600ce5ee64e9c64b939525c70d5486bc46cbc7cb073e 29.7KiB
+	profile:
+	    cpu mean=0.0 max=0.0
+	    mem mean=0B max=0B
+	    disk mean=29.7KiB max=29.7KiB
+	    tmp mean=0B max=0B
+2021/06/21 10:55:21 scheduler task 9bda0e13 (flow fa126f66): submitted with execconfig extern url s3://niema-test/n1/r09/n1.r09.s1.reference.fas resources {}
+2021/06/21 10:55:21 scheduler task 1439db81 (flow f22bc899): submitted with execconfig exec image niemasd/minimap2_samtools:2.20_1.12 cmd "\n        minimap2 -t 1 -a -x sr \"%s\" \"%s\" \"%s\" | samtools view -bS - > \"%s\"\n    " args [val<.=0891c00c 29.7KiB>, val<.=s3://niema-test/n1/r09/n1.r09.s1_R1.fastq 35.4MiB>, val<.=s3://niema-test/n1/r09/n1.r09.s1_R2.fastq 35.4MiB>, out[0]] resources {mem:500.0MiB cpu:1 disk:0B}
+2021/06/21 10:55:21 scheduler task 1439db81 (flow f22bc899): assigning to alloc ec2-18-223-97-213.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 available {mem:2.6GiB cpu:0 disk:327.8GiB intel_avx:2 intel_avx2:2}
+2021/06/21 10:55:21 scheduler task 1439db81 (flow f22bc899): loading (try 0): started
+2021/06/21 10:55:21 scheduler task 1439db81 (flow f22bc899): loading val<.=s3://niema-test/n1/r09/n1.r09.s1_R2.fastq 35.4MiB>
+2021/06/21 10:55:21 scheduler task 1439db81 (flow f22bc899): loading val<.=0891c00c 29.7KiB>
+2021/06/21 10:55:21  ->  n1.r09.s1.Main.cp_ref_fas fa126f66 exec extern s3://niema-test/n1/r09/n1.r09.s1.reference.fas 29.7KiB
+2021/06/21 10:55:21 scheduler task 1439db81 (flow f22bc899): loading val<.=s3://niema-test/n1/r09/n1.r09.s1_R1.fastq 35.4MiB>
+2021/06/21 10:55:21 scheduler task 7a174b09 (flow e69c8b79): submitting (try 0): successful, next state: waiting for completion
+2021/06/21 10:55:21 scheduler task 1439db81 (flow f22bc899): loaded val<.=0891c00c 29.7KiB>
+2021/06/21 10:55:21 scheduler task 7a174b09 (flow e69c8b79): waiting for completion (try 0): started
+2021/06/21 10:55:21  ->  n1.r09.s1.Main.primer_bed e69c8b79 exec   exec ..803df56619370f0a1e0c8a4751aca971a7cbb0 wget -O "{{out}}" "https://ra..v2_v2_primers_swift.bed" 1>&2
+2021/06/21 10:55:21 n1.r09.s1.Main.primer_bed e69c8b79 r09/n1.r09.s1.rf:25:23:
+	resources: {mem:500.0MiB cpu:1 disk:0B}
+	sha256:f27d8804592182c946ddc082a428fae4b0ebd191fbcbd66e77c33d8697943308
+	sha256:9788a813b8d778cf52c3eea94d31bf5bb0c44d311fc1b51e62904a9249b34994
+	sha256:e69c8b79ea294382e3796b8a317f122f9e291e940d072916884091e1e6fdca5a
+	ec2-18-223-97-213.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/7a174b09d42389dd7d33a075ca4f93c4971406f7af5f99d3266f50f7f262a8d7
+	index.docker.io/niemasd/bash@sha256:850e096199de927966e0a823d9803df56619370f0a1e0c8a4751aca971a7cbb0
+	command:
+	    wget -O "{{out}}" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed" 1>&2
+	where:
+2021/06/21 10:55:22 scheduler task 9bda0e13 (flow fa126f66): direct transfer: completed s3://niema-test-quickstart-cache/objects/sha256:0891c00cc2d503f58e0c600ce5ee64e9c64b939525c70d5486bc46cbc7cb073e -> s3://niema-test/n1/r09/n1.r09.s1.reference.fas (29.7KiB) in 1s (29.7KiB/s) 
+2021/06/21 10:55:22  <-  n1.r09.s1.Main.cp_ref_fas fa126f66 ok   extern 0s 29.7KiB
+2021/06/21 10:55:22 scheduler task a00158a4 (flow 00c6f09c): direct transfer: completed s3://niema-test-quickstart-cache/objects/sha256:70383daddfac7980b49de5cc655696894a5a352b6b09eeb2938dc6b38abafa87 -> s3://niema-test/n1/r09/n1.r09.s1.reference.gff (14.3KiB) in 1s (14.3KiB/s) 
+2021/06/21 10:55:22  <-  n1.r09.s1.Main.cp_ref_gff 00c6f09c ok   extern 0s 14.3KiB
+2021/06/21 10:55:22 scheduler task 1439db81 (flow f22bc899): loaded val<.=65c9e862 35.4MiB>
+2021/06/21 10:55:22 scheduler task 7a174b09 (flow e69c8b79): waiting for completion (try 0): successful, next state: promoting objects
+2021/06/21 10:55:22 scheduler task 7a174b09 (flow e69c8b79): promoting objects (try 0): started
+2021/06/21 10:55:22 scheduler task 7a174b09 (flow e69c8b79): promoting objects (try 0): successful, next state: retrieving diagnostic output
+2021/06/21 10:55:22 scheduler task 7a174b09 (flow e69c8b79): retrieving diagnostic output (try 0): started
+2021/06/21 10:55:22 scheduler task 1439db81 (flow f22bc899): loaded val<.=c19584f6 35.4MiB>
+2021/06/21 10:55:22 scheduler task 1439db81 (flow f22bc899): loading (try 0): successful, next state: submitting
+2021/06/21 10:55:22 scheduler task 1439db81 (flow f22bc899): submitting (try 0): started
+2021/06/21 10:55:22 scheduler task 7a174b09 (flow e69c8b79): retrieving diagnostic output (try 0): successful, next state: retrieving result
+2021/06/21 10:55:22 scheduler task 7a174b09 (flow e69c8b79): retrieving result (try 0): started
+2021/06/21 10:55:22 scheduler task 7a174b09 (flow e69c8b79): retrieving result (try 0): successful, next state: transferring output
+2021/06/21 10:55:22 scheduler task 1439db81 (flow f22bc899): submitting (try 0): successful, next state: waiting for completion
+2021/06/21 10:55:22 scheduler task 7a174b09 (flow e69c8b79): transferring output (try 0): started
+2021/06/21 10:55:22 scheduler task 1439db81 (flow f22bc899): waiting for completion (try 0): started
+2021/06/21 10:55:22  ->  n1.r09.s1.Main.untrimmed_bam f22bc899 exec   exec niemasd/minimap2_samtools:2.20_1.12 minimap2 -t 1 -a -x sr "{{ref..mtools view -bS - > "{{out}}"
+2021/06/21 10:55:22 n1.r09.s1.Main.untrimmed_bam f22bc899 r09/n1.r09.s1.rf:31:26:
+	resources: {mem:500.0MiB cpu:1 disk:0B}
+	sha256:eba991af94b7e2895b6176da2efe09c16ae4c317da6faeeabf54e46d41a7171f
+	sha256:f22bc899a6c48000ed23482d6ab42f673ae6c5edf9352afd83a6a66aa9dd31d0
+	ec2-18-223-97-213.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/1439db81864e22d2ca8d41aef04a7a303fbc525384120b4d3a6d33674d7a0df5
+	niemasd/minimap2_samtools:2.20_1.12
+	command:
+	    minimap2 -t 1 -a -x sr "{{ref_fas}}" "{{fq1}}" "{{fq2}}" | samtools view -bS - > "{{out}}"
+	where:
+	    {{ref_fas}} = 
+	        . sha256:0891c00cc2d503f58e0c600ce5ee64e9c64b939525c70d5486bc46cbc7cb073e 29.7KiB
+	    {{fq1}} = 
+	        . <zero> 35.4MiB
+	    {{fq2}} = 
+	        . <zero> 35.4MiB
+2021/06/21 10:55:22 scheduler task 7a174b09 (flow e69c8b79): transferring output (try 0): successful, next state: unloading
+2021/06/21 10:55:22 scheduler task 7a174b09 (flow e69c8b79): unloading (try 0): started
+2021/06/21 10:55:22 scheduler task 7a174b09 (flow e69c8b79): unloading list<val<.=915db124 41.0KiB> 41.0KiB>
+2021/06/21 10:55:22 scheduler task 7a174b09 (flow e69c8b79): unloaded list<val<.=915db124 41.0KiB> 41.0KiB>
+2021/06/21 10:55:22 scheduler task 7a174b09 (flow e69c8b79): unloading (try 0): successful, next state: complete
+2021/06/21 10:55:22  <-  n1.r09.s1.Main.primer_bed e69c8b79 ok     exec 0s 41.0KiB
+2021/06/21 10:55:22 n1.r09.s1.Main.primer_bed e69c8b79 r09/n1.r09.s1.rf:25:23:
+	resources: {mem:500.0MiB cpu:1 disk:0B}
+	sha256:f27d8804592182c946ddc082a428fae4b0ebd191fbcbd66e77c33d8697943308
+	sha256:9788a813b8d778cf52c3eea94d31bf5bb0c44d311fc1b51e62904a9249b34994
+	sha256:e69c8b79ea294382e3796b8a317f122f9e291e940d072916884091e1e6fdca5a
+	ec2-18-223-97-213.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/7a174b09d42389dd7d33a075ca4f93c4971406f7af5f99d3266f50f7f262a8d7
+	index.docker.io/niemasd/bash@sha256:850e096199de927966e0a823d9803df56619370f0a1e0c8a4751aca971a7cbb0
+	command:
+	    wget -O "{{out}}" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed" 1>&2
+	where:
+	result:
+	    {{out}} =
+	        . sha256:915db1249d8c954f803733f5d6e9c913f84a12bd4b1a0efe2e01aaefef50be16 41.0KiB
+	profile:
+	    cpu mean=0.0 max=0.0
+	    mem mean=2.4MiB max=2.4MiB
+	    disk mean=41.0KiB max=41.0KiB
+	    tmp mean=0B max=0B
+2021/06/21 10:55:22 scheduler task ca6e6c67 (flow 1eec57c6): submitted with execconfig extern url s3://niema-test/n1/r09/n1.r09.s1.primers.bed resources {}
+2021/06/21 10:55:22  ->  n1.r09.s1.Main.cp_primer_bed 1eec57c6 exec extern s3://niema-test/n1/r09/n1.r09.s1.primers.bed 41.0KiB
+2021/06/21 10:55:23 scheduler task ca6e6c67 (flow 1eec57c6): direct transfer: completed s3://niema-test-quickstart-cache/objects/sha256:915db1249d8c954f803733f5d6e9c913f84a12bd4b1a0efe2e01aaefef50be16 -> s3://niema-test/n1/r09/n1.r09.s1.primers.bed (41.0KiB) in 1s (41.0KiB/s) 
+2021/06/21 10:55:23  <-  n1.r09.s1.Main.cp_primer_bed 1eec57c6 ok   extern 0s 41.0KiB
+2021/06/21 10:55:37 scheduler task 1439db81 (flow f22bc899): waiting for completion (try 0): successful, next state: promoting objects
+2021/06/21 10:55:37 scheduler task 1439db81 (flow f22bc899): promoting objects (try 0): started
+2021/06/21 10:55:37 scheduler task 1439db81 (flow f22bc899): promoting objects (try 0): successful, next state: retrieving diagnostic output
+2021/06/21 10:55:37 scheduler task 1439db81 (flow f22bc899): retrieving diagnostic output (try 0): started
+2021/06/21 10:55:37 scheduler task 1439db81 (flow f22bc899): retrieving diagnostic output (try 0): successful, next state: retrieving result
+2021/06/21 10:55:37 scheduler task 1439db81 (flow f22bc899): retrieving result (try 0): started
+2021/06/21 10:55:37 scheduler task 1439db81 (flow f22bc899): retrieving result (try 0): successful, next state: transferring output
+2021/06/21 10:55:37 scheduler task 1439db81 (flow f22bc899): transferring output (try 0): started
+2021/06/21 10:55:38 scheduler task 1439db81 (flow f22bc899): transferring output (try 0): successful, next state: unloading
+2021/06/21 10:55:38 scheduler task 1439db81 (flow f22bc899): unloading (try 0): started
+2021/06/21 10:55:38 scheduler task 1439db81 (flow f22bc899): unloading list<val<.=d0f22b73 15.5MiB> 15.5MiB>
+2021/06/21 10:55:38 scheduler task 1439db81 (flow f22bc899): unloading val<.=65c9e862 35.4MiB>
+2021/06/21 10:55:38 scheduler task 1439db81 (flow f22bc899): unloading val<.=c19584f6 35.4MiB>
+2021/06/21 10:55:38 scheduler task 1439db81 (flow f22bc899): unloading val<.=0891c00c 29.7KiB>
+2021/06/21 10:55:38 scheduler task 1439db81 (flow f22bc899): unloaded val<.=65c9e862 35.4MiB>
+2021/06/21 10:55:38 scheduler task 1439db81 (flow f22bc899): unloaded list<val<.=d0f22b73 15.5MiB> 15.5MiB>
+2021/06/21 10:55:38 scheduler task 1439db81 (flow f22bc899): unloaded val<.=c19584f6 35.4MiB>
+2021/06/21 10:55:38 scheduler task 1439db81 (flow f22bc899): unloaded val<.=0891c00c 29.7KiB>
+2021/06/21 10:55:38 scheduler task 1439db81 (flow f22bc899): unloading (try 0): successful, next state: complete
+2021/06/21 10:55:38  <-  n1.r09.s1.Main.untrimmed_bam f22bc899 ok     exec 9s 15.5MiB
+2021/06/21 10:55:38 n1.r09.s1.Main.untrimmed_bam f22bc899 r09/n1.r09.s1.rf:31:26:
+	resources: {mem:500.0MiB cpu:1 disk:0B}
+	sha256:eba991af94b7e2895b6176da2efe09c16ae4c317da6faeeabf54e46d41a7171f
+	sha256:f22bc899a6c48000ed23482d6ab42f673ae6c5edf9352afd83a6a66aa9dd31d0
+	ec2-18-223-97-213.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/1439db81864e22d2ca8d41aef04a7a303fbc525384120b4d3a6d33674d7a0df5
+	niemasd/minimap2_samtools:2.20_1.12
+	command:
+	    minimap2 -t 1 -a -x sr "{{ref_fas}}" "{{fq1}}" "{{fq2}}" | samtools view -bS - > "{{out}}"
+	where:
+	    {{ref_fas}} = 
+	        . sha256:0891c00cc2d503f58e0c600ce5ee64e9c64b939525c70d5486bc46cbc7cb073e 29.7KiB
+	    {{fq1}} = 
+	        . <zero> 35.4MiB
+	    {{fq2}} = 
+	        . <zero> 35.4MiB
+	result:
+	    {{out}} =
+	        . sha256:d0f22b736b7eccd294e29ce5d570d6b056df6e39cab2fef33d1fb7023697d5e9 15.5MiB
+	profile:
+	    cpu mean=1.0 max=1.2
+	    mem mean=79.1MiB max=121.6MiB
+	    disk mean=15.5MiB max=15.5MiB
+	    tmp mean=0B max=0B
+2021/06/21 10:55:38 scheduler task 6df00db9 (flow 8222fda2): submitted with execconfig exec image niemasd/samtools:1.12 cmd "\n        samtools sort --threads 1 -O bam -o \"%s\" \"%s\" 1>&2\n    " args [out[0], val<.=d0f22b73 15.5MiB>] resources {mem:500.0MiB cpu:1 disk:0B}
+2021/06/21 10:55:38 scheduler task 88289208 (flow e78fe3a6): submitted with execconfig extern url s3://niema-test/n1/r09/n1.r09.s1.untrimmed.bam resources {}
+2021/06/21 10:55:38 scheduler task 6df00db9 (flow 8222fda2): assigning to alloc ec2-18-223-97-213.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 available {mem:3.1GiB cpu:1 disk:327.8GiB intel_avx:2 intel_avx2:2}
+2021/06/21 10:55:38 scheduler task 6df00db9 (flow 8222fda2): loading (try 0): started
+2021/06/21 10:55:38  ->  n1.r09.s1.Main.cp_untrimmed_bam e78fe3a6 exec extern s3://niema-test/n1/r09/n1.r09.s1.untrimmed.bam 15.5MiB
+2021/06/21 10:55:38 scheduler task 6df00db9 (flow 8222fda2): loading val<.=d0f22b73 15.5MiB>
+2021/06/21 10:55:38 scheduler task 6df00db9 (flow 8222fda2): loaded val<.=d0f22b73 15.5MiB>
+2021/06/21 10:55:38 scheduler task 6df00db9 (flow 8222fda2): loading (try 0): successful, next state: submitting
+2021/06/21 10:55:38 scheduler task 6df00db9 (flow 8222fda2): submitting (try 0): started
+2021/06/21 10:55:38 scheduler task 88289208 (flow e78fe3a6): direct transfer: completed s3://niema-test-quickstart-cache/objects/sha256:d0f22b736b7eccd294e29ce5d570d6b056df6e39cab2fef33d1fb7023697d5e9 -> s3://niema-test/n1/r09/n1.r09.s1.untrimmed.bam (15.5MiB) in 1s (15.5MiB/s) 
+2021/06/21 10:55:38  <-  n1.r09.s1.Main.cp_untrimmed_bam e78fe3a6 ok   extern 0s 15.5MiB
+2021/06/21 10:55:38 scheduler task 6df00db9 (flow 8222fda2): submitting (try 0): successful, next state: waiting for completion
+2021/06/21 10:55:38 scheduler task 6df00db9 (flow 8222fda2): waiting for completion (try 0): started
+2021/06/21 10:55:38  ->  n1.r09.s1.Main.sorted_untrimmed_bam 8222fda2 exec   exec niemasd/samtools:1.12 samtools sort --threads 1 -O ..t}}" "{{untrimmed_bam}}" 1>&2
+2021/06/21 10:55:38 n1.r09.s1.Main.sorted_untrimmed_bam 8222fda2 r09/n1.r09.s1.rf:37:33:
+	resources: {mem:500.0MiB cpu:1 disk:0B}
+	sha256:b8da44b186a2216af37549e9d64bcf500357814fa729799ffd048e9e6c930355
+	sha256:8222fda20076eb26dc6ee6a9d9007a6dd1184e17691161f69c777b606f3c355f
+	ec2-18-223-97-213.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/6df00db9470f0d017c17c5d23a2f8a3a1d6c2402df8f307377a0f14935e7a7cd
+	niemasd/samtools:1.12
+	command:
+	    samtools sort --threads 1 -O bam -o "{{out}}" "{{untrimmed_bam}}" 1>&2
+	where:
+	    {{untrimmed_bam}} = 
+	        . sha256:d0f22b736b7eccd294e29ce5d570d6b056df6e39cab2fef33d1fb7023697d5e9 15.5MiB
+2021/06/21 10:55:48 scheduler task 6df00db9 (flow 8222fda2): waiting for completion (try 0): successful, next state: promoting objects
+2021/06/21 10:55:48 scheduler task 6df00db9 (flow 8222fda2): promoting objects (try 0): started
+2021/06/21 10:55:48 scheduler task 6df00db9 (flow 8222fda2): promoting objects (try 0): successful, next state: retrieving diagnostic output
+2021/06/21 10:55:48 scheduler task 6df00db9 (flow 8222fda2): retrieving diagnostic output (try 0): started
+2021/06/21 10:55:48 scheduler task 6df00db9 (flow 8222fda2): retrieving diagnostic output (try 0): successful, next state: retrieving result
+2021/06/21 10:55:49 scheduler task 6df00db9 (flow 8222fda2): retrieving result (try 0): started
+2021/06/21 10:55:49 scheduler task 6df00db9 (flow 8222fda2): retrieving result (try 0): successful, next state: transferring output
+2021/06/21 10:55:49 scheduler task 6df00db9 (flow 8222fda2): transferring output (try 0): started
+2021/06/21 10:55:49 scheduler task 6df00db9 (flow 8222fda2): transferring output (try 0): successful, next state: unloading
+2021/06/21 10:55:49 scheduler task 6df00db9 (flow 8222fda2): unloading (try 0): started
+2021/06/21 10:55:49 scheduler task 6df00db9 (flow 8222fda2): unloading list<val<.=0eb7f128 6.9MiB> 6.9MiB>
+2021/06/21 10:55:49 scheduler task 6df00db9 (flow 8222fda2): unloading val<.=d0f22b73 15.5MiB>
+2021/06/21 10:55:49 scheduler task 6df00db9 (flow 8222fda2): unloaded val<.=d0f22b73 15.5MiB>
+2021/06/21 10:55:49 scheduler task 6df00db9 (flow 8222fda2): unloaded list<val<.=0eb7f128 6.9MiB> 6.9MiB>
+2021/06/21 10:55:49 scheduler task 6df00db9 (flow 8222fda2): unloading (try 0): successful, next state: complete
+2021/06/21 10:55:49  <-  n1.r09.s1.Main.sorted_untrimmed_bam 8222fda2 ok     exec 2s 6.9MiB
+2021/06/21 10:55:49 n1.r09.s1.Main.sorted_untrimmed_bam 8222fda2 r09/n1.r09.s1.rf:37:33:
+	resources: {mem:500.0MiB cpu:1 disk:0B}
+	sha256:b8da44b186a2216af37549e9d64bcf500357814fa729799ffd048e9e6c930355
+	sha256:8222fda20076eb26dc6ee6a9d9007a6dd1184e17691161f69c777b606f3c355f
+	ec2-18-223-97-213.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/6df00db9470f0d017c17c5d23a2f8a3a1d6c2402df8f307377a0f14935e7a7cd
+	niemasd/samtools:1.12
+	command:
+	    samtools sort --threads 1 -O bam -o "{{out}}" "{{untrimmed_bam}}" 1>&2
+	where:
+	    {{untrimmed_bam}} = 
+	        . sha256:d0f22b736b7eccd294e29ce5d570d6b056df6e39cab2fef33d1fb7023697d5e9 15.5MiB
+	result:
+	    {{out}} =
+	        . sha256:0eb7f128656303bb5b2b1e81126b20e64733003e76a3195ac3cc6f9ad8f0769a 6.9MiB
+	profile:
+	    cpu mean=0.7 max=1.0
+	    mem mean=64.7MiB max=84.8MiB
+	    disk mean=6.9MiB max=6.9MiB
+	    tmp mean=0B max=0B
+2021/06/21 10:55:49 scheduler task e5a7fe6e (flow 927892aa): submitted with execconfig exec image niemasd/ivar:1.3.1 cmd "\n        ivar trim -x 5 -e -i \"%s\" -b \"%s\" -p trimmed 1>&2 && mv trimmed.bam \"%s\"\n    " args [val<.=0eb7f128 6.9MiB>, val<.=915db124 41.0KiB>, out[0]] resources {mem:500.0MiB cpu:1 disk:0B}
+2021/06/21 10:55:49 scheduler task 1d3a401e (flow 1bf43688): submitted with execconfig extern url s3://niema-test/n1/r09/n1.r09.s1.untrimmed.sorted.bam resources {}
+2021/06/21 10:55:49 scheduler task e5a7fe6e (flow 927892aa): assigning to alloc ec2-18-223-97-213.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 available {mem:3.1GiB cpu:1 disk:327.8GiB intel_avx:2 intel_avx2:2}
+2021/06/21 10:55:49 scheduler task e5a7fe6e (flow 927892aa): loading (try 0): started
+2021/06/21 10:55:49 scheduler task e5a7fe6e (flow 927892aa): loading val<.=915db124 41.0KiB>
+2021/06/21 10:55:49 scheduler task e5a7fe6e (flow 927892aa): loading val<.=0eb7f128 6.9MiB>
+2021/06/21 10:55:49  ->  n1.r09.s1.Main.cp_sorted_untrimmed_bam 1bf43688 exec extern s3://niema-test/n1/r09/n1.r09.s1.untrimmed.sorted.bam 6.9MiB
+2021/06/21 10:55:49 scheduler task e5a7fe6e (flow 927892aa): loaded val<.=915db124 41.0KiB>
+2021/06/21 10:55:49 scheduler task e5a7fe6e (flow 927892aa): loaded val<.=0eb7f128 6.9MiB>
+2021/06/21 10:55:49 scheduler task e5a7fe6e (flow 927892aa): loading (try 0): successful, next state: submitting
+2021/06/21 10:55:49 scheduler task e5a7fe6e (flow 927892aa): submitting (try 0): started
+2021/06/21 10:55:50 scheduler task 1d3a401e (flow 1bf43688): direct transfer: completed s3://niema-test-quickstart-cache/objects/sha256:0eb7f128656303bb5b2b1e81126b20e64733003e76a3195ac3cc6f9ad8f0769a -> s3://niema-test/n1/r09/n1.r09.s1.untrimmed.sorted.bam (6.9MiB) in 1s (6.9MiB/s) 
+2021/06/21 10:55:50  <-  n1.r09.s1.Main.cp_sorted_untrimmed_bam 1bf43688 ok   extern 0s 6.9MiB
+2021/06/21 10:55:50 scheduler task e5a7fe6e (flow 927892aa): submitting (try 0): successful, next state: waiting for completion
+2021/06/21 10:55:50 scheduler task e5a7fe6e (flow 927892aa): waiting for completion (try 0): started
+2021/06/21 10:55:50  ->  n1.r09.s1.Main.trimmed_bam 927892aa exec   exec niemasd/ivar:1.3.1 ivar trim -x 5 -e -i "{{sorte..2 && mv trimmed.bam "{{out}}"
+2021/06/21 10:55:50 n1.r09.s1.Main.trimmed_bam 927892aa r09/n1.r09.s1.rf:43:24:
+	resources: {mem:500.0MiB cpu:1 disk:0B}
+	sha256:38e61fa43e62222f787cd8ebe8ea0eecb4df61000791e306ed427f6b518b97fe
+	sha256:927892aa5ac952d2ac897175f57299d2b4264eef88f890a4581989d94a61bb71
+	ec2-18-223-97-213.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/e5a7fe6e8b95d721e02875ba0577ba70b5583eccff0d6c154fff6f75676dd706
+	niemasd/ivar:1.3.1
+	command:
+	    ivar trim -x 5 -e -i "{{sorted_untrimmed_bam}}" -b "{{primer_bed}}" -p trimmed 1>&2 && mv trimmed.bam "{{out}}"
+	where:
+	    {{sorted_untrimmed_bam}} = 
+	        . sha256:0eb7f128656303bb5b2b1e81126b20e64733003e76a3195ac3cc6f9ad8f0769a 6.9MiB
+	    {{primer_bed}} = 
+	        . sha256:915db1249d8c954f803733f5d6e9c913f84a12bd4b1a0efe2e01aaefef50be16 41.0KiB
+2021/06/21 10:57:37 scheduler task e5a7fe6e (flow 927892aa): waiting for completion (try 0): successful, next state: promoting objects
+2021/06/21 10:57:37 scheduler task e5a7fe6e (flow 927892aa): promoting objects (try 0): started
+2021/06/21 10:57:37 scheduler task e5a7fe6e (flow 927892aa): promoting objects (try 0): successful, next state: retrieving diagnostic output
+2021/06/21 10:57:37 scheduler task e5a7fe6e (flow 927892aa): retrieving diagnostic output (try 0): started
+2021/06/21 10:57:37 scheduler task e5a7fe6e (flow 927892aa): retrieving diagnostic output (try 0): successful, next state: retrieving result
+2021/06/21 10:57:37 scheduler task e5a7fe6e (flow 927892aa): retrieving result (try 0): started
+2021/06/21 10:57:37 scheduler task e5a7fe6e (flow 927892aa): retrieving result (try 0): successful, next state: transferring output
+2021/06/21 10:57:37 scheduler task e5a7fe6e (flow 927892aa): transferring output (try 0): started
+2021/06/21 10:57:38 scheduler task e5a7fe6e (flow 927892aa): transferring output (try 0): successful, next state: unloading
+2021/06/21 10:57:38 scheduler task e5a7fe6e (flow 927892aa): unloading (try 0): started
+2021/06/21 10:57:38 scheduler task e5a7fe6e (flow 927892aa): unloading val<.=0eb7f128 6.9MiB>
+2021/06/21 10:57:38 scheduler task e5a7fe6e (flow 927892aa): unloading list<val<.=e887606d 6.3MiB> 6.3MiB>
+2021/06/21 10:57:38 scheduler task e5a7fe6e (flow 927892aa): unloading val<.=915db124 41.0KiB>
+2021/06/21 10:57:38 scheduler task e5a7fe6e (flow 927892aa): unloaded list<val<.=e887606d 6.3MiB> 6.3MiB>
+2021/06/21 10:57:38 scheduler task e5a7fe6e (flow 927892aa): unloaded val<.=0eb7f128 6.9MiB>
+2021/06/21 10:57:38 scheduler task e5a7fe6e (flow 927892aa): unloaded val<.=915db124 41.0KiB>
+2021/06/21 10:57:38 scheduler task e5a7fe6e (flow 927892aa): unloading (try 0): successful, next state: complete
+2021/06/21 10:57:38  <-  n1.r09.s1.Main.trimmed_bam 927892aa ok     exec 1m33s 6.3MiB
+2021/06/21 10:57:38 n1.r09.s1.Main.trimmed_bam 927892aa r09/n1.r09.s1.rf:43:24:
+	resources: {mem:500.0MiB cpu:1 disk:0B}
+	sha256:38e61fa43e62222f787cd8ebe8ea0eecb4df61000791e306ed427f6b518b97fe
+	sha256:927892aa5ac952d2ac897175f57299d2b4264eef88f890a4581989d94a61bb71
+	ec2-18-223-97-213.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/e5a7fe6e8b95d721e02875ba0577ba70b5583eccff0d6c154fff6f75676dd706
+	niemasd/ivar:1.3.1
+	command:
+	    ivar trim -x 5 -e -i "{{sorted_untrimmed_bam}}" -b "{{primer_bed}}" -p trimmed 1>&2 && mv trimmed.bam "{{out}}"
+	where:
+	    {{sorted_untrimmed_bam}} = 
+	        . sha256:0eb7f128656303bb5b2b1e81126b20e64733003e76a3195ac3cc6f9ad8f0769a 6.9MiB
+	    {{primer_bed}} = 
+	        . sha256:915db1249d8c954f803733f5d6e9c913f84a12bd4b1a0efe2e01aaefef50be16 41.0KiB
+	result:
+	    {{out}} =
+	        . sha256:e887606def99d3bd2d1f94127fda6a5d161c96caf81c8faf3520dd9402a474e1 6.3MiB
+	profile:
+	    cpu mean=1.0 max=1.0
+	    mem mean=4.4MiB max=7.4MiB
+	    disk mean=3.1MiB max=6.3MiB
+	    tmp mean=0B max=0B
+2021/06/21 10:57:38 scheduler task 9ca25a17 (flow 69d40cd0): submitted with execconfig exec image niemasd/samtools:1.12 cmd "\n        samtools sort --threads 1 -O bam -o \"%s\" \"%s\" 1>&2\n    " args [out[0], val<.=e887606d 6.3MiB>] resources {mem:500.0MiB cpu:1 disk:0B}
+2021/06/21 10:57:38 scheduler task 9ca25a17 (flow 69d40cd0): assigning to alloc ec2-3-15-23-122.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 available {mem:524.0MiB cpu:0 disk:1.0GiB}
+2021/06/21 10:57:38 scheduler task 9ca25a17 (flow 69d40cd0): loading (try 0): started
+2021/06/21 10:57:38 scheduler task 9ca25a17 (flow 69d40cd0): loading val<.=e887606d 6.3MiB>
+2021/06/21 10:57:38 scheduler task 9ca25a17 (flow 69d40cd0): loaded val<.=e887606d 6.3MiB>
+2021/06/21 10:57:38 scheduler task 9ca25a17 (flow 69d40cd0): loading (try 0): successful, next state: submitting
+2021/06/21 10:57:38 scheduler task 9ca25a17 (flow 69d40cd0): submitting (try 0): started
+2021/06/21 10:57:38 scheduler task 9ca25a17 (flow 69d40cd0): submitting (try 0): successful, next state: waiting for completion
+2021/06/21 10:57:38 scheduler task 9ca25a17 (flow 69d40cd0): waiting for completion (try 0): started
+2021/06/21 10:57:38  ->  n1.r09.s1.Main.sorted_trimmed_bam 69d40cd0 exec   exec niemasd/samtools:1.12 samtools sort --threads 1 -O ..out}}" "{{trimmed_bam}}" 1>&2
+2021/06/21 10:57:38 n1.r09.s1.Main.sorted_trimmed_bam 69d40cd0 r09/n1.r09.s1.rf:48:31:
+	resources: {mem:500.0MiB cpu:1 disk:0B}
+	sha256:12606f4111ce242336ce23abbdb0f8a15ce2f01fe15e2bc3e929e483df29bc6c
+	sha256:69d40cd053540c5afd873cd0e31e42361c479f16880c0e0ab459c612d842a4f6
+	ec2-3-15-23-122.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/9ca25a1742f07b9683e1e46368febd6e17757565be51ea565270ea82fcbac118
+	niemasd/samtools:1.12
+	command:
+	    samtools sort --threads 1 -O bam -o "{{out}}" "{{trimmed_bam}}" 1>&2
+	where:
+	    {{trimmed_bam}} = 
+	        . sha256:e887606def99d3bd2d1f94127fda6a5d161c96caf81c8faf3520dd9402a474e1 6.3MiB
+2021/06/21 10:57:49 scheduler task 9ca25a17 (flow 69d40cd0): waiting for completion (try 0): successful, next state: promoting objects
+2021/06/21 10:57:49 scheduler task 9ca25a17 (flow 69d40cd0): promoting objects (try 0): started
+2021/06/21 10:57:49 scheduler task 9ca25a17 (flow 69d40cd0): promoting objects (try 0): successful, next state: retrieving diagnostic output
+2021/06/21 10:57:49 scheduler task 9ca25a17 (flow 69d40cd0): retrieving diagnostic output (try 0): started
+2021/06/21 10:57:49 scheduler task 9ca25a17 (flow 69d40cd0): retrieving diagnostic output (try 0): successful, next state: retrieving result
+2021/06/21 10:57:49 scheduler task 9ca25a17 (flow 69d40cd0): retrieving result (try 0): started
+2021/06/21 10:57:49 scheduler task 9ca25a17 (flow 69d40cd0): retrieving result (try 0): successful, next state: transferring output
+2021/06/21 10:57:49 scheduler task 9ca25a17 (flow 69d40cd0): transferring output (try 0): started
+2021/06/21 10:57:50 scheduler task 9ca25a17 (flow 69d40cd0): transferring output (try 0): successful, next state: unloading
+2021/06/21 10:57:50 scheduler task 9ca25a17 (flow 69d40cd0): unloading (try 0): started
+2021/06/21 10:57:50 scheduler task 9ca25a17 (flow 69d40cd0): unloading list<val<.=00f96a80 6.3MiB> 6.3MiB>
+2021/06/21 10:57:50 scheduler task 9ca25a17 (flow 69d40cd0): unloading val<.=e887606d 6.3MiB>
+2021/06/21 10:57:50 scheduler task 9ca25a17 (flow 69d40cd0): unloaded list<val<.=00f96a80 6.3MiB> 6.3MiB>
+2021/06/21 10:57:50 scheduler task 9ca25a17 (flow 69d40cd0): unloaded val<.=e887606d 6.3MiB>
+2021/06/21 10:57:50 scheduler task 9ca25a17 (flow 69d40cd0): unloading (try 0): successful, next state: complete
+2021/06/21 10:57:50  <-  n1.r09.s1.Main.sorted_trimmed_bam 69d40cd0 ok     exec 2s 6.3MiB
+2021/06/21 10:57:50 n1.r09.s1.Main.sorted_trimmed_bam 69d40cd0 r09/n1.r09.s1.rf:48:31:
+	resources: {mem:500.0MiB cpu:1 disk:0B}
+	sha256:12606f4111ce242336ce23abbdb0f8a15ce2f01fe15e2bc3e929e483df29bc6c
+	sha256:69d40cd053540c5afd873cd0e31e42361c479f16880c0e0ab459c612d842a4f6
+	ec2-3-15-23-122.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/9ca25a1742f07b9683e1e46368febd6e17757565be51ea565270ea82fcbac118
+	niemasd/samtools:1.12
+	command:
+	    samtools sort --threads 1 -O bam -o "{{out}}" "{{trimmed_bam}}" 1>&2
+	where:
+	    {{trimmed_bam}} = 
+	        . sha256:e887606def99d3bd2d1f94127fda6a5d161c96caf81c8faf3520dd9402a474e1 6.3MiB
+	result:
+	    {{out}} =
+	        . sha256:00f96a80f59b6025acf81e3ada5d6bf00f669a5a88a12165667c747bd5967556 6.3MiB
+	profile:
+	    cpu mean=0.5 max=1.0
+	    mem mean=82.9MiB max=82.9MiB
+	    disk mean=6.3MiB max=6.3MiB
+	    tmp mean=0B max=0B
+2021/06/21 10:57:50 scheduler task 6a10f37e (flow 4158f783): submitted with execconfig exec image niemasd/samtools:1.12 cmd "\n        samtools depth -d 0 -Q 0 -q 0 -aa \"%s\" > \"%s\"\n    " args [val<.=00f96a80 6.3MiB>, out[0]] resources {mem:500.0MiB cpu:1 disk:0B}
+2021/06/21 10:57:50 scheduler task 6c9c0a45 (flow 8e8cb8dc): submitted with execconfig exec image niemasd/samtools:1.12 cmd "\n        samtools mpileup -A -aa -d 0 -Q 0 --reference \"%s\" \"%s\" > \"%s\"\n    " args [val<.=0891c00c 29.7KiB>, val<.=00f96a80 6.3MiB>, out[0]] resources {mem:500.0MiB cpu:1 disk:0B}
+2021/06/21 10:57:50 scheduler task a2c2bc8c (flow 1f48a463): submitted with execconfig exec image niemasd/lofreq:2.1.5 cmd "\n        lofreq call -f \"%s\" --call-indels \"%s\" > \"%s\"\n    " args [val<.=0891c00c 29.7KiB>, val<.=00f96a80 6.3MiB>, out[0]] resources {mem:500.0MiB cpu:1 disk:0B}
+2021/06/21 10:57:50 scheduler task d5e750c4 (flow b8f7cbc1): submitted with execconfig extern url s3://niema-test/n1/r09/n1.r09.s1.sorted.trimmed.bam resources {}
+2021/06/21 10:57:50 scheduler task 6a10f37e (flow 4158f783): assigning to alloc ec2-3-15-23-122.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 available {mem:524.0MiB cpu:0 disk:1.0GiB}
+2021/06/21 10:57:50 scheduler task a2c2bc8c (flow 1f48a463): assigning to alloc ec2-18-223-97-213.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 available {mem:2.6GiB cpu:0 disk:327.8GiB intel_avx:2 intel_avx2:2}
+2021/06/21 10:57:50 scheduler task 6c9c0a45 (flow 8e8cb8dc): assigning to alloc ec2-18-223-97-213.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 available {mem:2.6GiB cpu:0 disk:327.8GiB intel_avx:2 intel_avx2:2}
+2021/06/21 10:57:50 scheduler task 6c9c0a45 (flow 8e8cb8dc): loading (try 0): started
+2021/06/21 10:57:50 scheduler task 6c9c0a45 (flow 8e8cb8dc): loading val<.=00f96a80 6.3MiB>
+2021/06/21 10:57:50 scheduler task a2c2bc8c (flow 1f48a463): loading (try 0): started
+2021/06/21 10:57:50 scheduler task 6c9c0a45 (flow 8e8cb8dc): loading val<.=0891c00c 29.7KiB>
+2021/06/21 10:57:50 scheduler task a2c2bc8c (flow 1f48a463): loading val<.=00f96a80 6.3MiB>
+2021/06/21 10:57:50 scheduler task 6a10f37e (flow 4158f783): loading (try 0): started
+2021/06/21 10:57:50 scheduler task a2c2bc8c (flow 1f48a463): loading val<.=0891c00c 29.7KiB>
+2021/06/21 10:57:50 scheduler task 6a10f37e (flow 4158f783): loading val<.=00f96a80 6.3MiB>
+2021/06/21 10:57:50  ->  n1.r09.s1.Main.cp_sorted_trimmed_bam b8f7cbc1 exec extern s3://niema-test/n1/r09/n1.r09.s1.sorted.trimmed.bam 6.3MiB
+2021/06/21 10:57:50 scheduler task a2c2bc8c (flow 1f48a463): loaded val<.=0891c00c 29.7KiB>
+2021/06/21 10:57:50 scheduler task 6c9c0a45 (flow 8e8cb8dc): loaded val<.=0891c00c 29.7KiB>
+2021/06/21 10:57:50 scheduler task 6a10f37e (flow 4158f783): loaded val<.=00f96a80 6.3MiB>
+2021/06/21 10:57:50 scheduler task 6a10f37e (flow 4158f783): loading (try 0): successful, next state: submitting
+2021/06/21 10:57:50 scheduler task 6a10f37e (flow 4158f783): submitting (try 0): started
+2021/06/21 10:57:50 scheduler task 6c9c0a45 (flow 8e8cb8dc): loaded val<.=00f96a80 6.3MiB>
+2021/06/21 10:57:50 scheduler task 6c9c0a45 (flow 8e8cb8dc): loading (try 0): successful, next state: submitting
+2021/06/21 10:57:50 scheduler task a2c2bc8c (flow 1f48a463): loaded val<.=00f96a80 6.3MiB>
+2021/06/21 10:57:50 scheduler task a2c2bc8c (flow 1f48a463): loading (try 0): successful, next state: submitting
+2021/06/21 10:57:50 scheduler task 6c9c0a45 (flow 8e8cb8dc): submitting (try 0): started
+2021/06/21 10:57:50 scheduler task a2c2bc8c (flow 1f48a463): submitting (try 0): started
+2021/06/21 10:57:51 scheduler task 6c9c0a45 (flow 8e8cb8dc): submitting (try 0): successful, next state: waiting for completion
+2021/06/21 10:57:51 scheduler task 6c9c0a45 (flow 8e8cb8dc): waiting for completion (try 0): started
+2021/06/21 10:57:51  ->  n1.r09.s1.Main.pileup 8e8cb8dc exec   exec niemasd/samtools:1.12 samtools mpileup -A -aa -d 0 ..ed_trimmed_bam}}" > "{{out}}"
+2021/06/21 10:57:51 n1.r09.s1.Main.pileup 8e8cb8dc r09/n1.r09.s1.rf:54:19:
+	resources: {mem:500.0MiB cpu:1 disk:0B}
+	sha256:f1eb097b31e16ca33e0c5601dc5919523fdf1e71135c5abb902215d32894554a
+	sha256:8e8cb8dcec59f4288ea6e7b79ccfbb78ad0a3372ce7b71465658f252fbbfdbb6
+	ec2-18-223-97-213.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/6c9c0a4501c488624b67918bf75c0b1d1912327840fcec9bbd24a17bc99db45d
+	niemasd/samtools:1.12
+	command:
+	    samtools mpileup -A -aa -d 0 -Q 0 --reference "{{ref_fas}}" "{{sorted_trimmed_bam}}" > "{{out}}"
+	where:
+	    {{ref_fas}} = 
+	        . sha256:0891c00cc2d503f58e0c600ce5ee64e9c64b939525c70d5486bc46cbc7cb073e 29.7KiB
+	    {{sorted_trimmed_bam}} = 
+	        . sha256:00f96a80f59b6025acf81e3ada5d6bf00f669a5a88a12165667c747bd5967556 6.3MiB
+2021/06/21 10:57:51 scheduler task 6a10f37e (flow 4158f783): submitting (try 0): successful, next state: waiting for completion
+2021/06/21 10:57:51 scheduler task 6a10f37e (flow 4158f783): waiting for completion (try 0): started
+2021/06/21 10:57:51  ->  n1.r09.s1.Main.depth 4158f783 exec   exec niemasd/samtools:1.12 samtools depth -d 0 -Q 0 -q 0..ed_trimmed_bam}}" > "{{out}}"
+2021/06/21 10:57:51 n1.r09.s1.Main.depth 4158f783 r09/n1.r09.s1.rf:66:18:
+	resources: {mem:500.0MiB cpu:1 disk:0B}
+	sha256:bc1655bc8c562fc4498561f99eb222d3c978244705493e05f9ba1dad37b7f27e
+	sha256:4158f78320e5824739ed252ce89f188f204522aabee9f7d7e4cbccf4cd657e19
+	ec2-3-15-23-122.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/6a10f37e2699422469ca9a07d76adde06a8ca3d8392633613f0698bcf3c0fc4a
+	niemasd/samtools:1.12
+	command:
+	    samtools depth -d 0 -Q 0 -q 0 -aa "{{sorted_trimmed_bam}}" > "{{out}}"
+	where:
+	    {{sorted_trimmed_bam}} = 
+	        . sha256:00f96a80f59b6025acf81e3ada5d6bf00f669a5a88a12165667c747bd5967556 6.3MiB
+2021/06/21 10:57:51 scheduler task a2c2bc8c (flow 1f48a463): submitting (try 0): successful, next state: waiting for completion
+2021/06/21 10:57:51 scheduler task a2c2bc8c (flow 1f48a463): waiting for completion (try 0): started
+2021/06/21 10:57:51  ->  n1.r09.s1.Main.variants 1f48a463 exec   exec niemasd/lofreq:2.1.5 lofreq call -f "{{ref_fas}}" ..ed_trimmed_bam}}" > "{{out}}"
+2021/06/21 10:57:51 n1.r09.s1.Main.variants 1f48a463 r09/n1.r09.s1.rf:60:21:
+	resources: {mem:500.0MiB cpu:1 disk:0B}
+	sha256:bfdd20685a496da7c230daf7992c5fcc2b2d19e5c1bf4b297d6e8e229e7d6de9
+	sha256:1f48a463b6e235c68590b0f07a08156b2c44e7544a5eee87c5684a1cc156ab53
+	ec2-18-223-97-213.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/a2c2bc8cb2fafe37f988faa040b5e026958c33ca028373ec58e07850fd351947
+	niemasd/lofreq:2.1.5
+	command:
+	    lofreq call -f "{{ref_fas}}" --call-indels "{{sorted_trimmed_bam}}" > "{{out}}"
+	where:
+	    {{ref_fas}} = 
+	        . sha256:0891c00cc2d503f58e0c600ce5ee64e9c64b939525c70d5486bc46cbc7cb073e 29.7KiB
+	    {{sorted_trimmed_bam}} = 
+	        . sha256:00f96a80f59b6025acf81e3ada5d6bf00f669a5a88a12165667c747bd5967556 6.3MiB
+2021/06/21 10:57:51 scheduler task d5e750c4 (flow b8f7cbc1): direct transfer: completed s3://niema-test-quickstart-cache/objects/sha256:00f96a80f59b6025acf81e3ada5d6bf00f669a5a88a12165667c747bd5967556 -> s3://niema-test/n1/r09/n1.r09.s1.sorted.trimmed.bam (6.3MiB) in 1s (6.3MiB/s) 
+2021/06/21 10:57:51  <-  n1.r09.s1.Main.cp_sorted_trimmed_bam b8f7cbc1 ok   extern 0s 6.3MiB
+2021/06/21 10:57:52 scheduler task 6a10f37e (flow 4158f783): waiting for completion (try 0): successful, next state: promoting objects
+2021/06/21 10:57:52 scheduler task 6a10f37e (flow 4158f783): promoting objects (try 0): started
+2021/06/21 10:57:52 scheduler task 6a10f37e (flow 4158f783): promoting objects (try 0): successful, next state: retrieving diagnostic output
+2021/06/21 10:57:52 scheduler task 6a10f37e (flow 4158f783): retrieving diagnostic output (try 0): started
+2021/06/21 10:57:52 scheduler task 6a10f37e (flow 4158f783): retrieving diagnostic output (try 0): successful, next state: retrieving result
+2021/06/21 10:57:52 scheduler task 6a10f37e (flow 4158f783): retrieving result (try 0): started
+2021/06/21 10:57:52 scheduler task 6a10f37e (flow 4158f783): retrieving result (try 0): successful, next state: transferring output
+2021/06/21 10:57:52 scheduler task 6a10f37e (flow 4158f783): transferring output (try 0): started
+2021/06/21 10:57:53 scheduler task 6a10f37e (flow 4158f783): transferring output (try 0): successful, next state: unloading
+2021/06/21 10:57:53 scheduler task 6a10f37e (flow 4158f783): unloading (try 0): started
+2021/06/21 10:57:53 scheduler task 6a10f37e (flow 4158f783): unloading list<val<.=84aba7db 635.4KiB> 635.4KiB>
+2021/06/21 10:57:53 scheduler task 6a10f37e (flow 4158f783): unloading val<.=00f96a80 6.3MiB>
+2021/06/21 10:57:53 scheduler task 6a10f37e (flow 4158f783): unloaded val<.=00f96a80 6.3MiB>
+2021/06/21 10:57:53 scheduler task 6a10f37e (flow 4158f783): unloaded list<val<.=84aba7db 635.4KiB> 635.4KiB>
+2021/06/21 10:57:53 scheduler task 6a10f37e (flow 4158f783): unloading (try 0): successful, next state: complete
+2021/06/21 10:57:53  <-  n1.r09.s1.Main.depth 4158f783 ok     exec 0s 635.4KiB
+2021/06/21 10:57:53 n1.r09.s1.Main.depth 4158f783 r09/n1.r09.s1.rf:66:18:
+	resources: {mem:500.0MiB cpu:1 disk:0B}
+	sha256:bc1655bc8c562fc4498561f99eb222d3c978244705493e05f9ba1dad37b7f27e
+	sha256:4158f78320e5824739ed252ce89f188f204522aabee9f7d7e4cbccf4cd657e19
+	ec2-3-15-23-122.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/6a10f37e2699422469ca9a07d76adde06a8ca3d8392633613f0698bcf3c0fc4a
+	niemasd/samtools:1.12
+	command:
+	    samtools depth -d 0 -Q 0 -q 0 -aa "{{sorted_trimmed_bam}}" > "{{out}}"
+	where:
+	    {{sorted_trimmed_bam}} = 
+	        . sha256:00f96a80f59b6025acf81e3ada5d6bf00f669a5a88a12165667c747bd5967556 6.3MiB
+	result:
+	    {{out}} =
+	        . sha256:84aba7db32232fbd08e7cbafbf47bba6dd9da03ab12c1785cd88857b8e34c64d 635.4KiB
+	profile:
+	    cpu mean=0.0 max=0.0
+	    mem mean=6.0MiB max=6.0MiB
+	    disk mean=635.4KiB max=635.4KiB
+	    tmp mean=0B max=0B
+2021/06/21 10:57:53 scheduler task 498570c9 (flow 0f547f2e): submitted with execconfig exec image niemasd/low_depth_regions:1.0.0 cmd "\n        low_depth_regions \"%s\" \"%s\" 10 1>&2\n    " args [val<.=84aba7db 635.4KiB>, out[0]] resources {mem:500.0MiB cpu:1 disk:0B}
+2021/06/21 10:57:53 scheduler task 55bd61e3 (flow ad6fe12f): submitted with execconfig extern url s3://niema-test/n1/r09/n1.r09.s1.depth.txt resources {}
+2021/06/21 10:57:53 scheduler task 498570c9 (flow 0f547f2e): assigning to alloc ec2-3-15-23-122.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 available {mem:524.0MiB cpu:0 disk:1.0GiB}
+2021/06/21 10:57:53 scheduler task 498570c9 (flow 0f547f2e): loading (try 0): started
+2021/06/21 10:57:53 scheduler task 498570c9 (flow 0f547f2e): loading val<.=84aba7db 635.4KiB>
+2021/06/21 10:57:53  ->  n1.r09.s1.Main.cp_depth ad6fe12f exec extern s3://niema-test/n1/r09/n1.r09.s1.depth.txt 635.4KiB
+2021/06/21 10:57:53 scheduler task 498570c9 (flow 0f547f2e): loaded val<.=84aba7db 635.4KiB>
+2021/06/21 10:57:53 scheduler task 498570c9 (flow 0f547f2e): loading (try 0): successful, next state: submitting
+2021/06/21 10:57:53 scheduler task 498570c9 (flow 0f547f2e): submitting (try 0): started
+2021/06/21 10:57:53 scheduler task 498570c9 (flow 0f547f2e): submitting (try 0): successful, next state: waiting for completion
+2021/06/21 10:57:53 scheduler task 498570c9 (flow 0f547f2e): waiting for completion (try 0): started
+2021/06/21 10:57:53  ->  n1.r09.s1.Main.low_depth 0f547f2e exec   exec niemasd/low_depth_regions:1.0.0 low_depth_regions "{{depth}}" "{{out}}" 10 1>&2
+2021/06/21 10:57:53 n1.r09.s1.Main.low_depth 0f547f2e r09/n1.r09.s1.rf:72:22:
+	resources: {mem:500.0MiB cpu:1 disk:0B}
+	sha256:9aaab24ba7b99ed4f1730377dd6d5e4e7dba2d19102f425a784ae5cc76c9366c
+	sha256:0f547f2e2ac1ff74ecd4209ed27411f7c36d5891da6092ccc4d5d64946305d80
+	ec2-3-15-23-122.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/498570c9b942aaa10257c284ce17ffe93c5835ee983f5e9574f4bf457f138926
+	niemasd/low_depth_regions:1.0.0
+	command:
+	    low_depth_regions "{{depth}}" "{{out}}" 10 1>&2
+	where:
+	    {{depth}} = 
+	        . sha256:84aba7db32232fbd08e7cbafbf47bba6dd9da03ab12c1785cd88857b8e34c64d 635.4KiB
+2021/06/21 10:57:53 scheduler task 55bd61e3 (flow ad6fe12f): direct transfer: completed s3://niema-test-quickstart-cache/objects/sha256:84aba7db32232fbd08e7cbafbf47bba6dd9da03ab12c1785cd88857b8e34c64d -> s3://niema-test/n1/r09/n1.r09.s1.depth.txt (635.4KiB) in 1s (635.4KiB/s) 
+2021/06/21 10:57:53  <-  n1.r09.s1.Main.cp_depth ad6fe12f ok   extern 0s 635.4KiB
+2021/06/21 10:58:00 scheduler task 498570c9 (flow 0f547f2e): waiting for completion (try 0): successful, next state: promoting objects
+2021/06/21 10:58:00 scheduler task 498570c9 (flow 0f547f2e): promoting objects (try 0): started
+2021/06/21 10:58:00 scheduler task 498570c9 (flow 0f547f2e): promoting objects (try 0): successful, next state: retrieving diagnostic output
+2021/06/21 10:58:00 scheduler task 498570c9 (flow 0f547f2e): retrieving diagnostic output (try 0): started
+2021/06/21 10:58:00 scheduler task 498570c9 (flow 0f547f2e): retrieving diagnostic output (try 0): successful, next state: retrieving result
+2021/06/21 10:58:00 scheduler task 498570c9 (flow 0f547f2e): retrieving result (try 0): started
+2021/06/21 10:58:00 scheduler task 498570c9 (flow 0f547f2e): retrieving result (try 0): successful, next state: transferring output
+2021/06/21 10:58:01 scheduler task 498570c9 (flow 0f547f2e): transferring output (try 0): started
+2021/06/21 10:58:01 scheduler task 498570c9 (flow 0f547f2e): transferring output (try 0): successful, next state: unloading
+2021/06/21 10:58:01 scheduler task 498570c9 (flow 0f547f2e): unloading (try 0): started
+2021/06/21 10:58:01 scheduler task 498570c9 (flow 0f547f2e): unloading list<val<.=d3170c3a 208B> 208B>
+2021/06/21 10:58:01 scheduler task 498570c9 (flow 0f547f2e): unloading val<.=84aba7db 635.4KiB>
+2021/06/21 10:58:01 scheduler task 498570c9 (flow 0f547f2e): unloaded val<.=84aba7db 635.4KiB>
+2021/06/21 10:58:01 scheduler task 498570c9 (flow 0f547f2e): unloaded list<val<.=d3170c3a 208B> 208B>
+2021/06/21 10:58:01 scheduler task 498570c9 (flow 0f547f2e): unloading (try 0): successful, next state: complete
+2021/06/21 10:58:01  <-  n1.r09.s1.Main.low_depth 0f547f2e ok     exec 0s 208B
+2021/06/21 10:58:01 n1.r09.s1.Main.low_depth 0f547f2e r09/n1.r09.s1.rf:72:22:
+	resources: {mem:500.0MiB cpu:1 disk:0B}
+	sha256:9aaab24ba7b99ed4f1730377dd6d5e4e7dba2d19102f425a784ae5cc76c9366c
+	sha256:0f547f2e2ac1ff74ecd4209ed27411f7c36d5891da6092ccc4d5d64946305d80
+	ec2-3-15-23-122.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/498570c9b942aaa10257c284ce17ffe93c5835ee983f5e9574f4bf457f138926
+	niemasd/low_depth_regions:1.0.0
+	command:
+	    low_depth_regions "{{depth}}" "{{out}}" 10 1>&2
+	where:
+	    {{depth}} = 
+	        . sha256:84aba7db32232fbd08e7cbafbf47bba6dd9da03ab12c1785cd88857b8e34c64d 635.4KiB
+	result:
+	    {{out}} =
+	        . sha256:d3170c3aa1c725e2fa7fd2b0f4968947ad631fca79c65b04d5f29a97a6c73c9e 208B
+	profile:
+	    cpu mean=0.0 max=0.0
+	    mem mean=0B max=0B
+	    disk mean=208B max=208B
+	    tmp mean=0B max=0B
+2021/06/21 10:58:01 scheduler task 2a8af6c4 (flow 3f8aa11e): submitted with execconfig extern url s3://niema-test/n1/r09/n1.r09.s1.lowdepth.tsv resources {}
+2021/06/21 10:58:01  ->  n1.r09.s1.Main.cp_low_depth 3f8aa11e exec extern s3://niema-test/n1/r09/n1.r09.s1.lowdepth.tsv 208B
+2021/06/21 10:58:01 scheduler task 2a8af6c4 (flow 3f8aa11e): direct transfer: completed s3://niema-test-quickstart-cache/objects/sha256:d3170c3aa1c725e2fa7fd2b0f4968947ad631fca79c65b04d5f29a97a6c73c9e -> s3://niema-test/n1/r09/n1.r09.s1.lowdepth.tsv (208B) in 1s (208B/s) 
+2021/06/21 10:58:01  <-  n1.r09.s1.Main.cp_low_depth 3f8aa11e ok   extern 0s 208B
+2021/06/21 10:58:22 scheduler task 6c9c0a45 (flow 8e8cb8dc): waiting for completion (try 0): successful, next state: promoting objects
+2021/06/21 10:58:22 scheduler task 6c9c0a45 (flow 8e8cb8dc): promoting objects (try 0): started
+2021/06/21 10:58:22 scheduler task 6c9c0a45 (flow 8e8cb8dc): promoting objects (try 0): successful, next state: retrieving diagnostic output
+2021/06/21 10:58:22 scheduler task 6c9c0a45 (flow 8e8cb8dc): retrieving diagnostic output (try 0): started
+2021/06/21 10:58:22 scheduler task 6c9c0a45 (flow 8e8cb8dc): retrieving diagnostic output (try 0): successful, next state: retrieving result
+2021/06/21 10:58:22 scheduler task 6c9c0a45 (flow 8e8cb8dc): retrieving result (try 0): started
+2021/06/21 10:58:22 scheduler task 6c9c0a45 (flow 8e8cb8dc): retrieving result (try 0): successful, next state: transferring output
+2021/06/21 10:58:22 scheduler task 6c9c0a45 (flow 8e8cb8dc): transferring output (try 0): started
+2021/06/21 10:58:23 scheduler task 6c9c0a45 (flow 8e8cb8dc): transferring output (try 0): successful, next state: unloading
+2021/06/21 10:58:23 scheduler task 6c9c0a45 (flow 8e8cb8dc): unloading (try 0): started
+2021/06/21 10:58:23 scheduler task 6c9c0a45 (flow 8e8cb8dc): unloading list<val<.=c12bc75f 42.6MiB> 42.6MiB>
+2021/06/21 10:58:23 scheduler task 6c9c0a45 (flow 8e8cb8dc): unloading val<.=0891c00c 29.7KiB>
+2021/06/21 10:58:23 scheduler task 6c9c0a45 (flow 8e8cb8dc): unloading val<.=00f96a80 6.3MiB>
+2021/06/21 10:58:23 scheduler task 6c9c0a45 (flow 8e8cb8dc): unloaded list<val<.=c12bc75f 42.6MiB> 42.6MiB>
+2021/06/21 10:58:23 scheduler task 6c9c0a45 (flow 8e8cb8dc): unloaded val<.=0891c00c 29.7KiB>
+2021/06/21 10:58:23 scheduler task 6c9c0a45 (flow 8e8cb8dc): unloaded val<.=00f96a80 6.3MiB>
+2021/06/21 10:58:23 scheduler task 6c9c0a45 (flow 8e8cb8dc): unloading (try 0): successful, next state: complete
+2021/06/21 10:58:23  <-  n1.r09.s1.Main.pileup 8e8cb8dc ok     exec 30s 42.6MiB
+2021/06/21 10:58:23 n1.r09.s1.Main.pileup 8e8cb8dc r09/n1.r09.s1.rf:54:19:
+	resources: {mem:500.0MiB cpu:1 disk:0B}
+	sha256:f1eb097b31e16ca33e0c5601dc5919523fdf1e71135c5abb902215d32894554a
+	sha256:8e8cb8dcec59f4288ea6e7b79ccfbb78ad0a3372ce7b71465658f252fbbfdbb6
+	ec2-18-223-97-213.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/6c9c0a4501c488624b67918bf75c0b1d1912327840fcec9bbd24a17bc99db45d
+	niemasd/samtools:1.12
+	command:
+	    samtools mpileup -A -aa -d 0 -Q 0 --reference "{{ref_fas}}" "{{sorted_trimmed_bam}}" > "{{out}}"
+	where:
+	    {{ref_fas}} = 
+	        . sha256:0891c00cc2d503f58e0c600ce5ee64e9c64b939525c70d5486bc46cbc7cb073e 29.7KiB
+	    {{sorted_trimmed_bam}} = 
+	        . sha256:00f96a80f59b6025acf81e3ada5d6bf00f669a5a88a12165667c747bd5967556 6.3MiB
+	result:
+	    {{out}} =
+	        . sha256:c12bc75fc7ad9e5c63d477b5ad799ac24d31d0fded93d669857ddc207925e6ca 42.6MiB
+	profile:
+	    cpu mean=0.9 max=1.0
+	    mem mean=7.1MiB max=9.4MiB
+	    disk mean=42.6MiB max=42.6MiB
+	    tmp mean=0B max=0B
+2021/06/21 10:58:23 scheduler task 14a650bf (flow 23486707): submitted with execconfig extern url s3://niema-test/n1/r09/n1.r09.s1.pileup.txt resources {}
+2021/06/21 10:58:23  ->  n1.r09.s1.Main.cp_pileup 23486707 exec extern s3://niema-test/n1/r09/n1.r09.s1.pileup.txt 42.6MiB
+2021/06/21 10:58:24 scheduler task 14a650bf (flow 23486707): direct transfer: completed s3://niema-test-quickstart-cache/objects/sha256:c12bc75fc7ad9e5c63d477b5ad799ac24d31d0fded93d669857ddc207925e6ca -> s3://niema-test/n1/r09/n1.r09.s1.pileup.txt (42.6MiB) in 1s (42.6MiB/s) 
+2021/06/21 10:58:24  <-  n1.r09.s1.Main.cp_pileup 23486707 ok   extern 0s 42.6MiB
+2021/06/21 10:59:16 scheduler task a2c2bc8c (flow 1f48a463): waiting for completion (try 0): successful, next state: promoting objects
+2021/06/21 10:59:16 scheduler task a2c2bc8c (flow 1f48a463): promoting objects (try 0): started
+2021/06/21 10:59:16 scheduler task a2c2bc8c (flow 1f48a463): promoting objects (try 0): successful, next state: retrieving diagnostic output
+2021/06/21 10:59:16 scheduler task a2c2bc8c (flow 1f48a463): retrieving diagnostic output (try 0): started
+2021/06/21 10:59:16 scheduler task a2c2bc8c (flow 1f48a463): retrieving diagnostic output (try 0): successful, next state: retrieving result
+2021/06/21 10:59:16 scheduler task a2c2bc8c (flow 1f48a463): retrieving result (try 0): started
+2021/06/21 10:59:16 scheduler task a2c2bc8c (flow 1f48a463): retrieving result (try 0): successful, next state: transferring output
+2021/06/21 10:59:16 scheduler task a2c2bc8c (flow 1f48a463): transferring output (try 0): started
+2021/06/21 10:59:17 scheduler task a2c2bc8c (flow 1f48a463): transferring output (try 0): successful, next state: unloading
+2021/06/21 10:59:17 scheduler task a2c2bc8c (flow 1f48a463): unloading (try 0): started
+2021/06/21 10:59:17 scheduler task a2c2bc8c (flow 1f48a463): unloading list<val<.=6b339270 3.3KiB> 3.3KiB>
+2021/06/21 10:59:17 scheduler task a2c2bc8c (flow 1f48a463): unloading val<.=00f96a80 6.3MiB>
+2021/06/21 10:59:17 scheduler task a2c2bc8c (flow 1f48a463): unloading val<.=0891c00c 29.7KiB>
+2021/06/21 10:59:17 scheduler task a2c2bc8c (flow 1f48a463): unloaded val<.=00f96a80 6.3MiB>
+2021/06/21 10:59:17 scheduler task a2c2bc8c (flow 1f48a463): unloaded list<val<.=6b339270 3.3KiB> 3.3KiB>
+2021/06/21 10:59:17 scheduler task a2c2bc8c (flow 1f48a463): unloaded val<.=0891c00c 29.7KiB>
+2021/06/21 10:59:17 scheduler task a2c2bc8c (flow 1f48a463): unloading (try 0): successful, next state: complete
+2021/06/21 10:59:17  <-  n1.r09.s1.Main.variants 1f48a463 ok     exec 1m11s 3.3KiB
+2021/06/21 10:59:17 n1.r09.s1.Main.variants 1f48a463 r09/n1.r09.s1.rf:60:21:
+	resources: {mem:500.0MiB cpu:1 disk:0B}
+	sha256:bfdd20685a496da7c230daf7992c5fcc2b2d19e5c1bf4b297d6e8e229e7d6de9
+	sha256:1f48a463b6e235c68590b0f07a08156b2c44e7544a5eee87c5684a1cc156ab53
+	ec2-18-223-97-213.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/a2c2bc8cb2fafe37f988faa040b5e026958c33ca028373ec58e07850fd351947
+	niemasd/lofreq:2.1.5
+	command:
+	    lofreq call -f "{{ref_fas}}" --call-indels "{{sorted_trimmed_bam}}" > "{{out}}"
+	where:
+	    {{ref_fas}} = 
+	        . sha256:0891c00cc2d503f58e0c600ce5ee64e9c64b939525c70d5486bc46cbc7cb073e 29.7KiB
+	    {{sorted_trimmed_bam}} = 
+	        . sha256:00f96a80f59b6025acf81e3ada5d6bf00f669a5a88a12165667c747bd5967556 6.3MiB
+	result:
+	    {{out}} =
+	        . sha256:6b339270be10c00650115f1b5a4a040f4a02b02f66a526651b7f5b118b929c4c 3.3KiB
+	profile:
+	    cpu mean=1.0 max=1.0
+	    mem mean=6.8MiB max=8.6MiB
+	    disk mean=1.7KiB max=3.3KiB
+	    tmp mean=1.0KiB max=2.1KiB
+2021/06/21 10:59:17 scheduler task db78f604 (flow 26875fe4): submitted with execconfig exec image niemasd/bcftools:1.12_1.0 cmd "\n        alt_vars.py -i \"%s\" -o tmp.vcf -v lofreq\n        bgzip tmp.vcf\n        bcftools index tmp.vcf.gz\n        cat \"%s\" | bcftools consensus -m \"%s\" tmp.vcf.gz > \"%s\"\n    " args [val<.=6b339270 3.3KiB>, val<.=0891c00c 29.7KiB>, val<.=d3170c3a 208B>, out[0]] resources {mem:500.0MiB cpu:1 disk:0B}
+2021/06/21 10:59:17 scheduler task 1e278602 (flow 568fcfac): submitted with execconfig extern url s3://niema-test/n1/r09/n1.r09.s1.variants.vcf resources {}
+2021/06/21 10:59:17 scheduler task db78f604 (flow 26875fe4): assigning to alloc ec2-3-15-23-122.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 available {mem:524.0MiB cpu:0 disk:1.0GiB}
+2021/06/21 10:59:17 scheduler task db78f604 (flow 26875fe4): loading (try 0): started
+2021/06/21 10:59:17 scheduler task db78f604 (flow 26875fe4): loading val<.=d3170c3a 208B>
+2021/06/21 10:59:17 scheduler task db78f604 (flow 26875fe4): loading val<.=6b339270 3.3KiB>
+2021/06/21 10:59:17 scheduler task db78f604 (flow 26875fe4): loading val<.=0891c00c 29.7KiB>
+2021/06/21 10:59:17  ->  n1.r09.s1.Main.cp_variants 568fcfac exec extern s3://niema-test/n1/r09/n1.r09.s1.variants.vcf 3.3KiB
+2021/06/21 10:59:17 scheduler task db78f604 (flow 26875fe4): loaded val<.=d3170c3a 208B>
+2021/06/21 10:59:17 scheduler task db78f604 (flow 26875fe4): loaded val<.=6b339270 3.3KiB>
+2021/06/21 10:59:17 scheduler task db78f604 (flow 26875fe4): loaded val<.=0891c00c 29.7KiB>
+2021/06/21 10:59:17 scheduler task db78f604 (flow 26875fe4): loading (try 0): successful, next state: submitting
+2021/06/21 10:59:17 scheduler task db78f604 (flow 26875fe4): submitting (try 0): started
+2021/06/21 10:59:18 scheduler task db78f604 (flow 26875fe4): submitting (try 0): successful, next state: waiting for completion
+2021/06/21 10:59:18 scheduler task db78f604 (flow 26875fe4): waiting for completion (try 0): started
+2021/06/21 10:59:18  ->  n1.r09.s1.Main.consensus 26875fe4 exec   exec niemasd/bcftools:1.12_1.0 alt_vars.py -i "{{variants}}"..pth}}" tmp.vcf.gz > "{{out}}"
+2021/06/21 10:59:18 n1.r09.s1.Main.consensus 26875fe4 r09/n1.r09.s1.rf:78:22:
+	resources: {mem:500.0MiB cpu:1 disk:0B}
+	sha256:da8eabf9bb28ec9d964ae2a1d448ef776c730f2ad47e2e757dd9fe86b5d553b4
+	sha256:26875fe411e7c8246406ef4d0cff50b9e61a7ed52f683454ff4e726f44bae5b8
+	ec2-3-15-23-122.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/db78f604d86596b0a929f6b0585114951155b5f8ce0465bf9a7783ab1b376caa
+	niemasd/bcftools:1.12_1.0
+	command:
+	    alt_vars.py -i "{{variants}}" -o tmp.vcf -v lofreq
+	    bgzip tmp.vcf
+	    bcftools index tmp.vcf.gz
+	    cat "{{ref_fas}}" | bcftools consensus -m "{{low_depth}}" tmp.vcf.gz > "{{out}}"
+	where:
+	    {{variants}} = 
+	        . sha256:6b339270be10c00650115f1b5a4a040f4a02b02f66a526651b7f5b118b929c4c 3.3KiB
+	    {{ref_fas}} = 
+	        . sha256:0891c00cc2d503f58e0c600ce5ee64e9c64b939525c70d5486bc46cbc7cb073e 29.7KiB
+	    {{low_depth}} = 
+	        . sha256:d3170c3aa1c725e2fa7fd2b0f4968947ad631fca79c65b04d5f29a97a6c73c9e 208B
+2021/06/21 10:59:18 scheduler task 1e278602 (flow 568fcfac): direct transfer: completed s3://niema-test-quickstart-cache/objects/sha256:6b339270be10c00650115f1b5a4a040f4a02b02f66a526651b7f5b118b929c4c -> s3://niema-test/n1/r09/n1.r09.s1.variants.vcf (3.3KiB) in 1s (3.3KiB/s) 
+2021/06/21 10:59:18  <-  n1.r09.s1.Main.cp_variants 568fcfac ok   extern 0s 3.3KiB
+2021/06/21 10:59:27 scheduler task db78f604 (flow 26875fe4): waiting for completion (try 0): successful, next state: promoting objects
+2021/06/21 10:59:27 scheduler task db78f604 (flow 26875fe4): promoting objects (try 0): started
+2021/06/21 10:59:27 scheduler task db78f604 (flow 26875fe4): promoting objects (try 0): successful, next state: retrieving diagnostic output
+2021/06/21 10:59:27 scheduler task db78f604 (flow 26875fe4): retrieving diagnostic output (try 0): started
+2021/06/21 10:59:27 scheduler task db78f604 (flow 26875fe4): retrieving diagnostic output (try 0): successful, next state: retrieving result
+2021/06/21 10:59:27 scheduler task db78f604 (flow 26875fe4): retrieving result (try 0): started
+2021/06/21 10:59:27 scheduler task db78f604 (flow 26875fe4): retrieving result (try 0): successful, next state: transferring output
+2021/06/21 10:59:27 scheduler task db78f604 (flow 26875fe4): transferring output (try 0): started
+2021/06/21 10:59:28 scheduler task db78f604 (flow 26875fe4): transferring output (try 0): successful, next state: unloading
+2021/06/21 10:59:28 scheduler task db78f604 (flow 26875fe4): unloading (try 0): started
+2021/06/21 10:59:28 scheduler task db78f604 (flow 26875fe4): unloading val<.=0891c00c 29.7KiB>
+2021/06/21 10:59:28 scheduler task db78f604 (flow 26875fe4): unloading val<.=d3170c3a 208B>
+2021/06/21 10:59:28 scheduler task db78f604 (flow 26875fe4): unloading val<.=6b339270 3.3KiB>
+2021/06/21 10:59:28 scheduler task db78f604 (flow 26875fe4): unloading list<val<.=85bc4e40 29.8KiB> 29.8KiB>
+2021/06/21 10:59:28 scheduler task db78f604 (flow 26875fe4): unloaded list<val<.=85bc4e40 29.8KiB> 29.8KiB>
+2021/06/21 10:59:28 scheduler task db78f604 (flow 26875fe4): unloaded val<.=6b339270 3.3KiB>
+2021/06/21 10:59:28 scheduler task db78f604 (flow 26875fe4): unloaded val<.=d3170c3a 208B>
+2021/06/21 10:59:28 scheduler task db78f604 (flow 26875fe4): unloaded val<.=0891c00c 29.7KiB>
+2021/06/21 10:59:28 scheduler task db78f604 (flow 26875fe4): unloading (try 0): successful, next state: complete
+2021/06/21 10:59:28  <-  n1.r09.s1.Main.consensus 26875fe4 ok     exec 0s 29.8KiB
+2021/06/21 10:59:28 n1.r09.s1.Main.consensus 26875fe4 r09/n1.r09.s1.rf:78:22:
+	resources: {mem:500.0MiB cpu:1 disk:0B}
+	sha256:da8eabf9bb28ec9d964ae2a1d448ef776c730f2ad47e2e757dd9fe86b5d553b4
+	sha256:26875fe411e7c8246406ef4d0cff50b9e61a7ed52f683454ff4e726f44bae5b8
+	ec2-3-15-23-122.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/db78f604d86596b0a929f6b0585114951155b5f8ce0465bf9a7783ab1b376caa
+	niemasd/bcftools:1.12_1.0
+	command:
+	    alt_vars.py -i "{{variants}}" -o tmp.vcf -v lofreq
+	    bgzip tmp.vcf
+	    bcftools index tmp.vcf.gz
+	    cat "{{ref_fas}}" | bcftools consensus -m "{{low_depth}}" tmp.vcf.gz > "{{out}}"
+	where:
+	    {{variants}} = 
+	        . sha256:6b339270be10c00650115f1b5a4a040f4a02b02f66a526651b7f5b118b929c4c 3.3KiB
+	    {{ref_fas}} = 
+	        . sha256:0891c00cc2d503f58e0c600ce5ee64e9c64b939525c70d5486bc46cbc7cb073e 29.7KiB
+	    {{low_depth}} = 
+	        . sha256:d3170c3aa1c725e2fa7fd2b0f4968947ad631fca79c65b04d5f29a97a6c73c9e 208B
+	result:
+	    {{out}} =
+	        . sha256:85bc4e406d17977a1cecdc14c35e26e7b97d5aef4d6c05d2b45ffca25447e3e2 29.8KiB
+	profile:
+	    cpu mean=0.0 max=0.0
+	    mem mean=0B max=0B
+	    disk mean=29.8KiB max=29.8KiB
+	    tmp mean=0B max=0B
+2021/06/21 10:59:28 scheduler task fe7f0eef (flow 0aa9f90c): submitted with execconfig extern url s3://niema-test/n1/r09/n1.r09.s1.consensus.fas resources {}
+2021/06/21 10:59:28  ->  n1.r09.s1.Main.cp_consensus 0aa9f90c exec extern s3://niema-test/n1/r09/n1.r09.s1.consensus.fas 29.8KiB
+2021/06/21 10:59:28 scheduler task fe7f0eef (flow 0aa9f90c): direct transfer: completed s3://niema-test-quickstart-cache/objects/sha256:85bc4e406d17977a1cecdc14c35e26e7b97d5aef4d6c05d2b45ffca25447e3e2 -> s3://niema-test/n1/r09/n1.r09.s1.consensus.fas (29.8KiB) in 1s (29.8KiB/s) 
+2021/06/21 10:59:28  <-  n1.r09.s1.Main.cp_consensus 0aa9f90c ok   extern 0s 29.8KiB
+2021/06/21 10:59:28 total n=25 time=5m11s
+	ident                                  n   ncache transfer runtime(m) cpu         mem(GiB)    disk(GiB)   tmp(GiB)    requested
+	n1.r09.s1.Main.consensus               1   0      0B       0/0/0      0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r09.s1.Main.cp_consensus            1   0      0B                                                      
+	n1.r09.s1.Main.cp_depth                1   0      0B                                                      
+	n1.r09.s1.Main.cp_low_depth            1   0      0B                                                      
+	n1.r09.s1.Main.cp_pileup               1   0      0B                                                      
+	n1.r09.s1.Main.cp_primer_bed           1   0      0B                                                      
+	n1.r09.s1.Main.cp_ref_fas              1   0      0B                                                      
+	n1.r09.s1.Main.cp_ref_gff              1   0      0B                                                      
+	n1.r09.s1.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n1.r09.s1.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n1.r09.s1.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n1.r09.s1.Main.cp_variants             1   0      0B                                                      
+	n1.r09.s1.Main.depth                   1   0      0B       0/0/0      0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r09.s1.Main.fq1                     1   0      0B                                                      
+	n1.r09.s1.Main.fq2                     1   0      0B                                                      
+	n1.r09.s1.Main.low_depth               1   0      0B       0/0/0      0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r09.s1.Main.pileup                  1   0      0B       1/1/1      0.9/0.9/0.9 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r09.s1.Main.primer_bed              1   0      0B       0/0/0      0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r09.s1.Main.ref_fas                 1   0      0B       0/0/0      0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r09.s1.Main.ref_gff                 1   0      0B       0/0/0      0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r09.s1.Main.sorted_trimmed_bam      1   0      0B       0/0/0      0.5/0.5/0.5 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r09.s1.Main.sorted_untrimmed_bam    1   0      0B       0/0/0      0.7/0.7/0.7 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r09.s1.Main.trimmed_bam             1   0      0B       2/2/2      1.0/1.0/1.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r09.s1.Main.untrimmed_bam           1   0      0B       0/0/0      1.0/1.0/1.0 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r09.s1.Main.variants                1   0      0B       1/1/1      1.0/1.0/1.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	
+2021/06/21 10:59:28 result: [(val<.=d0f22b73 15.5MiB>, val<.=0eb7f128 6.9MiB>, val<.=00f96a80 6.3MiB>, val<.=c12bc75f 42.6MiB>, val<.=6b339270 3.3KiB>, val<.=84aba7db 635.4KiB>, val<.=d3170c3a 208B>, val<.=85bc4e40 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>)]
+2021/06/21 10:59:28 waiting for 1 background tasks to complete
