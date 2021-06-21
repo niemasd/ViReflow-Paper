@@ -9,6 +9,7 @@ SEARCH-19280__D101810__M11__210529_A00953_0313_AHFGT7DRXY__S49_L002
 ViReflow.py -rf "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas" -rg "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3" -p "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed" -d OUTPUT_S3_DIR -mt 1 -id REPNUM -o REPNUM.rf R1_FASTQ_S3 R2_FASTQ_S3
 ```
 # Copy FASTQ files for each replicate
+This didn't work! All the files are identical, so they have the same exact SHA256, so Reflow doesn't recompute the analysis on all of them: it just does it on one.
 
 ```bash
 # replace 'n=1' with whatever n (total number of samples)
