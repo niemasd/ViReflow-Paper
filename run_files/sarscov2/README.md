@@ -17,7 +17,7 @@ ViReflow.py -rf "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC
 # replace 'G=29903' with the genome length
 # replace 'L=151' with the read length
 # replace 'C=100' with whatever coverage
-n=1; R=10; G=29903; L=151; C=100; NUM_READS=$(echo $G | numlist -mul$C | numlist -div$L | numlist -int); mkdir -p n$n; for r in $(seq -w 1 $R); do mkdir -p n$n/r$r; done; parallel --jobs 7 'SEED=$RANDOM' ";" seqtk sample '-s$SEED' SEARCH-19280__D101810__M11__210529_A00953_0313_AHFGT7DRXY__S49_L002_R{3}_001.fastq.gz $NUM_READS ">" n$n/r{1}/n$n.r{1}.s{2}_R{3}.fastq ::: $(seq -w 1 $R) ::: $(seq -w 1 $n) ::: 1 2
+n=1; R=10; G=29903; L=151; C=100; NUM_READS=$(echo $G | numlist -mul$C | numlist -div$L | numlist -int); mkdir -p n$n; for r in $(seq -w 1 $R); do mkdir -p n$n/r$r; done; parallel --jobs 7 'SEED=$RANDOM' "&&" seqtk sample '-s$SEED' SEARCH-19280__D101810__M11__210529_A00953_0313_AHFGT7DRXY__S49_L002_R1_001.fastq.gz $NUM_READS ">" n$n/r{1}/n$n.r{1}.s{2}_R1.fastq "&&" SEARCH-19280__D101810__M11__210529_A00953_0313_AHFGT7DRXY__S49_L002_R2_001.fastq.gz $NUM_READS ">" n$n/r{1}/n$n.r{1}.s{2}_R2.fastq ::: $(seq -w 1 $R) ::: $(seq -w 1 $n)
 ```
 
 # Copy FASTQ files for each replicate
