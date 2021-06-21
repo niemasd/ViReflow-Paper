@@ -1,0 +1,34 @@
+2021/06/21 10:29:24 reflow version: reflow1.6.0 (go1.13.15)
+2021/06/21 10:29:24 run ID: 7000e197
+2021/06/21 10:29:25 Trace: /home/niema/.reflow/runs/7000e197c5a6437d44d149e7ab5b8fcc86e3758e7ccd6a7873b2ae6d095e3f88.trace
+2021/06/21 10:30:19 discovered instance i-0bce3e0557a6721a8 (t3a.medium) ec2-18-119-98-89.us-east-2.compute.amazonaws.com
+2021/06/21 10:31:11 discovered instance i-0a4035e05e4d8b243 (t3a.small) ec2-3-17-65-213.us-east-2.compute.amazonaws.com
+2021/06/21 10:34:28 total n=25 time=5m3s
+	ident                                  n   ncache transfer runtime(m) cpu         mem(GiB)    disk(GiB)   tmp(GiB)    requested
+	n1.r05.s1.Main.consensus               1   0      0B       0/0/0      0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r05.s1.Main.cp_consensus            1   0      0B                                                      
+	n1.r05.s1.Main.cp_depth                1   0      0B                                                      
+	n1.r05.s1.Main.cp_low_depth            1   0      0B                                                      
+	n1.r05.s1.Main.cp_pileup               1   0      0B                                                      
+	n1.r05.s1.Main.cp_primer_bed           1   0      0B                                                      
+	n1.r05.s1.Main.cp_ref_fas              1   0      0B                                                      
+	n1.r05.s1.Main.cp_ref_gff              1   0      0B                                                      
+	n1.r05.s1.Main.cp_sorted_trimmed_bam   1   0      0B                                                      
+	n1.r05.s1.Main.cp_sorted_untrimmed_bam 1   0      0B                                                      
+	n1.r05.s1.Main.cp_untrimmed_bam        1   0      0B                                                      
+	n1.r05.s1.Main.cp_variants             1   0      0B                                                      
+	n1.r05.s1.Main.depth                   1   0      0B       0/0/0      0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r05.s1.Main.fq1                     1   0      0B                                                      
+	n1.r05.s1.Main.fq2                     1   0      0B                                                      
+	n1.r05.s1.Main.low_depth               1   0      0B       0/0/0      0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r05.s1.Main.pileup                  1   0      0B       1/1/1      0.9/0.9/0.9 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r05.s1.Main.primer_bed              1   0      0B       0/0/0      0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r05.s1.Main.ref_fas                 1   0      0B       0/0/0      0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r05.s1.Main.ref_gff                 1   0      0B       0/0/0      0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r05.s1.Main.sorted_trimmed_bam      1   0      0B       0/0/0      0.5/0.5/0.5 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r05.s1.Main.sorted_untrimmed_bam    1   0      0B       0/0/0      0.5/0.5/0.5 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r05.s1.Main.trimmed_bam             1   0      0B       2/2/2      1.0/1.0/1.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r05.s1.Main.untrimmed_bam           1   0      0B       0/0/0      1.0/1.0/1.0 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	n1.r05.s1.Main.variants                1   0      0B       1/1/1      1.0/1.0/1.0 0.0/0.0/0.0 0.0/0.0/0.0 0.0/0.0/0.0 {mem:500.0MiB cpu:1 disk:0B}
+	
+2021/06/21 10:34:28 result: [(val<.=640ac098 15.5MiB>, val<.=83e0e2b7 7.0MiB>, val<.=ba58f4c5 6.3MiB>, val<.=1867d11b 42.6MiB>, val<.=dfdfd378 3.4KiB>, val<.=0cbe1cf6 635.4KiB>, val<.=96a30364 206B>, val<.=2ce00e10 29.8KiB>, val<.=0891c00c 29.7KiB>, val<.=70383dad 14.3KiB>, val<.=915db124 41.0KiB>)]
