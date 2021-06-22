@@ -1,6 +1,9 @@
 # ignore reflow run files
 *.rf
 
+# ignore AWS cost files (sensitive)
+AWS_ANALYZE*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
