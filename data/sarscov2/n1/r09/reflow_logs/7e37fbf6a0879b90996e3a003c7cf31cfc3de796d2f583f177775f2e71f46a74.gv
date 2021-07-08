@@ -1,0 +1,68 @@
+strict digraph "reflow flowgraph sha256:7e37fbf6a0879b90996e3a003c7cf31cfc3de796d2f583f177775f2e71f46a74" {
+// Node definitions.
+"01e34a2e-val-";
+"1ba4e0b3-val-";
+"3d2e905b-val-";
+"3db1c3dd-val-";
+"411f62b5-val-";
+"429c9bf6-val-";
+"4759c124-intern-n1.r09.s1.Main.fq2-s3://niema-test/n1/r09/n1.r09.s1_R2.fastq" [
+fillcolor=green
+style=filled
+];
+"6a726035-val-";
+"8a2bccd0-exec-n1.r09.s1.Main.out_file" [
+fillcolor=green
+style=filled
+];
+"a2de3039-intern-n1.r09.s1.Main.fq1-s3://niema-test/n1/r09/n1.r09.s1_R1.fastq" [
+fillcolor=green
+style=filled
+];
+"b5ccb327-coerce-n1.r09.s1.Main.fq2";
+"b6dc61d6-coerce-n1.r09.s1.Main.fq1";
+"cc995bab-val-";
+"d1e71686-extern-n1.r09.s1.Main.cp_out_file-s3://niema-test/n1/r09/n1.r09.s1.tar.gz" [
+fillcolor=green
+style=filled
+];
+"d44e2eef-val-";
+"d676b4e3-val-";
+"dab893c4-val-";
+"dc8eb9e7-coerce-n1.r09.s1.Main.out_file";
+"e6fa9fe5-val-";
+"e9047b0b-val-";
+
+// Edge definitions.
+"01e34a2e-val-" -> "b5ccb327-coerce-n1.r09.s1.Main.fq2" [dynamic=false];
+"1ba4e0b3-val-" -> "dc8eb9e7-coerce-n1.r09.s1.Main.out_file" [dynamic=false];
+"3d2e905b-val-" -> "01e34a2e-val-" [dynamic=false];
+"3db1c3dd-val-" -> "dab893c4-val-" [dynamic=false];
+"429c9bf6-val-" -> "b6dc61d6-coerce-n1.r09.s1.Main.fq1" [dynamic=false];
+"6a726035-val-" -> "3db1c3dd-val-" [dynamic=false];
+"8a2bccd0-exec-n1.r09.s1.Main.out_file" -> "411f62b5-val-" [
+dynamic=true
+color=blue
+];
+"8a2bccd0-exec-n1.r09.s1.Main.out_file" -> "cc995bab-val-" [
+dynamic=true
+color=blue
+];
+"b5ccb327-coerce-n1.r09.s1.Main.fq2" -> "4759c124-intern-n1.r09.s1.Main.fq2-s3://niema-test/n1/r09/n1.r09.s1_R2.fastq" [dynamic=false];
+"b6dc61d6-coerce-n1.r09.s1.Main.fq1" -> "a2de3039-intern-n1.r09.s1.Main.fq1-s3://niema-test/n1/r09/n1.r09.s1_R1.fastq" [dynamic=false];
+"d1e71686-extern-n1.r09.s1.Main.cp_out_file-s3://niema-test/n1/r09/n1.r09.s1.tar.gz" -> "1ba4e0b3-val-" [dynamic=false];
+"d1e71686-extern-n1.r09.s1.Main.cp_out_file-s3://niema-test/n1/r09/n1.r09.s1.tar.gz" -> "e6fa9fe5-val-" [
+dynamic=true
+color=blue
+];
+"d44e2eef-val-" -> "d1e71686-extern-n1.r09.s1.Main.cp_out_file-s3://niema-test/n1/r09/n1.r09.s1.tar.gz" [dynamic=false];
+"d676b4e3-val-" -> "6a726035-val-" [dynamic=false];
+"dab893c4-val-" -> "d44e2eef-val-" [dynamic=false];
+"dc8eb9e7-coerce-n1.r09.s1.Main.out_file" -> "3d2e905b-val-" [dynamic=false];
+"dc8eb9e7-coerce-n1.r09.s1.Main.out_file" -> "8a2bccd0-exec-n1.r09.s1.Main.out_file" [
+dynamic=true
+color=blue
+];
+"dc8eb9e7-coerce-n1.r09.s1.Main.out_file" -> "e9047b0b-val-" [dynamic=false];
+"e9047b0b-val-" -> "429c9bf6-val-" [dynamic=false];
+}
