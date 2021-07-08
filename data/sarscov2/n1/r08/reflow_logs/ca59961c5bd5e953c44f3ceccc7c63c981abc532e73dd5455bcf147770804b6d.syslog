@@ -1,0 +1,12 @@
+2021/07/08 13:12:00 reflow version: reflow1.6.0 (go1.13.15)
+2021/07/08 13:12:00 run ID: ca59961c
+2021/07/08 13:12:00 Trace: /home/niema/.reflow/runs/ca59961c5bd5e953c44f3ceccc7c63c981abc532e73dd5455bcf147770804b6d.trace
+2021/07/08 13:12:56 discovered instance i-03edb2ef98be3aed9 (t3a.small) ec2-3-141-43-188.us-east-2.compute.amazonaws.com
+2021/07/08 13:16:45 total n=4 time=4m44s
+	ident                      n   ncache transfer runtime(m) cpu         mem(GiB)    disk(GiB)   tmp(GiB) requested
+	n1.r08.s1.Main.cp_out_file 1   0      0B                                                      
+	n1.r08.s1.Main.fq1         1   0      0B                                                      
+	n1.r08.s1.Main.fq2         1   0      0B                                                      
+	n1.r08.s1.Main.out_file    1   0      0B       3/3/3      1.0/1.0/1.0 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:1.0GiB cpu:1 disk:0B}
+	warning: reduce memory requirements for over-allocating execs: n1.r08.s1.Main.out_file
+2021/07/08 13:16:45 result: [val<.=43d3d970 35.8MiB>]
