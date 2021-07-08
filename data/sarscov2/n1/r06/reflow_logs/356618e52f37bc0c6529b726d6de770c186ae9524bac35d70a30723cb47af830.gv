@@ -1,0 +1,68 @@
+strict digraph "reflow flowgraph sha256:356618e52f37bc0c6529b726d6de770c186ae9524bac35d70a30723cb47af830" {
+// Node definitions.
+"0411b8bf-val-";
+"0e206885-val-";
+"248df21b-val-";
+"26fe7d8b-val-";
+"27aa4dba-val-";
+"51e62795-val-";
+"757b8ed3-val-";
+"8ad98415-intern-n1.r06.s1.Main.fq1-s3://niema-test/n1/r06/n1.r06.s1_R1.fastq" [
+fillcolor=green
+style=filled
+];
+"8d8eaec6-val-";
+"9069d682-exec-n1.r06.s1.Main.out_file" [
+fillcolor=green
+style=filled
+];
+"9e6cace5-val-";
+"bdfa9b29-coerce-n1.r06.s1.Main.out_file";
+"c6d7ad06-val-";
+"c8cc123d-extern-n1.r06.s1.Main.cp_out_file-s3://niema-test/n1/r06/n1.r06.s1.tar.gz" [
+fillcolor=green
+style=filled
+];
+"d172e614-val-";
+"e750b3dc-val-";
+"f2614a3a-intern-n1.r06.s1.Main.fq2-s3://niema-test/n1/r06/n1.r06.s1_R2.fastq" [
+fillcolor=green
+style=filled
+];
+"f2a0102f-coerce-n1.r06.s1.Main.fq2";
+"f6ab9b39-coerce-n1.r06.s1.Main.fq1";
+"fbdaa542-val-";
+
+// Edge definitions.
+"0e206885-val-" -> "248df21b-val-" [dynamic=false];
+"248df21b-val-" -> "c8cc123d-extern-n1.r06.s1.Main.cp_out_file-s3://niema-test/n1/r06/n1.r06.s1.tar.gz" [dynamic=false];
+"26fe7d8b-val-" -> "27aa4dba-val-" [dynamic=false];
+"27aa4dba-val-" -> "f6ab9b39-coerce-n1.r06.s1.Main.fq1" [dynamic=false];
+"757b8ed3-val-" -> "fbdaa542-val-" [dynamic=false];
+"8d8eaec6-val-" -> "bdfa9b29-coerce-n1.r06.s1.Main.out_file" [dynamic=false];
+"9069d682-exec-n1.r06.s1.Main.out_file" -> "0411b8bf-val-" [
+dynamic=true
+color=blue
+];
+"9069d682-exec-n1.r06.s1.Main.out_file" -> "c6d7ad06-val-" [
+dynamic=true
+color=blue
+];
+"9e6cace5-val-" -> "f2a0102f-coerce-n1.r06.s1.Main.fq2" [dynamic=false];
+"bdfa9b29-coerce-n1.r06.s1.Main.out_file" -> "26fe7d8b-val-" [dynamic=false];
+"bdfa9b29-coerce-n1.r06.s1.Main.out_file" -> "9069d682-exec-n1.r06.s1.Main.out_file" [
+dynamic=true
+color=blue
+];
+"bdfa9b29-coerce-n1.r06.s1.Main.out_file" -> "e750b3dc-val-" [dynamic=false];
+"c8cc123d-extern-n1.r06.s1.Main.cp_out_file-s3://niema-test/n1/r06/n1.r06.s1.tar.gz" -> "51e62795-val-" [
+dynamic=true
+color=blue
+];
+"c8cc123d-extern-n1.r06.s1.Main.cp_out_file-s3://niema-test/n1/r06/n1.r06.s1.tar.gz" -> "8d8eaec6-val-" [dynamic=false];
+"d172e614-val-" -> "757b8ed3-val-" [dynamic=false];
+"e750b3dc-val-" -> "9e6cace5-val-" [dynamic=false];
+"f2a0102f-coerce-n1.r06.s1.Main.fq2" -> "f2614a3a-intern-n1.r06.s1.Main.fq2-s3://niema-test/n1/r06/n1.r06.s1_R2.fastq" [dynamic=false];
+"f6ab9b39-coerce-n1.r06.s1.Main.fq1" -> "8ad98415-intern-n1.r06.s1.Main.fq1-s3://niema-test/n1/r06/n1.r06.s1_R1.fastq" [dynamic=false];
+"fbdaa542-val-" -> "0e206885-val-" [dynamic=false];
+}
