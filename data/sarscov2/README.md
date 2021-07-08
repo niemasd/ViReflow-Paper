@@ -6,7 +6,7 @@ SEARCH-19280__D101810__M11__210529_A00953_0313_AHFGT7DRXY__S49_L002
 # ViReflow command
 
 ```bash
-ViReflow.py -rf "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas" -rg "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3" -p "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed" -d OUTPUT_S3_DIR -mt 1 -id REPNUM -o REPNUM.rf R1_FASTQ_S3 R2_FASTQ_S3
+ViReflow.py -rf "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas" -rg "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3" -p "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed" -d OUTPUT_S3_DIR -id REPNUM -o REPNUM.rf R1_FASTQ_S3 R2_FASTQ_S3
 ```
 
 # Subsample FASTQ files for each replicate
@@ -18,6 +18,12 @@ ViReflow.py -rf "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC
 # replace 'L=151' with the read length
 # replace 'C=500' with whatever coverage per FASTQ (so overall coverage is 2C)
 n=1; R=10; G=29903; L=151; C=500; NUM_READS=$(echo $G | numlist -mul$C | numlist -div$L | numlist -int); mkdir -p n$n; for r in $(seq -w 1 $R); do mkdir -p n$n/r$r; done; parallel --jobs 7 'SEED=$RANDOM' "&&" seqtk sample '-s$SEED' SEARCH-19280__D101810__M11__210529_A00953_0313_AHFGT7DRXY__S49_L002_R1_001.fastq.gz $NUM_READS ">" n$n/r{1}/n$n.r{1}.s{2}_R1.fastq "&&" seqtk sample '-s$SEED' SEARCH-19280__D101810__M11__210529_A00953_0313_AHFGT7DRXY__S49_L002_R2_001.fastq.gz $NUM_READS ">" n$n/r{1}/n$n.r{1}.s{2}_R2.fastq ::: $(seq -w 1 $R) ::: $(seq -w 1 $n)
+```
+
+For big values of *n*, my PC can't store all the files, so the following copies to S3 and removes locally on-the-fly:
+
+```bash
+n=10000; R=10; G=29903; L=151; C=500; NUM_READS=$(echo $G | numlist -mul$C | numlist -div$L | numlist -int); mkdir -p n$n; for r in $(seq -w 1 $R); do mkdir -p n$n/r$r; done; parallel --jobs 7 'SEED=$RANDOM' "&&" seqtk sample '-s$SEED' SEARCH-19280__D101810__M11__210529_A00953_0313_AHFGT7DRXY__S49_L002_R1_001.fastq.gz $NUM_READS ">" n$n/r{1}/n$n.r{1}.s{2}_R1.fastq "&&" aws s3 cp n$n/r{1}/n$n.r{1}.s{2}_R1.fastq s3://niema-test/n$n/r{1}/n$n.r{1}.s{2}_R1.fastq "&&" seqtk sample '-s$SEED' SEARCH-19280__D101810__M11__210529_A00953_0313_AHFGT7DRXY__S49_L002_R2_001.fastq.gz $NUM_READS ">" n$n/r{1}/n$n.r{1}.s{2}_R2.fastq "&&" aws s3 cp n$n/r{1}/n$n.r{1}.s{2}_R2.fastq s3://niema-test/n$n/r{1}/n$n.r{1}.s{2}_R2.fastq "&&" rm n$n/r{1}/n$n.r{1}.s{2}_R1.fastq n$n/r{1}/n$n.r{1}.s{2}_R2.fastq ::: $(seq -w 1 $R) ::: $(seq -w 1 $n)
 ```
 
 # Generate batch files for each replicate
