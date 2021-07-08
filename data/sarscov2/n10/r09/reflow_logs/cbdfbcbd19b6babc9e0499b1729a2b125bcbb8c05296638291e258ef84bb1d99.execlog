@@ -1,0 +1,1572 @@
+2021/07/08 16:25:30 reflow version: reflow1.6.0 (go1.13.15)
+2021/07/08 16:25:30 run ID: cbdfbcbd
+2021/07/08 16:25:30 evaluating program /home/niema/ViReflow-Paper/data/sarscov2/n10/n10.r09.rf
+	(no params)
+	(no arguments)
+2021/07/08 16:25:30 Trace: /home/niema/.reflow/runs/cbdfbcbd19b6babc9e0499b1729a2b125bcbb8c05296638291e258ef84bb1d99.trace
+2021/07/08 16:25:30 evaluating with configuration: scheduler *sched.Scheduler snapshotter blob.Mux transferer *repository.Manager repository *blobrepo.Repository,url=s3://niema-test-quickstart-cache/ assoc *dydbassoc.Assoc,TableName=niema-test-quickstart flags cacheextern,nocache,nogc,norecomputeempty,topdown flowconfig hashv2 cachelookuptimeout 20m0s imagemap map[] dotwriter(*os.File)
+2021/07/08 16:25:30 scheduler task ab7897d2 (flow ac2b9915): submitted with execconfig exec image niemasd/vireflow:latest cmd "\n        # Copy input files locally\n        mkdir \"n10.r09.s04_output\"\n        wget -O \"n10.r09.s04_output/n10.r09.s04.reference.fas\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas\"\n        wget -O \"n10.r09.s04_output/n10.r09.s04.reference.gff\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3\"\n        wget -O \"n10.r09.s04_output/n10.r09.s04.primers.bed\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed\"\n        cp \"%s\" \"n10.r09.s04_output/n10.r09.s04.fq1.fastq\"\n        cp \"%s\" \"n10.r09.s04_output/n10.r09.s04.fq2.fastq\"\n\n        # Map reads using minimap2\n        minimap2 -t 1 -a -x sr \"n10.r09.s04_output/n10.r09.s04.reference.fas\" \"n10.r09.s04_output/n10.r09.s04.fq1.fastq\" \"n10.r09.s04_output/n10.r09.s04.fq2.fastq\" | samtools view -bS - > \"n10.r09.s04_output/n10.r09.s04.untrimmed.bam\"\n\n        # Sort mapped reads\n        samtools sort --threads 1 -O bam -o \"n10.r09.s04_output/n10.r09.s04.untrimmed.sorted.bam\" \"n10.r09.s04_output/n10.r09.s04.untrimmed.bam\" 1>&2\n\n        # Trim mapped reads using ivar\n        ivar trim -x 5 -e -i \"n10.r09.s04_output/n10.r09.s04.untrimmed.sorted.bam\" -b \"n10.r09.s04_output/n10.r09.s04.primers.bed\" -p \"n10.r09.s04_output/n10.r09.s04.trimmed\" 1>&2\n\n        # Sort trimmed mapped reads\n        samtools sort --threads 1 -O bam -o \"n10.r09.s04_output/n10.r09.s04.trimmed.sorted.bam\" \"n10.r09.s04_output/n10.r09.s04.trimmed.bam\" 1>&2\n\n        # Generate pile-up from sorted trimmed BAM\n        samtools mpileup -A -aa -d 0 -Q 0 --reference \"n10.r09.s04_output/n10.r09.s04.reference.fas\" \"n10.r09.s04_output/n10.r09.s04.trimmed.sorted.bam\" > \"n10.r09.s04_output/n10.r09.s04.pileup.txt\"\n\n        # Call variants using lofreq\"\n        lofreq call -f \"n10.r09.s04_output/n10.r09.s04.reference.fas\" --call-indels \"n10.r09.s04_output/n10.r09.s04.trimmed.sorted.bam\" > \"n10.r09.s04_output/n10.r09.s04.variants.vcf\"\n\n        # Call depth from trimmed BAM\n        samtools depth -d 0 -Q 0 -q 0 -aa \"n10.r09.s04_output/n10.r09.s04.trimmed.sorted.bam\" > \"n10.r09.s04_output/n10.r09.s04.depth.txt\"\n\n        # Find low-depth regions\n        low_depth_regions \"n10.r09.s04_output/n10.r09.s04.depth.txt\" \"n10.r09.s04_output/n10.r09.s04.low_depth.tsv\" 10 1>&2\n\n        # Generate consensus sequence\n        alt_vars.py -i \"n10.r09.s04_output/n10.r09.s04.variants.vcf\" -o tmp.vcf -v lofreq\n        bgzip tmp.vcf\n        bcftools index tmp.vcf.gz\n        cat \"n10.r09.s04_output/n10.r09.s04.reference.fas\" | bcftools consensus -m \"n10.r09.s04_output/n10.r09.s04.low_depth.tsv\" tmp.vcf.gz > \"n10.r09.s04_output/n10.r09.s04.consensus.fas\"\n\n        # Remove redundant output files before compressing\n        rm */*trimmed.bam\n\n        # Compress output files\n        tar cvf - \"n10.r09.s04_output\" | pigz -1 -p 1 > \"%s\"\n    " args [val<.=s3://niema-test/n10/r09/n10.r09.s04_R1.fastq 35.4MiB>, val<.=s3://niema-test/n10/r09/n10.r09.s04_R2.fastq 35.4MiB>, out[0]] resources {mem:1.0GiB cpu:1 disk:0B}
+2021/07/08 16:25:30 scheduler task d3bb03f8 (flow 37138529): submitted with execconfig exec image niemasd/vireflow:latest cmd "\n        # Copy input files locally\n        mkdir \"n10.r09.s10_output\"\n        wget -O \"n10.r09.s10_output/n10.r09.s10.reference.fas\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas\"\n        wget -O \"n10.r09.s10_output/n10.r09.s10.reference.gff\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3\"\n        wget -O \"n10.r09.s10_output/n10.r09.s10.primers.bed\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed\"\n        cp \"%s\" \"n10.r09.s10_output/n10.r09.s10.fq1.fastq\"\n        cp \"%s\" \"n10.r09.s10_output/n10.r09.s10.fq2.fastq\"\n\n        # Map reads using minimap2\n        minimap2 -t 1 -a -x sr \"n10.r09.s10_output/n10.r09.s10.reference.fas\" \"n10.r09.s10_output/n10.r09.s10.fq1.fastq\" \"n10.r09.s10_output/n10.r09.s10.fq2.fastq\" | samtools view -bS - > \"n10.r09.s10_output/n10.r09.s10.untrimmed.bam\"\n\n        # Sort mapped reads\n        samtools sort --threads 1 -O bam -o \"n10.r09.s10_output/n10.r09.s10.untrimmed.sorted.bam\" \"n10.r09.s10_output/n10.r09.s10.untrimmed.bam\" 1>&2\n\n        # Trim mapped reads using ivar\n        ivar trim -x 5 -e -i \"n10.r09.s10_output/n10.r09.s10.untrimmed.sorted.bam\" -b \"n10.r09.s10_output/n10.r09.s10.primers.bed\" -p \"n10.r09.s10_output/n10.r09.s10.trimmed\" 1>&2\n\n        # Sort trimmed mapped reads\n        samtools sort --threads 1 -O bam -o \"n10.r09.s10_output/n10.r09.s10.trimmed.sorted.bam\" \"n10.r09.s10_output/n10.r09.s10.trimmed.bam\" 1>&2\n\n        # Generate pile-up from sorted trimmed BAM\n        samtools mpileup -A -aa -d 0 -Q 0 --reference \"n10.r09.s10_output/n10.r09.s10.reference.fas\" \"n10.r09.s10_output/n10.r09.s10.trimmed.sorted.bam\" > \"n10.r09.s10_output/n10.r09.s10.pileup.txt\"\n\n        # Call variants using lofreq\"\n        lofreq call -f \"n10.r09.s10_output/n10.r09.s10.reference.fas\" --call-indels \"n10.r09.s10_output/n10.r09.s10.trimmed.sorted.bam\" > \"n10.r09.s10_output/n10.r09.s10.variants.vcf\"\n\n        # Call depth from trimmed BAM\n        samtools depth -d 0 -Q 0 -q 0 -aa \"n10.r09.s10_output/n10.r09.s10.trimmed.sorted.bam\" > \"n10.r09.s10_output/n10.r09.s10.depth.txt\"\n\n        # Find low-depth regions\n        low_depth_regions \"n10.r09.s10_output/n10.r09.s10.depth.txt\" \"n10.r09.s10_output/n10.r09.s10.low_depth.tsv\" 10 1>&2\n\n        # Generate consensus sequence\n        alt_vars.py -i \"n10.r09.s10_output/n10.r09.s10.variants.vcf\" -o tmp.vcf -v lofreq\n        bgzip tmp.vcf\n        bcftools index tmp.vcf.gz\n        cat \"n10.r09.s10_output/n10.r09.s10.reference.fas\" | bcftools consensus -m \"n10.r09.s10_output/n10.r09.s10.low_depth.tsv\" tmp.vcf.gz > \"n10.r09.s10_output/n10.r09.s10.consensus.fas\"\n\n        # Remove redundant output files before compressing\n        rm */*trimmed.bam\n\n        # Compress output files\n        tar cvf - \"n10.r09.s10_output\" | pigz -1 -p 1 > \"%s\"\n    " args [val<.=s3://niema-test/n10/r09/n10.r09.s10_R1.fastq 35.4MiB>, val<.=s3://niema-test/n10/r09/n10.r09.s10_R2.fastq 35.4MiB>, out[0]] resources {mem:1.0GiB cpu:1 disk:0B}
+2021/07/08 16:25:30 scheduler task 845c4e68 (flow 578bac3b): submitted with execconfig exec image niemasd/vireflow:latest cmd "\n        # Copy input files locally\n        mkdir \"n10.r09.s02_output\"\n        wget -O \"n10.r09.s02_output/n10.r09.s02.reference.fas\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas\"\n        wget -O \"n10.r09.s02_output/n10.r09.s02.reference.gff\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3\"\n        wget -O \"n10.r09.s02_output/n10.r09.s02.primers.bed\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed\"\n        cp \"%s\" \"n10.r09.s02_output/n10.r09.s02.fq1.fastq\"\n        cp \"%s\" \"n10.r09.s02_output/n10.r09.s02.fq2.fastq\"\n\n        # Map reads using minimap2\n        minimap2 -t 1 -a -x sr \"n10.r09.s02_output/n10.r09.s02.reference.fas\" \"n10.r09.s02_output/n10.r09.s02.fq1.fastq\" \"n10.r09.s02_output/n10.r09.s02.fq2.fastq\" | samtools view -bS - > \"n10.r09.s02_output/n10.r09.s02.untrimmed.bam\"\n\n        # Sort mapped reads\n        samtools sort --threads 1 -O bam -o \"n10.r09.s02_output/n10.r09.s02.untrimmed.sorted.bam\" \"n10.r09.s02_output/n10.r09.s02.untrimmed.bam\" 1>&2\n\n        # Trim mapped reads using ivar\n        ivar trim -x 5 -e -i \"n10.r09.s02_output/n10.r09.s02.untrimmed.sorted.bam\" -b \"n10.r09.s02_output/n10.r09.s02.primers.bed\" -p \"n10.r09.s02_output/n10.r09.s02.trimmed\" 1>&2\n\n        # Sort trimmed mapped reads\n        samtools sort --threads 1 -O bam -o \"n10.r09.s02_output/n10.r09.s02.trimmed.sorted.bam\" \"n10.r09.s02_output/n10.r09.s02.trimmed.bam\" 1>&2\n\n        # Generate pile-up from sorted trimmed BAM\n        samtools mpileup -A -aa -d 0 -Q 0 --reference \"n10.r09.s02_output/n10.r09.s02.reference.fas\" \"n10.r09.s02_output/n10.r09.s02.trimmed.sorted.bam\" > \"n10.r09.s02_output/n10.r09.s02.pileup.txt\"\n\n        # Call variants using lofreq\"\n        lofreq call -f \"n10.r09.s02_output/n10.r09.s02.reference.fas\" --call-indels \"n10.r09.s02_output/n10.r09.s02.trimmed.sorted.bam\" > \"n10.r09.s02_output/n10.r09.s02.variants.vcf\"\n\n        # Call depth from trimmed BAM\n        samtools depth -d 0 -Q 0 -q 0 -aa \"n10.r09.s02_output/n10.r09.s02.trimmed.sorted.bam\" > \"n10.r09.s02_output/n10.r09.s02.depth.txt\"\n\n        # Find low-depth regions\n        low_depth_regions \"n10.r09.s02_output/n10.r09.s02.depth.txt\" \"n10.r09.s02_output/n10.r09.s02.low_depth.tsv\" 10 1>&2\n\n        # Generate consensus sequence\n        alt_vars.py -i \"n10.r09.s02_output/n10.r09.s02.variants.vcf\" -o tmp.vcf -v lofreq\n        bgzip tmp.vcf\n        bcftools index tmp.vcf.gz\n        cat \"n10.r09.s02_output/n10.r09.s02.reference.fas\" | bcftools consensus -m \"n10.r09.s02_output/n10.r09.s02.low_depth.tsv\" tmp.vcf.gz > \"n10.r09.s02_output/n10.r09.s02.consensus.fas\"\n\n        # Remove redundant output files before compressing\n        rm */*trimmed.bam\n\n        # Compress output files\n        tar cvf - \"n10.r09.s02_output\" | pigz -1 -p 1 > \"%s\"\n    " args [val<.=s3://niema-test/n10/r09/n10.r09.s02_R1.fastq 35.4MiB>, val<.=s3://niema-test/n10/r09/n10.r09.s02_R2.fastq 35.4MiB>, out[0]] resources {mem:1.0GiB cpu:1 disk:0B}
+2021/07/08 16:25:30 scheduler task 534d229a (flow 246aa0e8): submitted with execconfig exec image niemasd/vireflow:latest cmd "\n        # Copy input files locally\n        mkdir \"n10.r09.s07_output\"\n        wget -O \"n10.r09.s07_output/n10.r09.s07.reference.fas\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas\"\n        wget -O \"n10.r09.s07_output/n10.r09.s07.reference.gff\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3\"\n        wget -O \"n10.r09.s07_output/n10.r09.s07.primers.bed\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed\"\n        cp \"%s\" \"n10.r09.s07_output/n10.r09.s07.fq1.fastq\"\n        cp \"%s\" \"n10.r09.s07_output/n10.r09.s07.fq2.fastq\"\n\n        # Map reads using minimap2\n        minimap2 -t 1 -a -x sr \"n10.r09.s07_output/n10.r09.s07.reference.fas\" \"n10.r09.s07_output/n10.r09.s07.fq1.fastq\" \"n10.r09.s07_output/n10.r09.s07.fq2.fastq\" | samtools view -bS - > \"n10.r09.s07_output/n10.r09.s07.untrimmed.bam\"\n\n        # Sort mapped reads\n        samtools sort --threads 1 -O bam -o \"n10.r09.s07_output/n10.r09.s07.untrimmed.sorted.bam\" \"n10.r09.s07_output/n10.r09.s07.untrimmed.bam\" 1>&2\n\n        # Trim mapped reads using ivar\n        ivar trim -x 5 -e -i \"n10.r09.s07_output/n10.r09.s07.untrimmed.sorted.bam\" -b \"n10.r09.s07_output/n10.r09.s07.primers.bed\" -p \"n10.r09.s07_output/n10.r09.s07.trimmed\" 1>&2\n\n        # Sort trimmed mapped reads\n        samtools sort --threads 1 -O bam -o \"n10.r09.s07_output/n10.r09.s07.trimmed.sorted.bam\" \"n10.r09.s07_output/n10.r09.s07.trimmed.bam\" 1>&2\n\n        # Generate pile-up from sorted trimmed BAM\n        samtools mpileup -A -aa -d 0 -Q 0 --reference \"n10.r09.s07_output/n10.r09.s07.reference.fas\" \"n10.r09.s07_output/n10.r09.s07.trimmed.sorted.bam\" > \"n10.r09.s07_output/n10.r09.s07.pileup.txt\"\n\n        # Call variants using lofreq\"\n        lofreq call -f \"n10.r09.s07_output/n10.r09.s07.reference.fas\" --call-indels \"n10.r09.s07_output/n10.r09.s07.trimmed.sorted.bam\" > \"n10.r09.s07_output/n10.r09.s07.variants.vcf\"\n\n        # Call depth from trimmed BAM\n        samtools depth -d 0 -Q 0 -q 0 -aa \"n10.r09.s07_output/n10.r09.s07.trimmed.sorted.bam\" > \"n10.r09.s07_output/n10.r09.s07.depth.txt\"\n\n        # Find low-depth regions\n        low_depth_regions \"n10.r09.s07_output/n10.r09.s07.depth.txt\" \"n10.r09.s07_output/n10.r09.s07.low_depth.tsv\" 10 1>&2\n\n        # Generate consensus sequence\n        alt_vars.py -i \"n10.r09.s07_output/n10.r09.s07.variants.vcf\" -o tmp.vcf -v lofreq\n        bgzip tmp.vcf\n        bcftools index tmp.vcf.gz\n        cat \"n10.r09.s07_output/n10.r09.s07.reference.fas\" | bcftools consensus -m \"n10.r09.s07_output/n10.r09.s07.low_depth.tsv\" tmp.vcf.gz > \"n10.r09.s07_output/n10.r09.s07.consensus.fas\"\n\n        # Remove redundant output files before compressing\n        rm */*trimmed.bam\n\n        # Compress output files\n        tar cvf - \"n10.r09.s07_output\" | pigz -1 -p 1 > \"%s\"\n    " args [val<.=s3://niema-test/n10/r09/n10.r09.s07_R1.fastq 35.4MiB>, val<.=s3://niema-test/n10/r09/n10.r09.s07_R2.fastq 35.4MiB>, out[0]] resources {mem:1.0GiB cpu:1 disk:0B}
+2021/07/08 16:25:30 scheduler task 281f39fe (flow be9f2b71): submitted with execconfig exec image niemasd/vireflow:latest cmd "\n        # Copy input files locally\n        mkdir \"n10.r09.s03_output\"\n        wget -O \"n10.r09.s03_output/n10.r09.s03.reference.fas\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas\"\n        wget -O \"n10.r09.s03_output/n10.r09.s03.reference.gff\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3\"\n        wget -O \"n10.r09.s03_output/n10.r09.s03.primers.bed\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed\"\n        cp \"%s\" \"n10.r09.s03_output/n10.r09.s03.fq1.fastq\"\n        cp \"%s\" \"n10.r09.s03_output/n10.r09.s03.fq2.fastq\"\n\n        # Map reads using minimap2\n        minimap2 -t 1 -a -x sr \"n10.r09.s03_output/n10.r09.s03.reference.fas\" \"n10.r09.s03_output/n10.r09.s03.fq1.fastq\" \"n10.r09.s03_output/n10.r09.s03.fq2.fastq\" | samtools view -bS - > \"n10.r09.s03_output/n10.r09.s03.untrimmed.bam\"\n\n        # Sort mapped reads\n        samtools sort --threads 1 -O bam -o \"n10.r09.s03_output/n10.r09.s03.untrimmed.sorted.bam\" \"n10.r09.s03_output/n10.r09.s03.untrimmed.bam\" 1>&2\n\n        # Trim mapped reads using ivar\n        ivar trim -x 5 -e -i \"n10.r09.s03_output/n10.r09.s03.untrimmed.sorted.bam\" -b \"n10.r09.s03_output/n10.r09.s03.primers.bed\" -p \"n10.r09.s03_output/n10.r09.s03.trimmed\" 1>&2\n\n        # Sort trimmed mapped reads\n        samtools sort --threads 1 -O bam -o \"n10.r09.s03_output/n10.r09.s03.trimmed.sorted.bam\" \"n10.r09.s03_output/n10.r09.s03.trimmed.bam\" 1>&2\n\n        # Generate pile-up from sorted trimmed BAM\n        samtools mpileup -A -aa -d 0 -Q 0 --reference \"n10.r09.s03_output/n10.r09.s03.reference.fas\" \"n10.r09.s03_output/n10.r09.s03.trimmed.sorted.bam\" > \"n10.r09.s03_output/n10.r09.s03.pileup.txt\"\n\n        # Call variants using lofreq\"\n        lofreq call -f \"n10.r09.s03_output/n10.r09.s03.reference.fas\" --call-indels \"n10.r09.s03_output/n10.r09.s03.trimmed.sorted.bam\" > \"n10.r09.s03_output/n10.r09.s03.variants.vcf\"\n\n        # Call depth from trimmed BAM\n        samtools depth -d 0 -Q 0 -q 0 -aa \"n10.r09.s03_output/n10.r09.s03.trimmed.sorted.bam\" > \"n10.r09.s03_output/n10.r09.s03.depth.txt\"\n\n        # Find low-depth regions\n        low_depth_regions \"n10.r09.s03_output/n10.r09.s03.depth.txt\" \"n10.r09.s03_output/n10.r09.s03.low_depth.tsv\" 10 1>&2\n\n        # Generate consensus sequence\n        alt_vars.py -i \"n10.r09.s03_output/n10.r09.s03.variants.vcf\" -o tmp.vcf -v lofreq\n        bgzip tmp.vcf\n        bcftools index tmp.vcf.gz\n        cat \"n10.r09.s03_output/n10.r09.s03.reference.fas\" | bcftools consensus -m \"n10.r09.s03_output/n10.r09.s03.low_depth.tsv\" tmp.vcf.gz > \"n10.r09.s03_output/n10.r09.s03.consensus.fas\"\n\n        # Remove redundant output files before compressing\n        rm */*trimmed.bam\n\n        # Compress output files\n        tar cvf - \"n10.r09.s03_output\" | pigz -1 -p 1 > \"%s\"\n    " args [val<.=s3://niema-test/n10/r09/n10.r09.s03_R1.fastq 35.4MiB>, val<.=s3://niema-test/n10/r09/n10.r09.s03_R2.fastq 35.4MiB>, out[0]] resources {mem:1.0GiB cpu:1 disk:0B}
+2021/07/08 16:25:30 scheduler task 57df14a6 (flow 85dff006): submitted with execconfig exec image niemasd/vireflow:latest cmd "\n        # Copy input files locally\n        mkdir \"n10.r09.s01_output\"\n        wget -O \"n10.r09.s01_output/n10.r09.s01.reference.fas\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas\"\n        wget -O \"n10.r09.s01_output/n10.r09.s01.reference.gff\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3\"\n        wget -O \"n10.r09.s01_output/n10.r09.s01.primers.bed\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed\"\n        cp \"%s\" \"n10.r09.s01_output/n10.r09.s01.fq1.fastq\"\n        cp \"%s\" \"n10.r09.s01_output/n10.r09.s01.fq2.fastq\"\n\n        # Map reads using minimap2\n        minimap2 -t 1 -a -x sr \"n10.r09.s01_output/n10.r09.s01.reference.fas\" \"n10.r09.s01_output/n10.r09.s01.fq1.fastq\" \"n10.r09.s01_output/n10.r09.s01.fq2.fastq\" | samtools view -bS - > \"n10.r09.s01_output/n10.r09.s01.untrimmed.bam\"\n\n        # Sort mapped reads\n        samtools sort --threads 1 -O bam -o \"n10.r09.s01_output/n10.r09.s01.untrimmed.sorted.bam\" \"n10.r09.s01_output/n10.r09.s01.untrimmed.bam\" 1>&2\n\n        # Trim mapped reads using ivar\n        ivar trim -x 5 -e -i \"n10.r09.s01_output/n10.r09.s01.untrimmed.sorted.bam\" -b \"n10.r09.s01_output/n10.r09.s01.primers.bed\" -p \"n10.r09.s01_output/n10.r09.s01.trimmed\" 1>&2\n\n        # Sort trimmed mapped reads\n        samtools sort --threads 1 -O bam -o \"n10.r09.s01_output/n10.r09.s01.trimmed.sorted.bam\" \"n10.r09.s01_output/n10.r09.s01.trimmed.bam\" 1>&2\n\n        # Generate pile-up from sorted trimmed BAM\n        samtools mpileup -A -aa -d 0 -Q 0 --reference \"n10.r09.s01_output/n10.r09.s01.reference.fas\" \"n10.r09.s01_output/n10.r09.s01.trimmed.sorted.bam\" > \"n10.r09.s01_output/n10.r09.s01.pileup.txt\"\n\n        # Call variants using lofreq\"\n        lofreq call -f \"n10.r09.s01_output/n10.r09.s01.reference.fas\" --call-indels \"n10.r09.s01_output/n10.r09.s01.trimmed.sorted.bam\" > \"n10.r09.s01_output/n10.r09.s01.variants.vcf\"\n\n        # Call depth from trimmed BAM\n        samtools depth -d 0 -Q 0 -q 0 -aa \"n10.r09.s01_output/n10.r09.s01.trimmed.sorted.bam\" > \"n10.r09.s01_output/n10.r09.s01.depth.txt\"\n\n        # Find low-depth regions\n        low_depth_regions \"n10.r09.s01_output/n10.r09.s01.depth.txt\" \"n10.r09.s01_output/n10.r09.s01.low_depth.tsv\" 10 1>&2\n\n        # Generate consensus sequence\n        alt_vars.py -i \"n10.r09.s01_output/n10.r09.s01.variants.vcf\" -o tmp.vcf -v lofreq\n        bgzip tmp.vcf\n        bcftools index tmp.vcf.gz\n        cat \"n10.r09.s01_output/n10.r09.s01.reference.fas\" | bcftools consensus -m \"n10.r09.s01_output/n10.r09.s01.low_depth.tsv\" tmp.vcf.gz > \"n10.r09.s01_output/n10.r09.s01.consensus.fas\"\n\n        # Remove redundant output files before compressing\n        rm */*trimmed.bam\n\n        # Compress output files\n        tar cvf - \"n10.r09.s01_output\" | pigz -1 -p 1 > \"%s\"\n    " args [val<.=s3://niema-test/n10/r09/n10.r09.s01_R1.fastq 35.4MiB>, val<.=s3://niema-test/n10/r09/n10.r09.s01_R2.fastq 35.4MiB>, out[0]] resources {mem:1.0GiB cpu:1 disk:0B}
+2021/07/08 16:25:30 scheduler task a7a492f6 (flow 30a384f5): submitted with execconfig exec image niemasd/vireflow:latest cmd "\n        # Copy input files locally\n        mkdir \"n10.r09.s08_output\"\n        wget -O \"n10.r09.s08_output/n10.r09.s08.reference.fas\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas\"\n        wget -O \"n10.r09.s08_output/n10.r09.s08.reference.gff\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3\"\n        wget -O \"n10.r09.s08_output/n10.r09.s08.primers.bed\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed\"\n        cp \"%s\" \"n10.r09.s08_output/n10.r09.s08.fq1.fastq\"\n        cp \"%s\" \"n10.r09.s08_output/n10.r09.s08.fq2.fastq\"\n\n        # Map reads using minimap2\n        minimap2 -t 1 -a -x sr \"n10.r09.s08_output/n10.r09.s08.reference.fas\" \"n10.r09.s08_output/n10.r09.s08.fq1.fastq\" \"n10.r09.s08_output/n10.r09.s08.fq2.fastq\" | samtools view -bS - > \"n10.r09.s08_output/n10.r09.s08.untrimmed.bam\"\n\n        # Sort mapped reads\n        samtools sort --threads 1 -O bam -o \"n10.r09.s08_output/n10.r09.s08.untrimmed.sorted.bam\" \"n10.r09.s08_output/n10.r09.s08.untrimmed.bam\" 1>&2\n\n        # Trim mapped reads using ivar\n        ivar trim -x 5 -e -i \"n10.r09.s08_output/n10.r09.s08.untrimmed.sorted.bam\" -b \"n10.r09.s08_output/n10.r09.s08.primers.bed\" -p \"n10.r09.s08_output/n10.r09.s08.trimmed\" 1>&2\n\n        # Sort trimmed mapped reads\n        samtools sort --threads 1 -O bam -o \"n10.r09.s08_output/n10.r09.s08.trimmed.sorted.bam\" \"n10.r09.s08_output/n10.r09.s08.trimmed.bam\" 1>&2\n\n        # Generate pile-up from sorted trimmed BAM\n        samtools mpileup -A -aa -d 0 -Q 0 --reference \"n10.r09.s08_output/n10.r09.s08.reference.fas\" \"n10.r09.s08_output/n10.r09.s08.trimmed.sorted.bam\" > \"n10.r09.s08_output/n10.r09.s08.pileup.txt\"\n\n        # Call variants using lofreq\"\n        lofreq call -f \"n10.r09.s08_output/n10.r09.s08.reference.fas\" --call-indels \"n10.r09.s08_output/n10.r09.s08.trimmed.sorted.bam\" > \"n10.r09.s08_output/n10.r09.s08.variants.vcf\"\n\n        # Call depth from trimmed BAM\n        samtools depth -d 0 -Q 0 -q 0 -aa \"n10.r09.s08_output/n10.r09.s08.trimmed.sorted.bam\" > \"n10.r09.s08_output/n10.r09.s08.depth.txt\"\n\n        # Find low-depth regions\n        low_depth_regions \"n10.r09.s08_output/n10.r09.s08.depth.txt\" \"n10.r09.s08_output/n10.r09.s08.low_depth.tsv\" 10 1>&2\n\n        # Generate consensus sequence\n        alt_vars.py -i \"n10.r09.s08_output/n10.r09.s08.variants.vcf\" -o tmp.vcf -v lofreq\n        bgzip tmp.vcf\n        bcftools index tmp.vcf.gz\n        cat \"n10.r09.s08_output/n10.r09.s08.reference.fas\" | bcftools consensus -m \"n10.r09.s08_output/n10.r09.s08.low_depth.tsv\" tmp.vcf.gz > \"n10.r09.s08_output/n10.r09.s08.consensus.fas\"\n\n        # Remove redundant output files before compressing\n        rm */*trimmed.bam\n\n        # Compress output files\n        tar cvf - \"n10.r09.s08_output\" | pigz -1 -p 1 > \"%s\"\n    " args [val<.=s3://niema-test/n10/r09/n10.r09.s08_R1.fastq 35.4MiB>, val<.=s3://niema-test/n10/r09/n10.r09.s08_R2.fastq 35.4MiB>, out[0]] resources {mem:1.0GiB cpu:1 disk:0B}
+2021/07/08 16:25:30 scheduler task 99089331 (flow f39c0442): submitted with execconfig exec image niemasd/vireflow:latest cmd "\n        # Copy input files locally\n        mkdir \"n10.r09.s09_output\"\n        wget -O \"n10.r09.s09_output/n10.r09.s09.reference.fas\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas\"\n        wget -O \"n10.r09.s09_output/n10.r09.s09.reference.gff\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3\"\n        wget -O \"n10.r09.s09_output/n10.r09.s09.primers.bed\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed\"\n        cp \"%s\" \"n10.r09.s09_output/n10.r09.s09.fq1.fastq\"\n        cp \"%s\" \"n10.r09.s09_output/n10.r09.s09.fq2.fastq\"\n\n        # Map reads using minimap2\n        minimap2 -t 1 -a -x sr \"n10.r09.s09_output/n10.r09.s09.reference.fas\" \"n10.r09.s09_output/n10.r09.s09.fq1.fastq\" \"n10.r09.s09_output/n10.r09.s09.fq2.fastq\" | samtools view -bS - > \"n10.r09.s09_output/n10.r09.s09.untrimmed.bam\"\n\n        # Sort mapped reads\n        samtools sort --threads 1 -O bam -o \"n10.r09.s09_output/n10.r09.s09.untrimmed.sorted.bam\" \"n10.r09.s09_output/n10.r09.s09.untrimmed.bam\" 1>&2\n\n        # Trim mapped reads using ivar\n        ivar trim -x 5 -e -i \"n10.r09.s09_output/n10.r09.s09.untrimmed.sorted.bam\" -b \"n10.r09.s09_output/n10.r09.s09.primers.bed\" -p \"n10.r09.s09_output/n10.r09.s09.trimmed\" 1>&2\n\n        # Sort trimmed mapped reads\n        samtools sort --threads 1 -O bam -o \"n10.r09.s09_output/n10.r09.s09.trimmed.sorted.bam\" \"n10.r09.s09_output/n10.r09.s09.trimmed.bam\" 1>&2\n\n        # Generate pile-up from sorted trimmed BAM\n        samtools mpileup -A -aa -d 0 -Q 0 --reference \"n10.r09.s09_output/n10.r09.s09.reference.fas\" \"n10.r09.s09_output/n10.r09.s09.trimmed.sorted.bam\" > \"n10.r09.s09_output/n10.r09.s09.pileup.txt\"\n\n        # Call variants using lofreq\"\n        lofreq call -f \"n10.r09.s09_output/n10.r09.s09.reference.fas\" --call-indels \"n10.r09.s09_output/n10.r09.s09.trimmed.sorted.bam\" > \"n10.r09.s09_output/n10.r09.s09.variants.vcf\"\n\n        # Call depth from trimmed BAM\n        samtools depth -d 0 -Q 0 -q 0 -aa \"n10.r09.s09_output/n10.r09.s09.trimmed.sorted.bam\" > \"n10.r09.s09_output/n10.r09.s09.depth.txt\"\n\n        # Find low-depth regions\n        low_depth_regions \"n10.r09.s09_output/n10.r09.s09.depth.txt\" \"n10.r09.s09_output/n10.r09.s09.low_depth.tsv\" 10 1>&2\n\n        # Generate consensus sequence\n        alt_vars.py -i \"n10.r09.s09_output/n10.r09.s09.variants.vcf\" -o tmp.vcf -v lofreq\n        bgzip tmp.vcf\n        bcftools index tmp.vcf.gz\n        cat \"n10.r09.s09_output/n10.r09.s09.reference.fas\" | bcftools consensus -m \"n10.r09.s09_output/n10.r09.s09.low_depth.tsv\" tmp.vcf.gz > \"n10.r09.s09_output/n10.r09.s09.consensus.fas\"\n\n        # Remove redundant output files before compressing\n        rm */*trimmed.bam\n\n        # Compress output files\n        tar cvf - \"n10.r09.s09_output\" | pigz -1 -p 1 > \"%s\"\n    " args [val<.=s3://niema-test/n10/r09/n10.r09.s09_R1.fastq 35.4MiB>, val<.=s3://niema-test/n10/r09/n10.r09.s09_R2.fastq 35.4MiB>, out[0]] resources {mem:1.0GiB cpu:1 disk:0B}
+2021/07/08 16:25:30 scheduler task c7c38900 (flow 5c8d5082): submitted with execconfig exec image niemasd/vireflow:latest cmd "\n        # Copy input files locally\n        mkdir \"n10.r09.s06_output\"\n        wget -O \"n10.r09.s06_output/n10.r09.s06.reference.fas\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas\"\n        wget -O \"n10.r09.s06_output/n10.r09.s06.reference.gff\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3\"\n        wget -O \"n10.r09.s06_output/n10.r09.s06.primers.bed\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed\"\n        cp \"%s\" \"n10.r09.s06_output/n10.r09.s06.fq1.fastq\"\n        cp \"%s\" \"n10.r09.s06_output/n10.r09.s06.fq2.fastq\"\n\n        # Map reads using minimap2\n        minimap2 -t 1 -a -x sr \"n10.r09.s06_output/n10.r09.s06.reference.fas\" \"n10.r09.s06_output/n10.r09.s06.fq1.fastq\" \"n10.r09.s06_output/n10.r09.s06.fq2.fastq\" | samtools view -bS - > \"n10.r09.s06_output/n10.r09.s06.untrimmed.bam\"\n\n        # Sort mapped reads\n        samtools sort --threads 1 -O bam -o \"n10.r09.s06_output/n10.r09.s06.untrimmed.sorted.bam\" \"n10.r09.s06_output/n10.r09.s06.untrimmed.bam\" 1>&2\n\n        # Trim mapped reads using ivar\n        ivar trim -x 5 -e -i \"n10.r09.s06_output/n10.r09.s06.untrimmed.sorted.bam\" -b \"n10.r09.s06_output/n10.r09.s06.primers.bed\" -p \"n10.r09.s06_output/n10.r09.s06.trimmed\" 1>&2\n\n        # Sort trimmed mapped reads\n        samtools sort --threads 1 -O bam -o \"n10.r09.s06_output/n10.r09.s06.trimmed.sorted.bam\" \"n10.r09.s06_output/n10.r09.s06.trimmed.bam\" 1>&2\n\n        # Generate pile-up from sorted trimmed BAM\n        samtools mpileup -A -aa -d 0 -Q 0 --reference \"n10.r09.s06_output/n10.r09.s06.reference.fas\" \"n10.r09.s06_output/n10.r09.s06.trimmed.sorted.bam\" > \"n10.r09.s06_output/n10.r09.s06.pileup.txt\"\n\n        # Call variants using lofreq\"\n        lofreq call -f \"n10.r09.s06_output/n10.r09.s06.reference.fas\" --call-indels \"n10.r09.s06_output/n10.r09.s06.trimmed.sorted.bam\" > \"n10.r09.s06_output/n10.r09.s06.variants.vcf\"\n\n        # Call depth from trimmed BAM\n        samtools depth -d 0 -Q 0 -q 0 -aa \"n10.r09.s06_output/n10.r09.s06.trimmed.sorted.bam\" > \"n10.r09.s06_output/n10.r09.s06.depth.txt\"\n\n        # Find low-depth regions\n        low_depth_regions \"n10.r09.s06_output/n10.r09.s06.depth.txt\" \"n10.r09.s06_output/n10.r09.s06.low_depth.tsv\" 10 1>&2\n\n        # Generate consensus sequence\n        alt_vars.py -i \"n10.r09.s06_output/n10.r09.s06.variants.vcf\" -o tmp.vcf -v lofreq\n        bgzip tmp.vcf\n        bcftools index tmp.vcf.gz\n        cat \"n10.r09.s06_output/n10.r09.s06.reference.fas\" | bcftools consensus -m \"n10.r09.s06_output/n10.r09.s06.low_depth.tsv\" tmp.vcf.gz > \"n10.r09.s06_output/n10.r09.s06.consensus.fas\"\n\n        # Remove redundant output files before compressing\n        rm */*trimmed.bam\n\n        # Compress output files\n        tar cvf - \"n10.r09.s06_output\" | pigz -1 -p 1 > \"%s\"\n    " args [val<.=s3://niema-test/n10/r09/n10.r09.s06_R1.fastq 35.4MiB>, val<.=s3://niema-test/n10/r09/n10.r09.s06_R2.fastq 35.4MiB>, out[0]] resources {mem:1.0GiB cpu:1 disk:0B}
+2021/07/08 16:25:30 scheduler task 1157305a (flow cf5837f5): submitted with execconfig exec image niemasd/vireflow:latest cmd "\n        # Copy input files locally\n        mkdir \"n10.r09.s05_output\"\n        wget -O \"n10.r09.s05_output/n10.r09.s05.reference.fas\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas\"\n        wget -O \"n10.r09.s05_output/n10.r09.s05.reference.gff\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3\"\n        wget -O \"n10.r09.s05_output/n10.r09.s05.primers.bed\" \"https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed\"\n        cp \"%s\" \"n10.r09.s05_output/n10.r09.s05.fq1.fastq\"\n        cp \"%s\" \"n10.r09.s05_output/n10.r09.s05.fq2.fastq\"\n\n        # Map reads using minimap2\n        minimap2 -t 1 -a -x sr \"n10.r09.s05_output/n10.r09.s05.reference.fas\" \"n10.r09.s05_output/n10.r09.s05.fq1.fastq\" \"n10.r09.s05_output/n10.r09.s05.fq2.fastq\" | samtools view -bS - > \"n10.r09.s05_output/n10.r09.s05.untrimmed.bam\"\n\n        # Sort mapped reads\n        samtools sort --threads 1 -O bam -o \"n10.r09.s05_output/n10.r09.s05.untrimmed.sorted.bam\" \"n10.r09.s05_output/n10.r09.s05.untrimmed.bam\" 1>&2\n\n        # Trim mapped reads using ivar\n        ivar trim -x 5 -e -i \"n10.r09.s05_output/n10.r09.s05.untrimmed.sorted.bam\" -b \"n10.r09.s05_output/n10.r09.s05.primers.bed\" -p \"n10.r09.s05_output/n10.r09.s05.trimmed\" 1>&2\n\n        # Sort trimmed mapped reads\n        samtools sort --threads 1 -O bam -o \"n10.r09.s05_output/n10.r09.s05.trimmed.sorted.bam\" \"n10.r09.s05_output/n10.r09.s05.trimmed.bam\" 1>&2\n\n        # Generate pile-up from sorted trimmed BAM\n        samtools mpileup -A -aa -d 0 -Q 0 --reference \"n10.r09.s05_output/n10.r09.s05.reference.fas\" \"n10.r09.s05_output/n10.r09.s05.trimmed.sorted.bam\" > \"n10.r09.s05_output/n10.r09.s05.pileup.txt\"\n\n        # Call variants using lofreq\"\n        lofreq call -f \"n10.r09.s05_output/n10.r09.s05.reference.fas\" --call-indels \"n10.r09.s05_output/n10.r09.s05.trimmed.sorted.bam\" > \"n10.r09.s05_output/n10.r09.s05.variants.vcf\"\n\n        # Call depth from trimmed BAM\n        samtools depth -d 0 -Q 0 -q 0 -aa \"n10.r09.s05_output/n10.r09.s05.trimmed.sorted.bam\" > \"n10.r09.s05_output/n10.r09.s05.depth.txt\"\n\n        # Find low-depth regions\n        low_depth_regions \"n10.r09.s05_output/n10.r09.s05.depth.txt\" \"n10.r09.s05_output/n10.r09.s05.low_depth.tsv\" 10 1>&2\n\n        # Generate consensus sequence\n        alt_vars.py -i \"n10.r09.s05_output/n10.r09.s05.variants.vcf\" -o tmp.vcf -v lofreq\n        bgzip tmp.vcf\n        bcftools index tmp.vcf.gz\n        cat \"n10.r09.s05_output/n10.r09.s05.reference.fas\" | bcftools consensus -m \"n10.r09.s05_output/n10.r09.s05.low_depth.tsv\" tmp.vcf.gz > \"n10.r09.s05_output/n10.r09.s05.consensus.fas\"\n\n        # Remove redundant output files before compressing\n        rm */*trimmed.bam\n\n        # Compress output files\n        tar cvf - \"n10.r09.s05_output\" | pigz -1 -p 1 > \"%s\"\n    " args [val<.=s3://niema-test/n10/r09/n10.r09.s05_R1.fastq 35.4MiB>, val<.=s3://niema-test/n10/r09/n10.r09.s05_R2.fastq 35.4MiB>, out[0]] resources {mem:1.0GiB cpu:1 disk:0B}
+2021/07/08 16:26:15 scheduler task ab7897d2 (flow ac2b9915): assigning to alloc ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 available {mem:0B cpu:0 disk:10.0GiB}
+2021/07/08 16:26:15 scheduler task 1157305a (flow cf5837f5): assigning to alloc ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 available {mem:0B cpu:0 disk:10.0GiB}
+2021/07/08 16:26:15 scheduler task c7c38900 (flow 5c8d5082): assigning to alloc ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 available {mem:0B cpu:0 disk:10.0GiB}
+2021/07/08 16:26:15 scheduler task 99089331 (flow f39c0442): assigning to alloc ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 available {mem:0B cpu:0 disk:10.0GiB}
+2021/07/08 16:26:15 scheduler task a7a492f6 (flow 30a384f5): assigning to alloc ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 available {mem:0B cpu:0 disk:10.0GiB}
+2021/07/08 16:26:15 scheduler task 57df14a6 (flow 85dff006): assigning to alloc ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 available {mem:0B cpu:0 disk:10.0GiB}
+2021/07/08 16:26:15 scheduler task 281f39fe (flow be9f2b71): assigning to alloc ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 available {mem:0B cpu:0 disk:10.0GiB}
+2021/07/08 16:26:15 scheduler task 534d229a (flow 246aa0e8): assigning to alloc ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 available {mem:0B cpu:0 disk:10.0GiB}
+2021/07/08 16:26:15 scheduler task 845c4e68 (flow 578bac3b): assigning to alloc ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 available {mem:0B cpu:0 disk:10.0GiB}
+2021/07/08 16:26:15 scheduler task d3bb03f8 (flow 37138529): assigning to alloc ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8 available {mem:0B cpu:0 disk:10.0GiB}
+2021/07/08 16:26:15 scheduler task d3bb03f8 (flow 37138529): loading (try 0): started
+2021/07/08 16:26:15 scheduler task d3bb03f8 (flow 37138529): loading val<.=s3://niema-test/n10/r09/n10.r09.s10_R2.fastq 35.4MiB>
+2021/07/08 16:26:15 scheduler task 57df14a6 (flow 85dff006): loading (try 0): started
+2021/07/08 16:26:15 scheduler task a7a492f6 (flow 30a384f5): loading (try 0): started
+2021/07/08 16:26:15 scheduler task 281f39fe (flow be9f2b71): loading (try 0): started
+2021/07/08 16:26:15 scheduler task 845c4e68 (flow 578bac3b): loading (try 0): started
+2021/07/08 16:26:15 scheduler task 57df14a6 (flow 85dff006): loading val<.=s3://niema-test/n10/r09/n10.r09.s01_R2.fastq 35.4MiB>
+2021/07/08 16:26:15 scheduler task 845c4e68 (flow 578bac3b): loading val<.=s3://niema-test/n10/r09/n10.r09.s02_R2.fastq 35.4MiB>
+2021/07/08 16:26:15 scheduler task 845c4e68 (flow 578bac3b): loading val<.=s3://niema-test/n10/r09/n10.r09.s02_R1.fastq 35.4MiB>
+2021/07/08 16:26:15 scheduler task ab7897d2 (flow ac2b9915): loading (try 0): started
+2021/07/08 16:26:15 scheduler task ab7897d2 (flow ac2b9915): loading val<.=s3://niema-test/n10/r09/n10.r09.s04_R2.fastq 35.4MiB>
+2021/07/08 16:26:15 scheduler task 99089331 (flow f39c0442): loading (try 0): started
+2021/07/08 16:26:15 scheduler task ab7897d2 (flow ac2b9915): loading val<.=s3://niema-test/n10/r09/n10.r09.s04_R1.fastq 35.4MiB>
+2021/07/08 16:26:15 scheduler task 99089331 (flow f39c0442): loading val<.=s3://niema-test/n10/r09/n10.r09.s09_R1.fastq 35.4MiB>
+2021/07/08 16:26:15 scheduler task 99089331 (flow f39c0442): loading val<.=s3://niema-test/n10/r09/n10.r09.s09_R2.fastq 35.4MiB>
+2021/07/08 16:26:15 scheduler task c7c38900 (flow 5c8d5082): loading (try 0): started
+2021/07/08 16:26:15 scheduler task c7c38900 (flow 5c8d5082): loading val<.=s3://niema-test/n10/r09/n10.r09.s06_R2.fastq 35.4MiB>
+2021/07/08 16:26:15 scheduler task a7a492f6 (flow 30a384f5): loading val<.=s3://niema-test/n10/r09/n10.r09.s08_R2.fastq 35.4MiB>
+2021/07/08 16:26:15 scheduler task 57df14a6 (flow 85dff006): loading val<.=s3://niema-test/n10/r09/n10.r09.s01_R1.fastq 35.4MiB>
+2021/07/08 16:26:15 scheduler task 281f39fe (flow be9f2b71): loading val<.=s3://niema-test/n10/r09/n10.r09.s03_R2.fastq 35.4MiB>
+2021/07/08 16:26:15 scheduler task a7a492f6 (flow 30a384f5): loading val<.=s3://niema-test/n10/r09/n10.r09.s08_R1.fastq 35.4MiB>
+2021/07/08 16:26:15 scheduler task 281f39fe (flow be9f2b71): loading val<.=s3://niema-test/n10/r09/n10.r09.s03_R1.fastq 35.4MiB>
+2021/07/08 16:26:15 scheduler task d3bb03f8 (flow 37138529): loading val<.=s3://niema-test/n10/r09/n10.r09.s10_R1.fastq 35.4MiB>
+2021/07/08 16:26:15 scheduler task 534d229a (flow 246aa0e8): loading (try 0): started
+2021/07/08 16:26:15 scheduler task 534d229a (flow 246aa0e8): loading val<.=s3://niema-test/n10/r09/n10.r09.s07_R1.fastq 35.4MiB>
+2021/07/08 16:26:15 scheduler task 1157305a (flow cf5837f5): loading (try 0): started
+2021/07/08 16:26:15 scheduler task c7c38900 (flow 5c8d5082): loading val<.=s3://niema-test/n10/r09/n10.r09.s06_R1.fastq 35.4MiB>
+2021/07/08 16:26:15 scheduler task 1157305a (flow cf5837f5): loading val<.=s3://niema-test/n10/r09/n10.r09.s05_R1.fastq 35.4MiB>
+2021/07/08 16:26:15 scheduler task 534d229a (flow 246aa0e8): loading val<.=s3://niema-test/n10/r09/n10.r09.s07_R2.fastq 35.4MiB>
+2021/07/08 16:26:15 scheduler task 1157305a (flow cf5837f5): loading val<.=s3://niema-test/n10/r09/n10.r09.s05_R2.fastq 35.4MiB>
+2021/07/08 16:26:16 scheduler task d3bb03f8 (flow 37138529): loaded val<.=d79ac898 35.4MiB>
+2021/07/08 16:26:16 scheduler task ab7897d2 (flow ac2b9915): loaded val<.=70b88ffd 35.4MiB>
+2021/07/08 16:26:16 scheduler task a7a492f6 (flow 30a384f5): loaded val<.=deb6cdf4 35.4MiB>
+2021/07/08 16:26:16 scheduler task 99089331 (flow f39c0442): loaded val<.=ddd0338c 35.4MiB>
+2021/07/08 16:26:16 scheduler task 281f39fe (flow be9f2b71): loaded val<.=575d7e2c 35.4MiB>
+2021/07/08 16:26:16 scheduler task a7a492f6 (flow 30a384f5): loaded val<.=87a464a0 35.4MiB>
+2021/07/08 16:26:16 scheduler task a7a492f6 (flow 30a384f5): loading (try 0): successful, next state: submitting
+2021/07/08 16:26:16 scheduler task 845c4e68 (flow 578bac3b): loaded val<.=a6014bad 35.4MiB>
+2021/07/08 16:26:16 scheduler task 1157305a (flow cf5837f5): loaded val<.=5d14f719 35.4MiB>
+2021/07/08 16:26:16 scheduler task 57df14a6 (flow 85dff006): loaded val<.=1d98803b 35.4MiB>
+2021/07/08 16:26:16 scheduler task a7a492f6 (flow 30a384f5): submitting (try 0): started
+2021/07/08 16:26:16 scheduler task 99089331 (flow f39c0442): loaded val<.=9819cb5c 35.4MiB>
+2021/07/08 16:26:16 scheduler task 99089331 (flow f39c0442): loading (try 0): successful, next state: submitting
+2021/07/08 16:26:16 scheduler task 99089331 (flow f39c0442): submitting (try 0): started
+2021/07/08 16:26:16 scheduler task d3bb03f8 (flow 37138529): loaded val<.=c393a918 35.4MiB>
+2021/07/08 16:26:16 scheduler task 57df14a6 (flow 85dff006): loaded val<.=8c0eebb6 35.4MiB>
+2021/07/08 16:26:16 scheduler task 534d229a (flow 246aa0e8): loaded val<.=1780ccd1 35.4MiB>
+2021/07/08 16:26:16 scheduler task c7c38900 (flow 5c8d5082): loaded val<.=bcc54848 35.4MiB>
+2021/07/08 16:26:16 scheduler task d3bb03f8 (flow 37138529): loading (try 0): successful, next state: submitting
+2021/07/08 16:26:16 scheduler task 1157305a (flow cf5837f5): loaded val<.=238e32a1 35.4MiB>
+2021/07/08 16:26:16 scheduler task 1157305a (flow cf5837f5): loading (try 0): successful, next state: submitting
+2021/07/08 16:26:16 scheduler task ab7897d2 (flow ac2b9915): loaded val<.=e77e9086 35.4MiB>
+2021/07/08 16:26:16 scheduler task ab7897d2 (flow ac2b9915): loading (try 0): successful, next state: submitting
+2021/07/08 16:26:16 scheduler task 281f39fe (flow be9f2b71): loaded val<.=a28200ab 35.4MiB>
+2021/07/08 16:26:16 scheduler task 281f39fe (flow be9f2b71): loading (try 0): successful, next state: submitting
+2021/07/08 16:26:16 scheduler task 57df14a6 (flow 85dff006): loading (try 0): successful, next state: submitting
+2021/07/08 16:26:16 scheduler task d3bb03f8 (flow 37138529): submitting (try 0): started
+2021/07/08 16:26:16 scheduler task 1157305a (flow cf5837f5): submitting (try 0): started
+2021/07/08 16:26:16 scheduler task 534d229a (flow 246aa0e8): loaded val<.=db2fbf85 35.4MiB>
+2021/07/08 16:26:16 scheduler task 534d229a (flow 246aa0e8): loading (try 0): successful, next state: submitting
+2021/07/08 16:26:16 scheduler task ab7897d2 (flow ac2b9915): submitting (try 0): started
+2021/07/08 16:26:16 scheduler task 281f39fe (flow be9f2b71): submitting (try 0): started
+2021/07/08 16:26:16 scheduler task 57df14a6 (flow 85dff006): submitting (try 0): started
+2021/07/08 16:26:16 scheduler task 534d229a (flow 246aa0e8): submitting (try 0): started
+2021/07/08 16:26:16 scheduler task 845c4e68 (flow 578bac3b): loaded val<.=956a7310 35.4MiB>
+2021/07/08 16:26:16 scheduler task 845c4e68 (flow 578bac3b): loading (try 0): successful, next state: submitting
+2021/07/08 16:26:16 scheduler task 845c4e68 (flow 578bac3b): submitting (try 0): started
+2021/07/08 16:26:16 scheduler task c7c38900 (flow 5c8d5082): loaded val<.=a0e0a5de 35.4MiB>
+2021/07/08 16:26:16 scheduler task c7c38900 (flow 5c8d5082): loading (try 0): successful, next state: submitting
+2021/07/08 16:26:16 scheduler task c7c38900 (flow 5c8d5082): submitting (try 0): started
+2021/07/08 16:26:16 scheduler task a7a492f6 (flow 30a384f5): submitting (try 0): successful, next state: waiting for completion
+2021/07/08 16:26:16 scheduler task a7a492f6 (flow 30a384f5): waiting for completion (try 0): started
+2021/07/08 16:26:16  ->  n10.r09.s08.Main.out_file 30a384f5 exec   exec niemasd/vireflow:latest # Copy input files locally.mk..t" | pigz -1 -p 1 > "{{out}}"
+2021/07/08 16:26:16 n10.r09.s08.Main.out_file 30a384f5 n10/r09/n10.r09.s08.rf:13:21:
+	resources: {mem:1.0GiB cpu:1 disk:0B}
+	sha256:b49cc07d2101ce7b956f8cb5aa417a98926c5fcf285c75096f960a535b2826de
+	sha256:30a384f54ec9a85adb6b7bb9e9c24761e7d5cbdee2eb289590e1e9f56e3e807f
+	ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/a7a492f642c0559a8bd05e7cecc68d7359386784d4735ea0d573b092848dce1f
+	niemasd/vireflow:latest
+	command:
+	    # Copy input files locally
+	    mkdir "n10.r09.s08_output"
+	    wget -O "n10.r09.s08_output/n10.r09.s08.reference.fas" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas"
+	    wget -O "n10.r09.s08_output/n10.r09.s08.reference.gff" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3"
+	    wget -O "n10.r09.s08_output/n10.r09.s08.primers.bed" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed"
+	    cp "{{fq1}}" "n10.r09.s08_output/n10.r09.s08.fq1.fastq"
+	    cp "{{fq2}}" "n10.r09.s08_output/n10.r09.s08.fq2.fastq"
+	    
+	    # Map reads using minimap2
+	    minimap2 -t 1 -a -x sr "n10.r09.s08_output/n10.r09.s08.reference.fas" "n10.r09.s08_output/n10.r09.s08.fq1.fastq" "n10.r09.s08_output/n10.r09.s08.fq2.fastq" | samtools view -bS - > "n10.r09.s08_output/n10.r09.s08.untrimmed.bam"
+	    
+	    # Sort mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s08_output/n10.r09.s08.untrimmed.sorted.bam" "n10.r09.s08_output/n10.r09.s08.untrimmed.bam" 1>&2
+	    
+	    # Trim mapped reads using ivar
+	    ivar trim -x 5 -e -i "n10.r09.s08_output/n10.r09.s08.untrimmed.sorted.bam" -b "n10.r09.s08_output/n10.r09.s08.primers.bed" -p "n10.r09.s08_output/n10.r09.s08.trimmed" 1>&2
+	    
+	    # Sort trimmed mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s08_output/n10.r09.s08.trimmed.sorted.bam" "n10.r09.s08_output/n10.r09.s08.trimmed.bam" 1>&2
+	    
+	    # Generate pile-up from sorted trimmed BAM
+	    samtools mpileup -A -aa -d 0 -Q 0 --reference "n10.r09.s08_output/n10.r09.s08.reference.fas" "n10.r09.s08_output/n10.r09.s08.trimmed.sorted.bam" > "n10.r09.s08_output/n10.r09.s08.pileup.txt"
+	    
+	    # Call variants using lofreq"
+	    lofreq call -f "n10.r09.s08_output/n10.r09.s08.reference.fas" --call-indels "n10.r09.s08_output/n10.r09.s08.trimmed.sorted.bam" > "n10.r09.s08_output/n10.r09.s08.variants.vcf"
+	    
+	    # Call depth from trimmed BAM
+	    samtools depth -d 0 -Q 0 -q 0 -aa "n10.r09.s08_output/n10.r09.s08.trimmed.sorted.bam" > "n10.r09.s08_output/n10.r09.s08.depth.txt"
+	    
+	    # Find low-depth regions
+	    low_depth_regions "n10.r09.s08_output/n10.r09.s08.depth.txt" "n10.r09.s08_output/n10.r09.s08.low_depth.tsv" 10 1>&2
+	    
+	    # Generate consensus sequence
+	    alt_vars.py -i "n10.r09.s08_output/n10.r09.s08.variants.vcf" -o tmp.vcf -v lofreq
+	    bgzip tmp.vcf
+	    bcftools index tmp.vcf.gz
+	    cat "n10.r09.s08_output/n10.r09.s08.reference.fas" | bcftools consensus -m "n10.r09.s08_output/n10.r09.s08.low_depth.tsv" tmp.vcf.gz > "n10.r09.s08_output/n10.r09.s08.consensus.fas"
+	    
+	    # Remove redundant output files before compressing
+	    rm */*trimmed.bam
+	    
+	    # Compress output files
+	    tar cvf - "n10.r09.s08_output" | pigz -1 -p 1 > "{{out}}"
+	where:
+	    {{fq1}} = 
+	        . <zero> 35.4MiB
+	    {{fq2}} = 
+	        . <zero> 35.4MiB
+2021/07/08 16:26:16 scheduler task 99089331 (flow f39c0442): submitting (try 0): successful, next state: waiting for completion
+2021/07/08 16:26:16 scheduler task 99089331 (flow f39c0442): waiting for completion (try 0): started
+2021/07/08 16:26:16  ->  n10.r09.s09.Main.out_file f39c0442 exec   exec niemasd/vireflow:latest # Copy input files locally.mk..t" | pigz -1 -p 1 > "{{out}}"
+2021/07/08 16:26:16 n10.r09.s09.Main.out_file f39c0442 n10/r09/n10.r09.s09.rf:13:21:
+	resources: {mem:1.0GiB cpu:1 disk:0B}
+	sha256:4796e72018554bfb5d2230e6d3f034d3b3525b32d27b389e8a3b878281001b6d
+	sha256:f39c0442df0f35a70a2ce5fa39f66fa819667afa90a418342055436275d79989
+	ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/990893315302408bc840e53870824dc95a1a0937970c706cee917908873a8444
+	niemasd/vireflow:latest
+	command:
+	    # Copy input files locally
+	    mkdir "n10.r09.s09_output"
+	    wget -O "n10.r09.s09_output/n10.r09.s09.reference.fas" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas"
+	    wget -O "n10.r09.s09_output/n10.r09.s09.reference.gff" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3"
+	    wget -O "n10.r09.s09_output/n10.r09.s09.primers.bed" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed"
+	    cp "{{fq1}}" "n10.r09.s09_output/n10.r09.s09.fq1.fastq"
+	    cp "{{fq2}}" "n10.r09.s09_output/n10.r09.s09.fq2.fastq"
+	    
+	    # Map reads using minimap2
+	    minimap2 -t 1 -a -x sr "n10.r09.s09_output/n10.r09.s09.reference.fas" "n10.r09.s09_output/n10.r09.s09.fq1.fastq" "n10.r09.s09_output/n10.r09.s09.fq2.fastq" | samtools view -bS - > "n10.r09.s09_output/n10.r09.s09.untrimmed.bam"
+	    
+	    # Sort mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s09_output/n10.r09.s09.untrimmed.sorted.bam" "n10.r09.s09_output/n10.r09.s09.untrimmed.bam" 1>&2
+	    
+	    # Trim mapped reads using ivar
+	    ivar trim -x 5 -e -i "n10.r09.s09_output/n10.r09.s09.untrimmed.sorted.bam" -b "n10.r09.s09_output/n10.r09.s09.primers.bed" -p "n10.r09.s09_output/n10.r09.s09.trimmed" 1>&2
+	    
+	    # Sort trimmed mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s09_output/n10.r09.s09.trimmed.sorted.bam" "n10.r09.s09_output/n10.r09.s09.trimmed.bam" 1>&2
+	    
+	    # Generate pile-up from sorted trimmed BAM
+	    samtools mpileup -A -aa -d 0 -Q 0 --reference "n10.r09.s09_output/n10.r09.s09.reference.fas" "n10.r09.s09_output/n10.r09.s09.trimmed.sorted.bam" > "n10.r09.s09_output/n10.r09.s09.pileup.txt"
+	    
+	    # Call variants using lofreq"
+	    lofreq call -f "n10.r09.s09_output/n10.r09.s09.reference.fas" --call-indels "n10.r09.s09_output/n10.r09.s09.trimmed.sorted.bam" > "n10.r09.s09_output/n10.r09.s09.variants.vcf"
+	    
+	    # Call depth from trimmed BAM
+	    samtools depth -d 0 -Q 0 -q 0 -aa "n10.r09.s09_output/n10.r09.s09.trimmed.sorted.bam" > "n10.r09.s09_output/n10.r09.s09.depth.txt"
+	    
+	    # Find low-depth regions
+	    low_depth_regions "n10.r09.s09_output/n10.r09.s09.depth.txt" "n10.r09.s09_output/n10.r09.s09.low_depth.tsv" 10 1>&2
+	    
+	    # Generate consensus sequence
+	    alt_vars.py -i "n10.r09.s09_output/n10.r09.s09.variants.vcf" -o tmp.vcf -v lofreq
+	    bgzip tmp.vcf
+	    bcftools index tmp.vcf.gz
+	    cat "n10.r09.s09_output/n10.r09.s09.reference.fas" | bcftools consensus -m "n10.r09.s09_output/n10.r09.s09.low_depth.tsv" tmp.vcf.gz > "n10.r09.s09_output/n10.r09.s09.consensus.fas"
+	    
+	    # Remove redundant output files before compressing
+	    rm */*trimmed.bam
+	    
+	    # Compress output files
+	    tar cvf - "n10.r09.s09_output" | pigz -1 -p 1 > "{{out}}"
+	where:
+	    {{fq1}} = 
+	        . <zero> 35.4MiB
+	    {{fq2}} = 
+	        . <zero> 35.4MiB
+2021/07/08 16:26:17 scheduler task d3bb03f8 (flow 37138529): submitting (try 0): successful, next state: waiting for completion
+2021/07/08 16:26:17 scheduler task d3bb03f8 (flow 37138529): waiting for completion (try 0): started
+2021/07/08 16:26:17  ->  n10.r09.s10.Main.out_file 37138529 exec   exec niemasd/vireflow:latest # Copy input files locally.mk..t" | pigz -1 -p 1 > "{{out}}"
+2021/07/08 16:26:17 n10.r09.s10.Main.out_file 37138529 n10/r09/n10.r09.s10.rf:13:21:
+	resources: {mem:1.0GiB cpu:1 disk:0B}
+	sha256:684467352f616e181c25eec5e21f660fec4d6d0364521fd2875e51502fdc5193
+	sha256:3713852983d7dfb0f836508168885a50640fe822692233edd5bc591f326d5ee9
+	ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/d3bb03f8bdb09fcd97e1a6b323606051fc5548d8932360fbdf5584be449a9729
+	niemasd/vireflow:latest
+	command:
+	    # Copy input files locally
+	    mkdir "n10.r09.s10_output"
+	    wget -O "n10.r09.s10_output/n10.r09.s10.reference.fas" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas"
+	    wget -O "n10.r09.s10_output/n10.r09.s10.reference.gff" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3"
+	    wget -O "n10.r09.s10_output/n10.r09.s10.primers.bed" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed"
+	    cp "{{fq1}}" "n10.r09.s10_output/n10.r09.s10.fq1.fastq"
+	    cp "{{fq2}}" "n10.r09.s10_output/n10.r09.s10.fq2.fastq"
+	    
+	    # Map reads using minimap2
+	    minimap2 -t 1 -a -x sr "n10.r09.s10_output/n10.r09.s10.reference.fas" "n10.r09.s10_output/n10.r09.s10.fq1.fastq" "n10.r09.s10_output/n10.r09.s10.fq2.fastq" | samtools view -bS - > "n10.r09.s10_output/n10.r09.s10.untrimmed.bam"
+	    
+	    # Sort mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s10_output/n10.r09.s10.untrimmed.sorted.bam" "n10.r09.s10_output/n10.r09.s10.untrimmed.bam" 1>&2
+	    
+	    # Trim mapped reads using ivar
+	    ivar trim -x 5 -e -i "n10.r09.s10_output/n10.r09.s10.untrimmed.sorted.bam" -b "n10.r09.s10_output/n10.r09.s10.primers.bed" -p "n10.r09.s10_output/n10.r09.s10.trimmed" 1>&2
+	    
+	    # Sort trimmed mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s10_output/n10.r09.s10.trimmed.sorted.bam" "n10.r09.s10_output/n10.r09.s10.trimmed.bam" 1>&2
+	    
+	    # Generate pile-up from sorted trimmed BAM
+	    samtools mpileup -A -aa -d 0 -Q 0 --reference "n10.r09.s10_output/n10.r09.s10.reference.fas" "n10.r09.s10_output/n10.r09.s10.trimmed.sorted.bam" > "n10.r09.s10_output/n10.r09.s10.pileup.txt"
+	    
+	    # Call variants using lofreq"
+	    lofreq call -f "n10.r09.s10_output/n10.r09.s10.reference.fas" --call-indels "n10.r09.s10_output/n10.r09.s10.trimmed.sorted.bam" > "n10.r09.s10_output/n10.r09.s10.variants.vcf"
+	    
+	    # Call depth from trimmed BAM
+	    samtools depth -d 0 -Q 0 -q 0 -aa "n10.r09.s10_output/n10.r09.s10.trimmed.sorted.bam" > "n10.r09.s10_output/n10.r09.s10.depth.txt"
+	    
+	    # Find low-depth regions
+	    low_depth_regions "n10.r09.s10_output/n10.r09.s10.depth.txt" "n10.r09.s10_output/n10.r09.s10.low_depth.tsv" 10 1>&2
+	    
+	    # Generate consensus sequence
+	    alt_vars.py -i "n10.r09.s10_output/n10.r09.s10.variants.vcf" -o tmp.vcf -v lofreq
+	    bgzip tmp.vcf
+	    bcftools index tmp.vcf.gz
+	    cat "n10.r09.s10_output/n10.r09.s10.reference.fas" | bcftools consensus -m "n10.r09.s10_output/n10.r09.s10.low_depth.tsv" tmp.vcf.gz > "n10.r09.s10_output/n10.r09.s10.consensus.fas"
+	    
+	    # Remove redundant output files before compressing
+	    rm */*trimmed.bam
+	    
+	    # Compress output files
+	    tar cvf - "n10.r09.s10_output" | pigz -1 -p 1 > "{{out}}"
+	where:
+	    {{fq1}} = 
+	        . <zero> 35.4MiB
+	    {{fq2}} = 
+	        . <zero> 35.4MiB
+2021/07/08 16:26:17 scheduler task 1157305a (flow cf5837f5): submitting (try 0): successful, next state: waiting for completion
+2021/07/08 16:26:17 scheduler task 1157305a (flow cf5837f5): waiting for completion (try 0): started
+2021/07/08 16:26:17  ->  n10.r09.s05.Main.out_file cf5837f5 exec   exec niemasd/vireflow:latest # Copy input files locally.mk..t" | pigz -1 -p 1 > "{{out}}"
+2021/07/08 16:26:17 n10.r09.s05.Main.out_file cf5837f5 n10/r09/n10.r09.s05.rf:13:21:
+	resources: {mem:1.0GiB cpu:1 disk:0B}
+	sha256:d744a76776042c0ef436884f6ca8886abc1a625b79afdc66abd9d6c3af6b7fad
+	sha256:cf5837f58bff88434e0f0db0e0a2484479010b55bad250367b7dea0aa7878f96
+	ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/1157305a2987ae01633d8b015ca71573560f7b8974977df9e9dc0c91f3c827fe
+	niemasd/vireflow:latest
+	command:
+	    # Copy input files locally
+	    mkdir "n10.r09.s05_output"
+	    wget -O "n10.r09.s05_output/n10.r09.s05.reference.fas" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas"
+	    wget -O "n10.r09.s05_output/n10.r09.s05.reference.gff" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3"
+	    wget -O "n10.r09.s05_output/n10.r09.s05.primers.bed" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed"
+	    cp "{{fq1}}" "n10.r09.s05_output/n10.r09.s05.fq1.fastq"
+	    cp "{{fq2}}" "n10.r09.s05_output/n10.r09.s05.fq2.fastq"
+	    
+	    # Map reads using minimap2
+	    minimap2 -t 1 -a -x sr "n10.r09.s05_output/n10.r09.s05.reference.fas" "n10.r09.s05_output/n10.r09.s05.fq1.fastq" "n10.r09.s05_output/n10.r09.s05.fq2.fastq" | samtools view -bS - > "n10.r09.s05_output/n10.r09.s05.untrimmed.bam"
+	    
+	    # Sort mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s05_output/n10.r09.s05.untrimmed.sorted.bam" "n10.r09.s05_output/n10.r09.s05.untrimmed.bam" 1>&2
+	    
+	    # Trim mapped reads using ivar
+	    ivar trim -x 5 -e -i "n10.r09.s05_output/n10.r09.s05.untrimmed.sorted.bam" -b "n10.r09.s05_output/n10.r09.s05.primers.bed" -p "n10.r09.s05_output/n10.r09.s05.trimmed" 1>&2
+	    
+	    # Sort trimmed mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s05_output/n10.r09.s05.trimmed.sorted.bam" "n10.r09.s05_output/n10.r09.s05.trimmed.bam" 1>&2
+	    
+	    # Generate pile-up from sorted trimmed BAM
+	    samtools mpileup -A -aa -d 0 -Q 0 --reference "n10.r09.s05_output/n10.r09.s05.reference.fas" "n10.r09.s05_output/n10.r09.s05.trimmed.sorted.bam" > "n10.r09.s05_output/n10.r09.s05.pileup.txt"
+	    
+	    # Call variants using lofreq"
+	    lofreq call -f "n10.r09.s05_output/n10.r09.s05.reference.fas" --call-indels "n10.r09.s05_output/n10.r09.s05.trimmed.sorted.bam" > "n10.r09.s05_output/n10.r09.s05.variants.vcf"
+	    
+	    # Call depth from trimmed BAM
+	    samtools depth -d 0 -Q 0 -q 0 -aa "n10.r09.s05_output/n10.r09.s05.trimmed.sorted.bam" > "n10.r09.s05_output/n10.r09.s05.depth.txt"
+	    
+	    # Find low-depth regions
+	    low_depth_regions "n10.r09.s05_output/n10.r09.s05.depth.txt" "n10.r09.s05_output/n10.r09.s05.low_depth.tsv" 10 1>&2
+	    
+	    # Generate consensus sequence
+	    alt_vars.py -i "n10.r09.s05_output/n10.r09.s05.variants.vcf" -o tmp.vcf -v lofreq
+	    bgzip tmp.vcf
+	    bcftools index tmp.vcf.gz
+	    cat "n10.r09.s05_output/n10.r09.s05.reference.fas" | bcftools consensus -m "n10.r09.s05_output/n10.r09.s05.low_depth.tsv" tmp.vcf.gz > "n10.r09.s05_output/n10.r09.s05.consensus.fas"
+	    
+	    # Remove redundant output files before compressing
+	    rm */*trimmed.bam
+	    
+	    # Compress output files
+	    tar cvf - "n10.r09.s05_output" | pigz -1 -p 1 > "{{out}}"
+	where:
+	    {{fq1}} = 
+	        . <zero> 35.4MiB
+	    {{fq2}} = 
+	        . <zero> 35.4MiB
+2021/07/08 16:26:17 scheduler task ab7897d2 (flow ac2b9915): submitting (try 0): successful, next state: waiting for completion
+2021/07/08 16:26:17 scheduler task ab7897d2 (flow ac2b9915): waiting for completion (try 0): started
+2021/07/08 16:26:17  ->  n10.r09.s04.Main.out_file ac2b9915 exec   exec niemasd/vireflow:latest # Copy input files locally.mk..t" | pigz -1 -p 1 > "{{out}}"
+2021/07/08 16:26:17 n10.r09.s04.Main.out_file ac2b9915 n10/r09/n10.r09.s04.rf:13:21:
+	resources: {mem:1.0GiB cpu:1 disk:0B}
+	sha256:dfd2c2bdd0318a90d6fe036762f7bc489f35471811ebd318a7892761cf3ceb0c
+	sha256:ac2b9915338a98746242bbb3455a13b5771d8262d278a2d9de60465133373923
+	ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/ab7897d2682907c4c17ce035cdfe03257a7d18ed5c01a0647d770c7008f5c1e3
+	niemasd/vireflow:latest
+	command:
+	    # Copy input files locally
+	    mkdir "n10.r09.s04_output"
+	    wget -O "n10.r09.s04_output/n10.r09.s04.reference.fas" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas"
+	    wget -O "n10.r09.s04_output/n10.r09.s04.reference.gff" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3"
+	    wget -O "n10.r09.s04_output/n10.r09.s04.primers.bed" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed"
+	    cp "{{fq1}}" "n10.r09.s04_output/n10.r09.s04.fq1.fastq"
+	    cp "{{fq2}}" "n10.r09.s04_output/n10.r09.s04.fq2.fastq"
+	    
+	    # Map reads using minimap2
+	    minimap2 -t 1 -a -x sr "n10.r09.s04_output/n10.r09.s04.reference.fas" "n10.r09.s04_output/n10.r09.s04.fq1.fastq" "n10.r09.s04_output/n10.r09.s04.fq2.fastq" | samtools view -bS - > "n10.r09.s04_output/n10.r09.s04.untrimmed.bam"
+	    
+	    # Sort mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s04_output/n10.r09.s04.untrimmed.sorted.bam" "n10.r09.s04_output/n10.r09.s04.untrimmed.bam" 1>&2
+	    
+	    # Trim mapped reads using ivar
+	    ivar trim -x 5 -e -i "n10.r09.s04_output/n10.r09.s04.untrimmed.sorted.bam" -b "n10.r09.s04_output/n10.r09.s04.primers.bed" -p "n10.r09.s04_output/n10.r09.s04.trimmed" 1>&2
+	    
+	    # Sort trimmed mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s04_output/n10.r09.s04.trimmed.sorted.bam" "n10.r09.s04_output/n10.r09.s04.trimmed.bam" 1>&2
+	    
+	    # Generate pile-up from sorted trimmed BAM
+	    samtools mpileup -A -aa -d 0 -Q 0 --reference "n10.r09.s04_output/n10.r09.s04.reference.fas" "n10.r09.s04_output/n10.r09.s04.trimmed.sorted.bam" > "n10.r09.s04_output/n10.r09.s04.pileup.txt"
+	    
+	    # Call variants using lofreq"
+	    lofreq call -f "n10.r09.s04_output/n10.r09.s04.reference.fas" --call-indels "n10.r09.s04_output/n10.r09.s04.trimmed.sorted.bam" > "n10.r09.s04_output/n10.r09.s04.variants.vcf"
+	    
+	    # Call depth from trimmed BAM
+	    samtools depth -d 0 -Q 0 -q 0 -aa "n10.r09.s04_output/n10.r09.s04.trimmed.sorted.bam" > "n10.r09.s04_output/n10.r09.s04.depth.txt"
+	    
+	    # Find low-depth regions
+	    low_depth_regions "n10.r09.s04_output/n10.r09.s04.depth.txt" "n10.r09.s04_output/n10.r09.s04.low_depth.tsv" 10 1>&2
+	    
+	    # Generate consensus sequence
+	    alt_vars.py -i "n10.r09.s04_output/n10.r09.s04.variants.vcf" -o tmp.vcf -v lofreq
+	    bgzip tmp.vcf
+	    bcftools index tmp.vcf.gz
+	    cat "n10.r09.s04_output/n10.r09.s04.reference.fas" | bcftools consensus -m "n10.r09.s04_output/n10.r09.s04.low_depth.tsv" tmp.vcf.gz > "n10.r09.s04_output/n10.r09.s04.consensus.fas"
+	    
+	    # Remove redundant output files before compressing
+	    rm */*trimmed.bam
+	    
+	    # Compress output files
+	    tar cvf - "n10.r09.s04_output" | pigz -1 -p 1 > "{{out}}"
+	where:
+	    {{fq1}} = 
+	        . <zero> 35.4MiB
+	    {{fq2}} = 
+	        . <zero> 35.4MiB
+2021/07/08 16:26:17 scheduler task 281f39fe (flow be9f2b71): submitting (try 0): successful, next state: waiting for completion
+2021/07/08 16:26:17 scheduler task 281f39fe (flow be9f2b71): waiting for completion (try 0): started
+2021/07/08 16:26:17  ->  n10.r09.s03.Main.out_file be9f2b71 exec   exec niemasd/vireflow:latest # Copy input files locally.mk..t" | pigz -1 -p 1 > "{{out}}"
+2021/07/08 16:26:17 n10.r09.s03.Main.out_file be9f2b71 n10/r09/n10.r09.s03.rf:13:21:
+	resources: {mem:1.0GiB cpu:1 disk:0B}
+	sha256:facafbda097d56fd3bda61a70326d2109cc5b11080f1d36e8230a028213015d5
+	sha256:be9f2b71c3c55656c733a9af745da9e2882ce4309d0be188bc17cabff434f253
+	ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/281f39fefe30f47d25d50611f970322acafd7a1b8f49b2d1ba0993e2e00a3980
+	niemasd/vireflow:latest
+	command:
+	    # Copy input files locally
+	    mkdir "n10.r09.s03_output"
+	    wget -O "n10.r09.s03_output/n10.r09.s03.reference.fas" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas"
+	    wget -O "n10.r09.s03_output/n10.r09.s03.reference.gff" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3"
+	    wget -O "n10.r09.s03_output/n10.r09.s03.primers.bed" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed"
+	    cp "{{fq1}}" "n10.r09.s03_output/n10.r09.s03.fq1.fastq"
+	    cp "{{fq2}}" "n10.r09.s03_output/n10.r09.s03.fq2.fastq"
+	    
+	    # Map reads using minimap2
+	    minimap2 -t 1 -a -x sr "n10.r09.s03_output/n10.r09.s03.reference.fas" "n10.r09.s03_output/n10.r09.s03.fq1.fastq" "n10.r09.s03_output/n10.r09.s03.fq2.fastq" | samtools view -bS - > "n10.r09.s03_output/n10.r09.s03.untrimmed.bam"
+	    
+	    # Sort mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s03_output/n10.r09.s03.untrimmed.sorted.bam" "n10.r09.s03_output/n10.r09.s03.untrimmed.bam" 1>&2
+	    
+	    # Trim mapped reads using ivar
+	    ivar trim -x 5 -e -i "n10.r09.s03_output/n10.r09.s03.untrimmed.sorted.bam" -b "n10.r09.s03_output/n10.r09.s03.primers.bed" -p "n10.r09.s03_output/n10.r09.s03.trimmed" 1>&2
+	    
+	    # Sort trimmed mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s03_output/n10.r09.s03.trimmed.sorted.bam" "n10.r09.s03_output/n10.r09.s03.trimmed.bam" 1>&2
+	    
+	    # Generate pile-up from sorted trimmed BAM
+	    samtools mpileup -A -aa -d 0 -Q 0 --reference "n10.r09.s03_output/n10.r09.s03.reference.fas" "n10.r09.s03_output/n10.r09.s03.trimmed.sorted.bam" > "n10.r09.s03_output/n10.r09.s03.pileup.txt"
+	    
+	    # Call variants using lofreq"
+	    lofreq call -f "n10.r09.s03_output/n10.r09.s03.reference.fas" --call-indels "n10.r09.s03_output/n10.r09.s03.trimmed.sorted.bam" > "n10.r09.s03_output/n10.r09.s03.variants.vcf"
+	    
+	    # Call depth from trimmed BAM
+	    samtools depth -d 0 -Q 0 -q 0 -aa "n10.r09.s03_output/n10.r09.s03.trimmed.sorted.bam" > "n10.r09.s03_output/n10.r09.s03.depth.txt"
+	    
+	    # Find low-depth regions
+	    low_depth_regions "n10.r09.s03_output/n10.r09.s03.depth.txt" "n10.r09.s03_output/n10.r09.s03.low_depth.tsv" 10 1>&2
+	    
+	    # Generate consensus sequence
+	    alt_vars.py -i "n10.r09.s03_output/n10.r09.s03.variants.vcf" -o tmp.vcf -v lofreq
+	    bgzip tmp.vcf
+	    bcftools index tmp.vcf.gz
+	    cat "n10.r09.s03_output/n10.r09.s03.reference.fas" | bcftools consensus -m "n10.r09.s03_output/n10.r09.s03.low_depth.tsv" tmp.vcf.gz > "n10.r09.s03_output/n10.r09.s03.consensus.fas"
+	    
+	    # Remove redundant output files before compressing
+	    rm */*trimmed.bam
+	    
+	    # Compress output files
+	    tar cvf - "n10.r09.s03_output" | pigz -1 -p 1 > "{{out}}"
+	where:
+	    {{fq1}} = 
+	        . <zero> 35.4MiB
+	    {{fq2}} = 
+	        . <zero> 35.4MiB
+2021/07/08 16:26:17 scheduler task 57df14a6 (flow 85dff006): submitting (try 0): successful, next state: waiting for completion
+2021/07/08 16:26:17 scheduler task 57df14a6 (flow 85dff006): waiting for completion (try 0): started
+2021/07/08 16:26:17  ->  n10.r09.s01.Main.out_file 85dff006 exec   exec niemasd/vireflow:latest # Copy input files locally.mk..t" | pigz -1 -p 1 > "{{out}}"
+2021/07/08 16:26:17 n10.r09.s01.Main.out_file 85dff006 n10/r09/n10.r09.s01.rf:13:21:
+	resources: {mem:1.0GiB cpu:1 disk:0B}
+	sha256:39cf2aa7af37f5c422ac612d16393bf8f8ec3e2b1e0229a6d3305ae3119992f5
+	sha256:85dff006abb085113b5c5a77658036478fa885b4224fada3169f8a8fc0f7a837
+	ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/57df14a6e26984cd58591aec59cb199d96df0b937145f6cd4acbbe1817e87992
+	niemasd/vireflow:latest
+	command:
+	    # Copy input files locally
+	    mkdir "n10.r09.s01_output"
+	    wget -O "n10.r09.s01_output/n10.r09.s01.reference.fas" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas"
+	    wget -O "n10.r09.s01_output/n10.r09.s01.reference.gff" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3"
+	    wget -O "n10.r09.s01_output/n10.r09.s01.primers.bed" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed"
+	    cp "{{fq1}}" "n10.r09.s01_output/n10.r09.s01.fq1.fastq"
+	    cp "{{fq2}}" "n10.r09.s01_output/n10.r09.s01.fq2.fastq"
+	    
+	    # Map reads using minimap2
+	    minimap2 -t 1 -a -x sr "n10.r09.s01_output/n10.r09.s01.reference.fas" "n10.r09.s01_output/n10.r09.s01.fq1.fastq" "n10.r09.s01_output/n10.r09.s01.fq2.fastq" | samtools view -bS - > "n10.r09.s01_output/n10.r09.s01.untrimmed.bam"
+	    
+	    # Sort mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s01_output/n10.r09.s01.untrimmed.sorted.bam" "n10.r09.s01_output/n10.r09.s01.untrimmed.bam" 1>&2
+	    
+	    # Trim mapped reads using ivar
+	    ivar trim -x 5 -e -i "n10.r09.s01_output/n10.r09.s01.untrimmed.sorted.bam" -b "n10.r09.s01_output/n10.r09.s01.primers.bed" -p "n10.r09.s01_output/n10.r09.s01.trimmed" 1>&2
+	    
+	    # Sort trimmed mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s01_output/n10.r09.s01.trimmed.sorted.bam" "n10.r09.s01_output/n10.r09.s01.trimmed.bam" 1>&2
+	    
+	    # Generate pile-up from sorted trimmed BAM
+	    samtools mpileup -A -aa -d 0 -Q 0 --reference "n10.r09.s01_output/n10.r09.s01.reference.fas" "n10.r09.s01_output/n10.r09.s01.trimmed.sorted.bam" > "n10.r09.s01_output/n10.r09.s01.pileup.txt"
+	    
+	    # Call variants using lofreq"
+	    lofreq call -f "n10.r09.s01_output/n10.r09.s01.reference.fas" --call-indels "n10.r09.s01_output/n10.r09.s01.trimmed.sorted.bam" > "n10.r09.s01_output/n10.r09.s01.variants.vcf"
+	    
+	    # Call depth from trimmed BAM
+	    samtools depth -d 0 -Q 0 -q 0 -aa "n10.r09.s01_output/n10.r09.s01.trimmed.sorted.bam" > "n10.r09.s01_output/n10.r09.s01.depth.txt"
+	    
+	    # Find low-depth regions
+	    low_depth_regions "n10.r09.s01_output/n10.r09.s01.depth.txt" "n10.r09.s01_output/n10.r09.s01.low_depth.tsv" 10 1>&2
+	    
+	    # Generate consensus sequence
+	    alt_vars.py -i "n10.r09.s01_output/n10.r09.s01.variants.vcf" -o tmp.vcf -v lofreq
+	    bgzip tmp.vcf
+	    bcftools index tmp.vcf.gz
+	    cat "n10.r09.s01_output/n10.r09.s01.reference.fas" | bcftools consensus -m "n10.r09.s01_output/n10.r09.s01.low_depth.tsv" tmp.vcf.gz > "n10.r09.s01_output/n10.r09.s01.consensus.fas"
+	    
+	    # Remove redundant output files before compressing
+	    rm */*trimmed.bam
+	    
+	    # Compress output files
+	    tar cvf - "n10.r09.s01_output" | pigz -1 -p 1 > "{{out}}"
+	where:
+	    {{fq1}} = 
+	        . <zero> 35.4MiB
+	    {{fq2}} = 
+	        . <zero> 35.4MiB
+2021/07/08 16:26:17 scheduler task 845c4e68 (flow 578bac3b): submitting (try 0): successful, next state: waiting for completion
+2021/07/08 16:26:17 scheduler task 845c4e68 (flow 578bac3b): waiting for completion (try 0): started
+2021/07/08 16:26:17  ->  n10.r09.s02.Main.out_file 578bac3b exec   exec niemasd/vireflow:latest # Copy input files locally.mk..t" | pigz -1 -p 1 > "{{out}}"
+2021/07/08 16:26:17 n10.r09.s02.Main.out_file 578bac3b n10/r09/n10.r09.s02.rf:13:21:
+	resources: {mem:1.0GiB cpu:1 disk:0B}
+	sha256:33608fc8ce93fce155c743905652fad7299669f6c7701a796018831e8e7c1c07
+	sha256:578bac3beae59dbb6fc9d4f71d2c51cb85c0c869d650bbd8d95ad8632704222c
+	ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/845c4e680eb8b239da3eab4a4ba433f3a86ce99f81527f612dfeda86a5c76d85
+	niemasd/vireflow:latest
+	command:
+	    # Copy input files locally
+	    mkdir "n10.r09.s02_output"
+	    wget -O "n10.r09.s02_output/n10.r09.s02.reference.fas" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas"
+	    wget -O "n10.r09.s02_output/n10.r09.s02.reference.gff" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3"
+	    wget -O "n10.r09.s02_output/n10.r09.s02.primers.bed" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed"
+	    cp "{{fq1}}" "n10.r09.s02_output/n10.r09.s02.fq1.fastq"
+	    cp "{{fq2}}" "n10.r09.s02_output/n10.r09.s02.fq2.fastq"
+	    
+	    # Map reads using minimap2
+	    minimap2 -t 1 -a -x sr "n10.r09.s02_output/n10.r09.s02.reference.fas" "n10.r09.s02_output/n10.r09.s02.fq1.fastq" "n10.r09.s02_output/n10.r09.s02.fq2.fastq" | samtools view -bS - > "n10.r09.s02_output/n10.r09.s02.untrimmed.bam"
+	    
+	    # Sort mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s02_output/n10.r09.s02.untrimmed.sorted.bam" "n10.r09.s02_output/n10.r09.s02.untrimmed.bam" 1>&2
+	    
+	    # Trim mapped reads using ivar
+	    ivar trim -x 5 -e -i "n10.r09.s02_output/n10.r09.s02.untrimmed.sorted.bam" -b "n10.r09.s02_output/n10.r09.s02.primers.bed" -p "n10.r09.s02_output/n10.r09.s02.trimmed" 1>&2
+	    
+	    # Sort trimmed mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s02_output/n10.r09.s02.trimmed.sorted.bam" "n10.r09.s02_output/n10.r09.s02.trimmed.bam" 1>&2
+	    
+	    # Generate pile-up from sorted trimmed BAM
+	    samtools mpileup -A -aa -d 0 -Q 0 --reference "n10.r09.s02_output/n10.r09.s02.reference.fas" "n10.r09.s02_output/n10.r09.s02.trimmed.sorted.bam" > "n10.r09.s02_output/n10.r09.s02.pileup.txt"
+	    
+	    # Call variants using lofreq"
+	    lofreq call -f "n10.r09.s02_output/n10.r09.s02.reference.fas" --call-indels "n10.r09.s02_output/n10.r09.s02.trimmed.sorted.bam" > "n10.r09.s02_output/n10.r09.s02.variants.vcf"
+	    
+	    # Call depth from trimmed BAM
+	    samtools depth -d 0 -Q 0 -q 0 -aa "n10.r09.s02_output/n10.r09.s02.trimmed.sorted.bam" > "n10.r09.s02_output/n10.r09.s02.depth.txt"
+	    
+	    # Find low-depth regions
+	    low_depth_regions "n10.r09.s02_output/n10.r09.s02.depth.txt" "n10.r09.s02_output/n10.r09.s02.low_depth.tsv" 10 1>&2
+	    
+	    # Generate consensus sequence
+	    alt_vars.py -i "n10.r09.s02_output/n10.r09.s02.variants.vcf" -o tmp.vcf -v lofreq
+	    bgzip tmp.vcf
+	    bcftools index tmp.vcf.gz
+	    cat "n10.r09.s02_output/n10.r09.s02.reference.fas" | bcftools consensus -m "n10.r09.s02_output/n10.r09.s02.low_depth.tsv" tmp.vcf.gz > "n10.r09.s02_output/n10.r09.s02.consensus.fas"
+	    
+	    # Remove redundant output files before compressing
+	    rm */*trimmed.bam
+	    
+	    # Compress output files
+	    tar cvf - "n10.r09.s02_output" | pigz -1 -p 1 > "{{out}}"
+	where:
+	    {{fq1}} = 
+	        . <zero> 35.4MiB
+	    {{fq2}} = 
+	        . <zero> 35.4MiB
+2021/07/08 16:26:18 scheduler task 534d229a (flow 246aa0e8): submitting (try 0): successful, next state: waiting for completion
+2021/07/08 16:26:18 scheduler task 534d229a (flow 246aa0e8): waiting for completion (try 0): started
+2021/07/08 16:26:18  ->  n10.r09.s07.Main.out_file 246aa0e8 exec   exec niemasd/vireflow:latest # Copy input files locally.mk..t" | pigz -1 -p 1 > "{{out}}"
+2021/07/08 16:26:18 n10.r09.s07.Main.out_file 246aa0e8 n10/r09/n10.r09.s07.rf:13:21:
+	resources: {mem:1.0GiB cpu:1 disk:0B}
+	sha256:f9627aba98c47b63c262ec74b1661b2bfdae15e2abb538afa16a95613feea582
+	sha256:246aa0e8ccc61f9111df0ee4937a9bdc837b8b0048349f8615517da7921a4a19
+	ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/534d229ac36d34491e3d29e0cc5748599f9a1562ae424c7c41e406cb80031d3a
+	niemasd/vireflow:latest
+	command:
+	    # Copy input files locally
+	    mkdir "n10.r09.s07_output"
+	    wget -O "n10.r09.s07_output/n10.r09.s07.reference.fas" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas"
+	    wget -O "n10.r09.s07_output/n10.r09.s07.reference.gff" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3"
+	    wget -O "n10.r09.s07_output/n10.r09.s07.primers.bed" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed"
+	    cp "{{fq1}}" "n10.r09.s07_output/n10.r09.s07.fq1.fastq"
+	    cp "{{fq2}}" "n10.r09.s07_output/n10.r09.s07.fq2.fastq"
+	    
+	    # Map reads using minimap2
+	    minimap2 -t 1 -a -x sr "n10.r09.s07_output/n10.r09.s07.reference.fas" "n10.r09.s07_output/n10.r09.s07.fq1.fastq" "n10.r09.s07_output/n10.r09.s07.fq2.fastq" | samtools view -bS - > "n10.r09.s07_output/n10.r09.s07.untrimmed.bam"
+	    
+	    # Sort mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s07_output/n10.r09.s07.untrimmed.sorted.bam" "n10.r09.s07_output/n10.r09.s07.untrimmed.bam" 1>&2
+	    
+	    # Trim mapped reads using ivar
+	    ivar trim -x 5 -e -i "n10.r09.s07_output/n10.r09.s07.untrimmed.sorted.bam" -b "n10.r09.s07_output/n10.r09.s07.primers.bed" -p "n10.r09.s07_output/n10.r09.s07.trimmed" 1>&2
+	    
+	    # Sort trimmed mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s07_output/n10.r09.s07.trimmed.sorted.bam" "n10.r09.s07_output/n10.r09.s07.trimmed.bam" 1>&2
+	    
+	    # Generate pile-up from sorted trimmed BAM
+	    samtools mpileup -A -aa -d 0 -Q 0 --reference "n10.r09.s07_output/n10.r09.s07.reference.fas" "n10.r09.s07_output/n10.r09.s07.trimmed.sorted.bam" > "n10.r09.s07_output/n10.r09.s07.pileup.txt"
+	    
+	    # Call variants using lofreq"
+	    lofreq call -f "n10.r09.s07_output/n10.r09.s07.reference.fas" --call-indels "n10.r09.s07_output/n10.r09.s07.trimmed.sorted.bam" > "n10.r09.s07_output/n10.r09.s07.variants.vcf"
+	    
+	    # Call depth from trimmed BAM
+	    samtools depth -d 0 -Q 0 -q 0 -aa "n10.r09.s07_output/n10.r09.s07.trimmed.sorted.bam" > "n10.r09.s07_output/n10.r09.s07.depth.txt"
+	    
+	    # Find low-depth regions
+	    low_depth_regions "n10.r09.s07_output/n10.r09.s07.depth.txt" "n10.r09.s07_output/n10.r09.s07.low_depth.tsv" 10 1>&2
+	    
+	    # Generate consensus sequence
+	    alt_vars.py -i "n10.r09.s07_output/n10.r09.s07.variants.vcf" -o tmp.vcf -v lofreq
+	    bgzip tmp.vcf
+	    bcftools index tmp.vcf.gz
+	    cat "n10.r09.s07_output/n10.r09.s07.reference.fas" | bcftools consensus -m "n10.r09.s07_output/n10.r09.s07.low_depth.tsv" tmp.vcf.gz > "n10.r09.s07_output/n10.r09.s07.consensus.fas"
+	    
+	    # Remove redundant output files before compressing
+	    rm */*trimmed.bam
+	    
+	    # Compress output files
+	    tar cvf - "n10.r09.s07_output" | pigz -1 -p 1 > "{{out}}"
+	where:
+	    {{fq1}} = 
+	        . <zero> 35.4MiB
+	    {{fq2}} = 
+	        . <zero> 35.4MiB
+2021/07/08 16:26:18 scheduler task c7c38900 (flow 5c8d5082): submitting (try 0): successful, next state: waiting for completion
+2021/07/08 16:26:18 scheduler task c7c38900 (flow 5c8d5082): waiting for completion (try 0): started
+2021/07/08 16:26:18  ->  n10.r09.s06.Main.out_file 5c8d5082 exec   exec niemasd/vireflow:latest # Copy input files locally.mk..t" | pigz -1 -p 1 > "{{out}}"
+2021/07/08 16:26:18 n10.r09.s06.Main.out_file 5c8d5082 n10/r09/n10.r09.s06.rf:13:21:
+	resources: {mem:1.0GiB cpu:1 disk:0B}
+	sha256:78ef173f2e5c418b172aa97a77d882fe7333709580c997616822f1adbdda680c
+	sha256:5c8d5082b6c493892bdadd17095a931f924f747538c9eaa500fe3db9dc19809c
+	ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/c7c38900dcdf9894958dd1b3ea57fd5b4722532c6ec59fca0d49533a2107037a
+	niemasd/vireflow:latest
+	command:
+	    # Copy input files locally
+	    mkdir "n10.r09.s06_output"
+	    wget -O "n10.r09.s06_output/n10.r09.s06.reference.fas" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas"
+	    wget -O "n10.r09.s06_output/n10.r09.s06.reference.gff" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3"
+	    wget -O "n10.r09.s06_output/n10.r09.s06.primers.bed" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed"
+	    cp "{{fq1}}" "n10.r09.s06_output/n10.r09.s06.fq1.fastq"
+	    cp "{{fq2}}" "n10.r09.s06_output/n10.r09.s06.fq2.fastq"
+	    
+	    # Map reads using minimap2
+	    minimap2 -t 1 -a -x sr "n10.r09.s06_output/n10.r09.s06.reference.fas" "n10.r09.s06_output/n10.r09.s06.fq1.fastq" "n10.r09.s06_output/n10.r09.s06.fq2.fastq" | samtools view -bS - > "n10.r09.s06_output/n10.r09.s06.untrimmed.bam"
+	    
+	    # Sort mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s06_output/n10.r09.s06.untrimmed.sorted.bam" "n10.r09.s06_output/n10.r09.s06.untrimmed.bam" 1>&2
+	    
+	    # Trim mapped reads using ivar
+	    ivar trim -x 5 -e -i "n10.r09.s06_output/n10.r09.s06.untrimmed.sorted.bam" -b "n10.r09.s06_output/n10.r09.s06.primers.bed" -p "n10.r09.s06_output/n10.r09.s06.trimmed" 1>&2
+	    
+	    # Sort trimmed mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s06_output/n10.r09.s06.trimmed.sorted.bam" "n10.r09.s06_output/n10.r09.s06.trimmed.bam" 1>&2
+	    
+	    # Generate pile-up from sorted trimmed BAM
+	    samtools mpileup -A -aa -d 0 -Q 0 --reference "n10.r09.s06_output/n10.r09.s06.reference.fas" "n10.r09.s06_output/n10.r09.s06.trimmed.sorted.bam" > "n10.r09.s06_output/n10.r09.s06.pileup.txt"
+	    
+	    # Call variants using lofreq"
+	    lofreq call -f "n10.r09.s06_output/n10.r09.s06.reference.fas" --call-indels "n10.r09.s06_output/n10.r09.s06.trimmed.sorted.bam" > "n10.r09.s06_output/n10.r09.s06.variants.vcf"
+	    
+	    # Call depth from trimmed BAM
+	    samtools depth -d 0 -Q 0 -q 0 -aa "n10.r09.s06_output/n10.r09.s06.trimmed.sorted.bam" > "n10.r09.s06_output/n10.r09.s06.depth.txt"
+	    
+	    # Find low-depth regions
+	    low_depth_regions "n10.r09.s06_output/n10.r09.s06.depth.txt" "n10.r09.s06_output/n10.r09.s06.low_depth.tsv" 10 1>&2
+	    
+	    # Generate consensus sequence
+	    alt_vars.py -i "n10.r09.s06_output/n10.r09.s06.variants.vcf" -o tmp.vcf -v lofreq
+	    bgzip tmp.vcf
+	    bcftools index tmp.vcf.gz
+	    cat "n10.r09.s06_output/n10.r09.s06.reference.fas" | bcftools consensus -m "n10.r09.s06_output/n10.r09.s06.low_depth.tsv" tmp.vcf.gz > "n10.r09.s06_output/n10.r09.s06.consensus.fas"
+	    
+	    # Remove redundant output files before compressing
+	    rm */*trimmed.bam
+	    
+	    # Compress output files
+	    tar cvf - "n10.r09.s06_output" | pigz -1 -p 1 > "{{out}}"
+	where:
+	    {{fq1}} = 
+	        . <zero> 35.4MiB
+	    {{fq2}} = 
+	        . <zero> 35.4MiB
+2021/07/08 16:29:04 scheduler task d3bb03f8 (flow 37138529): waiting for completion (try 0): successful, next state: promoting objects
+2021/07/08 16:29:04 scheduler task d3bb03f8 (flow 37138529): promoting objects (try 0): started
+2021/07/08 16:29:04 scheduler task d3bb03f8 (flow 37138529): promoting objects (try 0): successful, next state: retrieving diagnostic output
+2021/07/08 16:29:04 scheduler task d3bb03f8 (flow 37138529): retrieving diagnostic output (try 0): started
+2021/07/08 16:29:04 scheduler task d3bb03f8 (flow 37138529): retrieving diagnostic output (try 0): successful, next state: retrieving result
+2021/07/08 16:29:04 scheduler task d3bb03f8 (flow 37138529): retrieving result (try 0): started
+2021/07/08 16:29:04 scheduler task d3bb03f8 (flow 37138529): retrieving result (try 0): successful, next state: transferring output
+2021/07/08 16:29:04 scheduler task d3bb03f8 (flow 37138529): transferring output (try 0): started
+2021/07/08 16:29:05 scheduler task d3bb03f8 (flow 37138529): transferring output (try 0): successful, next state: unloading
+2021/07/08 16:29:05 scheduler task d3bb03f8 (flow 37138529): unloading (try 0): started
+2021/07/08 16:29:05 scheduler task d3bb03f8 (flow 37138529): unloading list<val<.=8ecd3ace 35.7MiB> 35.7MiB>
+2021/07/08 16:29:05 scheduler task d3bb03f8 (flow 37138529): unloading val<.=d79ac898 35.4MiB>
+2021/07/08 16:29:05 scheduler task d3bb03f8 (flow 37138529): unloading val<.=c393a918 35.4MiB>
+2021/07/08 16:29:05 scheduler task d3bb03f8 (flow 37138529): unloaded val<.=c393a918 35.4MiB>
+2021/07/08 16:29:05 scheduler task d3bb03f8 (flow 37138529): unloaded val<.=d79ac898 35.4MiB>
+2021/07/08 16:29:05 scheduler task d3bb03f8 (flow 37138529): unloaded list<val<.=8ecd3ace 35.7MiB> 35.7MiB>
+2021/07/08 16:29:05 scheduler task d3bb03f8 (flow 37138529): unloading (try 0): successful, next state: complete
+2021/07/08 16:29:05  <-  n10.r09.s10.Main.out_file 37138529 ok     exec 2m29s 35.7MiB
+2021/07/08 16:29:05 n10.r09.s10.Main.out_file 37138529 n10/r09/n10.r09.s10.rf:13:21:
+	resources: {mem:1.0GiB cpu:1 disk:0B}
+	sha256:684467352f616e181c25eec5e21f660fec4d6d0364521fd2875e51502fdc5193
+	sha256:3713852983d7dfb0f836508168885a50640fe822692233edd5bc591f326d5ee9
+	ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/d3bb03f8bdb09fcd97e1a6b323606051fc5548d8932360fbdf5584be449a9729
+	niemasd/vireflow:latest
+	command:
+	    # Copy input files locally
+	    mkdir "n10.r09.s10_output"
+	    wget -O "n10.r09.s10_output/n10.r09.s10.reference.fas" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas"
+	    wget -O "n10.r09.s10_output/n10.r09.s10.reference.gff" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3"
+	    wget -O "n10.r09.s10_output/n10.r09.s10.primers.bed" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed"
+	    cp "{{fq1}}" "n10.r09.s10_output/n10.r09.s10.fq1.fastq"
+	    cp "{{fq2}}" "n10.r09.s10_output/n10.r09.s10.fq2.fastq"
+	    
+	    # Map reads using minimap2
+	    minimap2 -t 1 -a -x sr "n10.r09.s10_output/n10.r09.s10.reference.fas" "n10.r09.s10_output/n10.r09.s10.fq1.fastq" "n10.r09.s10_output/n10.r09.s10.fq2.fastq" | samtools view -bS - > "n10.r09.s10_output/n10.r09.s10.untrimmed.bam"
+	    
+	    # Sort mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s10_output/n10.r09.s10.untrimmed.sorted.bam" "n10.r09.s10_output/n10.r09.s10.untrimmed.bam" 1>&2
+	    
+	    # Trim mapped reads using ivar
+	    ivar trim -x 5 -e -i "n10.r09.s10_output/n10.r09.s10.untrimmed.sorted.bam" -b "n10.r09.s10_output/n10.r09.s10.primers.bed" -p "n10.r09.s10_output/n10.r09.s10.trimmed" 1>&2
+	    
+	    # Sort trimmed mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s10_output/n10.r09.s10.trimmed.sorted.bam" "n10.r09.s10_output/n10.r09.s10.trimmed.bam" 1>&2
+	    
+	    # Generate pile-up from sorted trimmed BAM
+	    samtools mpileup -A -aa -d 0 -Q 0 --reference "n10.r09.s10_output/n10.r09.s10.reference.fas" "n10.r09.s10_output/n10.r09.s10.trimmed.sorted.bam" > "n10.r09.s10_output/n10.r09.s10.pileup.txt"
+	    
+	    # Call variants using lofreq"
+	    lofreq call -f "n10.r09.s10_output/n10.r09.s10.reference.fas" --call-indels "n10.r09.s10_output/n10.r09.s10.trimmed.sorted.bam" > "n10.r09.s10_output/n10.r09.s10.variants.vcf"
+	    
+	    # Call depth from trimmed BAM
+	    samtools depth -d 0 -Q 0 -q 0 -aa "n10.r09.s10_output/n10.r09.s10.trimmed.sorted.bam" > "n10.r09.s10_output/n10.r09.s10.depth.txt"
+	    
+	    # Find low-depth regions
+	    low_depth_regions "n10.r09.s10_output/n10.r09.s10.depth.txt" "n10.r09.s10_output/n10.r09.s10.low_depth.tsv" 10 1>&2
+	    
+	    # Generate consensus sequence
+	    alt_vars.py -i "n10.r09.s10_output/n10.r09.s10.variants.vcf" -o tmp.vcf -v lofreq
+	    bgzip tmp.vcf
+	    bcftools index tmp.vcf.gz
+	    cat "n10.r09.s10_output/n10.r09.s10.reference.fas" | bcftools consensus -m "n10.r09.s10_output/n10.r09.s10.low_depth.tsv" tmp.vcf.gz > "n10.r09.s10_output/n10.r09.s10.consensus.fas"
+	    
+	    # Remove redundant output files before compressing
+	    rm */*trimmed.bam
+	    
+	    # Compress output files
+	    tar cvf - "n10.r09.s10_output" | pigz -1 -p 1 > "{{out}}"
+	where:
+	    {{fq1}} = 
+	        . <zero> 35.4MiB
+	    {{fq2}} = 
+	        . <zero> 35.4MiB
+	result:
+	    {{out}} =
+	        . sha256:8ecd3ace42088974d11fe08c0b7bd40b185680e928c30b2299f41ffdd31871b7 35.7MiB
+	profile:
+	    cpu mean=1.0 max=1.2
+	    mem mean=19.6MiB max=125.2MiB
+	    disk mean=11.9MiB max=35.7MiB
+	    tmp mean=341B max=1.0KiB
+2021/07/08 16:29:05 scheduler task 9de7c141 (flow 94bf9943): submitted with execconfig extern url s3://niema-test/n10/r09/n10.r09.s10.tar.gz resources {}
+2021/07/08 16:29:05  ->  n10.r09.s10.Main.cp_out_file 94bf9943 exec extern s3://niema-test/n10/r09/n10.r09.s10.tar.gz 35.7MiB
+2021/07/08 16:29:06 scheduler task 9de7c141 (flow 94bf9943): direct transfer: completed s3://niema-test-quickstart-cache/objects/sha256:8ecd3ace42088974d11fe08c0b7bd40b185680e928c30b2299f41ffdd31871b7 -> s3://niema-test/n10/r09/n10.r09.s10.tar.gz (35.7MiB) in 1s (35.7MiB/s) 
+2021/07/08 16:29:06  <-  n10.r09.s10.Main.cp_out_file 94bf9943 ok   extern 0s 35.7MiB
+2021/07/08 16:29:09 scheduler task 57df14a6 (flow 85dff006): waiting for completion (try 0): successful, next state: promoting objects
+2021/07/08 16:29:09 scheduler task 57df14a6 (flow 85dff006): promoting objects (try 0): started
+2021/07/08 16:29:09 scheduler task 57df14a6 (flow 85dff006): promoting objects (try 0): successful, next state: retrieving diagnostic output
+2021/07/08 16:29:09 scheduler task 57df14a6 (flow 85dff006): retrieving diagnostic output (try 0): started
+2021/07/08 16:29:09 scheduler task 57df14a6 (flow 85dff006): retrieving diagnostic output (try 0): successful, next state: retrieving result
+2021/07/08 16:29:10 scheduler task 57df14a6 (flow 85dff006): retrieving result (try 0): started
+2021/07/08 16:29:10 scheduler task 57df14a6 (flow 85dff006): retrieving result (try 0): successful, next state: transferring output
+2021/07/08 16:29:10 scheduler task 57df14a6 (flow 85dff006): transferring output (try 0): started
+2021/07/08 16:29:10 scheduler task 57df14a6 (flow 85dff006): transferring output (try 0): successful, next state: unloading
+2021/07/08 16:29:10 scheduler task 57df14a6 (flow 85dff006): unloading (try 0): started
+2021/07/08 16:29:10 scheduler task 57df14a6 (flow 85dff006): unloading list<val<.=4772c890 35.7MiB> 35.7MiB>
+2021/07/08 16:29:10 scheduler task 57df14a6 (flow 85dff006): unloading val<.=8c0eebb6 35.4MiB>
+2021/07/08 16:29:10 scheduler task 57df14a6 (flow 85dff006): unloading val<.=1d98803b 35.4MiB>
+2021/07/08 16:29:10 scheduler task 57df14a6 (flow 85dff006): unloaded val<.=8c0eebb6 35.4MiB>
+2021/07/08 16:29:10 scheduler task 57df14a6 (flow 85dff006): unloaded list<val<.=4772c890 35.7MiB> 35.7MiB>
+2021/07/08 16:29:10 scheduler task 57df14a6 (flow 85dff006): unloaded val<.=1d98803b 35.4MiB>
+2021/07/08 16:29:10 scheduler task 57df14a6 (flow 85dff006): unloading (try 0): successful, next state: complete
+2021/07/08 16:29:10  <-  n10.r09.s01.Main.out_file 85dff006 ok     exec 2m34s 35.7MiB
+2021/07/08 16:29:10 n10.r09.s01.Main.out_file 85dff006 n10/r09/n10.r09.s01.rf:13:21:
+	resources: {mem:1.0GiB cpu:1 disk:0B}
+	sha256:39cf2aa7af37f5c422ac612d16393bf8f8ec3e2b1e0229a6d3305ae3119992f5
+	sha256:85dff006abb085113b5c5a77658036478fa885b4224fada3169f8a8fc0f7a837
+	ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/57df14a6e26984cd58591aec59cb199d96df0b937145f6cd4acbbe1817e87992
+	niemasd/vireflow:latest
+	command:
+	    # Copy input files locally
+	    mkdir "n10.r09.s01_output"
+	    wget -O "n10.r09.s01_output/n10.r09.s01.reference.fas" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas"
+	    wget -O "n10.r09.s01_output/n10.r09.s01.reference.gff" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3"
+	    wget -O "n10.r09.s01_output/n10.r09.s01.primers.bed" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed"
+	    cp "{{fq1}}" "n10.r09.s01_output/n10.r09.s01.fq1.fastq"
+	    cp "{{fq2}}" "n10.r09.s01_output/n10.r09.s01.fq2.fastq"
+	    
+	    # Map reads using minimap2
+	    minimap2 -t 1 -a -x sr "n10.r09.s01_output/n10.r09.s01.reference.fas" "n10.r09.s01_output/n10.r09.s01.fq1.fastq" "n10.r09.s01_output/n10.r09.s01.fq2.fastq" | samtools view -bS - > "n10.r09.s01_output/n10.r09.s01.untrimmed.bam"
+	    
+	    # Sort mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s01_output/n10.r09.s01.untrimmed.sorted.bam" "n10.r09.s01_output/n10.r09.s01.untrimmed.bam" 1>&2
+	    
+	    # Trim mapped reads using ivar
+	    ivar trim -x 5 -e -i "n10.r09.s01_output/n10.r09.s01.untrimmed.sorted.bam" -b "n10.r09.s01_output/n10.r09.s01.primers.bed" -p "n10.r09.s01_output/n10.r09.s01.trimmed" 1>&2
+	    
+	    # Sort trimmed mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s01_output/n10.r09.s01.trimmed.sorted.bam" "n10.r09.s01_output/n10.r09.s01.trimmed.bam" 1>&2
+	    
+	    # Generate pile-up from sorted trimmed BAM
+	    samtools mpileup -A -aa -d 0 -Q 0 --reference "n10.r09.s01_output/n10.r09.s01.reference.fas" "n10.r09.s01_output/n10.r09.s01.trimmed.sorted.bam" > "n10.r09.s01_output/n10.r09.s01.pileup.txt"
+	    
+	    # Call variants using lofreq"
+	    lofreq call -f "n10.r09.s01_output/n10.r09.s01.reference.fas" --call-indels "n10.r09.s01_output/n10.r09.s01.trimmed.sorted.bam" > "n10.r09.s01_output/n10.r09.s01.variants.vcf"
+	    
+	    # Call depth from trimmed BAM
+	    samtools depth -d 0 -Q 0 -q 0 -aa "n10.r09.s01_output/n10.r09.s01.trimmed.sorted.bam" > "n10.r09.s01_output/n10.r09.s01.depth.txt"
+	    
+	    # Find low-depth regions
+	    low_depth_regions "n10.r09.s01_output/n10.r09.s01.depth.txt" "n10.r09.s01_output/n10.r09.s01.low_depth.tsv" 10 1>&2
+	    
+	    # Generate consensus sequence
+	    alt_vars.py -i "n10.r09.s01_output/n10.r09.s01.variants.vcf" -o tmp.vcf -v lofreq
+	    bgzip tmp.vcf
+	    bcftools index tmp.vcf.gz
+	    cat "n10.r09.s01_output/n10.r09.s01.reference.fas" | bcftools consensus -m "n10.r09.s01_output/n10.r09.s01.low_depth.tsv" tmp.vcf.gz > "n10.r09.s01_output/n10.r09.s01.consensus.fas"
+	    
+	    # Remove redundant output files before compressing
+	    rm */*trimmed.bam
+	    
+	    # Compress output files
+	    tar cvf - "n10.r09.s01_output" | pigz -1 -p 1 > "{{out}}"
+	where:
+	    {{fq1}} = 
+	        . <zero> 35.4MiB
+	    {{fq2}} = 
+	        . <zero> 35.4MiB
+	result:
+	    {{out}} =
+	        . sha256:4772c890feed1c844942b0b3e8b1115e393041051ff3a058e1e7316d70a514c8 35.7MiB
+	profile:
+	    cpu mean=1.0 max=1.2
+	    mem mean=19.7MiB max=125.4MiB
+	    disk mean=11.9MiB max=35.7MiB
+	    tmp mean=341B max=1.0KiB
+2021/07/08 16:29:10 scheduler task 3ebf66ae (flow ee74c31d): submitted with execconfig extern url s3://niema-test/n10/r09/n10.r09.s01.tar.gz resources {}
+2021/07/08 16:29:10  ->  n10.r09.s01.Main.cp_out_file ee74c31d exec extern s3://niema-test/n10/r09/n10.r09.s01.tar.gz 35.7MiB
+2021/07/08 16:29:10 scheduler task c7c38900 (flow 5c8d5082): waiting for completion (try 0): successful, next state: promoting objects
+2021/07/08 16:29:10 scheduler task c7c38900 (flow 5c8d5082): promoting objects (try 0): started
+2021/07/08 16:29:11 scheduler task c7c38900 (flow 5c8d5082): promoting objects (try 0): successful, next state: retrieving diagnostic output
+2021/07/08 16:29:11 scheduler task c7c38900 (flow 5c8d5082): retrieving diagnostic output (try 0): started
+2021/07/08 16:29:11 scheduler task c7c38900 (flow 5c8d5082): retrieving diagnostic output (try 0): successful, next state: retrieving result
+2021/07/08 16:29:11 scheduler task c7c38900 (flow 5c8d5082): retrieving result (try 0): started
+2021/07/08 16:29:11 scheduler task c7c38900 (flow 5c8d5082): retrieving result (try 0): successful, next state: transferring output
+2021/07/08 16:29:11 scheduler task c7c38900 (flow 5c8d5082): transferring output (try 0): started
+2021/07/08 16:29:11 scheduler task 3ebf66ae (flow ee74c31d): direct transfer: completed s3://niema-test-quickstart-cache/objects/sha256:4772c890feed1c844942b0b3e8b1115e393041051ff3a058e1e7316d70a514c8 -> s3://niema-test/n10/r09/n10.r09.s01.tar.gz (35.7MiB) in 1s (35.7MiB/s) 
+2021/07/08 16:29:11  <-  n10.r09.s01.Main.cp_out_file ee74c31d ok   extern 0s 35.7MiB
+2021/07/08 16:29:11 scheduler task a7a492f6 (flow 30a384f5): waiting for completion (try 0): successful, next state: promoting objects
+2021/07/08 16:29:11 scheduler task a7a492f6 (flow 30a384f5): promoting objects (try 0): started
+2021/07/08 16:29:11 scheduler task c7c38900 (flow 5c8d5082): transferring output (try 0): successful, next state: unloading
+2021/07/08 16:29:11 scheduler task c7c38900 (flow 5c8d5082): unloading (try 0): started
+2021/07/08 16:29:11 scheduler task c7c38900 (flow 5c8d5082): unloading list<val<.=1ac80e6a 35.8MiB> 35.8MiB>
+2021/07/08 16:29:11 scheduler task c7c38900 (flow 5c8d5082): unloading val<.=a0e0a5de 35.4MiB>
+2021/07/08 16:29:11 scheduler task c7c38900 (flow 5c8d5082): unloading val<.=bcc54848 35.4MiB>
+2021/07/08 16:29:11 scheduler task a7a492f6 (flow 30a384f5): promoting objects (try 0): successful, next state: retrieving diagnostic output
+2021/07/08 16:29:11 scheduler task a7a492f6 (flow 30a384f5): retrieving diagnostic output (try 0): started
+2021/07/08 16:29:11 scheduler task c7c38900 (flow 5c8d5082): unloaded val<.=a0e0a5de 35.4MiB>
+2021/07/08 16:29:11 scheduler task c7c38900 (flow 5c8d5082): unloaded list<val<.=1ac80e6a 35.8MiB> 35.8MiB>
+2021/07/08 16:29:11 scheduler task c7c38900 (flow 5c8d5082): unloaded val<.=bcc54848 35.4MiB>
+2021/07/08 16:29:11 scheduler task c7c38900 (flow 5c8d5082): unloading (try 0): successful, next state: complete
+2021/07/08 16:29:11  <-  n10.r09.s06.Main.out_file 5c8d5082 ok     exec 2m35s 35.8MiB
+2021/07/08 16:29:11 n10.r09.s06.Main.out_file 5c8d5082 n10/r09/n10.r09.s06.rf:13:21:
+	resources: {mem:1.0GiB cpu:1 disk:0B}
+	sha256:78ef173f2e5c418b172aa97a77d882fe7333709580c997616822f1adbdda680c
+	sha256:5c8d5082b6c493892bdadd17095a931f924f747538c9eaa500fe3db9dc19809c
+	ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/c7c38900dcdf9894958dd1b3ea57fd5b4722532c6ec59fca0d49533a2107037a
+	niemasd/vireflow:latest
+	command:
+	    # Copy input files locally
+	    mkdir "n10.r09.s06_output"
+	    wget -O "n10.r09.s06_output/n10.r09.s06.reference.fas" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas"
+	    wget -O "n10.r09.s06_output/n10.r09.s06.reference.gff" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3"
+	    wget -O "n10.r09.s06_output/n10.r09.s06.primers.bed" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed"
+	    cp "{{fq1}}" "n10.r09.s06_output/n10.r09.s06.fq1.fastq"
+	    cp "{{fq2}}" "n10.r09.s06_output/n10.r09.s06.fq2.fastq"
+	    
+	    # Map reads using minimap2
+	    minimap2 -t 1 -a -x sr "n10.r09.s06_output/n10.r09.s06.reference.fas" "n10.r09.s06_output/n10.r09.s06.fq1.fastq" "n10.r09.s06_output/n10.r09.s06.fq2.fastq" | samtools view -bS - > "n10.r09.s06_output/n10.r09.s06.untrimmed.bam"
+	    
+	    # Sort mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s06_output/n10.r09.s06.untrimmed.sorted.bam" "n10.r09.s06_output/n10.r09.s06.untrimmed.bam" 1>&2
+	    
+	    # Trim mapped reads using ivar
+	    ivar trim -x 5 -e -i "n10.r09.s06_output/n10.r09.s06.untrimmed.sorted.bam" -b "n10.r09.s06_output/n10.r09.s06.primers.bed" -p "n10.r09.s06_output/n10.r09.s06.trimmed" 1>&2
+	    
+	    # Sort trimmed mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s06_output/n10.r09.s06.trimmed.sorted.bam" "n10.r09.s06_output/n10.r09.s06.trimmed.bam" 1>&2
+	    
+	    # Generate pile-up from sorted trimmed BAM
+	    samtools mpileup -A -aa -d 0 -Q 0 --reference "n10.r09.s06_output/n10.r09.s06.reference.fas" "n10.r09.s06_output/n10.r09.s06.trimmed.sorted.bam" > "n10.r09.s06_output/n10.r09.s06.pileup.txt"
+	    
+	    # Call variants using lofreq"
+	    lofreq call -f "n10.r09.s06_output/n10.r09.s06.reference.fas" --call-indels "n10.r09.s06_output/n10.r09.s06.trimmed.sorted.bam" > "n10.r09.s06_output/n10.r09.s06.variants.vcf"
+	    
+	    # Call depth from trimmed BAM
+	    samtools depth -d 0 -Q 0 -q 0 -aa "n10.r09.s06_output/n10.r09.s06.trimmed.sorted.bam" > "n10.r09.s06_output/n10.r09.s06.depth.txt"
+	    
+	    # Find low-depth regions
+	    low_depth_regions "n10.r09.s06_output/n10.r09.s06.depth.txt" "n10.r09.s06_output/n10.r09.s06.low_depth.tsv" 10 1>&2
+	    
+	    # Generate consensus sequence
+	    alt_vars.py -i "n10.r09.s06_output/n10.r09.s06.variants.vcf" -o tmp.vcf -v lofreq
+	    bgzip tmp.vcf
+	    bcftools index tmp.vcf.gz
+	    cat "n10.r09.s06_output/n10.r09.s06.reference.fas" | bcftools consensus -m "n10.r09.s06_output/n10.r09.s06.low_depth.tsv" tmp.vcf.gz > "n10.r09.s06_output/n10.r09.s06.consensus.fas"
+	    
+	    # Remove redundant output files before compressing
+	    rm */*trimmed.bam
+	    
+	    # Compress output files
+	    tar cvf - "n10.r09.s06_output" | pigz -1 -p 1 > "{{out}}"
+	where:
+	    {{fq1}} = 
+	        . <zero> 35.4MiB
+	    {{fq2}} = 
+	        . <zero> 35.4MiB
+	result:
+	    {{out}} =
+	        . sha256:1ac80e6a963e4744011ff1a12fcd7f51343012e7dbc7c7296cea07a241ae0dd7 35.8MiB
+	profile:
+	    cpu mean=1.0 max=1.2
+	    mem mean=18.6MiB max=123.8MiB
+	    disk mean=11.9MiB max=35.8MiB
+	    tmp mean=341B max=1.0KiB
+2021/07/08 16:29:11 scheduler task 749bbf96 (flow 71aa04c8): submitted with execconfig extern url s3://niema-test/n10/r09/n10.r09.s06.tar.gz resources {}
+2021/07/08 16:29:11  ->  n10.r09.s06.Main.cp_out_file 71aa04c8 exec extern s3://niema-test/n10/r09/n10.r09.s06.tar.gz 35.8MiB
+2021/07/08 16:29:11 scheduler task a7a492f6 (flow 30a384f5): retrieving diagnostic output (try 0): successful, next state: retrieving result
+2021/07/08 16:29:11 scheduler task a7a492f6 (flow 30a384f5): retrieving result (try 0): started
+2021/07/08 16:29:11 scheduler task a7a492f6 (flow 30a384f5): retrieving result (try 0): successful, next state: transferring output
+2021/07/08 16:29:12 scheduler task a7a492f6 (flow 30a384f5): transferring output (try 0): started
+2021/07/08 16:29:12 scheduler task 534d229a (flow 246aa0e8): waiting for completion (try 0): successful, next state: promoting objects
+2021/07/08 16:29:12 scheduler task 534d229a (flow 246aa0e8): promoting objects (try 0): started
+2021/07/08 16:29:12 scheduler task 749bbf96 (flow 71aa04c8): direct transfer: completed s3://niema-test-quickstart-cache/objects/sha256:1ac80e6a963e4744011ff1a12fcd7f51343012e7dbc7c7296cea07a241ae0dd7 -> s3://niema-test/n10/r09/n10.r09.s06.tar.gz (35.8MiB) in 1s (35.8MiB/s) 
+2021/07/08 16:29:12  <-  n10.r09.s06.Main.cp_out_file 71aa04c8 ok   extern 0s 35.8MiB
+2021/07/08 16:29:12 scheduler task 534d229a (flow 246aa0e8): promoting objects (try 0): successful, next state: retrieving diagnostic output
+2021/07/08 16:29:12 scheduler task a7a492f6 (flow 30a384f5): transferring output (try 0): successful, next state: unloading
+2021/07/08 16:29:12 scheduler task 534d229a (flow 246aa0e8): retrieving diagnostic output (try 0): started
+2021/07/08 16:29:12 scheduler task a7a492f6 (flow 30a384f5): unloading (try 0): started
+2021/07/08 16:29:12 scheduler task a7a492f6 (flow 30a384f5): unloading list<val<.=dde02070 35.7MiB> 35.7MiB>
+2021/07/08 16:29:12 scheduler task a7a492f6 (flow 30a384f5): unloading val<.=87a464a0 35.4MiB>
+2021/07/08 16:29:12 scheduler task a7a492f6 (flow 30a384f5): unloading val<.=deb6cdf4 35.4MiB>
+2021/07/08 16:29:12 scheduler task 534d229a (flow 246aa0e8): retrieving diagnostic output (try 0): successful, next state: retrieving result
+2021/07/08 16:29:12 scheduler task a7a492f6 (flow 30a384f5): unloaded val<.=deb6cdf4 35.4MiB>
+2021/07/08 16:29:12 scheduler task a7a492f6 (flow 30a384f5): unloaded list<val<.=dde02070 35.7MiB> 35.7MiB>
+2021/07/08 16:29:12 scheduler task a7a492f6 (flow 30a384f5): unloaded val<.=87a464a0 35.4MiB>
+2021/07/08 16:29:12 scheduler task a7a492f6 (flow 30a384f5): unloading (try 0): successful, next state: complete
+2021/07/08 16:29:12 scheduler task 534d229a (flow 246aa0e8): retrieving result (try 0): started
+2021/07/08 16:29:12  <-  n10.r09.s08.Main.out_file 30a384f5 ok     exec 2m36s 35.7MiB
+2021/07/08 16:29:12 n10.r09.s08.Main.out_file 30a384f5 n10/r09/n10.r09.s08.rf:13:21:
+	resources: {mem:1.0GiB cpu:1 disk:0B}
+	sha256:b49cc07d2101ce7b956f8cb5aa417a98926c5fcf285c75096f960a535b2826de
+	sha256:30a384f54ec9a85adb6b7bb9e9c24761e7d5cbdee2eb289590e1e9f56e3e807f
+	ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/a7a492f642c0559a8bd05e7cecc68d7359386784d4735ea0d573b092848dce1f
+	niemasd/vireflow:latest
+	command:
+	    # Copy input files locally
+	    mkdir "n10.r09.s08_output"
+	    wget -O "n10.r09.s08_output/n10.r09.s08.reference.fas" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas"
+	    wget -O "n10.r09.s08_output/n10.r09.s08.reference.gff" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3"
+	    wget -O "n10.r09.s08_output/n10.r09.s08.primers.bed" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed"
+	    cp "{{fq1}}" "n10.r09.s08_output/n10.r09.s08.fq1.fastq"
+	    cp "{{fq2}}" "n10.r09.s08_output/n10.r09.s08.fq2.fastq"
+	    
+	    # Map reads using minimap2
+	    minimap2 -t 1 -a -x sr "n10.r09.s08_output/n10.r09.s08.reference.fas" "n10.r09.s08_output/n10.r09.s08.fq1.fastq" "n10.r09.s08_output/n10.r09.s08.fq2.fastq" | samtools view -bS - > "n10.r09.s08_output/n10.r09.s08.untrimmed.bam"
+	    
+	    # Sort mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s08_output/n10.r09.s08.untrimmed.sorted.bam" "n10.r09.s08_output/n10.r09.s08.untrimmed.bam" 1>&2
+	    
+	    # Trim mapped reads using ivar
+	    ivar trim -x 5 -e -i "n10.r09.s08_output/n10.r09.s08.untrimmed.sorted.bam" -b "n10.r09.s08_output/n10.r09.s08.primers.bed" -p "n10.r09.s08_output/n10.r09.s08.trimmed" 1>&2
+	    
+	    # Sort trimmed mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s08_output/n10.r09.s08.trimmed.sorted.bam" "n10.r09.s08_output/n10.r09.s08.trimmed.bam" 1>&2
+	    
+	    # Generate pile-up from sorted trimmed BAM
+	    samtools mpileup -A -aa -d 0 -Q 0 --reference "n10.r09.s08_output/n10.r09.s08.reference.fas" "n10.r09.s08_output/n10.r09.s08.trimmed.sorted.bam" > "n10.r09.s08_output/n10.r09.s08.pileup.txt"
+	    
+	    # Call variants using lofreq"
+	    lofreq call -f "n10.r09.s08_output/n10.r09.s08.reference.fas" --call-indels "n10.r09.s08_output/n10.r09.s08.trimmed.sorted.bam" > "n10.r09.s08_output/n10.r09.s08.variants.vcf"
+	    
+	    # Call depth from trimmed BAM
+	    samtools depth -d 0 -Q 0 -q 0 -aa "n10.r09.s08_output/n10.r09.s08.trimmed.sorted.bam" > "n10.r09.s08_output/n10.r09.s08.depth.txt"
+	    
+	    # Find low-depth regions
+	    low_depth_regions "n10.r09.s08_output/n10.r09.s08.depth.txt" "n10.r09.s08_output/n10.r09.s08.low_depth.tsv" 10 1>&2
+	    
+	    # Generate consensus sequence
+	    alt_vars.py -i "n10.r09.s08_output/n10.r09.s08.variants.vcf" -o tmp.vcf -v lofreq
+	    bgzip tmp.vcf
+	    bcftools index tmp.vcf.gz
+	    cat "n10.r09.s08_output/n10.r09.s08.reference.fas" | bcftools consensus -m "n10.r09.s08_output/n10.r09.s08.low_depth.tsv" tmp.vcf.gz > "n10.r09.s08_output/n10.r09.s08.consensus.fas"
+	    
+	    # Remove redundant output files before compressing
+	    rm */*trimmed.bam
+	    
+	    # Compress output files
+	    tar cvf - "n10.r09.s08_output" | pigz -1 -p 1 > "{{out}}"
+	where:
+	    {{fq1}} = 
+	        . <zero> 35.4MiB
+	    {{fq2}} = 
+	        . <zero> 35.4MiB
+	result:
+	    {{out}} =
+	        . sha256:dde0207000b40a8cc7f1e370d697c1154f82ed8f3eab4d7d57cb5e4e552c276b 35.7MiB
+	profile:
+	    cpu mean=1.0 max=1.2
+	    mem mean=20.2MiB max=127.0MiB
+	    disk mean=11.9MiB max=35.7MiB
+	    tmp mean=341B max=1.0KiB
+2021/07/08 16:29:12 scheduler task 04e7092d (flow f7a4fd2a): submitted with execconfig extern url s3://niema-test/n10/r09/n10.r09.s08.tar.gz resources {}
+2021/07/08 16:29:12  ->  n10.r09.s08.Main.cp_out_file f7a4fd2a exec extern s3://niema-test/n10/r09/n10.r09.s08.tar.gz 35.7MiB
+2021/07/08 16:29:12 scheduler task 534d229a (flow 246aa0e8): retrieving result (try 0): successful, next state: transferring output
+2021/07/08 16:29:12 scheduler task 534d229a (flow 246aa0e8): transferring output (try 0): started
+2021/07/08 16:29:13 scheduler task 534d229a (flow 246aa0e8): transferring output (try 0): successful, next state: unloading
+2021/07/08 16:29:13 scheduler task 534d229a (flow 246aa0e8): unloading (try 0): started
+2021/07/08 16:29:13 scheduler task 534d229a (flow 246aa0e8): unloading list<val<.=c8ef6a80 35.7MiB> 35.7MiB>
+2021/07/08 16:29:13 scheduler task 534d229a (flow 246aa0e8): unloading val<.=db2fbf85 35.4MiB>
+2021/07/08 16:29:13 scheduler task 534d229a (flow 246aa0e8): unloading val<.=1780ccd1 35.4MiB>
+2021/07/08 16:29:13 scheduler task 534d229a (flow 246aa0e8): unloaded val<.=db2fbf85 35.4MiB>
+2021/07/08 16:29:13 scheduler task 534d229a (flow 246aa0e8): unloaded val<.=1780ccd1 35.4MiB>
+2021/07/08 16:29:13 scheduler task 534d229a (flow 246aa0e8): unloaded list<val<.=c8ef6a80 35.7MiB> 35.7MiB>
+2021/07/08 16:29:13 scheduler task 534d229a (flow 246aa0e8): unloading (try 0): successful, next state: complete
+2021/07/08 16:29:13 scheduler task 04e7092d (flow f7a4fd2a): direct transfer: completed s3://niema-test-quickstart-cache/objects/sha256:dde0207000b40a8cc7f1e370d697c1154f82ed8f3eab4d7d57cb5e4e552c276b -> s3://niema-test/n10/r09/n10.r09.s08.tar.gz (35.7MiB) in 1s (35.7MiB/s) 
+2021/07/08 16:29:13  <-  n10.r09.s08.Main.cp_out_file f7a4fd2a ok   extern 0s 35.7MiB
+2021/07/08 16:29:13  <-  n10.r09.s07.Main.out_file 246aa0e8 ok     exec 2m37s 35.7MiB
+2021/07/08 16:29:13 n10.r09.s07.Main.out_file 246aa0e8 n10/r09/n10.r09.s07.rf:13:21:
+	resources: {mem:1.0GiB cpu:1 disk:0B}
+	sha256:f9627aba98c47b63c262ec74b1661b2bfdae15e2abb538afa16a95613feea582
+	sha256:246aa0e8ccc61f9111df0ee4937a9bdc837b8b0048349f8615517da7921a4a19
+	ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/534d229ac36d34491e3d29e0cc5748599f9a1562ae424c7c41e406cb80031d3a
+	niemasd/vireflow:latest
+	command:
+	    # Copy input files locally
+	    mkdir "n10.r09.s07_output"
+	    wget -O "n10.r09.s07_output/n10.r09.s07.reference.fas" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas"
+	    wget -O "n10.r09.s07_output/n10.r09.s07.reference.gff" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3"
+	    wget -O "n10.r09.s07_output/n10.r09.s07.primers.bed" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed"
+	    cp "{{fq1}}" "n10.r09.s07_output/n10.r09.s07.fq1.fastq"
+	    cp "{{fq2}}" "n10.r09.s07_output/n10.r09.s07.fq2.fastq"
+	    
+	    # Map reads using minimap2
+	    minimap2 -t 1 -a -x sr "n10.r09.s07_output/n10.r09.s07.reference.fas" "n10.r09.s07_output/n10.r09.s07.fq1.fastq" "n10.r09.s07_output/n10.r09.s07.fq2.fastq" | samtools view -bS - > "n10.r09.s07_output/n10.r09.s07.untrimmed.bam"
+	    
+	    # Sort mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s07_output/n10.r09.s07.untrimmed.sorted.bam" "n10.r09.s07_output/n10.r09.s07.untrimmed.bam" 1>&2
+	    
+	    # Trim mapped reads using ivar
+	    ivar trim -x 5 -e -i "n10.r09.s07_output/n10.r09.s07.untrimmed.sorted.bam" -b "n10.r09.s07_output/n10.r09.s07.primers.bed" -p "n10.r09.s07_output/n10.r09.s07.trimmed" 1>&2
+	    
+	    # Sort trimmed mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s07_output/n10.r09.s07.trimmed.sorted.bam" "n10.r09.s07_output/n10.r09.s07.trimmed.bam" 1>&2
+	    
+	    # Generate pile-up from sorted trimmed BAM
+	    samtools mpileup -A -aa -d 0 -Q 0 --reference "n10.r09.s07_output/n10.r09.s07.reference.fas" "n10.r09.s07_output/n10.r09.s07.trimmed.sorted.bam" > "n10.r09.s07_output/n10.r09.s07.pileup.txt"
+	    
+	    # Call variants using lofreq"
+	    lofreq call -f "n10.r09.s07_output/n10.r09.s07.reference.fas" --call-indels "n10.r09.s07_output/n10.r09.s07.trimmed.sorted.bam" > "n10.r09.s07_output/n10.r09.s07.variants.vcf"
+	    
+	    # Call depth from trimmed BAM
+	    samtools depth -d 0 -Q 0 -q 0 -aa "n10.r09.s07_output/n10.r09.s07.trimmed.sorted.bam" > "n10.r09.s07_output/n10.r09.s07.depth.txt"
+	    
+	    # Find low-depth regions
+	    low_depth_regions "n10.r09.s07_output/n10.r09.s07.depth.txt" "n10.r09.s07_output/n10.r09.s07.low_depth.tsv" 10 1>&2
+	    
+	    # Generate consensus sequence
+	    alt_vars.py -i "n10.r09.s07_output/n10.r09.s07.variants.vcf" -o tmp.vcf -v lofreq
+	    bgzip tmp.vcf
+	    bcftools index tmp.vcf.gz
+	    cat "n10.r09.s07_output/n10.r09.s07.reference.fas" | bcftools consensus -m "n10.r09.s07_output/n10.r09.s07.low_depth.tsv" tmp.vcf.gz > "n10.r09.s07_output/n10.r09.s07.consensus.fas"
+	    
+	    # Remove redundant output files before compressing
+	    rm */*trimmed.bam
+	    
+	    # Compress output files
+	    tar cvf - "n10.r09.s07_output" | pigz -1 -p 1 > "{{out}}"
+	where:
+	    {{fq1}} = 
+	        . <zero> 35.4MiB
+	    {{fq2}} = 
+	        . <zero> 35.4MiB
+	result:
+	    {{out}} =
+	        . sha256:c8ef6a802ecad94448f4d193bc1122a2af5dafa74d1f4ba61882ca2e58450b3e 35.7MiB
+	profile:
+	    cpu mean=1.0 max=1.2
+	    mem mean=18.7MiB max=124.4MiB
+	    disk mean=11.9MiB max=35.7MiB
+	    tmp mean=345B max=1.0KiB
+2021/07/08 16:29:13 scheduler task 81005532 (flow df461c8b): submitted with execconfig extern url s3://niema-test/n10/r09/n10.r09.s07.tar.gz resources {}
+2021/07/08 16:29:13  ->  n10.r09.s07.Main.cp_out_file df461c8b exec extern s3://niema-test/n10/r09/n10.r09.s07.tar.gz 35.7MiB
+2021/07/08 16:29:14 scheduler task 81005532 (flow df461c8b): direct transfer: completed s3://niema-test-quickstart-cache/objects/sha256:c8ef6a802ecad94448f4d193bc1122a2af5dafa74d1f4ba61882ca2e58450b3e -> s3://niema-test/n10/r09/n10.r09.s07.tar.gz (35.7MiB) in 1s (35.7MiB/s) 
+2021/07/08 16:29:14  <-  n10.r09.s07.Main.cp_out_file df461c8b ok   extern 0s 35.7MiB
+2021/07/08 16:29:15 scheduler task 281f39fe (flow be9f2b71): waiting for completion (try 0): successful, next state: promoting objects
+2021/07/08 16:29:15 scheduler task 281f39fe (flow be9f2b71): promoting objects (try 0): started
+2021/07/08 16:29:15 scheduler task 281f39fe (flow be9f2b71): promoting objects (try 0): successful, next state: retrieving diagnostic output
+2021/07/08 16:29:15 scheduler task 281f39fe (flow be9f2b71): retrieving diagnostic output (try 0): started
+2021/07/08 16:29:15 scheduler task 281f39fe (flow be9f2b71): retrieving diagnostic output (try 0): successful, next state: retrieving result
+2021/07/08 16:29:15 scheduler task 281f39fe (flow be9f2b71): retrieving result (try 0): started
+2021/07/08 16:29:16 scheduler task 281f39fe (flow be9f2b71): retrieving result (try 0): successful, next state: transferring output
+2021/07/08 16:29:16 scheduler task 281f39fe (flow be9f2b71): transferring output (try 0): started
+2021/07/08 16:29:16 scheduler task 281f39fe (flow be9f2b71): transferring output (try 0): successful, next state: unloading
+2021/07/08 16:29:16 scheduler task 281f39fe (flow be9f2b71): unloading (try 0): started
+2021/07/08 16:29:16 scheduler task 281f39fe (flow be9f2b71): unloading list<val<.=69db1fa2 35.8MiB> 35.8MiB>
+2021/07/08 16:29:16 scheduler task 281f39fe (flow be9f2b71): unloading val<.=575d7e2c 35.4MiB>
+2021/07/08 16:29:16 scheduler task 281f39fe (flow be9f2b71): unloading val<.=a28200ab 35.4MiB>
+2021/07/08 16:29:16 scheduler task 281f39fe (flow be9f2b71): unloaded val<.=575d7e2c 35.4MiB>
+2021/07/08 16:29:16 scheduler task 281f39fe (flow be9f2b71): unloaded val<.=a28200ab 35.4MiB>
+2021/07/08 16:29:16 scheduler task 281f39fe (flow be9f2b71): unloaded list<val<.=69db1fa2 35.8MiB> 35.8MiB>
+2021/07/08 16:29:16 scheduler task 281f39fe (flow be9f2b71): unloading (try 0): successful, next state: complete
+2021/07/08 16:29:16  <-  n10.r09.s03.Main.out_file be9f2b71 ok     exec 2m40s 35.8MiB
+2021/07/08 16:29:16 n10.r09.s03.Main.out_file be9f2b71 n10/r09/n10.r09.s03.rf:13:21:
+	resources: {mem:1.0GiB cpu:1 disk:0B}
+	sha256:facafbda097d56fd3bda61a70326d2109cc5b11080f1d36e8230a028213015d5
+	sha256:be9f2b71c3c55656c733a9af745da9e2882ce4309d0be188bc17cabff434f253
+	ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/281f39fefe30f47d25d50611f970322acafd7a1b8f49b2d1ba0993e2e00a3980
+	niemasd/vireflow:latest
+	command:
+	    # Copy input files locally
+	    mkdir "n10.r09.s03_output"
+	    wget -O "n10.r09.s03_output/n10.r09.s03.reference.fas" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas"
+	    wget -O "n10.r09.s03_output/n10.r09.s03.reference.gff" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3"
+	    wget -O "n10.r09.s03_output/n10.r09.s03.primers.bed" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed"
+	    cp "{{fq1}}" "n10.r09.s03_output/n10.r09.s03.fq1.fastq"
+	    cp "{{fq2}}" "n10.r09.s03_output/n10.r09.s03.fq2.fastq"
+	    
+	    # Map reads using minimap2
+	    minimap2 -t 1 -a -x sr "n10.r09.s03_output/n10.r09.s03.reference.fas" "n10.r09.s03_output/n10.r09.s03.fq1.fastq" "n10.r09.s03_output/n10.r09.s03.fq2.fastq" | samtools view -bS - > "n10.r09.s03_output/n10.r09.s03.untrimmed.bam"
+	    
+	    # Sort mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s03_output/n10.r09.s03.untrimmed.sorted.bam" "n10.r09.s03_output/n10.r09.s03.untrimmed.bam" 1>&2
+	    
+	    # Trim mapped reads using ivar
+	    ivar trim -x 5 -e -i "n10.r09.s03_output/n10.r09.s03.untrimmed.sorted.bam" -b "n10.r09.s03_output/n10.r09.s03.primers.bed" -p "n10.r09.s03_output/n10.r09.s03.trimmed" 1>&2
+	    
+	    # Sort trimmed mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s03_output/n10.r09.s03.trimmed.sorted.bam" "n10.r09.s03_output/n10.r09.s03.trimmed.bam" 1>&2
+	    
+	    # Generate pile-up from sorted trimmed BAM
+	    samtools mpileup -A -aa -d 0 -Q 0 --reference "n10.r09.s03_output/n10.r09.s03.reference.fas" "n10.r09.s03_output/n10.r09.s03.trimmed.sorted.bam" > "n10.r09.s03_output/n10.r09.s03.pileup.txt"
+	    
+	    # Call variants using lofreq"
+	    lofreq call -f "n10.r09.s03_output/n10.r09.s03.reference.fas" --call-indels "n10.r09.s03_output/n10.r09.s03.trimmed.sorted.bam" > "n10.r09.s03_output/n10.r09.s03.variants.vcf"
+	    
+	    # Call depth from trimmed BAM
+	    samtools depth -d 0 -Q 0 -q 0 -aa "n10.r09.s03_output/n10.r09.s03.trimmed.sorted.bam" > "n10.r09.s03_output/n10.r09.s03.depth.txt"
+	    
+	    # Find low-depth regions
+	    low_depth_regions "n10.r09.s03_output/n10.r09.s03.depth.txt" "n10.r09.s03_output/n10.r09.s03.low_depth.tsv" 10 1>&2
+	    
+	    # Generate consensus sequence
+	    alt_vars.py -i "n10.r09.s03_output/n10.r09.s03.variants.vcf" -o tmp.vcf -v lofreq
+	    bgzip tmp.vcf
+	    bcftools index tmp.vcf.gz
+	    cat "n10.r09.s03_output/n10.r09.s03.reference.fas" | bcftools consensus -m "n10.r09.s03_output/n10.r09.s03.low_depth.tsv" tmp.vcf.gz > "n10.r09.s03_output/n10.r09.s03.consensus.fas"
+	    
+	    # Remove redundant output files before compressing
+	    rm */*trimmed.bam
+	    
+	    # Compress output files
+	    tar cvf - "n10.r09.s03_output" | pigz -1 -p 1 > "{{out}}"
+	where:
+	    {{fq1}} = 
+	        . <zero> 35.4MiB
+	    {{fq2}} = 
+	        . <zero> 35.4MiB
+	result:
+	    {{out}} =
+	        . sha256:69db1fa207e96c831df2e2380b559b907976aad88162e930e741e1e275edbe94 35.8MiB
+	profile:
+	    cpu mean=1.0 max=1.2
+	    mem mean=20.3MiB max=127.0MiB
+	    disk mean=11.9MiB max=35.8MiB
+	    tmp mean=341B max=1.0KiB
+2021/07/08 16:29:16 scheduler task 1036553b (flow 7bc71b4e): submitted with execconfig extern url s3://niema-test/n10/r09/n10.r09.s03.tar.gz resources {}
+2021/07/08 16:29:16  ->  n10.r09.s03.Main.cp_out_file 7bc71b4e exec extern s3://niema-test/n10/r09/n10.r09.s03.tar.gz 35.8MiB
+2021/07/08 16:29:17 scheduler task 1036553b (flow 7bc71b4e): direct transfer: completed s3://niema-test-quickstart-cache/objects/sha256:69db1fa207e96c831df2e2380b559b907976aad88162e930e741e1e275edbe94 -> s3://niema-test/n10/r09/n10.r09.s03.tar.gz (35.8MiB) in 1s (35.8MiB/s) 
+2021/07/08 16:29:17  <-  n10.r09.s03.Main.cp_out_file 7bc71b4e ok   extern 0s 35.8MiB
+2021/07/08 16:29:22 scheduler task 1157305a (flow cf5837f5): waiting for completion (try 0): successful, next state: promoting objects
+2021/07/08 16:29:22 scheduler task 1157305a (flow cf5837f5): promoting objects (try 0): started
+2021/07/08 16:29:22 scheduler task 1157305a (flow cf5837f5): promoting objects (try 0): successful, next state: retrieving diagnostic output
+2021/07/08 16:29:22 scheduler task 1157305a (flow cf5837f5): retrieving diagnostic output (try 0): started
+2021/07/08 16:29:22 scheduler task 1157305a (flow cf5837f5): retrieving diagnostic output (try 0): successful, next state: retrieving result
+2021/07/08 16:29:22 scheduler task 1157305a (flow cf5837f5): retrieving result (try 0): started
+2021/07/08 16:29:23 scheduler task 1157305a (flow cf5837f5): retrieving result (try 0): successful, next state: transferring output
+2021/07/08 16:29:23 scheduler task 1157305a (flow cf5837f5): transferring output (try 0): started
+2021/07/08 16:29:23 scheduler task 1157305a (flow cf5837f5): transferring output (try 0): successful, next state: unloading
+2021/07/08 16:29:23 scheduler task 1157305a (flow cf5837f5): unloading (try 0): started
+2021/07/08 16:29:23 scheduler task 1157305a (flow cf5837f5): unloading list<val<.=85837b58 35.7MiB> 35.7MiB>
+2021/07/08 16:29:23 scheduler task 1157305a (flow cf5837f5): unloading val<.=238e32a1 35.4MiB>
+2021/07/08 16:29:23 scheduler task 1157305a (flow cf5837f5): unloading val<.=5d14f719 35.4MiB>
+2021/07/08 16:29:23 scheduler task 1157305a (flow cf5837f5): unloaded val<.=238e32a1 35.4MiB>
+2021/07/08 16:29:23 scheduler task 1157305a (flow cf5837f5): unloaded list<val<.=85837b58 35.7MiB> 35.7MiB>
+2021/07/08 16:29:23 scheduler task 1157305a (flow cf5837f5): unloaded val<.=5d14f719 35.4MiB>
+2021/07/08 16:29:23 scheduler task 1157305a (flow cf5837f5): unloading (try 0): successful, next state: complete
+2021/07/08 16:29:23  <-  n10.r09.s05.Main.out_file cf5837f5 ok     exec 2m47s 35.7MiB
+2021/07/08 16:29:23 n10.r09.s05.Main.out_file cf5837f5 n10/r09/n10.r09.s05.rf:13:21:
+	resources: {mem:1.0GiB cpu:1 disk:0B}
+	sha256:d744a76776042c0ef436884f6ca8886abc1a625b79afdc66abd9d6c3af6b7fad
+	sha256:cf5837f58bff88434e0f0db0e0a2484479010b55bad250367b7dea0aa7878f96
+	ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/1157305a2987ae01633d8b015ca71573560f7b8974977df9e9dc0c91f3c827fe
+	niemasd/vireflow:latest
+	command:
+	    # Copy input files locally
+	    mkdir "n10.r09.s05_output"
+	    wget -O "n10.r09.s05_output/n10.r09.s05.reference.fas" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas"
+	    wget -O "n10.r09.s05_output/n10.r09.s05.reference.gff" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3"
+	    wget -O "n10.r09.s05_output/n10.r09.s05.primers.bed" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed"
+	    cp "{{fq1}}" "n10.r09.s05_output/n10.r09.s05.fq1.fastq"
+	    cp "{{fq2}}" "n10.r09.s05_output/n10.r09.s05.fq2.fastq"
+	    
+	    # Map reads using minimap2
+	    minimap2 -t 1 -a -x sr "n10.r09.s05_output/n10.r09.s05.reference.fas" "n10.r09.s05_output/n10.r09.s05.fq1.fastq" "n10.r09.s05_output/n10.r09.s05.fq2.fastq" | samtools view -bS - > "n10.r09.s05_output/n10.r09.s05.untrimmed.bam"
+	    
+	    # Sort mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s05_output/n10.r09.s05.untrimmed.sorted.bam" "n10.r09.s05_output/n10.r09.s05.untrimmed.bam" 1>&2
+	    
+	    # Trim mapped reads using ivar
+	    ivar trim -x 5 -e -i "n10.r09.s05_output/n10.r09.s05.untrimmed.sorted.bam" -b "n10.r09.s05_output/n10.r09.s05.primers.bed" -p "n10.r09.s05_output/n10.r09.s05.trimmed" 1>&2
+	    
+	    # Sort trimmed mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s05_output/n10.r09.s05.trimmed.sorted.bam" "n10.r09.s05_output/n10.r09.s05.trimmed.bam" 1>&2
+	    
+	    # Generate pile-up from sorted trimmed BAM
+	    samtools mpileup -A -aa -d 0 -Q 0 --reference "n10.r09.s05_output/n10.r09.s05.reference.fas" "n10.r09.s05_output/n10.r09.s05.trimmed.sorted.bam" > "n10.r09.s05_output/n10.r09.s05.pileup.txt"
+	    
+	    # Call variants using lofreq"
+	    lofreq call -f "n10.r09.s05_output/n10.r09.s05.reference.fas" --call-indels "n10.r09.s05_output/n10.r09.s05.trimmed.sorted.bam" > "n10.r09.s05_output/n10.r09.s05.variants.vcf"
+	    
+	    # Call depth from trimmed BAM
+	    samtools depth -d 0 -Q 0 -q 0 -aa "n10.r09.s05_output/n10.r09.s05.trimmed.sorted.bam" > "n10.r09.s05_output/n10.r09.s05.depth.txt"
+	    
+	    # Find low-depth regions
+	    low_depth_regions "n10.r09.s05_output/n10.r09.s05.depth.txt" "n10.r09.s05_output/n10.r09.s05.low_depth.tsv" 10 1>&2
+	    
+	    # Generate consensus sequence
+	    alt_vars.py -i "n10.r09.s05_output/n10.r09.s05.variants.vcf" -o tmp.vcf -v lofreq
+	    bgzip tmp.vcf
+	    bcftools index tmp.vcf.gz
+	    cat "n10.r09.s05_output/n10.r09.s05.reference.fas" | bcftools consensus -m "n10.r09.s05_output/n10.r09.s05.low_depth.tsv" tmp.vcf.gz > "n10.r09.s05_output/n10.r09.s05.consensus.fas"
+	    
+	    # Remove redundant output files before compressing
+	    rm */*trimmed.bam
+	    
+	    # Compress output files
+	    tar cvf - "n10.r09.s05_output" | pigz -1 -p 1 > "{{out}}"
+	where:
+	    {{fq1}} = 
+	        . <zero> 35.4MiB
+	    {{fq2}} = 
+	        . <zero> 35.4MiB
+	result:
+	    {{out}} =
+	        . sha256:85837b58eedf3622559eb36759873e51e1e19db665bc2d5691d3da259ad1ee1b 35.7MiB
+	profile:
+	    cpu mean=1.0 max=1.2
+	    mem mean=18.6MiB max=126.0MiB
+	    disk mean=11.9MiB max=35.7MiB
+	    tmp mean=345B max=1.0KiB
+2021/07/08 16:29:23 scheduler task 67ba093f (flow a35111dc): submitted with execconfig extern url s3://niema-test/n10/r09/n10.r09.s05.tar.gz resources {}
+2021/07/08 16:29:23  ->  n10.r09.s05.Main.cp_out_file a35111dc exec extern s3://niema-test/n10/r09/n10.r09.s05.tar.gz 35.7MiB
+2021/07/08 16:29:24 scheduler task 67ba093f (flow a35111dc): direct transfer: completed s3://niema-test-quickstart-cache/objects/sha256:85837b58eedf3622559eb36759873e51e1e19db665bc2d5691d3da259ad1ee1b -> s3://niema-test/n10/r09/n10.r09.s05.tar.gz (35.7MiB) in 1s (35.7MiB/s) 
+2021/07/08 16:29:24  <-  n10.r09.s05.Main.cp_out_file a35111dc ok   extern 0s 35.7MiB
+2021/07/08 16:29:29 scheduler task 99089331 (flow f39c0442): waiting for completion (try 0): successful, next state: promoting objects
+2021/07/08 16:29:29 scheduler task 99089331 (flow f39c0442): promoting objects (try 0): started
+2021/07/08 16:29:29 scheduler task ab7897d2 (flow ac2b9915): waiting for completion (try 0): successful, next state: promoting objects
+2021/07/08 16:29:29 scheduler task ab7897d2 (flow ac2b9915): promoting objects (try 0): started
+2021/07/08 16:29:29 scheduler task 99089331 (flow f39c0442): promoting objects (try 0): successful, next state: retrieving diagnostic output
+2021/07/08 16:29:29 scheduler task 99089331 (flow f39c0442): retrieving diagnostic output (try 0): started
+2021/07/08 16:29:29 scheduler task ab7897d2 (flow ac2b9915): promoting objects (try 0): successful, next state: retrieving diagnostic output
+2021/07/08 16:29:29 scheduler task ab7897d2 (flow ac2b9915): retrieving diagnostic output (try 0): started
+2021/07/08 16:29:29 scheduler task 99089331 (flow f39c0442): retrieving diagnostic output (try 0): successful, next state: retrieving result
+2021/07/08 16:29:29 scheduler task ab7897d2 (flow ac2b9915): retrieving diagnostic output (try 0): successful, next state: retrieving result
+2021/07/08 16:29:29 scheduler task 99089331 (flow f39c0442): retrieving result (try 0): started
+2021/07/08 16:29:29 scheduler task ab7897d2 (flow ac2b9915): retrieving result (try 0): started
+2021/07/08 16:29:29 scheduler task 99089331 (flow f39c0442): retrieving result (try 0): successful, next state: transferring output
+2021/07/08 16:29:29 scheduler task 99089331 (flow f39c0442): transferring output (try 0): started
+2021/07/08 16:29:29 scheduler task ab7897d2 (flow ac2b9915): retrieving result (try 0): successful, next state: transferring output
+2021/07/08 16:29:30 scheduler task ab7897d2 (flow ac2b9915): transferring output (try 0): started
+2021/07/08 16:29:30 scheduler task 99089331 (flow f39c0442): transferring output (try 0): successful, next state: unloading
+2021/07/08 16:29:30 scheduler task 99089331 (flow f39c0442): unloading (try 0): started
+2021/07/08 16:29:30 scheduler task 99089331 (flow f39c0442): unloading list<val<.=19441a93 35.7MiB> 35.7MiB>
+2021/07/08 16:29:30 scheduler task 99089331 (flow f39c0442): unloading val<.=ddd0338c 35.4MiB>
+2021/07/08 16:29:30 scheduler task 99089331 (flow f39c0442): unloading val<.=9819cb5c 35.4MiB>
+2021/07/08 16:29:30 scheduler task ab7897d2 (flow ac2b9915): transferring output (try 0): successful, next state: unloading
+2021/07/08 16:29:30 scheduler task ab7897d2 (flow ac2b9915): unloading (try 0): started
+2021/07/08 16:29:30 scheduler task ab7897d2 (flow ac2b9915): unloading list<val<.=6a65084c 35.7MiB> 35.7MiB>
+2021/07/08 16:29:30 scheduler task ab7897d2 (flow ac2b9915): unloading val<.=e77e9086 35.4MiB>
+2021/07/08 16:29:30 scheduler task ab7897d2 (flow ac2b9915): unloading val<.=70b88ffd 35.4MiB>
+2021/07/08 16:29:30 scheduler task 99089331 (flow f39c0442): unloaded val<.=9819cb5c 35.4MiB>
+2021/07/08 16:29:30 scheduler task 99089331 (flow f39c0442): unloaded list<val<.=19441a93 35.7MiB> 35.7MiB>
+2021/07/08 16:29:30 scheduler task 99089331 (flow f39c0442): unloaded val<.=ddd0338c 35.4MiB>
+2021/07/08 16:29:30 scheduler task 99089331 (flow f39c0442): unloading (try 0): successful, next state: complete
+2021/07/08 16:29:30  <-  n10.r09.s09.Main.out_file f39c0442 ok     exec 2m54s 35.7MiB
+2021/07/08 16:29:30 n10.r09.s09.Main.out_file f39c0442 n10/r09/n10.r09.s09.rf:13:21:
+	resources: {mem:1.0GiB cpu:1 disk:0B}
+	sha256:4796e72018554bfb5d2230e6d3f034d3b3525b32d27b389e8a3b878281001b6d
+	sha256:f39c0442df0f35a70a2ce5fa39f66fa819667afa90a418342055436275d79989
+	ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/990893315302408bc840e53870824dc95a1a0937970c706cee917908873a8444
+	niemasd/vireflow:latest
+	command:
+	    # Copy input files locally
+	    mkdir "n10.r09.s09_output"
+	    wget -O "n10.r09.s09_output/n10.r09.s09.reference.fas" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas"
+	    wget -O "n10.r09.s09_output/n10.r09.s09.reference.gff" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3"
+	    wget -O "n10.r09.s09_output/n10.r09.s09.primers.bed" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed"
+	    cp "{{fq1}}" "n10.r09.s09_output/n10.r09.s09.fq1.fastq"
+	    cp "{{fq2}}" "n10.r09.s09_output/n10.r09.s09.fq2.fastq"
+	    
+	    # Map reads using minimap2
+	    minimap2 -t 1 -a -x sr "n10.r09.s09_output/n10.r09.s09.reference.fas" "n10.r09.s09_output/n10.r09.s09.fq1.fastq" "n10.r09.s09_output/n10.r09.s09.fq2.fastq" | samtools view -bS - > "n10.r09.s09_output/n10.r09.s09.untrimmed.bam"
+	    
+	    # Sort mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s09_output/n10.r09.s09.untrimmed.sorted.bam" "n10.r09.s09_output/n10.r09.s09.untrimmed.bam" 1>&2
+	    
+	    # Trim mapped reads using ivar
+	    ivar trim -x 5 -e -i "n10.r09.s09_output/n10.r09.s09.untrimmed.sorted.bam" -b "n10.r09.s09_output/n10.r09.s09.primers.bed" -p "n10.r09.s09_output/n10.r09.s09.trimmed" 1>&2
+	    
+	    # Sort trimmed mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s09_output/n10.r09.s09.trimmed.sorted.bam" "n10.r09.s09_output/n10.r09.s09.trimmed.bam" 1>&2
+	    
+	    # Generate pile-up from sorted trimmed BAM
+	    samtools mpileup -A -aa -d 0 -Q 0 --reference "n10.r09.s09_output/n10.r09.s09.reference.fas" "n10.r09.s09_output/n10.r09.s09.trimmed.sorted.bam" > "n10.r09.s09_output/n10.r09.s09.pileup.txt"
+	    
+	    # Call variants using lofreq"
+	    lofreq call -f "n10.r09.s09_output/n10.r09.s09.reference.fas" --call-indels "n10.r09.s09_output/n10.r09.s09.trimmed.sorted.bam" > "n10.r09.s09_output/n10.r09.s09.variants.vcf"
+	    
+	    # Call depth from trimmed BAM
+	    samtools depth -d 0 -Q 0 -q 0 -aa "n10.r09.s09_output/n10.r09.s09.trimmed.sorted.bam" > "n10.r09.s09_output/n10.r09.s09.depth.txt"
+	    
+	    # Find low-depth regions
+	    low_depth_regions "n10.r09.s09_output/n10.r09.s09.depth.txt" "n10.r09.s09_output/n10.r09.s09.low_depth.tsv" 10 1>&2
+	    
+	    # Generate consensus sequence
+	    alt_vars.py -i "n10.r09.s09_output/n10.r09.s09.variants.vcf" -o tmp.vcf -v lofreq
+	    bgzip tmp.vcf
+	    bcftools index tmp.vcf.gz
+	    cat "n10.r09.s09_output/n10.r09.s09.reference.fas" | bcftools consensus -m "n10.r09.s09_output/n10.r09.s09.low_depth.tsv" tmp.vcf.gz > "n10.r09.s09_output/n10.r09.s09.consensus.fas"
+	    
+	    # Remove redundant output files before compressing
+	    rm */*trimmed.bam
+	    
+	    # Compress output files
+	    tar cvf - "n10.r09.s09_output" | pigz -1 -p 1 > "{{out}}"
+	where:
+	    {{fq1}} = 
+	        . <zero> 35.4MiB
+	    {{fq2}} = 
+	        . <zero> 35.4MiB
+	result:
+	    {{out}} =
+	        . sha256:19441a93b6d9059c541d61bb6f894ec5ee7054cfb48c7c7417240013aa743f13 35.7MiB
+	profile:
+	    cpu mean=1.0 max=1.1
+	    mem mean=19.3MiB max=125.0MiB
+	    disk mean=11.9MiB max=35.7MiB
+	    tmp mean=0B max=0B
+2021/07/08 16:29:30 scheduler task cc20ec10 (flow dbbf5d3c): submitted with execconfig extern url s3://niema-test/n10/r09/n10.r09.s09.tar.gz resources {}
+2021/07/08 16:29:30  ->  n10.r09.s09.Main.cp_out_file dbbf5d3c exec extern s3://niema-test/n10/r09/n10.r09.s09.tar.gz 35.7MiB
+2021/07/08 16:29:30 scheduler task ab7897d2 (flow ac2b9915): unloaded list<val<.=6a65084c 35.7MiB> 35.7MiB>
+2021/07/08 16:29:30 scheduler task ab7897d2 (flow ac2b9915): unloaded val<.=e77e9086 35.4MiB>
+2021/07/08 16:29:30 scheduler task ab7897d2 (flow ac2b9915): unloaded val<.=70b88ffd 35.4MiB>
+2021/07/08 16:29:30 scheduler task ab7897d2 (flow ac2b9915): unloading (try 0): successful, next state: complete
+2021/07/08 16:29:30  <-  n10.r09.s04.Main.out_file ac2b9915 ok     exec 2m54s 35.7MiB
+2021/07/08 16:29:30 n10.r09.s04.Main.out_file ac2b9915 n10/r09/n10.r09.s04.rf:13:21:
+	resources: {mem:1.0GiB cpu:1 disk:0B}
+	sha256:dfd2c2bdd0318a90d6fe036762f7bc489f35471811ebd318a7892761cf3ceb0c
+	sha256:ac2b9915338a98746242bbb3455a13b5771d8262d278a2d9de60465133373923
+	ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/ab7897d2682907c4c17ce035cdfe03257a7d18ed5c01a0647d770c7008f5c1e3
+	niemasd/vireflow:latest
+	command:
+	    # Copy input files locally
+	    mkdir "n10.r09.s04_output"
+	    wget -O "n10.r09.s04_output/n10.r09.s04.reference.fas" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas"
+	    wget -O "n10.r09.s04_output/n10.r09.s04.reference.gff" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3"
+	    wget -O "n10.r09.s04_output/n10.r09.s04.primers.bed" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed"
+	    cp "{{fq1}}" "n10.r09.s04_output/n10.r09.s04.fq1.fastq"
+	    cp "{{fq2}}" "n10.r09.s04_output/n10.r09.s04.fq2.fastq"
+	    
+	    # Map reads using minimap2
+	    minimap2 -t 1 -a -x sr "n10.r09.s04_output/n10.r09.s04.reference.fas" "n10.r09.s04_output/n10.r09.s04.fq1.fastq" "n10.r09.s04_output/n10.r09.s04.fq2.fastq" | samtools view -bS - > "n10.r09.s04_output/n10.r09.s04.untrimmed.bam"
+	    
+	    # Sort mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s04_output/n10.r09.s04.untrimmed.sorted.bam" "n10.r09.s04_output/n10.r09.s04.untrimmed.bam" 1>&2
+	    
+	    # Trim mapped reads using ivar
+	    ivar trim -x 5 -e -i "n10.r09.s04_output/n10.r09.s04.untrimmed.sorted.bam" -b "n10.r09.s04_output/n10.r09.s04.primers.bed" -p "n10.r09.s04_output/n10.r09.s04.trimmed" 1>&2
+	    
+	    # Sort trimmed mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s04_output/n10.r09.s04.trimmed.sorted.bam" "n10.r09.s04_output/n10.r09.s04.trimmed.bam" 1>&2
+	    
+	    # Generate pile-up from sorted trimmed BAM
+	    samtools mpileup -A -aa -d 0 -Q 0 --reference "n10.r09.s04_output/n10.r09.s04.reference.fas" "n10.r09.s04_output/n10.r09.s04.trimmed.sorted.bam" > "n10.r09.s04_output/n10.r09.s04.pileup.txt"
+	    
+	    # Call variants using lofreq"
+	    lofreq call -f "n10.r09.s04_output/n10.r09.s04.reference.fas" --call-indels "n10.r09.s04_output/n10.r09.s04.trimmed.sorted.bam" > "n10.r09.s04_output/n10.r09.s04.variants.vcf"
+	    
+	    # Call depth from trimmed BAM
+	    samtools depth -d 0 -Q 0 -q 0 -aa "n10.r09.s04_output/n10.r09.s04.trimmed.sorted.bam" > "n10.r09.s04_output/n10.r09.s04.depth.txt"
+	    
+	    # Find low-depth regions
+	    low_depth_regions "n10.r09.s04_output/n10.r09.s04.depth.txt" "n10.r09.s04_output/n10.r09.s04.low_depth.tsv" 10 1>&2
+	    
+	    # Generate consensus sequence
+	    alt_vars.py -i "n10.r09.s04_output/n10.r09.s04.variants.vcf" -o tmp.vcf -v lofreq
+	    bgzip tmp.vcf
+	    bcftools index tmp.vcf.gz
+	    cat "n10.r09.s04_output/n10.r09.s04.reference.fas" | bcftools consensus -m "n10.r09.s04_output/n10.r09.s04.low_depth.tsv" tmp.vcf.gz > "n10.r09.s04_output/n10.r09.s04.consensus.fas"
+	    
+	    # Remove redundant output files before compressing
+	    rm */*trimmed.bam
+	    
+	    # Compress output files
+	    tar cvf - "n10.r09.s04_output" | pigz -1 -p 1 > "{{out}}"
+	where:
+	    {{fq1}} = 
+	        . <zero> 35.4MiB
+	    {{fq2}} = 
+	        . <zero> 35.4MiB
+	result:
+	    {{out}} =
+	        . sha256:6a65084ca8df8950b37f4f6f2a10e59442fd614e45b15679eb1b18df848c1c36 35.7MiB
+	profile:
+	    cpu mean=1.0 max=1.2
+	    mem mean=19.5MiB max=125.6MiB
+	    disk mean=11.9MiB max=35.7MiB
+	    tmp mean=0B max=0B
+2021/07/08 16:29:30 scheduler task 2e4b4833 (flow 5fb57b0e): submitted with execconfig extern url s3://niema-test/n10/r09/n10.r09.s04.tar.gz resources {}
+2021/07/08 16:29:30  ->  n10.r09.s04.Main.cp_out_file 5fb57b0e exec extern s3://niema-test/n10/r09/n10.r09.s04.tar.gz 35.7MiB
+2021/07/08 16:29:31 scheduler task cc20ec10 (flow dbbf5d3c): direct transfer: completed s3://niema-test-quickstart-cache/objects/sha256:19441a93b6d9059c541d61bb6f894ec5ee7054cfb48c7c7417240013aa743f13 -> s3://niema-test/n10/r09/n10.r09.s09.tar.gz (35.7MiB) in 1s (35.7MiB/s) 
+2021/07/08 16:29:31  <-  n10.r09.s09.Main.cp_out_file dbbf5d3c ok   extern 0s 35.7MiB
+2021/07/08 16:29:31 scheduler task 2e4b4833 (flow 5fb57b0e): direct transfer: completed s3://niema-test-quickstart-cache/objects/sha256:6a65084ca8df8950b37f4f6f2a10e59442fd614e45b15679eb1b18df848c1c36 -> s3://niema-test/n10/r09/n10.r09.s04.tar.gz (35.7MiB) in 1s (35.7MiB/s) 
+2021/07/08 16:29:31  <-  n10.r09.s04.Main.cp_out_file 5fb57b0e ok   extern 0s 35.7MiB
+2021/07/08 16:29:33 scheduler task 845c4e68 (flow 578bac3b): waiting for completion (try 0): successful, next state: promoting objects
+2021/07/08 16:29:33 scheduler task 845c4e68 (flow 578bac3b): promoting objects (try 0): started
+2021/07/08 16:29:33 scheduler task 845c4e68 (flow 578bac3b): promoting objects (try 0): successful, next state: retrieving diagnostic output
+2021/07/08 16:29:33 scheduler task 845c4e68 (flow 578bac3b): retrieving diagnostic output (try 0): started
+2021/07/08 16:29:33 scheduler task 845c4e68 (flow 578bac3b): retrieving diagnostic output (try 0): successful, next state: retrieving result
+2021/07/08 16:29:33 scheduler task 845c4e68 (flow 578bac3b): retrieving result (try 0): started
+2021/07/08 16:29:33 scheduler task 845c4e68 (flow 578bac3b): retrieving result (try 0): successful, next state: transferring output
+2021/07/08 16:29:33 scheduler task 845c4e68 (flow 578bac3b): transferring output (try 0): started
+2021/07/08 16:29:34 scheduler task 845c4e68 (flow 578bac3b): transferring output (try 0): successful, next state: unloading
+2021/07/08 16:29:34 scheduler task 845c4e68 (flow 578bac3b): unloading (try 0): started
+2021/07/08 16:29:34 scheduler task 845c4e68 (flow 578bac3b): unloading list<val<.=b37cdec8 35.7MiB> 35.7MiB>
+2021/07/08 16:29:34 scheduler task 845c4e68 (flow 578bac3b): unloading val<.=956a7310 35.4MiB>
+2021/07/08 16:29:34 scheduler task 845c4e68 (flow 578bac3b): unloading val<.=a6014bad 35.4MiB>
+2021/07/08 16:29:34 scheduler task 845c4e68 (flow 578bac3b): unloaded val<.=a6014bad 35.4MiB>
+2021/07/08 16:29:34 scheduler task 845c4e68 (flow 578bac3b): unloaded val<.=956a7310 35.4MiB>
+2021/07/08 16:29:34 scheduler task 845c4e68 (flow 578bac3b): unloaded list<val<.=b37cdec8 35.7MiB> 35.7MiB>
+2021/07/08 16:29:34 scheduler task 845c4e68 (flow 578bac3b): unloading (try 0): successful, next state: complete
+2021/07/08 16:29:34  <-  n10.r09.s02.Main.out_file 578bac3b ok     exec 2m58s 35.7MiB
+2021/07/08 16:29:34 n10.r09.s02.Main.out_file 578bac3b n10/r09/n10.r09.s02.rf:13:21:
+	resources: {mem:1.0GiB cpu:1 disk:0B}
+	sha256:33608fc8ce93fce155c743905652fad7299669f6c7701a796018831e8e7c1c07
+	sha256:578bac3beae59dbb6fc9d4f71d2c51cb85c0c869d650bbd8d95ad8632704222c
+	ec2-18-117-153-110.us-east-2.compute.amazonaws.com:9000/d1e2c64981855ad8/845c4e680eb8b239da3eab4a4ba433f3a86ce99f81527f612dfeda86a5c76d85
+	niemasd/vireflow:latest
+	command:
+	    # Copy input files locally
+	    mkdir "n10.r09.s02_output"
+	    wget -O "n10.r09.s02_output/n10.r09.s02.reference.fas" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas"
+	    wget -O "n10.r09.s02_output/n10.r09.s02.reference.gff" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3"
+	    wget -O "n10.r09.s02_output/n10.r09.s02.primers.bed" "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed"
+	    cp "{{fq1}}" "n10.r09.s02_output/n10.r09.s02.fq1.fastq"
+	    cp "{{fq2}}" "n10.r09.s02_output/n10.r09.s02.fq2.fastq"
+	    
+	    # Map reads using minimap2
+	    minimap2 -t 1 -a -x sr "n10.r09.s02_output/n10.r09.s02.reference.fas" "n10.r09.s02_output/n10.r09.s02.fq1.fastq" "n10.r09.s02_output/n10.r09.s02.fq2.fastq" | samtools view -bS - > "n10.r09.s02_output/n10.r09.s02.untrimmed.bam"
+	    
+	    # Sort mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s02_output/n10.r09.s02.untrimmed.sorted.bam" "n10.r09.s02_output/n10.r09.s02.untrimmed.bam" 1>&2
+	    
+	    # Trim mapped reads using ivar
+	    ivar trim -x 5 -e -i "n10.r09.s02_output/n10.r09.s02.untrimmed.sorted.bam" -b "n10.r09.s02_output/n10.r09.s02.primers.bed" -p "n10.r09.s02_output/n10.r09.s02.trimmed" 1>&2
+	    
+	    # Sort trimmed mapped reads
+	    samtools sort --threads 1 -O bam -o "n10.r09.s02_output/n10.r09.s02.trimmed.sorted.bam" "n10.r09.s02_output/n10.r09.s02.trimmed.bam" 1>&2
+	    
+	    # Generate pile-up from sorted trimmed BAM
+	    samtools mpileup -A -aa -d 0 -Q 0 --reference "n10.r09.s02_output/n10.r09.s02.reference.fas" "n10.r09.s02_output/n10.r09.s02.trimmed.sorted.bam" > "n10.r09.s02_output/n10.r09.s02.pileup.txt"
+	    
+	    # Call variants using lofreq"
+	    lofreq call -f "n10.r09.s02_output/n10.r09.s02.reference.fas" --call-indels "n10.r09.s02_output/n10.r09.s02.trimmed.sorted.bam" > "n10.r09.s02_output/n10.r09.s02.variants.vcf"
+	    
+	    # Call depth from trimmed BAM
+	    samtools depth -d 0 -Q 0 -q 0 -aa "n10.r09.s02_output/n10.r09.s02.trimmed.sorted.bam" > "n10.r09.s02_output/n10.r09.s02.depth.txt"
+	    
+	    # Find low-depth regions
+	    low_depth_regions "n10.r09.s02_output/n10.r09.s02.depth.txt" "n10.r09.s02_output/n10.r09.s02.low_depth.tsv" 10 1>&2
+	    
+	    # Generate consensus sequence
+	    alt_vars.py -i "n10.r09.s02_output/n10.r09.s02.variants.vcf" -o tmp.vcf -v lofreq
+	    bgzip tmp.vcf
+	    bcftools index tmp.vcf.gz
+	    cat "n10.r09.s02_output/n10.r09.s02.reference.fas" | bcftools consensus -m "n10.r09.s02_output/n10.r09.s02.low_depth.tsv" tmp.vcf.gz > "n10.r09.s02_output/n10.r09.s02.consensus.fas"
+	    
+	    # Remove redundant output files before compressing
+	    rm */*trimmed.bam
+	    
+	    # Compress output files
+	    tar cvf - "n10.r09.s02_output" | pigz -1 -p 1 > "{{out}}"
+	where:
+	    {{fq1}} = 
+	        . <zero> 35.4MiB
+	    {{fq2}} = 
+	        . <zero> 35.4MiB
+	result:
+	    {{out}} =
+	        . sha256:b37cdec834ef29a698aa8ee878617898b39c732bab74c53b1f1b8dc28d298282 35.7MiB
+	profile:
+	    cpu mean=1.0 max=1.2
+	    mem mean=17.2MiB max=123.4MiB
+	    disk mean=11.9MiB max=35.7MiB
+	    tmp mean=0B max=0B
+2021/07/08 16:29:34 scheduler task 1483e329 (flow a87987af): submitted with execconfig extern url s3://niema-test/n10/r09/n10.r09.s02.tar.gz resources {}
+2021/07/08 16:29:34  ->  n10.r09.s02.Main.cp_out_file a87987af exec extern s3://niema-test/n10/r09/n10.r09.s02.tar.gz 35.7MiB
+2021/07/08 16:29:35 scheduler task 1483e329 (flow a87987af): direct transfer: completed s3://niema-test-quickstart-cache/objects/sha256:b37cdec834ef29a698aa8ee878617898b39c732bab74c53b1f1b8dc28d298282 -> s3://niema-test/n10/r09/n10.r09.s02.tar.gz (35.7MiB) in 1s (35.7MiB/s) 
+2021/07/08 16:29:35  <-  n10.r09.s02.Main.cp_out_file a87987af ok   extern 0s 35.7MiB
+2021/07/08 16:29:35 total n=40 time=4m4s
+	ident                        n   ncache transfer runtime(m) cpu         mem(GiB)    disk(GiB)   tmp(GiB) requested
+	n10.r09.s01.Main.cp_out_file 1   0      0B                                                      
+	n10.r09.s01.Main.fq1         1   0      0B                                                      
+	n10.r09.s01.Main.fq2         1   0      0B                                                      
+	n10.r09.s01.Main.out_file    1   0      0B       3/3/3      1.0/1.0/1.0 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:1.0GiB cpu:1 disk:0B}
+	n10.r09.s02.Main.cp_out_file 1   0      0B                                                      
+	n10.r09.s02.Main.fq1         1   0      0B                                                      
+	n10.r09.s02.Main.fq2         1   0      0B                                                      
+	n10.r09.s02.Main.out_file    1   0      0B       3/3/3      1.0/1.0/1.0 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:1.0GiB cpu:1 disk:0B}
+	n10.r09.s03.Main.cp_out_file 1   0      0B                                                      
+	n10.r09.s03.Main.fq1         1   0      0B                                                      
+	n10.r09.s03.Main.fq2         1   0      0B                                                      
+	n10.r09.s03.Main.out_file    1   0      0B       3/3/3      1.0/1.0/1.0 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:1.0GiB cpu:1 disk:0B}
+	n10.r09.s04.Main.cp_out_file 1   0      0B                                                      
+	n10.r09.s04.Main.fq1         1   0      0B                                                      
+	n10.r09.s04.Main.fq2         1   0      0B                                                      
+	n10.r09.s04.Main.out_file    1   0      0B       3/3/3      1.0/1.0/1.0 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:1.0GiB cpu:1 disk:0B}
+	n10.r09.s05.Main.cp_out_file 1   0      0B                                                      
+	n10.r09.s05.Main.fq1         1   0      0B                                                      
+	n10.r09.s05.Main.fq2         1   0      0B                                                      
+	n10.r09.s05.Main.out_file    1   0      0B       3/3/3      1.0/1.0/1.0 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:1.0GiB cpu:1 disk:0B}
+	n10.r09.s06.Main.cp_out_file 1   0      0B                                                      
+	n10.r09.s06.Main.fq1         1   0      0B                                                      
+	n10.r09.s06.Main.fq2         1   0      0B                                                      
+	n10.r09.s06.Main.out_file    1   0      0B       3/3/3      1.0/1.0/1.0 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:1.0GiB cpu:1 disk:0B}
+	n10.r09.s07.Main.cp_out_file 1   0      0B                                                      
+	n10.r09.s07.Main.fq1         1   0      0B                                                      
+	n10.r09.s07.Main.fq2         1   0      0B                                                      
+	n10.r09.s07.Main.out_file    1   0      0B       3/3/3      1.0/1.0/1.0 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:1.0GiB cpu:1 disk:0B}
+	n10.r09.s08.Main.cp_out_file 1   0      0B                                                      
+	n10.r09.s08.Main.fq1         1   0      0B                                                      
+	n10.r09.s08.Main.fq2         1   0      0B                                                      
+	n10.r09.s08.Main.out_file    1   0      0B       3/3/3      1.0/1.0/1.0 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:1.0GiB cpu:1 disk:0B}
+	n10.r09.s09.Main.cp_out_file 1   0      0B                                                      
+	n10.r09.s09.Main.fq1         1   0      0B                                                      
+	n10.r09.s09.Main.fq2         1   0      0B                                                      
+	n10.r09.s09.Main.out_file    1   0      0B       3/3/3      1.0/1.0/1.0 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:1.0GiB cpu:1 disk:0B}
+	n10.r09.s10.Main.cp_out_file 1   0      0B                                                      
+	n10.r09.s10.Main.fq1         1   0      0B                                                      
+	n10.r09.s10.Main.fq2         1   0      0B                                                      
+	n10.r09.s10.Main.out_file    1   0      0B       2/2/2      1.0/1.0/1.0 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:1.0GiB cpu:1 disk:0B}
+	warning: reduce memory requirements for over-allocating execs: n10.r09.s01.Main.out_file, n10.r09.s02.Main.out_file, n10.r09.s03.Main.out_file, n10.r09.s04.Main.out_file, n10.r09.s05.Main.out_file, n10.r09.s06.Main.out_file, n10.r09.s07.Main.out_file, n10.r09.s08.Main.out_file, n10.r09.s09.Main.out_file, n10.r09.s10.Main.out_file
+2021/07/08 16:29:35 result: [val<.=4772c890 35.7MiB>, val<.=b37cdec8 35.7MiB>, val<.=69db1fa2 35.8MiB>, val<.=6a65084c 35.7MiB>, val<.=85837b58 35.7MiB>, val<.=1ac80e6a 35.8MiB>, val<.=c8ef6a80 35.7MiB>, val<.=dde02070 35.7MiB>, val<.=19441a93 35.7MiB>, val<.=8ecd3ace 35.7MiB>]
+2021/07/08 16:29:35 waiting for 1 background tasks to complete

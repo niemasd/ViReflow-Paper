@@ -1,0 +1,48 @@
+2021/07/08 16:25:30 reflow version: reflow1.6.0 (go1.13.15)
+2021/07/08 16:25:30 run ID: cbdfbcbd
+2021/07/08 16:25:30 Trace: /home/niema/.reflow/runs/cbdfbcbd19b6babc9e0499b1729a2b125bcbb8c05296638291e258ef84bb1d99.trace
+2021/07/08 16:26:15 discovered instance i-0784e4625afe1c4e6 (c5a.4xlarge) ec2-18-117-153-110.us-east-2.compute.amazonaws.com
+2021/07/08 16:29:35 total n=40 time=4m4s
+	ident                        n   ncache transfer runtime(m) cpu         mem(GiB)    disk(GiB)   tmp(GiB) requested
+	n10.r09.s01.Main.cp_out_file 1   0      0B                                                      
+	n10.r09.s01.Main.fq1         1   0      0B                                                      
+	n10.r09.s01.Main.fq2         1   0      0B                                                      
+	n10.r09.s01.Main.out_file    1   0      0B       3/3/3      1.0/1.0/1.0 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:1.0GiB cpu:1 disk:0B}
+	n10.r09.s02.Main.cp_out_file 1   0      0B                                                      
+	n10.r09.s02.Main.fq1         1   0      0B                                                      
+	n10.r09.s02.Main.fq2         1   0      0B                                                      
+	n10.r09.s02.Main.out_file    1   0      0B       3/3/3      1.0/1.0/1.0 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:1.0GiB cpu:1 disk:0B}
+	n10.r09.s03.Main.cp_out_file 1   0      0B                                                      
+	n10.r09.s03.Main.fq1         1   0      0B                                                      
+	n10.r09.s03.Main.fq2         1   0      0B                                                      
+	n10.r09.s03.Main.out_file    1   0      0B       3/3/3      1.0/1.0/1.0 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:1.0GiB cpu:1 disk:0B}
+	n10.r09.s04.Main.cp_out_file 1   0      0B                                                      
+	n10.r09.s04.Main.fq1         1   0      0B                                                      
+	n10.r09.s04.Main.fq2         1   0      0B                                                      
+	n10.r09.s04.Main.out_file    1   0      0B       3/3/3      1.0/1.0/1.0 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:1.0GiB cpu:1 disk:0B}
+	n10.r09.s05.Main.cp_out_file 1   0      0B                                                      
+	n10.r09.s05.Main.fq1         1   0      0B                                                      
+	n10.r09.s05.Main.fq2         1   0      0B                                                      
+	n10.r09.s05.Main.out_file    1   0      0B       3/3/3      1.0/1.0/1.0 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:1.0GiB cpu:1 disk:0B}
+	n10.r09.s06.Main.cp_out_file 1   0      0B                                                      
+	n10.r09.s06.Main.fq1         1   0      0B                                                      
+	n10.r09.s06.Main.fq2         1   0      0B                                                      
+	n10.r09.s06.Main.out_file    1   0      0B       3/3/3      1.0/1.0/1.0 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:1.0GiB cpu:1 disk:0B}
+	n10.r09.s07.Main.cp_out_file 1   0      0B                                                      
+	n10.r09.s07.Main.fq1         1   0      0B                                                      
+	n10.r09.s07.Main.fq2         1   0      0B                                                      
+	n10.r09.s07.Main.out_file    1   0      0B       3/3/3      1.0/1.0/1.0 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:1.0GiB cpu:1 disk:0B}
+	n10.r09.s08.Main.cp_out_file 1   0      0B                                                      
+	n10.r09.s08.Main.fq1         1   0      0B                                                      
+	n10.r09.s08.Main.fq2         1   0      0B                                                      
+	n10.r09.s08.Main.out_file    1   0      0B       3/3/3      1.0/1.0/1.0 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:1.0GiB cpu:1 disk:0B}
+	n10.r09.s09.Main.cp_out_file 1   0      0B                                                      
+	n10.r09.s09.Main.fq1         1   0      0B                                                      
+	n10.r09.s09.Main.fq2         1   0      0B                                                      
+	n10.r09.s09.Main.out_file    1   0      0B       3/3/3      1.0/1.0/1.0 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:1.0GiB cpu:1 disk:0B}
+	n10.r09.s10.Main.cp_out_file 1   0      0B                                                      
+	n10.r09.s10.Main.fq1         1   0      0B                                                      
+	n10.r09.s10.Main.fq2         1   0      0B                                                      
+	n10.r09.s10.Main.out_file    1   0      0B       2/2/2      1.0/1.0/1.0 0.1/0.1/0.1 0.0/0.0/0.0 0.0/0.0/0.0 {mem:1.0GiB cpu:1 disk:0B}
+	warning: reduce memory requirements for over-allocating execs: n10.r09.s01.Main.out_file, n10.r09.s02.Main.out_file, n10.r09.s03.Main.out_file, n10.r09.s04.Main.out_file, n10.r09.s05.Main.out_file, n10.r09.s06.Main.out_file, n10.r09.s07.Main.out_file, n10.r09.s08.Main.out_file, n10.r09.s09.Main.out_file, n10.r09.s10.Main.out_file
+2021/07/08 16:29:35 result: [val<.=4772c890 35.7MiB>, val<.=b37cdec8 35.7MiB>, val<.=69db1fa2 35.8MiB>, val<.=6a65084c 35.7MiB>, val<.=85837b58 35.7MiB>, val<.=1ac80e6a 35.8MiB>, val<.=c8ef6a80 35.7MiB>, val<.=dde02070 35.7MiB>, val<.=19441a93 35.7MiB>, val<.=8ecd3ace 35.7MiB>]
