@@ -44,14 +44,9 @@ mv ~/.reflow/runs/* n100/r10/reflow_logs/ # make sure only 1 reflow run's files 
 git add n*/ && git commit -m "Added more results" && git push
 ```
 
-# Results
+# Generate batch files for AHFGT7DRXY
 
-| Number of Samples | ViReflow Walltime (seconds) | ViReflow Cost (dollars) | ViReflow Cost/Sample (dollars) |
-| ----------------: | --------------------------: | ----------------------: | -----------------------------: |
-|                 1 |                         ??? |                    $??? |                           $??? |
-|                10 |                         ??? |                    $??? |                           $??? |
-|               100 |                         ??? |                    $??? |                           $??? |
-|              1000 |                         ??? |                    $??? |                           $??? |
-|             10000 |                         ??? |                    $??? |                           $??? |
-|            100000 |                         ??? |                    $??? |                           $??? |
-|      Full NovaSeq |                         ??? |                    $??? |                           $??? |
+```bash
+parallel --jobs 7 ~/ViReflow/ViReflow.py -rf https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas -rg https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3 -p https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed -d s3://niema-test/AHFGT7DRXY/ -id "{}" -o "AHFGT7DRXY/samples/{}.rf" "s3://ucsd-all/210529_A00953_0313_AHFGT7DRXY/210529_A00953_0313_AHFGT7DRXY_fastq/{}_R1_001.fastq.gz" "s3://ucsd-all/210529_A00953_0313_AHFGT7DRXY/210529_A00953_0313_AHFGT7DRXY_fastq/{}_R2_001.fastq.gz" ::: $(aws s3 ls s3://ucsd-all/210529_A00953_0313_AHFGT7DRXY/210529_A00953_0313_AHFGT7DRXY_fastq/ | rev | grep "^zg.qtsaf." | cut -d' ' -f1 | cut -d'_' -f3- | rev | uniq | grep "^SEARCH")
+~/ViReflow/rf_batch.py -o AHFGT7DRXY/batch.rf AHFGT7DRXY/samples/*.rf
+```
