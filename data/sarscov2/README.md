@@ -34,6 +34,16 @@ n=10000; R=10; G=29903; L=151; C=500; NUM_READS=$(echo $G | numlist -mul$C | num
 n=1; R=10; mkdir -p n$n; for r in $(seq -w 1 $R); do mkdir -p n$n/r$r; done; parallel --jobs 7 ~/ViReflow/ViReflow.py -rf "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.fas" -rg "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/NC_045512.2.gff3" -p "https://raw.githubusercontent.com/niemasd/ViReflow/main/demo/sarscov2_v2_primers_swift.bed" -d s3://niema-test/n$n/r{1}/ -id n$n.r{1}.s{2} -o n$n/r{1}/n$n.r{1}.s{2}.rf s3://niema-test/n$n/r{1}/n$n.r{1}.s{2}_R1.fastq s3://niema-test/n$n/r{1}/n$n.r{1}.s{2}_R2.fastq ::: $(seq -w 1 $R) ::: $(seq -w 1 $n); parallel --jobs 7 ~/ViReflow/rf_batch.py -o n$n/n$n.r{1}.rf n$n/r{1}/*.rf ::: $(seq -w 1 $R)
 ```
 
+# Running the batch files
+Within the `ViReflow-Paper/data/sarscov2` directory, a given batch file can be run as follows (e.g. for `n=100` and `r=10`):
+
+```bash
+time reflow run n100/n100.r10.rf
+vi n100/r10/time.txt # write the `time` output here
+mv ~/.reflow/runs/* n100/r10/reflow_logs/ # make sure only 1 reflow run's files is present in `~/.reflow/runs`
+git add n*/ && git commit -m "Added more results" && git push
+```
+
 # Results
 
 | Number of Samples | ViReflow Walltime (seconds) | ViReflow Cost (dollars) | ViReflow Cost/Sample (dollars) |
